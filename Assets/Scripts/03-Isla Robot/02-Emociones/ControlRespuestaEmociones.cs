@@ -9,6 +9,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	ControlSlider CSlider;
 	
 	public GameObject IfinJuego;
+	public GameObject IfinJuego2;
 	
 	//public GameObject BotonVolverGrande;
 	
@@ -31,6 +32,11 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 		CEA = GameObject.Find ("ctrAleatorio").GetComponent<ControlEmocionesAleatorio> ();
+		ControlMonedas = GameObject.Find ("controlMonedas");
+		cM = ControlMonedas.GetComponent<Control_monedas> ();
+
+		cM.monedasEmociones=0;
+		CE.Intentos=1;
 
 		if (CEA.ARespuesta.Length == 3) 
 		{
@@ -292,5 +298,28 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		Tpuntuacion = puntuacion.GetComponent<Text> ();
 		
 		Tpuntuacion.text = CE.Intentos.ToString();
+	}
+
+	public void Salir_Interfaz()
+	{
+		IfinJuego2.SetActive(true);
+		
+		ControlMonedas = GameObject.Find ("controlMonedas");
+		cM = ControlMonedas.GetComponent<Control_monedas> ();
+		
+		puntuacionfin = GameObject.Find ("puntuacionFin");
+		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
+		
+		monedasEmociones = GameObject.Find ("monedas");
+		TmonedasEmociones = monedasEmociones.GetComponent<Text> ();
+	
+		TmonedasEmociones.text = cM.monedasEmociones.ToString();
+		TpuntuacionFin.text = "¿ QUIERES SALIR ? ";
+		CE.respuesta = true;
+	}
+	public void seguir_Jugando()
+	{
+		IfinJuego2.SetActive(false);
+		CE.respuesta = true;
 	}
 }

@@ -307,15 +307,21 @@ public class ControlEscenas : MonoBehaviour {
 	}
 	public void CargarEmocionesNivel1()
 	{
-		Application.LoadLevel ("2.1-Emociones_Nivel1");
+		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CE.NivelEmociones = 1;
+		Application.LoadLevel ("Emociones");
 	}
 	public void CargarEmocionesNivel2()
 	{
-		Application.LoadLevel ("2.2-Emociones_Nivel2");
+		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CE.NivelEmociones = 2;
+		Application.LoadLevel ("Emociones");
 	}
 	public void CargarEmocionesNivel3()
 	{
-		Application.LoadLevel ("2.3-Emociones_Nivel3");
+		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CE.NivelEmociones = 3;
+		Application.LoadLevel ("Emociones");
 	}
 
 
