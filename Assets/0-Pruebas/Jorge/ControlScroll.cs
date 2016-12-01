@@ -45,6 +45,107 @@ public class ControlScroll : MonoBehaviour
 	{
 
 	}
+	public void arrastrar()
+	{
+		
+		CEm = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		
+		switch (CEm.NivelEmociones) 
+		{
+		case 1:
+			if (Barra_Scroll.value < 0.25f) { //boton
+				B = 0;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.25f && Barra_Scroll.value < 0.75f) { //boton 1
+				B = 1;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.75) { //boton 2
+				B = 2;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			break;
+		case 2:
+			if (Barra_Scroll.value < 0.1f) { //boton
+				B = 0;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.1f && Barra_Scroll.value < 0.35f) { //boton 1
+
+				B = 1;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.35f && Barra_Scroll.value < 0.65f) { //boton 2
+
+				B = 2;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.65f && Barra_Scroll.value < 0.85f) { //boton 3
+
+				B = 3;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.85) { //boton 4
+
+				B = 4;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			break;
+		case 3:
+			if (Barra_Scroll.value < 0.1f) { //boton
+				B = 0;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.1f && Barra_Scroll.value < 0.26f) { //boton 1
+			
+				B = 1;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.26f && Barra_Scroll.value < 0.43f) { //boton 2
+
+				B = 2;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.43f && Barra_Scroll.value < 0.59f) { //boton 3
+			
+				B = 3;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.59 && Barra_Scroll.value < 0.76) { //boton 4
+			
+				B = 4;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.76 && Barra_Scroll.value < 0.93) { //boton 5
+
+				B = 5;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			if (Barra_Scroll.value >= 0.93) { //boton 5
+			
+				B = 6;
+				Reducir_tamaño ();
+				Ampliar_tamaño ();
+			}
+			break;
+		}
+
+	}
 
 	public void detectarSoltarBarra()
 	{
