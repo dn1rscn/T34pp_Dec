@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ControlEmocionesAleatorio : MonoBehaviour 
 {
+	ControlEmociones CE;
+
 	public Sprite[] APregunta;
 	public Sprite[] AImRespuesta;
 	public GameObject[] ARespuesta;
@@ -19,10 +21,22 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+
 		PreguntaAleat = Random.Range (0, APregunta.Length);
 		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
-
-		respuestaCorrectaAleat = Random.Range (1, ARespuesta.Length + 1);
+		switch (CE.NivelEmociones) 
+		{
+		case 1:
+			respuestaCorrectaAleat = Random.Range (1, 4);
+			break;
+		case 2:
+			respuestaCorrectaAleat = Random.Range (1, 6);
+			break;
+		case 3:
+			respuestaCorrectaAleat = Random.Range (1, 8);
+			break;
+		}
 		print (respuestaCorrectaAleat);
 		print (PreguntaAleat);
 		switch (respuestaCorrectaAleat) 
