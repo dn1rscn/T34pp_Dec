@@ -32,7 +32,10 @@ public class reproducirSonido : MonoBehaviour
 		CS = GameObject.Find ("ctrSonidos").GetComponent<ControlSonidos> ();
 		//BotonPlay.SetActive (true);
 		//BotonRepetir.SetActive (false);
-		Particulasmusica.gameObject.SetActive (false); 
+		Particulasmusica.gameObject.SetActive (false);
+
+		//Para que la primera vez que entras tambien sea aleatorio el sonido
+		SonidoAleatorio = Random.Range (0, 4);
 
 	}
 	
@@ -51,7 +54,6 @@ public class reproducirSonido : MonoBehaviour
 		else 
 		{
 			ASonidos [SonidoAleatorio].Play ();
-
 		}
 
 	}
@@ -76,7 +78,6 @@ public class reproducirSonido : MonoBehaviour
 
 			//MaquinaDiscos.GetComponent<Animation> ().Play ("play");
 			//MaquinaDiscos.GetComponent<Animation> ().Play ("disco");
-
 
 			while(SonidosOK[SonidoAleatorio]==true)
 			{
