@@ -15,29 +15,53 @@ public class control_triggersPosicion : MonoBehaviour {
 		GameObject grupoSuperiorProta = transform.parent.gameObject;
 
 		switch (CDG_Mundo3D.posicionPersonaje) {
-		case 3:
-		{
-			//posicionFinal
-			grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_03").transform.position;
-			
-			break;
-		}	
-		case 2:
-		{	//posicionMedia
-			grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_02").transform.position;
-			break;
-			
-		}	
-		case 1:
-		{	//posicionInicial
-			grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_01").transform.position;
-			
-			break;
-		}
-		default: 
-		{
-			break;
-		}
+			case 6:
+			{
+				//posicionFinal
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_06").transform.position;
+				
+				break;
+			}	
+
+			case 5:
+			{
+				//posicionFinal
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_06").transform.position;
+				
+				break;
+			}	
+
+			case 4:
+			{
+				//posicionFinal
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_04").transform.position;
+				
+				break;
+			}	
+
+			case 3:
+			{
+				//posicionFinal
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_03").transform.position;
+				
+				break;
+			}	
+			case 2:
+			{	//posicionMedia
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_02").transform.position;
+				break;
+				
+			}	
+			case 1:
+			{	//posicionInicial
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_01").transform.position;
+				
+				break;
+			}
+			default: 
+			{
+				break;
+			}
 		}
 
 
@@ -51,16 +75,24 @@ public class control_triggersPosicion : MonoBehaviour {
 
 		switch (coli.gameObject.name)
 		{
-		  	case "PosicionInicial" :
+		case "Posicion_01" :
 			CDG_Mundo3D.posicionPersonaje = 1;
 			break;
-			case "PosicionMedia":
+		case "Posicion_02":
 				CDG_Mundo3D.posicionPersonaje = 2;
 				break;
-			case "PosicionFinal":
+		case "Posicion_03":
 				CDG_Mundo3D.posicionPersonaje = 3;
 				break;
-
+		case "Posicion_04":
+			CDG_Mundo3D.posicionPersonaje = 4;
+		break;
+		case "Posicion_05":
+				CDG_Mundo3D.posicionPersonaje = 5;
+		break;
+		case "Posicion_06":
+				CDG_Mundo3D.posicionPersonaje = 6;
+			break;
 		}
 	}
 }

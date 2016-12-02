@@ -7,6 +7,8 @@ public class controlPortales : MonoBehaviour {
 	Animator animator_PanelCanvas;
 	Animator animator_botonesPortal;
 
+	Animator animator_Canvas;
+
 	Text textoNombrePortal;
 
 	string destinoPortal;
@@ -17,10 +19,11 @@ public class controlPortales : MonoBehaviour {
 	void Start ()
 	{
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
-//		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
 		animator_PanelCanvas = GameObject.Find ("CanvasPortal_Verde").GetComponent<Animator> ();
 		animator_botonesPortal = GameObject.Find("botonesPortal").GetComponent<Animator>();
+		animator_Canvas = GameObject.Find ("Canvas_Mundo3D").GetComponent<Animator> ();
 
 	}
 	
@@ -28,6 +31,8 @@ public class controlPortales : MonoBehaviour {
 	{
 		if (coli.gameObject.tag == "Portal")
 		{
+			animator_Canvas.enabled = false;
+
 			//Recogemos el texto que contiene el gameObject "nombrePortal" en el momento de colisionar con el trigger
 			textoNombrePortal = GameObject.Find("nombrePortal").GetComponent<Text>();
 
@@ -125,6 +130,7 @@ public class controlPortales : MonoBehaviour {
 	{
 		if (coli.gameObject.tag == "Portal")
 		{
+			animator_Canvas.enabled = true;
 			//Ejecutamos la animacion de salida canvas al salir del portal
 			animator_PanelCanvas.Play("CanvasPortal_animSalida");
 			animator_botonesPortal.Play("SalidaBotonesPortales");
@@ -134,6 +140,7 @@ public class controlPortales : MonoBehaviour {
 
 
 	public void usarPortal(){
+
 		switch (destinoPortal)
 		{
 		

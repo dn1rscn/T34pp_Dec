@@ -22,6 +22,10 @@ public class ControlDatosGlobales_Mundo3D: MonoBehaviour {
 	public bool islaMec=false;
 	public bool islaFant=false;
 
+  //Mision Huevo Isla Bosque
+	public int destinoHuevo = 0;
+	public bool huevoInvisible = false;
+
 	public int posicionPersonaje = 1;
 	//si posicionPersonaje = 1 , el prota aparecera en la posicion inicial del nivel
 	//si posicionPersonaje = 2 , el prota aparecera en la posicion media del nivel
