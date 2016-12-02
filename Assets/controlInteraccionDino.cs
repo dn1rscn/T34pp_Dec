@@ -105,7 +105,7 @@ public class controlInteraccionDino : MonoBehaviour {
 				{
 					agente.transform.LookAt(Dino.transform.position);
 
-					Invoke("DejarDeMirarDino",2.0f);
+					//Invoke("DejarDeMirarDino",2.0f);
 					animator_Prota.SetBool("andar",false);
 				}
 			

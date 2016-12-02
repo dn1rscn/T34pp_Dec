@@ -5,17 +5,6 @@ public class pasarDeEscena : MonoBehaviour {
 
 	public string escenaSiguiente;
 
-	// Use this for initialization
-	void Start () {
-
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void reproducirAudio (){
 		GameObject.Find ("audioIntroIkki_1").GetComponent<AudioSource>().Play();
 	}
