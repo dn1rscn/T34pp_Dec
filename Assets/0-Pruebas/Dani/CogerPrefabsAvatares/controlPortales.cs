@@ -13,6 +13,8 @@ public class controlPortales : MonoBehaviour {
 
 	string destinoPortal;
 
+	Image loadingScreen;
+
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 
 	// Use this for initialization
@@ -20,6 +22,8 @@ public class controlPortales : MonoBehaviour {
 	{
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+
+		loadingScreen = GameObject.Find("loadingScreen").GetComponent<Image>();
 
 		animator_PanelCanvas = GameObject.Find ("CanvasPortal_Verde").GetComponent<Animator> ();
 		animator_botonesPortal = GameObject.Find("botonesPortal").GetComponent<Animator>();
@@ -140,6 +144,8 @@ public class controlPortales : MonoBehaviour {
 
 
 	public void usarPortal(){
+
+		loadingScreen.enabled = true;
 
 		switch (destinoPortal)
 		{

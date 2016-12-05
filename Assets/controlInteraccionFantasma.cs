@@ -3,8 +3,14 @@ using System.Collections;
 
 public class controlInteraccionFantasma : MonoBehaviour {
 
+	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	ControlMisionesInterfaz CMI;
+
+	public Sprite[] array_BocadillosConversacion; 
+	public int bocadillosRestantes;
+
 	SpriteRenderer spr_bocadilloFantasma_01;
-	SpriteRenderer spr_bocadilloFantasma_02;
+	//SpriteRenderer spr_bocadilloFantasma_02;
 	
 	Vector3 posicionConversarConFantasma;
 
@@ -25,10 +31,12 @@ public class controlInteraccionFantasma : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		bocadillosRestantes = array_BocadillosConversacion.Length;
+
 		Fantasma = GameObject.Find("fantasma_bake_v2");
 
 		spr_bocadilloFantasma_01 = GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>();
-		spr_bocadilloFantasma_02 = GameObject.Find("bocadillo_Fantasma_02").GetComponent<SpriteRenderer>();
+		//spr_bocadilloFantasma_02 = GameObject.Find("bocadillo_Fantasma_02").GetComponent<SpriteRenderer>();
 
 		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
 		posicionConversarConFantasma = GameObject.Find("Posicion_ConversarConFantasma").transform.position; 
@@ -98,10 +106,26 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		
 	}
 	
+	public void pasarBocadillo(){
+		
+		if (bocadillosRestantes!=0)
+		{
+			//Cambiamos la imagen del bocadillo
+			Sprite ImagenNueva = array_BocadillosConversacion[bocadillosRestantes-1];
+			spr_bocadilloFantasma_01.GetComponent<SpriteRenderer>().sprite = ImagenNueva;
+			
+			bocadillosRestantes--;
+		}
+		else 
+		{		
+			//A los 3 segundos, salimos del "Modo Dialogo"
+			Invoke("salirDialogo",3.0f);
+		}
+	}
 
 	public void activarBocadillo2 (){
 		spr_bocadilloFantasma_01.enabled=false;
-		spr_bocadilloFantasma_02.enabled=true;
+		//spr_bocadilloFantasma_02.enabled=true;
 
 		//A los 3 segundos, salimos del "Modo Dialogo"
 		Invoke("salirDialogo",3.0f);
@@ -112,7 +136,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 		ctrlProta.enabled = true;
 
-		spr_bocadilloFantasma_02.enabled=false;
+		spr_bocadilloFantasma_01.enabled=false;
 		gObj_botonPasarBocadillo.SetActive(false);
 
 		animator_Cam.SetBool("ZoomCam_Fantasma", false);

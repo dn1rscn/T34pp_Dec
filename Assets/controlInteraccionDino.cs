@@ -6,9 +6,12 @@ public class controlInteraccionDino : MonoBehaviour {
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	ControlMisionesInterfaz CMI;
 
+	public Sprite[] array_BocadillosConversacion; 
+	public int bocadillosRestantes;
+
 	SpriteRenderer spr_flechaDestino_Dino;
 	SpriteRenderer spr_bocadilloDino_01;
-	SpriteRenderer spr_bocadilloDino_02;
+	//SpriteRenderer spr_bocadilloDino_02;
 	
 	Vector3 posicionConversarConDino;
 	Vector3 posicionConversarConDino2;
@@ -31,6 +34,9 @@ public class controlInteraccionDino : MonoBehaviour {
 	void Start () 
 	{
 
+		bocadillosRestantes = array_BocadillosConversacion.Length;
+
+
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
@@ -39,7 +45,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 		spr_flechaDestino_Dino = GameObject.Find("flechaDestino_Dino").GetComponent<SpriteRenderer>();
 		spr_bocadilloDino_01 = GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>();
-		spr_bocadilloDino_02 = GameObject.Find("bocadillo_Dino_02").GetComponent<SpriteRenderer>();
+		//spr_bocadilloDino_02 = GameObject.Find("bocadillo_Dino_02").GetComponent<SpriteRenderer>();
 
 		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
 		posicionConversarConDino = GameObject.Find("Posicion_ConversarConDino").transform.position; 
@@ -141,9 +147,28 @@ public class controlInteraccionDino : MonoBehaviour {
 		posicionCorrecta=true;
 	}
 
+
+	public void pasarBocadillo(){
+
+		if (bocadillosRestantes!=0)
+		{
+			//Cambiamos la imagen del bocadillo
+			Sprite ImagenNueva = array_BocadillosConversacion[bocadillosRestantes-1];
+			spr_bocadilloDino_01.GetComponent<SpriteRenderer>().sprite = ImagenNueva;
+
+			bocadillosRestantes--;
+		}
+		else 
+		{		
+			//A los 3 segundos, salimos del "Modo Dialogo"
+			Invoke("salirDialogo",3.0f);
+		}
+	}
+
+
 	public void activarBocadillo2 (){
 		spr_bocadilloDino_01.enabled=false;
-		spr_bocadilloDino_02.enabled=true;
+		//spr_bocadilloDino_02.enabled=true;
 		animator_Dino.SetBool("fallo_Dino",true);
 
 		//A los 3 segundos, salimos del "Modo Dialogo"
@@ -155,7 +180,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 		ctrlProta.enabled = true;
 
-		spr_bocadilloDino_02.enabled=false;
+		spr_bocadilloDino_01.enabled=false;
 		gObj_botonPasarBocadillo.SetActive(false);
 
 		CDG_Mundo3D.hemosHabladoConDino=true;

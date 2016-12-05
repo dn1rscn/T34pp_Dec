@@ -44,10 +44,16 @@ public class ControlRespuesta : MonoBehaviour
 	Animator animator_Cartel2;
 	Animator animator_Cartel3;
 
+	Animator animator_panelCanvas;
+	Animator animator_Dino;
+
 
 	// Use this for initialization
 	void Start () 
 	{
+		animator_Dino = GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>();
+		animator_panelCanvas = GameObject.Find("Panel_Canvas").GetComponent<Animator>();
+
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 		DGlobales = GameObject.Find ("DatosGlobales");
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
@@ -105,6 +111,9 @@ public class ControlRespuesta : MonoBehaviour
 
 	void correcto()
 	{
+		animator_Dino.Play("Acierto_01_dino");
+		animator_panelCanvas.Play("acierto");
+
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
@@ -120,9 +129,7 @@ public class ControlRespuesta : MonoBehaviour
 		//ejecutarSonidoAcierto
 		//GameObject.Find("SonidoAcierto").GetComponent<AudioSource>().Play();
 
-		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Acierto_01_dino");
-		
-		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
+
 
 		GameObject.Find ("Dado").GetComponent<Renderer> ().sharedMaterial = Im_Dado;
 		GameObject.Find("Dado").GetComponent<Animator>().Play ("Tirar_dado");
