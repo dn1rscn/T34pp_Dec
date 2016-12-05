@@ -108,7 +108,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 			Invoke ("ActivarEstrella2", 2.0f);
 			Invoke ("ActivarEstrella3", 3.0f);
 			DD.AEmpatia[2] = true;
-			DD.Portal2Fantasma=true;
+
 		} 
 		else 
 		{
@@ -117,13 +117,13 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 				DD.AEmpatia[2] = true;
-				DD.Portal2Fantasma=true;
+
 			} 
 			else if(CE.Intentos == 3)
 			{
 				Invoke ("ActivarEstrella1", 1.0f);
 				DD.AEmpatia[2] = true;
-				DD.Portal2Fantasma=true;
+
 			}
 		}
 		

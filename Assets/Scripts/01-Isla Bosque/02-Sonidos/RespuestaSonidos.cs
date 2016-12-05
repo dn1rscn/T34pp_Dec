@@ -36,6 +36,7 @@ public class RespuestaSonidos : MonoBehaviour
 	public GameObject BotonPlay;
 	public GameObject BotonRepetir;
 	public GameObject BotonSiguienteNivel;
+	public GameObject BotonBack;
 
 	//public GameObject estrella1;
 	//public GameObject estrella2;
@@ -384,6 +385,8 @@ public class RespuestaSonidos : MonoBehaviour
 
 	public void Notificacion ()
 	{
+		BotonBack.SetActive (false);
+
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		
@@ -441,14 +444,12 @@ public class RespuestaSonidos : MonoBehaviour
 		TpuntuacionFin.text ="\nACIERTOS: " + CS.aciertos.ToString ();
 		
 		TmonedasSonidos.text = cM.MonedasSonidos.ToString();
-		
-		cdg_3d.IslaFantasma_Desbloqueada=true;
-		//DD.ASonidos[CS.nivel]=true;
 	}
 
 	public void seguirJugando()
 	{
 		IfinJuego2.SetActive (false);
+		BotonBack.SetActive (true);
 		cM.monedas = cM.monedas - cM.MonedasSonidos;
 	}
 }

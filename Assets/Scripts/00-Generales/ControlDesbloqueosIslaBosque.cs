@@ -40,12 +40,7 @@ public class ControlDesbloqueosIslaBosque : MonoBehaviour
 		{
 			print("Ejercicio "+i+" no completado");
 		}
-
-		//Desbloqueo Protal 2
-		if (DD.Portal2Bosque == true) 
-		{
-			//activamosPortal
-		}
+		
 	}
 	
 	// Update is called once per frame

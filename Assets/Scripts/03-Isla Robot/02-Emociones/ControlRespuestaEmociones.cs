@@ -80,9 +80,11 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		print ("correcto");
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		print (CEA.ARespuesta.Length);
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 		if (CEA.ARespuesta.Length == 7) 
 		{
 			IfinJuego.SetActive(true);
+			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 			
 			ControlMonedas = GameObject.Find ("controlMonedas");
 			cM = ControlMonedas.GetComponent<Control_monedas> ();
@@ -149,18 +151,19 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	void Error()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("fallo_robot");
 		print ("fallo");
 		CE.Intentos++;
 		actualizarPuntuacion ();
-		if (CEA.ARespuesta.Length == 3) 
+		if (CE.NivelEmociones == 1) 
 		{
 			CSlider.progresoEmocionesNivel1();
 		}
-		if (CEA.ARespuesta.Length == 5) 
+		if (CE.NivelEmociones == 2) 
 		{
 			CSlider.progresoEmocionesNivel2();
 		}
-		if (CEA.ARespuesta.Length == 7) 
+		if (CE.NivelEmociones == 3) 
 		{
 			CSlider.progresoEmocionesNivel3();
 		}
