@@ -7,6 +7,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 	public GameObject IfinJuego;
 	public GameObject SiguienteSecuencia;
 	public GameObject ISalir;
+	public GameObject boton_Back;
 	
 	Control_monedas cM;
 	GameObject ControlMonedas;
@@ -32,7 +33,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 
 		IfinJuego.SetActive (false);
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
-		CNotificaciones.Portal.SetActive(false);
+		//CNotificaciones.Portal.SetActive(false);
 		for(int i=0;i < CNotificaciones.MisionFantasma.Length; i++)
 		{
 			CNotificaciones.MisionFantasma[i].SetActive(false);
@@ -74,7 +75,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 			SiguienteSecuencia.SetActive(true);
 			if(cs.Asecuencias[cs.Secuencia]==false)
 			{
-				GameObject.Find("Notificaciones1").GetComponent<Animator>().Play("abrirNotificacion");
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				CNotificaciones.Siguiente_Secuencia.SetActive(true);
 				if(cs.Secuencia<cs.Asecuencias.Length)
 				{
@@ -96,13 +97,6 @@ public class FinPartida_Secuencias : MonoBehaviour
 					cs.Asecuencias[cs.Secuencia]=true;
 				}
 			}
-			//desbloquearportal
-			if(cs.Secuencia==2&&DD.Portal2Fantasma==false)
-			{
-				DD.Portal2Fantasma=true;
-				CNotificaciones.Portal.SetActive(true);
-				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-			}
 		}
 		if (cs.fallos == 0) {
 			Invoke ("ActivarEstrella1", 1.0f);
@@ -123,12 +117,6 @@ public class FinPartida_Secuencias : MonoBehaviour
 				CMisiones.ejerF_3estrellas[cs.Secuencia-1]=true;
 				CNotificaciones.MisionFantasma[cs.Secuencia-1].SetActive(true);
 				//GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-			}
-			if(cs.Secuencia==2&&DD.Portal2Fantasma==false)
-			{
-				DD.Portal2Fantasma=true;
-				CNotificaciones.Portal.SetActive(true);
-				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 		}
 		
@@ -178,6 +166,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 
 	public void SalirSecuencias()
 	{
+		boton_Back.SetActive (false);
 		ISalir.SetActive (true);
 		ISalir.GetComponent<Animator>().Play ("AnimFinPartida");
 
@@ -197,6 +186,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 	public void SeguirJugando()
 	{
 		ISalir.SetActive (false);
+		boton_Back.SetActive (true);
 	}
 
 }

@@ -126,6 +126,8 @@ public class ControlSlider : MonoBehaviour
 	public void progresoEmocionesNivel1()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+
+		BarraProgreso.maxValue = 3;
 		
 		BarraProgreso.value = 4 -(CE.Intentos);
 		
@@ -149,6 +151,8 @@ public class ControlSlider : MonoBehaviour
 	public void progresoEmocionesNivel2()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+
+		BarraProgreso.maxValue = 4;
 		
 		BarraProgreso.value = 5 -(CE.Intentos);
 		
@@ -172,6 +176,8 @@ public class ControlSlider : MonoBehaviour
 	public void progresoEmocionesNivel3()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+
+		BarraProgreso.maxValue = 6;
 		
 		BarraProgreso.value = 7 -(CE.Intentos);
 		

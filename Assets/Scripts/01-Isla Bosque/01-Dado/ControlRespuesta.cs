@@ -35,6 +35,8 @@ public class ControlRespuesta : MonoBehaviour
 	public GameObject estrella2;
 	public GameObject estrella3;
 
+	public GameObject boton_back;
+
 	Renderer miRender;
 	
 	GameObject puntuacionfin;
@@ -261,7 +263,7 @@ public class ControlRespuesta : MonoBehaviour
 				{
 					cdg_3d.Ejer_Bosque[0]=true;
 				}
-				DD.Portal2Bosque=true;
+
 			}
 			if (cdg.aciertos >= 10) 
 			{
@@ -327,6 +329,7 @@ public class ControlRespuesta : MonoBehaviour
 	}
 	public void SalirDelJuego()
 	{
+		boton_back.SetActive (false);
 		IfinJuego2.SetActive (true);
 		IfinJuego2.GetComponent<Animator>().Play ("AnimFinPartida");
 
@@ -349,7 +352,7 @@ public class ControlRespuesta : MonoBehaviour
 			{
 				cdg_3d.Ejer_Bosque[0]=true;
 			}
-			DD.Portal2Bosque=true;
+
 		}
 		if (cdg.aciertos >= 10) 
 		{
@@ -368,6 +371,7 @@ public class ControlRespuesta : MonoBehaviour
 	}
 	public void seguirJugando()
 	{
+		boton_back.SetActive (true);
 		IfinJuego2.SetActive (false);
 		GameObject.Find ("Dado").GetComponent<ControlDado>().enabled=true;
 		cM.monedas = cM.monedas - cM.monedas_dado;

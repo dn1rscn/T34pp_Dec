@@ -16,22 +16,22 @@ public class ControlRespuestaSec : MonoBehaviour
 	GameObject ctrlsecuencias;
 	ControlSecuencias cs;
 	controlSituaciones CSit;
-	ControlSlider CSlider;
+	//ControlSlider CSlider;
 
 	FinPartida_Secuencias Fin_Sec;
 	
-	GameObject puntuacion;
-	Text Tpuntuacion;
+	//GameObject puntuacion;
+	//Text Tpuntuacion;
 
 	// Use this for initialization
 	void Start () 
 	{
 		ctrlsecuencias = GameObject.Find ("DatosGlobalesSecuencias");
 		cs = ctrlsecuencias.GetComponent<ControlSecuencias> ();
-		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
+		//CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
-		actualizarPuntuacion ();
-		CSlider.progresoSecuencias ();
+		//actualizarPuntuacion ();
+		//CSlider.progresoSecuencias ();
 
 	}
 	
@@ -55,6 +55,12 @@ public class ControlRespuestaSec : MonoBehaviour
 			P1.GetComponent<Image> ().sprite = primera;
 			Destroy(gameObject);
 			cs.p1=true;
+
+			//HAS ACERTADO
+			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("acierto_fantasma");
+			
+			//ejecutar animacionAcierto
+			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
 		}
 		else if (gameObject.GetComponent<Image> ().sprite.name == "Segunda"&&cs.p1==true) 
 		{
@@ -62,6 +68,12 @@ public class ControlRespuestaSec : MonoBehaviour
 			P2.GetComponent<Image> ().sprite = segunda;
 			Destroy(gameObject);
 			cs.p2=true;
+
+			//HAS ACERTADO
+			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("acierto_fantasma");
+			
+			//ejecutar animacionAcierto
+			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
 		}
 		else if (gameObject.GetComponent<Image> ().sprite.name == "Tercera"&&cs.p1==true&&cs.p2==true) 
 		{
@@ -70,13 +82,15 @@ public class ControlRespuestaSec : MonoBehaviour
 			Destroy(gameObject);
 			cs.p3=true;
 
-			//Invoke("finjuego",2);
-
 			//HAS ACERTADO
-			GameObject.Find("SonidoAcierto").GetComponent<AudioSource>().Play();
+			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("acierto_fantasma");
 			
 			//ejecutar animacionAcierto
 			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
+
+			//Invoke("finjuego",2);
+
+
 			//GameObject.Find("Boton_Volver").SetActive(false);
 
 			Debug.Log("finjuego1");
@@ -88,8 +102,8 @@ public class ControlRespuestaSec : MonoBehaviour
 			print("fallo");
 
 			cs.fallos++;
-			actualizarPuntuacion();
-			CSlider.progresoSecuencias ();
+			//actualizarPuntuacion();
+			//CSlider.progresoSecuencias ();
 
 			if(cs.fallos==3)
 			{
@@ -103,19 +117,19 @@ public class ControlRespuestaSec : MonoBehaviour
 
 
 			//ejecutar animacionError
-			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
+			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("fallo_fantasma");
 			
 			//ejecutarSonidoFallo
-			GameObject.Find("SonidoFallo").GetComponent<AudioSource>().Play();
+			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
 		}
 	}
 	
 	void actualizarPuntuacion()
 	{
-		puntuacion = GameObject.Find ("puntuacion");
-		Tpuntuacion = puntuacion.GetComponent<Text> ();
+		//puntuacion = GameObject.Find ("puntuacion");
+		//Tpuntuacion = puntuacion.GetComponent<Text> ();
 		
-		Tpuntuacion.text = cs.fallos.ToString();
+		//Tpuntuacion.text = cs.fallos.ToString();
 	}
 
 }
