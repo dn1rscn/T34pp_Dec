@@ -66,7 +66,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		IfinJuego.SetActive (false);
 
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
-		CNotificaciones.Portal.SetActive(false);
+		//CNotificaciones.Portal.SetActive(false);
 		CNotificaciones.Isla.SetActive (false);
 		for(int i=0;i < CNotificaciones.MisionFantasma.Length; i++)
 		{
