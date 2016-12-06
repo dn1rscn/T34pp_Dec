@@ -15,6 +15,9 @@ public class DatosDesbloqueo : MonoBehaviour
 	public bool Nivel2Sonidos=false;
 	public bool Nivel3Sonidos=false;
 
+	public bool secuencia1;
+	public bool Canasta;
+
 	public bool[] ADado;  //control niveles dado
 	public bool[] ASonidos;  //niveles Sonidos
 	public bool[] AEmpatia;	//niveles empatia

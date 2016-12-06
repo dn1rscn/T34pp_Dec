@@ -46,6 +46,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	ControlMisiones CMisiones;
 	ControlNotificaciones2 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
+	DatosDesbloqueo DD;
 
 
 	// Use this for initialization
@@ -332,6 +333,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	{
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
@@ -345,11 +347,15 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		if (puntuacionJugador >= 1) 
 		{
 			Invoke ("ActivarEstrella1", 1.0f);
-			if(cdg_3d.IslaMec_Desbloqueada==false)
+			if(DD.secuencia1==true)
 			{
 				cdg_3d.IslaMec_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
 				GameObject.Find("Notificaciones2").GetComponent<Animator>().Play("abrirNotificacion");
+			}
+			else
+			{
+				DD.Canasta=true;
 			}
 		}
 		if (puntuacionJugador >= 3) {

@@ -25,6 +25,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 	ControlMisiones CMisiones;
 	DatosDesbloqueo DD;
 	ControlNotificaciones2 CNotificaciones;
+	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 
 	// Use this for initialization
 	void Start () 
@@ -49,6 +50,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones2> ();
+		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
 		ctrlsecuencias = GameObject.Find ("DatosGlobalesSecuencias");
 		cs = ctrlsecuencias.GetComponent<ControlSecuencias> ();
@@ -70,6 +72,14 @@ public class FinPartida_Secuencias : MonoBehaviour
 		
 		if (cs.fallos == 2 ) 
 		{
+			if(cs.Secuencia==1&&DD.Canasta==true)
+			{
+				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+			}
+			else if(cs.Secuencia==1&&DD.Canasta==false)
+			{
+				DD.secuencia1=true;
+			}
 			Invoke ("ActivarEstrella1", 1.0f);
 			//ActivarEstrella1();
 			SiguienteSecuencia.SetActive(true);
@@ -85,6 +95,14 @@ public class FinPartida_Secuencias : MonoBehaviour
 		}
 		if (cs.fallos == 1) 
 		{
+			if(cs.Secuencia==1&&DD.Canasta==true)
+			{
+				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+			}
+			else if(cs.Secuencia==1&&DD.Canasta==false)
+			{
+				DD.secuencia1=true;
+			}
 			Invoke ("ActivarEstrella1", 1.0f);
 			Invoke ("ActivarEstrella2", 2.0f);
 			SiguienteSecuencia.SetActive(true);
@@ -102,6 +120,14 @@ public class FinPartida_Secuencias : MonoBehaviour
 			Invoke ("ActivarEstrella1", 1.0f);
 			Invoke ("ActivarEstrella2", 2.0f);
 			Invoke ("ActivarEstrella3", 3.0f);
+			if(cs.Secuencia==1&&DD.Canasta==true)
+			{
+				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+			}
+			else if(cs.Secuencia==1&&DD.Canasta==false)
+			{
+				DD.secuencia1=true;
+			}
 			SiguienteSecuencia.SetActive(true);
 			if(cs.Asecuencias[cs.Secuencia]==false)
 			{
