@@ -106,6 +106,9 @@ public class ControlEscenas : MonoBehaviour {
 	//******************CARGAR ISLAS*****************************************************
 	public void CargarIslaDinoDirecto()
 	{
+		//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla 
+		CDG_Mundo3D.posicionPersonaje = 1;
+
 		Application.LoadLevel ("Isla_bosque");
 		CDG_Mundo3D.islaBosque = true;
 		CDG_Mundo3D.islaMec = false;
@@ -127,12 +130,18 @@ public class ControlEscenas : MonoBehaviour {
 	}
 	*/
 	public void CargarIslaRobot(){
+		//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla
+		CDG_Mundo3D.posicionPersonaje = 1;
+
 		Application.LoadLevel ("Isla_Mecanica_v3");
 		CDG_Mundo3D.islaBosque = false;
 		CDG_Mundo3D.islaMec = true;
 		CDG_Mundo3D.islaFant = false;
 	}
 	public void CargarIslaFantasma(){
+		//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla
+		CDG_Mundo3D.posicionPersonaje = 1;
+
 		Application.LoadLevel ("Isla_fantasma");
 		CDG_Mundo3D.islaBosque = false;
 		CDG_Mundo3D.islaMec = false;

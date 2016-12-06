@@ -159,6 +159,10 @@ public class controlPortales : MonoBehaviour {
 			print ("Cargando ejercicio sonidos...");
 			break;
 		case "islaFantasma":
+
+			//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla, y no en la 6 
+			CDG_Mundo3D.posicionPersonaje = 1;
+
 			Application.LoadLevel("Isla_fantasma");
 			print ("Cargando islaFantasma...");
 			CDG_Mundo3D.islaBosque = false;
@@ -176,6 +180,9 @@ public class controlPortales : MonoBehaviour {
 			print ("Cargando ejercicio canasta...");
 			break;
 		case "islaMecanica":
+			//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla, y no en la 6 
+			CDG_Mundo3D.posicionPersonaje = 1;
+
 			Application.LoadLevel("Isla_Mecanica_v3");
 			print ("Cargando islaMecanica...");
 			CDG_Mundo3D.islaBosque = false;

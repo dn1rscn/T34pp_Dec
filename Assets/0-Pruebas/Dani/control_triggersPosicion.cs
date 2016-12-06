@@ -26,7 +26,7 @@ public class control_triggersPosicion : MonoBehaviour {
 			case 5:
 			{
 				//posicionFinal
-				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_06").transform.position;
+				grupoSuperiorProta.transform.position = GameObject.Find ("posicionInicialProta_05").transform.position;
 				
 				break;
 			}	
