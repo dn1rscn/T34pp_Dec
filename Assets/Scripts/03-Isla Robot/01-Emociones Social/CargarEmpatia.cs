@@ -210,4 +210,9 @@ public class CargarEmpatia : MonoBehaviour
 		Ifindeljuego2.SetActive (true);
 		Ifindeljuego2.GetComponent<Animator> ().Play ("AnimFinPartida");
 	}
+	public void seguirJugando()
+	{
+		Boton_Back.SetActive (true);
+		Ifindeljuego2.SetActive (false);
+	}
 }
