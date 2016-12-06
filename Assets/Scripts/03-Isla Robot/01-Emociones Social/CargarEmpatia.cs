@@ -16,6 +16,8 @@ public class CargarEmpatia : MonoBehaviour
 	public GameObject estrella2;
 	public GameObject estrella3;
 
+	public GameObject Ifindeljuego2;
+	public GameObject Boton_Back;
 	// Use this for initialization
 	void Start () 
 	{
@@ -200,5 +202,12 @@ public class CargarEmpatia : MonoBehaviour
 			Ejercicios[2].SetActive(true);
 			break;
 		}
+	}
+
+	public void back()
+	{
+		Boton_Back.SetActive (false);
+		Ifindeljuego2.SetActive (true);
+		Ifindeljuego2.GetComponent<Animator> ().Play ("AnimFinPartida");
 	}
 }
