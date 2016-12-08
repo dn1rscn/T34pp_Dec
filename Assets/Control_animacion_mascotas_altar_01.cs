@@ -5,22 +5,12 @@ public class Control_animacion_mascotas_altar_01 : MonoBehaviour
 {
 	
 	public bool bAccion;
-	
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
+
+	public GameObject grp_Particulas;
+
 	void OnTriggerEnter(Collider coli)
 	{
-		
-		
+
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");
@@ -39,15 +29,11 @@ public class Control_animacion_mascotas_altar_01 : MonoBehaviour
 			Animator fantasma_animator = fantasma.GetComponent<Animator> ();
 			fantasma_animator.SetBool ("bSaludo", true);
 		}
-		
-		
-		
+		grp_Particulas.SetActive(true);
 	}
 	void OnTriggerExit(Collider coli)
 	{
-		
-		
-		
+
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");

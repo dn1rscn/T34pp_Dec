@@ -16,13 +16,10 @@ public class NoDestruirMusicaFondo : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
-		if(Application.loadedLevelName =="03_1-Mundo3D_IslaDino"||
-		   Application.loadedLevelName =="01_MenuInicial"||
-		   Application.loadedLevelName =="04_1-Mundo3D_IslaRobot"||
-		   Application.loadedLevelName =="05_SeleccionPersonajes_IslaFantasma")
+		if(Application.loadedLevelName !="mapa" && Application.loadedLevelName !="personalizacion2.0" )
 		{
+			print ("eliminando musica fondo");
 			Destroy(gameObject);
 		}
 	

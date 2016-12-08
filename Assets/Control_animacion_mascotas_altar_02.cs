@@ -5,18 +5,11 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 {
 	
 	public bool bAccion;
-	
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
+
+	public GameObject botonMenu;
+	public GameObject txt_juegoCompletado;
+
+
 	void OnTriggerEnter(Collider coli)
 	{
 		
@@ -40,7 +33,8 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 			fantasma_animator.SetBool ("bCelebra", true);
 		}
 		
-		
+		botonMenu.SetActive (true);
+		txt_juegoCompletado.SetActive (true);
 		
 	}
 	void OnTriggerExit(Collider coli)
@@ -69,5 +63,9 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 		
 		
 		
+	}
+
+	public void cargarMenuInicial(){
+		Application.LoadLevel("personalizacion2.0");
 	}
 }

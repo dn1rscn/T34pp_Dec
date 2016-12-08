@@ -63,6 +63,7 @@ public class CargarEmpatia : MonoBehaviour
 				Actualizar_Escena();
 				break;
 			case 3:
+				Application.LoadLevel("Empatia_MenusSeleccion");
 				break;
 			}
 		}
@@ -93,6 +94,7 @@ public class CargarEmpatia : MonoBehaviour
 				Actualizar_Escena();
 				break;
 			case 3:
+				Application.LoadLevel("Empatia_MenusSeleccion");
 				break;
 			}
 		}
@@ -149,6 +151,7 @@ public class CargarEmpatia : MonoBehaviour
 				Application.LoadLevel("Empatia_MenusSeleccion");
 				break;
 			case 3:
+				//Application.LoadLevel("Empatia_MenusSeleccion");
 				Application.LoadLevel("Isla_Mecanica_v3");
 				break;
 			}
