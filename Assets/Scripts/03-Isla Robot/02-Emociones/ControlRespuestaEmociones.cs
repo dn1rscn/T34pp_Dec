@@ -14,6 +14,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	//public GameObject BotonVolverGrande;
 	
 	public GameObject SiguienteSecuencia;
+
+	public GameObject Boton_Back;
 	
 	Control_monedas cM;
 	GameObject ControlMonedas;
@@ -35,18 +37,20 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 
+		Boton_Back.SetActive (true);
+
 		cM.monedasEmociones=0;
 		CE.Intentos=1;
 
-		if (CEA.ARespuesta.Length == 3) 
+		if (CE.NivelEmociones==1) 
 		{
 			CSlider.progresoEmocionesNivel1();
 		}
-		if (CEA.ARespuesta.Length == 5) 
+		if (CE.NivelEmociones==2) 
 		{
 			CSlider.progresoEmocionesNivel2();
 		}
-		if (CEA.ARespuesta.Length == 7) 
+		if (CE.NivelEmociones==3) 
 		{
 			CSlider.progresoEmocionesNivel3();
 		}
@@ -95,7 +99,19 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			monedasEmociones = GameObject.Find ("monedas");
 			TmonedasEmociones = monedasEmociones.GetComponent<Text> ();
 			
-			cM.calcular_monedasEmocionesNivel3 ();
+			
+			if (CE.NivelEmociones==1) 
+			{
+				cM.calcular_monedasEmocionesNivel1();
+			}
+			if (CE.NivelEmociones==2) 
+			{
+				cM.calcular_monedasEmocionesNivel2();
+			}
+			if (CE.NivelEmociones==3) 
+			{
+				cM.calcular_monedasEmocionesNivel3();
+			}
 			cM.calcular_monedasGenerales ();
 			
 			if (CE.Intentos==5||CE.Intentos == 6) 
@@ -195,6 +211,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 
 	public void Salir_Interfaz()
 	{
+		Boton_Back.SetActive (false);
+
 		IfinJuego2.SetActive(true);
 		
 		ControlMonedas = GameObject.Find ("controlMonedas");
@@ -212,6 +230,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	}
 	public void seguir_Jugando()
 	{
+		Boton_Back.SetActive (true);
 		IfinJuego2.SetActive(false);
 		CE.respuesta = true;
 	}

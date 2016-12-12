@@ -32,6 +32,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 	{
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones2> ();
 
+		boton_Back.SetActive (true);
+
 		IfinJuego.SetActive (false);
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
 		//CNotificaciones.Portal.SetActive(false);
@@ -47,6 +49,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 	}
 	public void finjuego()
 	{
+		boton_Back.SetActive (false);
+
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones2> ();

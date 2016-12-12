@@ -61,8 +61,14 @@ public class ControlRespuesta : MonoBehaviour
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
+
+		boton_back.SetActive(true);
+
 		resetearDado ();
 		actualizarPuntuacion ();
+		CSlider.ProgresoDado ();
+
 		IfinJuego.SetActive (false);
 
 	}
@@ -246,6 +252,8 @@ public class ControlRespuesta : MonoBehaviour
 		if (cdg.fallos == 3) 
 		{
 			vidas [cdg.fallos-1].SetActive (false);
+
+			boton_back.SetActive(false);
 
 			cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 			CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();

@@ -51,7 +51,17 @@ public class RespuestaSonidos : MonoBehaviour
 		CS = GameObject.Find ("ctrSonidos").GetComponent<ControlSonidos> ();
 		RS = GameObject.Find ("reproducir sonido").GetComponent<reproducirSonido> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
+		cM=GameObject.Find("controlMonedas").GetComponent<Control_monedas>();
+
+		BotonBack.SetActive (true);
+
+		CS.aciertos = 0;
+		CS.fallos = 0;
+		cM.MonedasSonidos = 0;
+
 		actualizarPuntuacion ();
+		CSlider.progresoSonidos ();
 
 		CNotificaciones.Nivel2.SetActive(false);
 		CNotificaciones.Nivel3.SetActive(false);
@@ -319,6 +329,8 @@ public class RespuestaSonidos : MonoBehaviour
 	}
 	void FinPartida()
 	{
+		BotonBack.SetActive (false);
+
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		
@@ -343,7 +355,6 @@ public class RespuestaSonidos : MonoBehaviour
 			Invoke ("ActivarEstrella1", 1.0f);
 			//desbloquear su¡iguiente nivel
 			BotonSiguienteNivel.SetActive(true);
-			cdg_3d.IslaFantasma_Desbloqueada=true;
 		}
 		if (CS.aciertos >= 2) {
 			Invoke ("ActivarEstrella2", 2.0f);

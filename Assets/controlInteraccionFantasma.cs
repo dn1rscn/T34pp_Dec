@@ -29,7 +29,10 @@ public class controlInteraccionFantasma : MonoBehaviour {
 	public bool posicionCorrecta=false;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		CDG_Mundo3D=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
 
 		bocadillosRestantes = array_BocadillosConversacion.Length;
 
@@ -144,6 +147,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		
 		posicionCorrecta=true;
 
-
+		CDG_Mundo3D.hemosHabladoConFantasma = true;
+		CMI.ActualizarMisionFantasma ();
 	}
 }

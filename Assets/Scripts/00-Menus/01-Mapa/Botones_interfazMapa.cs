@@ -41,14 +41,14 @@ public class Botones_interfazMapa : MonoBehaviour
 			if (CDG_Mundo3D.islaMec == true) 
 			{
 				Fondo_IBosque.SetActive (false);
-				Fondo_IFantasma.SetActive (true);
-				Fondo_IRobot.SetActive (false);
+				Fondo_IFantasma.SetActive (false);
+				Fondo_IRobot.SetActive (true);
 			}
 			if (CDG_Mundo3D.islaFant == true) 
 			{
 				Fondo_IBosque.SetActive (false);
-				Fondo_IFantasma.SetActive (false);
-				Fondo_IRobot.SetActive (true);
+				Fondo_IFantasma.SetActive (true);
+				Fondo_IRobot.SetActive (false);
 			}
 
 		}
