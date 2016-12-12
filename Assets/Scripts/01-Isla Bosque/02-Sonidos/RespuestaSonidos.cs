@@ -234,6 +234,10 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Isla.SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
+			else if(CS.nivel==1&&CMisiones.Dado1_Completado==false)
+			{
+				CMisiones.Sonidos1_Completado=true;
+			}
 		}
 
 		if (CS.aciertos == 4) 
