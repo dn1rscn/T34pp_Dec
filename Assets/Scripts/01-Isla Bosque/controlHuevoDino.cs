@@ -6,14 +6,18 @@ public class controlHuevoDino : MonoBehaviour {
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	
 	Animator animatorHuevo;
+	ControlCamara ctlCamara;
 
 	public bool primeraInteraccion = false;
+
 
 	// Use this for initialization
 	void Start () {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+
 		animatorHuevo = gameObject.GetComponent<Animator>();
+		ctlCamara = GameObject.Find("PivoteCamaraPrincipal").GetComponent<ControlCamara>();
 
 		if(!CDG_Mundo3D.huevoInvisible)
 		{
@@ -47,11 +51,13 @@ public class controlHuevoDino : MonoBehaviour {
 			case 2:
 				animatorHuevo.Play("AnimEgg_02");
 				print ("El huevo avanza hasta el portal de sonidos");
+
+				//ctlCamara.
+
 				break;
 			case 3:
 				print ("Hemos conseguido el huevo!!");
 				CDG_Mundo3D.huevoInvisible = true;
-
 				break;
 			}
 		}
