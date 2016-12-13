@@ -31,12 +31,6 @@ public class ControlMisiones : MonoBehaviour
 		DontDestroyOnLoad (this);
 	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 
 	public void Mision_Dino()
 	{
