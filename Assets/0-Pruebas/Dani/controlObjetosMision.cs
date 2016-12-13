@@ -15,8 +15,8 @@ public class controlObjetosMision : MonoBehaviour {
 		CDG_Mundo3D=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 	
 		gObjArray_partesGafasFantasma = GameObject.FindGameObjectsWithTag("gafaFantasma");
-		//CDG_Mundo3D.check_partesGafas = new bool[gObjArray_partesGafasFantasma.Length];
-	
+		gObjArray_bateriasRobot = GameObject.FindGameObjectsWithTag("bateriaRobot");
+
 		ActualizarObjetosMision(); 
 	}
 
@@ -34,10 +34,10 @@ public class controlObjetosMision : MonoBehaviour {
 		//Si colisionamos con una de las 4 partes de las gafa del fantasma
 		if (coli.gameObject.tag == "gafaFantasma")
 		{
-			//Activamos la variable de datos globales "tenemosGafasFantasma"
 			coli.gameObject.SetActive (false);
 
 			int cont=0;
+			int recogidos=0;
 			//Recorremos el array de gameobjects 
 			foreach (GameObject parteGafa in gObjArray_partesGafasFantasma)
 			{
@@ -45,6 +45,10 @@ public class controlObjetosMision : MonoBehaviour {
 				if(parteGafa.activeSelf == false){
 					print(parteGafa.name+" recogida");
 					CDG_Mundo3D.check_partesGafas[cont]= true;
+					if(recogidos == 4){
+						//Activamos la variable de datos globales "tenemosGafasFantasma"
+						CDG_Mundo3D.tenemosGafasFantasma = true;
+					}
 				}
 				else {
 					print(parteGafa.name+" para recoger");
@@ -59,10 +63,10 @@ public class controlObjetosMision : MonoBehaviour {
 		//Si colisionamos con una de las 4 baterias del robot
 		if (coli.gameObject.tag == "bateriaRobot")
 		{
-			//Activamos la variable de datos globales "tenemosBateriasRobot"
 			coli.gameObject.SetActive (false);
 			
 			int cont=0;
+			int recogidos=0;
 			//Recorremos el array de gameobjects 
 			foreach (GameObject bateria in gObjArray_bateriasRobot)
 			{
@@ -70,6 +74,11 @@ public class controlObjetosMision : MonoBehaviour {
 				if(bateria.activeSelf == false){
 					print(bateria.name+" recogida");
 					CDG_Mundo3D.check_bateriasRobot[cont]= true;
+					recogidos++;
+					if(recogidos == 4){
+						//Activamos la variable de datos globales "tenemosBateriasRobot"
+						CDG_Mundo3D.tenemosBateriasRobot = true;
+					}
 				}
 				else {
 					print(bateria.name+" para recoger");
