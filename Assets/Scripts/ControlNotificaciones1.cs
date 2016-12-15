@@ -6,7 +6,7 @@ public class ControlNotificaciones1 : MonoBehaviour
 	public GameObject Nivel2;
 	public GameObject Nivel3;
 	public GameObject Isla;
-	public GameObject Portal;
+	public GameObject GMision;
 	public GameObject[] MisionDino;
 
 	// Use this for initialization

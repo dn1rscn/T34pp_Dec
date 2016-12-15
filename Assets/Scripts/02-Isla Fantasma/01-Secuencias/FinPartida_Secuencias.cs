@@ -79,6 +79,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 			if(cs.Secuencia==1&&DD.Canasta==true)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+				CNotificaciones.Isla.SetActive(true);
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 			else if(cs.Secuencia==1&&DD.Canasta==false)
 			{
@@ -102,6 +104,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 			if(cs.Secuencia==1&&DD.Canasta==true)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+				CNotificaciones.Isla.SetActive(true);
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 			else if(cs.Secuencia==1&&DD.Canasta==false)
 			{
@@ -127,6 +131,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 			if(cs.Secuencia==1&&DD.Canasta==true)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
+				CNotificaciones.Isla.SetActive(true);
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 			else if(cs.Secuencia==1&&DD.Canasta==false)
 			{

@@ -203,10 +203,7 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Nivel2.SetActive(true);
 				CNotificaciones.Nivel3.SetActive(false);
 				CNotificaciones.Isla.SetActive (false);
-				for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
-				{
-					CNotificaciones.MisionDino[i].SetActive(false);
-				}
+				CNotificaciones.GMision.SetActive(false);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				DD.Nivel2Sonidos=true;
 
@@ -218,10 +215,7 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Nivel3.SetActive(true);
 				CNotificaciones.Nivel2.SetActive(false);
 				CNotificaciones.Isla.SetActive (false);
-				for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
-				{
-					CNotificaciones.MisionDino[i].SetActive(false);
-				}
+				CNotificaciones.GMision.SetActive(false);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				DD.Nivel3Sonidos=true;
 			}
@@ -249,6 +243,7 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Nivel2.SetActive(false);
 				CNotificaciones.Nivel3.SetActive(false);
 				CNotificaciones.Isla.SetActive (false);
+				CNotificaciones.GMision.SetActive(true);
 				for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
 				{
 					CNotificaciones.MisionDino[i].SetActive(false);
@@ -263,6 +258,7 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Nivel2.SetActive(false);
 				CNotificaciones.Nivel3.SetActive(false);
 				CNotificaciones.Isla.SetActive (false);
+				CNotificaciones.GMision.SetActive(true);
 				for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
 				{
 					CNotificaciones.MisionDino[i].SetActive(false);
@@ -277,6 +273,7 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.Nivel2.SetActive(false);
 				CNotificaciones.Nivel3.SetActive(false);
 				CNotificaciones.Isla.SetActive (false);
+				CNotificaciones.GMision.SetActive(true);
 				for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
 				{
 					CNotificaciones.MisionDino[i].SetActive(false);
