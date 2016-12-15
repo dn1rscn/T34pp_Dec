@@ -126,7 +126,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 			case 4: 
 				animatorSlider.Play("animSlider_Acierto");
 				aciertoJugador ();
-				//botonTurnoJugador.SetActive(false);
+				botonTurnoJugador.GetComponent<Button>().interactable= false;
 				break;
 				
 			}
@@ -246,6 +246,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		//mostramos los botones de juego para el jugador
 		botonTurnoMascota.SetActive(false);
 		botonTurnoJugador.SetActive(true);
+		botonTurnoJugador.GetComponent<Button>().interactable = true;
 	}
 
 	//CERRAR LA PANTALLA DE TUTORIAL
