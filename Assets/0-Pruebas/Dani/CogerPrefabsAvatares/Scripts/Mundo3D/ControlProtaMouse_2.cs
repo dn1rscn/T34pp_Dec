@@ -37,7 +37,10 @@ public class ControlProtaMouse_2 : MonoBehaviour {
 		rayoPantalla = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit impacto;
 
-		if(agente.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
+		//if(agente.remainingDistance >= 0.1) 
+			//&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
+		
+		if (agente.velocity!=Vector3.zero)		
 		{
 			animatorProta.SetBool ("andar", true);
 		}

@@ -11,7 +11,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 	SpriteRenderer spr_flechaDestino_Dino;
 	SpriteRenderer spr_bocadilloDino_01;
-	//SpriteRenderer spr_bocadilloDino_02;
+	SpriteRenderer spr_bocadilloDino_FinMision;
 	
 	Vector3 posicionConversarConDino;
 	Vector3 posicionConversarConDino2;
@@ -21,7 +21,11 @@ public class controlInteraccionDino : MonoBehaviour {
 	NavMeshAgent agente;
 
 	GameObject Dino;
+
 	public GameObject gObj_botonPasarBocadillo;
+	public GameObject gObj_botonPasarBocadillo_2;
+
+	public GameObject huevoNido;
 
 	Animator animator_Dino;
 	Animator animator_Canvas;
@@ -45,7 +49,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 		spr_flechaDestino_Dino = GameObject.Find("flechaDestino_Dino").GetComponent<SpriteRenderer>();
 		spr_bocadilloDino_01 = GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>();
-		//spr_bocadilloDino_02 = GameObject.Find("bocadillo_Dino_02").GetComponent<SpriteRenderer>();
+		spr_bocadilloDino_FinMision = GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>();
 
 		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
 		posicionConversarConDino = GameObject.Find("Posicion_ConversarConDino").transform.position; 
@@ -63,6 +67,7 @@ public class controlInteraccionDino : MonoBehaviour {
 	{
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
+			//Si NO hemos hablado aun con Dino
 			if (!CDG_Mundo3D.hemosHabladoConDino)
 			{
 			//Desactivamos la flecha de destino sobre el dino
@@ -85,17 +90,48 @@ public class controlInteraccionDino : MonoBehaviour {
 			gObj_botonPasarBocadillo.SetActive(true);
 	
 			}
+
+			//Si ya hemos hablado con dino..
 			else 
 			{
-				DinoAnimFallo_activar();
-				Invoke ("DinoAnimFallo_desactivar",2.0f);
+				//Si HEMOS CONSEGUIDO EL HUEVO DEL DINO:
+				if(CDG_Mundo3D.tenemosHuevoDino){
+					animator_Dino.SetBool("acierto_Dino",true);
+					Invoke ("DinoAnimAcierto_desactivar",2.0f);
+
+					//Activamos el "Modo Dialogo" desde el animator del canvas
+					animator_Canvas.Play("Canvas_AparecerDialogos");
+
+					//Desactivamos el control del prota mientras estemos conversando
+					ctrlProta.enabled = false;
+
+					//Y mandamos su NavMeshAgent a la posicion de conversar con el Dino
+					agente.SetDestination(posicionConversarConDino);
+
+					//Activamos la animacion de zoom de la camara
+					animator_Cam.SetBool("ZoomCam", true);
+
+					//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
+					spr_bocadilloDino_FinMision.enabled=true;
+					gObj_botonPasarBocadillo_2.SetActive(true);
+
+					//Hacemos que aparezca el huevo del Dino en el nido
+					Invoke("activarHuevoNido",2.0f);
+				}
+
+				//Si no tenemos el huevo del Dino
+				else if(!CDG_Mundo3D.tenemosHuevoDino){
+					DinoAnimFallo_activar();
+					Invoke ("DinoAnimFallo_desactivar",2.0f);
+				}
 			}
 		}
 	}
 
 	void OnTriggerStay(Collider coli)
 	{
-		if (!CDG_Mundo3D.hemosHabladoConDino)
+		//Si no hemos hablado aun con el Dino o si ya tenemos el Huevo
+		if (!CDG_Mundo3D.hemosHabladoConDino||CDG_Mundo3D.tenemosHuevoDino)
 		{
 			//Colocamos al personaje en la posicion correcta.
 			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
@@ -114,9 +150,7 @@ public class controlInteraccionDino : MonoBehaviour {
 					//Invoke("DejarDeMirarDino",2.0f);
 					animator_Prota.SetBool("andar",false);
 				}
-			
 			}
-
 		}
 	}
 
@@ -143,10 +177,19 @@ public class controlInteraccionDino : MonoBehaviour {
 		animator_Dino.SetBool ("fallo_Dino", false);
 	}
 
+	public void DinoAnimAcierto_desactivar(){
+		animator_Dino.SetBool ("acierto_Dino", false);
+	}
+
 	public void DejarDeMirarDino(){
 		posicionCorrecta=true;
 	}
 
+
+	public void terminarMisionDino(){
+		//A los 1 segundos, salimos del "Modo Dialogo"
+		Invoke("salirDialogo",1.0f);
+	}
 
 	public void pasarBocadillo(){
 
@@ -160,8 +203,8 @@ public class controlInteraccionDino : MonoBehaviour {
 		}
 		else 
 		{		
-			//A los 3 segundos, salimos del "Modo Dialogo"
-			Invoke("salirDialogo",3.0f);
+			//A los 1 segundos, salimos del "Modo Dialogo"
+			Invoke("salirDialogo",1.0f);
 		}
 	}
 
@@ -171,9 +214,14 @@ public class controlInteraccionDino : MonoBehaviour {
 		//spr_bocadilloDino_02.enabled=true;
 		animator_Dino.SetBool("fallo_Dino",true);
 
-		//A los 3 segundos, salimos del "Modo Dialogo"
-		Invoke("salirDialogo",3.0f);
+		//A los 1 segundos, salimos del "Modo Dialogo"
+		Invoke("salirDialogo",1.0f);
 
+	}
+
+
+	void activarHuevoNido(){
+		huevoNido.SetActive(true);
 	}
 
 	void salirDialogo(){
@@ -182,6 +230,9 @@ public class controlInteraccionDino : MonoBehaviour {
 
 		spr_bocadilloDino_01.enabled=false;
 		gObj_botonPasarBocadillo.SetActive(false);
+
+		spr_bocadilloDino_FinMision.enabled=false;
+		gObj_botonPasarBocadillo_2.SetActive(false);
 
 		CDG_Mundo3D.hemosHabladoConDino=true;
 		CMI.ActualizarMisionDino ();

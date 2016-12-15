@@ -23,7 +23,7 @@ public class ControlDatosGlobales_Mundo3D: MonoBehaviour {
 	public bool islaFant=false;
 
   //Mision Huevo Isla Bosque
-	public int destinoHuevo = 0;
+	public int destinoHuevo = 1;
 	public bool huevoInvisible = false;
 
 	public int posicionPersonaje = 1;

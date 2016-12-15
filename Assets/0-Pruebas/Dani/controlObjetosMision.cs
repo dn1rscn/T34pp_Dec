@@ -25,6 +25,10 @@ public class controlObjetosMision : MonoBehaviour {
 		//Si colisionamos con el huevo del dino
 		if (coli.gameObject.tag == "huevoDino")
 		{
+			coli.gameObject.SetActive (false);
+
+			//Activamos la animacion "HAS CONSEGUIDO EL HUEVO"
+
 			//Activamos la variable de datos globales "tenemosHuevoDelDino"
 			CDG_Mundo3D.tenemosHuevoDino = true;
 
@@ -44,8 +48,14 @@ public class controlObjetosMision : MonoBehaviour {
 				//Y almacenamos en check_partesGafas las partes que ya hayamos recogido
 				if(parteGafa.activeSelf == false){
 					print(parteGafa.name+" recogida");
+
+					//Activamos la animacion "HAS CONSEGUIDO UNA PARTE DE LAS GAFAS"
+
 					CDG_Mundo3D.check_partesGafas[cont]= true;
 					if(recogidos == 4){
+
+						//Activamos la animacion "TODAS LAS PARTES DE LAS GAFAS CONSEGUIDAS!!"
+
 						//Activamos la variable de datos globales "tenemosGafasFantasma"
 						CDG_Mundo3D.tenemosGafasFantasma = true;
 					}
@@ -73,9 +83,15 @@ public class controlObjetosMision : MonoBehaviour {
 				//Y almacenamos en check_partesGafas las partes que ya hayamos recogido
 				if(bateria.activeSelf == false){
 					print(bateria.name+" recogida");
+
+					//Activamos la animacion "HAS CONSEGUIDO UNA BATERIA PARA EL ROBOT"
+
 					CDG_Mundo3D.check_bateriasRobot[cont]= true;
 					recogidos++;
 					if(recogidos == 4){
+
+						//Activamos la animacion "TODAS LAS BATERIAS CONSEGUIDAS!!"
+
 						//Activamos la variable de datos globales "tenemosBateriasRobot"
 						CDG_Mundo3D.tenemosBateriasRobot = true;
 					}
