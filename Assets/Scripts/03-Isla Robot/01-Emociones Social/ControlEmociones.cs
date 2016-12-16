@@ -14,6 +14,9 @@ public class ControlEmociones : MonoBehaviour
 	public int NivelEmpatia=0;
 	public int NivelEmociones=0;
 
+	public bool emociones1_completado;
+	public bool empatia1_completado;
+
 	public bool respuesta;
 	// Use this for initialization
 	void Start () 

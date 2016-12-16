@@ -7,6 +7,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	ControlEmocionesAleatorio CEA;
 	ControlEmociones CE;
 	ControlSlider CSlider;
+	ControlNotificaciones1 CNotificaciones;
+	ControlDatosGlobales_Mundo3D cdg_3d;
+	ControlMisiones CMisiones;
 	
 	public GameObject IfinJuego;
 	public GameObject IfinJuego2;
@@ -36,6 +39,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		CEA = GameObject.Find ("ctrAleatorio").GetComponent<ControlEmocionesAleatorio> ();
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 
 		Boton_Back.SetActive (true);
 
@@ -56,6 +60,14 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		}
 		CE.respuesta = false;
 		actualizarPuntuacion ();
+
+		CNotificaciones.Nivel2.SetActive(false);
+		CNotificaciones.Nivel3.SetActive(false);
+		CNotificaciones.Isla.SetActive (false);
+		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
+		{
+			CNotificaciones.MisionDino[i].SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -87,6 +99,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 		if (CEA.ARespuesta.Length == 7) 
 		{
+			cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+			CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
+
 			IfinJuego.SetActive(true);
 			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 			
@@ -116,6 +131,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			
 			if (CE.Intentos==5||CE.Intentos == 6) 
 			{
+
+
 				Invoke ("ActivarEstrella1", 1.0f);
 				if(CE.NivelEmociones<3)
 				{
@@ -125,9 +142,51 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				{
 					CE.AEmociones[CE.NivelEmociones]=true;
 				}
+
+				if(CE.NivelEmociones==1&&CE.empatia1_completado==true)
+				{
+					cdg_3d.Altar_Desbloqueado=true;
+					CNotificaciones.Isla.SetActive (true);
+					GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				}
+				else if(CE.NivelEmociones==1&&CE.empatia1_completado==false)
+				{
+					CE.emociones1_completado=true;
+				}
 			}
 			if (CE.Intentos == 2||CE.Intentos==3 || CE.Intentos==4) 
 			{
+				switch(CE.NivelEmociones)
+				{
+				case 1:
+					if(CE.empatia1_completado==true)
+					{
+						cdg_3d.Altar_Desbloqueado=true;
+						CNotificaciones.Isla.SetActive (true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
+					else if(CE.NivelEmociones==1&&CE.empatia1_completado==false)
+					{
+						CE.emociones1_completado=true;
+					}
+					if(CE.AEmociones[1]==false)
+					{
+						CNotificaciones.Nivel2.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						
+					}
+					break;
+					
+				case 2:
+					if(CE.AEmociones[2]==false)
+					{
+						CNotificaciones.Nivel3.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						
+					}
+					break;
+				}
+
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 				if(CE.NivelEmociones<3)
@@ -138,9 +197,54 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				{
 					CE.AEmociones[CE.NivelEmociones]=true;
 				}
+
+				
+
 			}
 			if (CE.Intentos == 1) 
 			{
+				switch(CE.NivelEmociones)
+				{
+				case 1:
+					if(CE.empatia1_completado==true)
+					{
+						cdg_3d.Altar_Desbloqueado=true;
+						CNotificaciones.Isla.SetActive (true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
+					else if(CE.NivelEmociones==1&&CE.empatia1_completado==false)
+					{
+						CE.emociones1_completado=true;
+					}
+					if(CE.AEmociones[1]==false)
+					{
+						CNotificaciones.Nivel2.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						
+					}
+					break;
+					
+				case 2:
+					if(CE.AEmociones[2]==false)
+					{
+						CNotificaciones.Nivel3.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						
+					}
+					break;
+				}
+				
+				if(CMisiones.ejerM_3estrellas[CE.NivelEmociones+2]==false)
+				{
+					CNotificaciones.GMision.SetActive(true);
+					for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
+					{
+						CNotificaciones.MisionDino[i].SetActive(false);
+					}
+					CNotificaciones.MisionDino[CE.NivelEmociones+2].SetActive(true);
+					GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				}
+
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 				Invoke ("ActivarEstrella3", 3.0f);
@@ -152,6 +256,10 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				{
 					CE.AEmociones[CE.NivelEmociones]=true;
 				}
+				CMisiones.ejerB_3estrellas[CE.NivelEmociones+2]=true;
+				CMisiones.Mision_Robot();
+
+
 			}
 			
 			

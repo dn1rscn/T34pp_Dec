@@ -9,6 +9,8 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 	ControlEmociones CE;
 	ControlSlider CSlider;
 	DatosDesbloqueo DD;
+	ControlNotificaciones1 CNotificaciones;
+	ControlDatosGlobales_Mundo3D cdg_3d;
 
 	public GameObject IfinJuego;
 	
@@ -77,6 +79,8 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 
 	void correcto()
 	{
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 
@@ -98,6 +102,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 		cM.calcular_monedasGenerales ();
 		if (CE.Intentos == 1) 
 		{
+			if(CE.emociones1_completado==true)
+			{
+				cdg_3d.Altar_Desbloqueado=true;
+				CNotificaciones.Isla.SetActive (true);
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+			}
+			else if(CE.emociones1_completado==false)
+			{
+				CE.empatia1_completado=true;
+			}
+
 			Invoke ("ActivarEstrella1", 1.0f);
 			Invoke ("ActivarEstrella2", 2.0f);
 			Invoke ("ActivarEstrella3", 3.0f);
@@ -108,11 +123,23 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				CE.ASocialNivel1[CE.EjercicioSocial]=true;
 			}
 			DD.AEmpatia[1] = true;
+	
 		} 
 		else 
 		{
 			if (CE.Intentos == 2) 
 			{
+				if(CE.emociones1_completado==true)
+				{
+					cdg_3d.Altar_Desbloqueado=true;
+					CNotificaciones.Isla.SetActive (true);
+					GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				}
+				else if(CE.emociones1_completado==false)
+				{
+					CE.empatia1_completado=true;
+				}
+
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 
@@ -122,9 +149,22 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					CE.ASocialNivel1[CE.EjercicioSocial]=true;
 				}
 				DD.AEmpatia[1] = true;
+
+
 			} 
 			else if (CE.Intentos == 3)
 			{
+				if(CE.emociones1_completado==true)
+				{
+					cdg_3d.Altar_Desbloqueado=true;
+					CNotificaciones.Isla.SetActive (true);
+					GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				}
+				else if(CE.emociones1_completado==false)
+				{
+					CE.empatia1_completado=true;
+				}
+
 				Invoke ("ActivarEstrella1", 1.0f);
 
 				SiguienteSituacion.SetActive (true);
@@ -133,6 +173,8 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					CE.ASocialNivel1[CE.EjercicioSocial]=true;
 				}
 				DD.AEmpatia[1] = true;
+
+
 			}
 		}
 
