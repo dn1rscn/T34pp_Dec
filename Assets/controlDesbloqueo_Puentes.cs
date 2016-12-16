@@ -32,9 +32,4 @@ public class controlDesbloqueo_Puentes : MonoBehaviour {
 			}
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

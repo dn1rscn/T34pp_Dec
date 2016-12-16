@@ -378,7 +378,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		puntuacionJugador = 0;
 		cM.MonedasGenerales_canasta = 0;
 	}
-	void activar_FinJuego_lose()
+	public void activar_FinJuego_lose()
 	{
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");

@@ -50,8 +50,8 @@ public class controlHuevoDino : MonoBehaviour {
 		}
 	}
 
-
-	public void destinoHuevo_Sonidos(){
+	public void destinoHuevo_Sonidos()
+	{
 
 		CDG_Mundo3D.destinoHuevo = 2;
 		CDG_Mundo3D.huevoInvisible = false;
@@ -86,5 +86,4 @@ public class controlHuevoDino : MonoBehaviour {
 			animatorHuevo.Play("huevoInvisible");
 		}
 	}
-	
 }

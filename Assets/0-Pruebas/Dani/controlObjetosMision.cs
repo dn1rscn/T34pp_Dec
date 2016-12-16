@@ -8,14 +8,18 @@ public class controlObjetosMision : MonoBehaviour {
 	public GameObject[] gObjArray_partesGafasFantasma;
 	public GameObject[] gObjArray_bateriasRobot;
 
+	public GameObject animObjetoMision;
+	Animator animator_ObjetoMision;
 	// Use this for initialization
 	void Start () {
 	
 		//Accedemos al script de datos globales
-		CDG_Mundo3D=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 	
 		gObjArray_partesGafasFantasma = GameObject.FindGameObjectsWithTag("gafaFantasma");
 		gObjArray_bateriasRobot = GameObject.FindGameObjectsWithTag("bateriaRobot");
+
+		animator_ObjetoMision = animObjetoMision.GetComponent<Animator>();
 
 		ActualizarObjetosMision(); 
 	}
@@ -28,6 +32,11 @@ public class controlObjetosMision : MonoBehaviour {
 			coli.gameObject.SetActive (false);
 
 			//Activamos la animacion "HAS CONSEGUIDO EL HUEVO"
+			animator_ObjetoMision.Play("anim_RecogerObjetoMision");
+
+			//Activamos los sonidos de "Objeto de mision obtenido"
+			GameObject.Find("audioRecogerHuevo_01").GetComponent<AudioSource>().Play();
+			GameObject.Find("audioRecogerHuevo_02").GetComponent<AudioSource>().Play();
 
 			//Activamos la variable de datos globales "tenemosHuevoDelDino"
 			CDG_Mundo3D.tenemosHuevoDino = true;
@@ -38,6 +47,9 @@ public class controlObjetosMision : MonoBehaviour {
 		//Si colisionamos con una de las 4 partes de las gafa del fantasma
 		if (coli.gameObject.tag == "gafaFantasma")
 		{
+			//Activamos la notificacion "HAS CONSEGUIDO UNA PARTE DE LAS GAFAS"
+			GameObject.Find("audioRecogerBateria").GetComponent<AudioSource>().Play();
+
 			coli.gameObject.SetActive (false);
 
 			int cont=0;
@@ -49,15 +61,20 @@ public class controlObjetosMision : MonoBehaviour {
 				if(parteGafa.activeSelf == false){
 					print(parteGafa.name+" recogida");
 
-					//Activamos la animacion "HAS CONSEGUIDO UNA PARTE DE LAS GAFAS"
-
 					CDG_Mundo3D.check_partesGafas[cont]= true;
+					recogidos++;
+
 					if(recogidos == 4){
-
-						//Activamos la animacion "TODAS LAS PARTES DE LAS GAFAS CONSEGUIDAS!!"
-
 						//Activamos la variable de datos globales "tenemosGafasFantasma"
 						CDG_Mundo3D.tenemosGafasFantasma = true;
+
+						//Activamos la animacion "TODAS LAS PARTES DE LAS GAFAS CONSEGUIDAS!!"
+						animator_ObjetoMision.Play("anim_RecogerObjetoMision");
+
+						//Activamos los sonidos de "Objeto de mision obtenido"
+						GameObject.Find("audioRecogerHuevo_01").GetComponent<AudioSource>().Play();
+						GameObject.Find("audioRecogerHuevo_02").GetComponent<AudioSource>().Play();
+
 					}
 				}
 				else {
@@ -73,6 +90,9 @@ public class controlObjetosMision : MonoBehaviour {
 		//Si colisionamos con una de las 4 baterias del robot
 		if (coli.gameObject.tag == "bateriaRobot")
 		{
+			//Activamos la animacion "HAS CONSEGUIDO UNA BATERIA PARA EL ROBOT"
+			GameObject.Find("audioRecogerBateria").GetComponent<AudioSource>().Play();
+
 			coli.gameObject.SetActive (false);
 			
 			int cont=0;
@@ -84,13 +104,16 @@ public class controlObjetosMision : MonoBehaviour {
 				if(bateria.activeSelf == false){
 					print(bateria.name+" recogida");
 
-					//Activamos la animacion "HAS CONSEGUIDO UNA BATERIA PARA EL ROBOT"
-
 					CDG_Mundo3D.check_bateriasRobot[cont]= true;
 					recogidos++;
 					if(recogidos == 4){
 
 						//Activamos la animacion "TODAS LAS BATERIAS CONSEGUIDAS!!"
+						animator_ObjetoMision.Play("anim_RecogerObjetoMision");
+						
+						//Activamos los sonidos de "Objeto de mision obtenido"
+						GameObject.Find("audioRecogerHuevo_01").GetComponent<AudioSource>().Play();
+						GameObject.Find("audioRecogerHuevo_02").GetComponent<AudioSource>().Play();
 
 						//Activamos la variable de datos globales "tenemosBateriasRobot"
 						CDG_Mundo3D.tenemosBateriasRobot = true;

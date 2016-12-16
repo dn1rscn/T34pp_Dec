@@ -9,10 +9,6 @@ public class tutoriales_ejercicios : MonoBehaviour
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	//CERRAR LA PANTALLA DE TUTORIAL
 	public void CerrarPantallaTutorial()
 	{
