@@ -8,6 +8,8 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 
 	public GameObject botonMenu;
 	public GameObject txt_juegoCompletado;
+	public GameObject botoncreditos;
+	public GameObject creditos;
 
 
 	void OnTriggerEnter(Collider coli)
@@ -35,6 +37,7 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 		
 		botonMenu.SetActive (true);
 		txt_juegoCompletado.SetActive (true);
+		botoncreditos.SetActive (true);
 		
 	}
 	void OnTriggerExit(Collider coli)
@@ -68,4 +71,11 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 	public void cargarMenuInicial(){
 		Application.LoadLevel("personalizacion2.0");
 	}
+
+	public void cargarcreditos () {
+		txt_juegoCompletado.SetActive (false);
+		creditos.SetActive (true);
+	}
+
+
 }
