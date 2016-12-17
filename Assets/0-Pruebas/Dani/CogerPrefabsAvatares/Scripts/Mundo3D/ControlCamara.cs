@@ -21,10 +21,14 @@ public class ControlCamara : MonoBehaviour {
 	
 	void Start ()
 	{
-		FlechaDer = GameObject.Find("mover_camIzq");
-		FlechaIzq = GameObject.Find("mover_camDer");
+		if(GameObject.Find("mover_camIzq") || GameObject.Find("mover_camDer") ){
+		
+		
+			FlechaDer = GameObject.Find("mover_camIzq");
+			FlechaIzq = GameObject.Find("mover_camDer");
+			FlechaDer.SetActive(false);
+		}
 
-		FlechaDer.SetActive(false);
 
 
 		offset = transform.position - jugador.transform.position;

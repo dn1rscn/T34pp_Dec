@@ -24,9 +24,13 @@ public class controlPortales : MonoBehaviour {
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
 		loadingScreen = GameObject.Find("loadingScreen").GetComponent<Image>();
-
-		animator_PanelCanvas = GameObject.Find ("CanvasPortal_Verde").GetComponent<Animator> ();
+		if(GameObject.Find ("CanvasPortal_Verde")){
+			animator_PanelCanvas = GameObject.Find ("CanvasPortal_Verde").GetComponent<Animator> ();
+		}
+		if(GameObject.Find("botonesPortal")){
 		animator_botonesPortal = GameObject.Find("botonesPortal").GetComponent<Animator>();
+		}
+
 		animator_Canvas = GameObject.Find ("Canvas_Mundo3D").GetComponent<Animator> ();
 
 	}

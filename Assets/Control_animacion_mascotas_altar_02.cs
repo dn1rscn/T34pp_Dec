@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 {
-	
+	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+
 	public bool bAccion;
 
 	public GameObject botonMenu;
@@ -11,40 +12,35 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 	public GameObject botoncreditos;
 	public GameObject creditos;
 
+	void Start(){
+		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
+		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+
+	}
 
 	void OnTriggerEnter(Collider coli)
 	{
-		
-		
+
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");
 			Animator dino_animator = dino.GetComponent<Animator> ();
 			dino_animator.SetBool ("bCelebra", true);
-		}
-		if (coli.gameObject.name == "Chico_TEAPlay") 
-		{
+
 			GameObject robot = GameObject.Find ("robot_animaciones_bake_v2");
 			Animator robot_animator = robot.GetComponent<Animator> ();
 			robot_animator.SetBool ("bCelebra", true);
-		}
-		if (coli.gameObject.name == "Chico_TEAPlay") 
-		{
+
 			GameObject fantasma = GameObject.Find ("fantasma_bake_v2");
 			Animator fantasma_animator = fantasma.GetComponent<Animator> ();
 			fantasma_animator.SetBool ("bCelebra", true);
 		}
-		
-		botonMenu.SetActive (true);
-		txt_juegoCompletado.SetActive (true);
-		botoncreditos.SetActive (true);
-		
+
+		Invoke("mostrarInterfazIslaAltar",3.0f);
 	}
 	void OnTriggerExit(Collider coli)
 	{
-		
-		
-		
+
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");
@@ -68,8 +64,17 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 		
 	}
 
+	public void mostrarInterfazIslaAltar(){
+		
+		creditos.SetActive (false);
+		botonMenu.SetActive (true);
+		txt_juegoCompletado.SetActive (true);
+		botoncreditos.SetActive (true);
+	}
+
 	public void cargarMenuInicial(){
 		Application.LoadLevel("personalizacion2.0");
+		CDG_Mundo3D.IKKI = true;
 	}
 
 	public void cargarcreditos () {
