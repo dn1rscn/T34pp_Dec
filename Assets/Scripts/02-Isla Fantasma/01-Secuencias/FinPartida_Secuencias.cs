@@ -36,7 +36,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 
 		IfinJuego.SetActive (false);
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
-		//CNotificaciones.Portal.SetActive(false);
+		CNotificaciones.Isla.SetActive (false);
+		CNotificaciones.misiones.SetActive (false);
 		for(int i=0;i < CNotificaciones.MisionFantasma.Length; i++)
 		{
 			CNotificaciones.MisionFantasma[i].SetActive(false);
@@ -89,7 +90,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 			Invoke ("ActivarEstrella1", 1.0f);
 			//ActivarEstrella1();
 			SiguienteSecuencia.SetActive(true);
-			if(cs.Asecuencias[cs.Secuencia]==false)
+			if(cs.Secuencia<cs.Asecuencias.Length&&cs.Asecuencias[cs.Secuencia]==false)
 			{
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				CNotificaciones.Siguiente_Secuencia.SetActive(true);
@@ -114,7 +115,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 			Invoke ("ActivarEstrella1", 1.0f);
 			Invoke ("ActivarEstrella2", 2.0f);
 			SiguienteSecuencia.SetActive(true);
-			if(cs.Asecuencias[cs.Secuencia]==false)
+			print(cs.Secuencia);
+			if(cs.Secuencia<cs.Asecuencias.Length&&cs.Asecuencias[cs.Secuencia]==false)
 			{
 				CNotificaciones.Siguiente_Secuencia.SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
@@ -139,7 +141,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 				DD.secuencia1=true;
 			}
 			SiguienteSecuencia.SetActive(true);
-			if(cs.Asecuencias[cs.Secuencia]==false)
+			if(cs.Secuencia<cs.Asecuencias.Length&&cs.Asecuencias[cs.Secuencia]==false)
 			{
 				CNotificaciones.Siguiente_Secuencia.SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
@@ -150,9 +152,10 @@ public class FinPartida_Secuencias : MonoBehaviour
 			}
 			if(CMisiones.ejerF_3estrellas[cs.Secuencia-1]==false)
 			{
+				CNotificaciones.misiones.SetActive(true);
 				CMisiones.ejerF_3estrellas[cs.Secuencia-1]=true;
 				CNotificaciones.MisionFantasma[cs.Secuencia-1].SetActive(true);
-				//GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 		}
 		
