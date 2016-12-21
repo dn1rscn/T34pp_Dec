@@ -31,5 +31,11 @@ public class controlDesbloqueo_Puentes : MonoBehaviour {
 				grupoPuenteArreglado.SetActive(true);
 			}
 		}
+		if(Application.loadedLevelName == "Isla_Mecanica_v3"){
+			if(CDG_Mundo3D.Altar_Desbloqueado){
+				grupoPuenteRoto.SetActive(false);
+				grupoPuenteArreglado.SetActive(true);
+			}
+		}
 	}
 }
