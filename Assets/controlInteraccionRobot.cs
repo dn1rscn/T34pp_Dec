@@ -81,7 +81,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			agente.SetDestination(posicionConversarConRobot);
 
 			//Activamos la animacion de zoom de la camara
-			animator_Cam.SetBool("ZoomCam", true);
+				animator_Cam.SetBool("ZoomCam_Robot", true);
 
 			//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 			spr_bocadilloRobot_01.enabled=true;
@@ -92,7 +92,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			//Si ya hemos hablado con Robot..
 			else 
 			{
-				//Si HEMOS CONSEGUIDO EL HUEVO DEL Robot:
+				//Si HEMOS CONSEGUIDO LAS BATERIAS DEL Robot:
 				if(CDG_Mundo3D.tenemosBateriasRobot){
 					animator_Robot.SetBool("acierto_Robot",true);
 					Invoke ("RobotAnimAcierto_desactivar",2.0f);
@@ -107,19 +107,18 @@ public class controlInteraccionRobot : MonoBehaviour {
 					agente.SetDestination(posicionConversarConRobot);
 
 					//Activamos la animacion de zoom de la camara
-					animator_Cam.SetBool("ZoomCam", true);
+					animator_Cam.SetBool("ZoomCam_Robot", true);
 
 					//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 					spr_bocadilloRobot_FinMision.enabled=true;
 					gObj_botonPasarBocadillo_2.SetActive(true);
 
-					//Hacemos que aparezca el huevo del Robot en el nido
-					Invoke("activarHuevoNido",2.0f);
+					//Hacemos que aparezca el Robot se levante
+					Invoke("activarRobot",2.0f);
 				}
 
-				//Si no tenemos el huevo del Robot
+				//Si no tenemos las baterias del Robot
 				else if(!CDG_Mundo3D.tenemosBateriasRobot){
-					RobotAnimFallo_activar();
 					Invoke ("RobotAnimFallo_desactivar",2.0f);
 				}
 			}
@@ -136,7 +135,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			{
 				//agente.transform.LookAt(Robot.transform.position);
 
-				if(agente.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
+				if (agente.velocity!=Vector3.zero)		
 				{
 					posicionCorrecta=false;
 					animator_Prota.SetBool ("andar", true);
@@ -156,7 +155,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 	{
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
-		//	animator_Cam.SetBool("ZoomCam", false);
+			//	animator_Cam.SetBool("ZoomCam_Robot", false);
 		//	animator_Robot.SetBool ("fallo_Robot", false);
 		//	animator_Canvas.Play("Canvas_DesaparecerDialogos");
 
@@ -165,14 +164,6 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 		}
 		
-	}
-
-	public void RobotAnimFallo_activar(){
-		animator_Robot.SetBool ("fallo_Robot", true);
-	}
-
-	public void RobotAnimFallo_desactivar(){
-		animator_Robot.SetBool ("fallo_Robot", false);
 	}
 
 	public void RobotAnimAcierto_desactivar(){
@@ -187,6 +178,12 @@ public class controlInteraccionRobot : MonoBehaviour {
 	public void terminarMisionRobot(){
 		//A los 1 segundos, salimos del "Modo Dialogo"
 		Invoke("salirDialogo",1.0f);
+	}
+
+	public void activarRobot(){
+
+		//	Ejecutamos la animacion de reposo del robot
+
 	}
 
 	public void pasarBocadillo(){
@@ -230,7 +227,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 		CDG_Mundo3D.hemosHabladoConRobot=true;
 		CMI.ActualizarMisionRobot ();
 
-		animator_Cam.SetBool("ZoomCam", false);
+		animator_Cam.SetBool("ZoomCam_Robot", false);
 		animator_Robot.SetBool ("fallo_Robot", false);
 		animator_Canvas.Play("Canvas_DesaparecerDialogos");
 		
