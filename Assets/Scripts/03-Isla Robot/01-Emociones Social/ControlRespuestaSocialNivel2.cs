@@ -8,7 +8,9 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 
 	ControlEmociones CE;
 	DatosDesbloqueo DD;
-	ControlSlider CSlider;
+	ControlNotificaciones1 CNotificaciones;
+	ControlDatosGlobales_Mundo3D cdg_3d;
+	CargarEmpatia Cargar_Em;
 	
 	public GameObject IfinJuego;
 	
@@ -31,11 +33,11 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	void Start () 
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
-		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
+		//CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
-		CSlider.progresoEmocionesSNivel1 ();
+		//CSlider.progresoEmocionesSNivel1 ();
 		CE.respuesta = false;
-		actualizarPuntuacion ();
+		//actualizarPuntuacion ();
 	}
 	
 	// Update is called once per frame
@@ -45,10 +47,11 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	public void respuesta()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
 		if (CE.respuesta == false) 
 		{
 			CAN2 = GameObject.Find ("ctrlAleatorio").GetComponent<ControlAleatorioSocialNivel2> ();
-			switch (CAN2.PreguntaAleat) {
+			switch (Cargar_Em.PreguntaAleat) {
 
 			case 1:
 				if (gameObject.GetComponent<Image> ().sprite.name == "Enfado") 
@@ -82,72 +85,150 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	}
 	void correcto()
 	{
+		
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
-
+		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
+		
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
 		
 		print ("correcto");
-		IfinJuego.SetActive(true);
+		Cargar_Em.Ejer_Activos [Cargar_Em.PreguntaAleat-1] = true;
 		
-		ControlMonedas = GameObject.Find ("controlMonedas");
-		cM = ControlMonedas.GetComponent<Control_monedas> ();
-		
-		puntuacionfin = GameObject.Find ("puntuacionFin");
-		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
-		
-		monedasSocialNivel2 = GameObject.Find ("monedas");
-		TmonedasSocialNivel2 = monedasSocialNivel2.GetComponent<Text> ();
-		
-		cM.calcular_monedaSocialNivel1 ();
-		cM.calcular_monedasGenerales ();
-		
-		if (CE.Intentos == 1) 
+		for (int i=0; i<Cargar_Em.Ejer_Activos.Length&&Cargar_Em.Ejer_Activos[i]==true; i++) 
 		{
-			Invoke ("ActivarEstrella1", 1.0f);
-			Invoke ("ActivarEstrella2", 2.0f);
-			Invoke ("ActivarEstrella3", 3.0f);
-			DD.AEmpatia[2] = true;
-
-		} 
-		else 
-		{
-			if (CE.Intentos == 2) 
+			print("entro en for ");
+			
+			if(i==Cargar_Em.Ejer_Activos.Length-1&&Cargar_Em.Ejer_Activos[i]==true)
 			{
-				Invoke ("ActivarEstrella1", 1.0f);
-				Invoke ("ActivarEstrella2", 2.0f);
-				DD.AEmpatia[2] = true;
-
-			} 
-			else if(CE.Intentos == 3)
-			{
-				Invoke ("ActivarEstrella1", 1.0f);
-				DD.AEmpatia[2] = true;
-
+				IfinJuego.SetActive(true);
+				
+				ControlMonedas = GameObject.Find ("controlMonedas");
+				cM = ControlMonedas.GetComponent<Control_monedas> ();
+				
+				puntuacionfin = GameObject.Find ("puntuacionFin");
+				TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
+				
+				monedasSocialNivel2 = GameObject.Find ("monedas");
+				TmonedasSocialNivel2 = monedasSocialNivel2.GetComponent<Text> ();
+				
+				cM.calcular_monedaSocialNivel1 ();
+				cM.calcular_monedasGenerales ();
+				
+				if (CE.Intentos == 1) 
+				{
+					Invoke ("ActivarEstrella1", 1.0f);
+					Invoke ("ActivarEstrella2", 2.0f);
+					Invoke ("ActivarEstrella3", 3.0f);
+					DD.AEmpatia[2] = true;
+					
+				} 
+				else 
+				{
+					if (CE.Intentos == 2) 
+					{
+						Invoke ("ActivarEstrella1", 1.0f);
+						Invoke ("ActivarEstrella2", 2.0f);
+						DD.AEmpatia[2] = true;
+						
+					} 
+					else if(CE.Intentos == 3)
+					{
+						Invoke ("ActivarEstrella1", 1.0f);
+						DD.AEmpatia[2] = true;
+						
+					}
+				}
+				
+				//SiguienteSituacion.SetActive (true);
+				
+				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
+				
+				TmonedasSocialNivel2.text = cM.monedasSocialNivel1.ToString();
+				
+				CE.Intentos = 1;
+				cM.monedasSocialNivel1 = 0;
+				CE.respuesta = true;
 			}
+			
 		}
-		
-		//SiguienteSituacion.SetActive (true);
-		
-		TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
-		
-		TmonedasSocialNivel2.text = cM.monedasSocialNivel1.ToString();
+		if (IfinJuego.activeSelf == false) 
+		{
+			Cargar_Em.Cambio_escena ();
+		}
 
-		CE.Intentos = 1;
-		cM.monedasSocialNivel1 = 0;
-		CE.respuesta = true;
 		
 		
 	}
 	void error()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
 		print ("error");
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
-		
 		CE.Intentos++;
-		actualizarPuntuacion ();
-		CSlider.progresoEmocionesSNivel1 ();
+		
+		if(CE.Intentos==4)
+		{
+			Cargar_Em.vidas [CE.Intentos-2].SetActive (false);
+
+			IfinJuego.SetActive(true);
+			
+			ControlMonedas = GameObject.Find ("controlMonedas");
+			cM = ControlMonedas.GetComponent<Control_monedas> ();
+			
+			puntuacionfin = GameObject.Find ("puntuacionFin");
+			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
+			
+			monedasSocialNivel2 = GameObject.Find ("monedas");
+			TmonedasSocialNivel2 = monedasSocialNivel2.GetComponent<Text> ();
+			
+			cM.calcular_monedaSocialNivel1 ();
+			cM.calcular_monedasGenerales ();
+			
+			if (CE.Intentos == 1) 
+			{
+				Invoke ("ActivarEstrella1", 1.0f);
+				Invoke ("ActivarEstrella2", 2.0f);
+				Invoke ("ActivarEstrella3", 3.0f);
+				DD.AEmpatia[2] = true;
+				
+			} 
+			else 
+			{
+				if (CE.Intentos == 2) 
+				{
+					Invoke ("ActivarEstrella1", 1.0f);
+					Invoke ("ActivarEstrella2", 2.0f);
+					DD.AEmpatia[2] = true;
+					
+				} 
+				else if(CE.Intentos == 3)
+				{
+					Invoke ("ActivarEstrella1", 1.0f);
+					DD.AEmpatia[2] = true;
+					
+				}
+			}
+			
+			//SiguienteSituacion.SetActive (true);
+			
+			TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
+			
+			TmonedasSocialNivel2.text = cM.monedasSocialNivel1.ToString();
+			
+			CE.Intentos = 1;
+			cM.monedasSocialNivel1 = 0;
+			CE.respuesta = true;
+
+		}
+		else
+		{
+			Cargar_Em.vidas [CE.Intentos-2].SetActive (false);
+		}
+		print ("incorrecto");
 	}
 	void actualizarPuntuacion()
 	{

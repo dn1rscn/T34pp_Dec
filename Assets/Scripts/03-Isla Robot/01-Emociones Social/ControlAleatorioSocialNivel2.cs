@@ -4,16 +4,18 @@ using UnityEngine.UI;
 
 public class ControlAleatorioSocialNivel2 : MonoBehaviour 
 {
+	CargarEmpatia Cargar_Em;
+
 	public Sprite[] AImREspuesta;
 	public GameObject[] ARespuestas;
 	public GameObject[] APreguntas;
 
-	public int PreguntaAleat;
+
 	public int respuestaAleat;
 	// Use this for initialization
 	void Start () 
 	{
-		AleatorioResp ();
+
 	}
 	
 	// Update is called once per frame
@@ -23,13 +25,17 @@ public class ControlAleatorioSocialNivel2 : MonoBehaviour
 	}
 	public void AleatorioResp()
 	{
+		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
+
 		APreguntas[0].SetActive(false);
 		APreguntas[1].SetActive(false);
 		APreguntas[2].SetActive(false);
-		PreguntaAleat = Random.Range (1, 4);
-		switch (PreguntaAleat) 
+
+
+		switch (Cargar_Em.PreguntaAleat) 
 		{
 		case 1:
+			print("in");
 			APreguntas[0].SetActive(true);
 			respuestaAleat=Random.Range(1,3);
 			switch (respuestaAleat) 
@@ -45,6 +51,7 @@ public class ControlAleatorioSocialNivel2 : MonoBehaviour
 			}
 			break;
 		case 2:
+			print("in");
 			APreguntas[1].SetActive(true);
 			respuestaAleat=Random.Range(1,3);
 			switch (respuestaAleat) 
@@ -60,6 +67,7 @@ public class ControlAleatorioSocialNivel2 : MonoBehaviour
 			}
 			break;
 		case 3:
+			print("in");
 			APreguntas[2].SetActive(true);
 			respuestaAleat=Random.Range(1,3);
 			switch (respuestaAleat) 

@@ -114,14 +114,22 @@ public class Control_monedas : MonoBehaviour
 	public void calcular_monedaSocialNivel1()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
-		if (CE.Intentos == 1) 
+		switch (CE.Intentos) 
 		{
+		case 1:
 			monedasSocialNivel1 = 100;
-		} 
-		else 
-		{
+			break;
+		case 2:
+			monedasSocialNivel1 = 60;
+			break;
+		case 3:
 			monedasSocialNivel1 = 30;
+			break;
+		case 4:
+			monedasSocialNivel1 = 0;
+			break;
 		}
+
 	}
 	public void calcular_monedasEmocionesNivel1()
 	{

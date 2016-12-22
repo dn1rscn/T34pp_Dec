@@ -14,16 +14,20 @@ public class controlRespAleatoria : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		RespuesAleatoria ();
+		//RespuesAleatoria ();
 	}
 	public void RespuesAleatoria()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		//CE.EjercicioSocial = Random.Range (0,3);
 		RespuestaAleat = Random.Range (1, 3);
 		//ARespuestas [0].GetComponent<Image> ().sprite = AImRespuesta [RespuestaAleat];
 		switch(CE.EjercicioSocial)
 		{
-		case 1:
+		
+		case 0:
+			print("CAse 0");
+			print(CE.EjercicioSocial);
 			switch (RespuestaAleat) 
 			{
 			case 1:					//respuesta correcta en cartel1
@@ -40,7 +44,9 @@ public class controlRespAleatoria : MonoBehaviour
 				break;
 			}
 			break;
-		case 2:
+		case 1:
+			print("CAse 1");
+			print(CE.EjercicioSocial);
 			switch (RespuestaAleat) 
 			{
 			case 1:					//respuesta correcta en cartel1
@@ -57,8 +63,9 @@ public class controlRespAleatoria : MonoBehaviour
 				break;
 			}
 			break;
-		case 3:
-			
+		case 2:
+			print("CAse 2");
+			print(CE.EjercicioSocial);
 			switch (RespuestaAleat) 
 			{
 			case 1:					//respuesta correcta en cartel1
