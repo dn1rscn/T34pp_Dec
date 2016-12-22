@@ -26,7 +26,7 @@ public class ControlMenu : MonoBehaviour
 	{
 		GameObject.Find ("Canvas").GetComponent<Animator> ().Play ("Subir");
 	}
-	public void Globo()
+	/*public void Globo()
 	{
 		CE.EjercicioSocial = 1;
 		Application.LoadLevel ("Emociones_Empatia");
@@ -41,12 +41,13 @@ public class ControlMenu : MonoBehaviour
 	{
 		CE.EjercicioSocial = 3;
 		Application.LoadLevel ("Emociones_Empatia");
-	}
+	}*/
 	public void Nivel1()
 	{
 		CE.NivelEmpatia = 1;
-		CDE.Desbloqueo_Nivel1 ();
-		GameObject.Find ("Canvas").GetComponent<Animator> ().Play ("Bajar");
+		//CDE.Desbloqueo_Nivel1 ();
+		Application.LoadLevel ("Emociones_Empatia");
+
 	}
 	public void Nivel2()
 	{
@@ -56,7 +57,7 @@ public class ControlMenu : MonoBehaviour
 	public void Nivel3()
 	{
 		CE.NivelEmpatia = 3;
-		CDE.Desbloqueo_Nivel3 ();
-		GameObject.Find ("Canvas").GetComponent<Animator> ().Play ("Bajar");
+		//CDE.Desbloqueo_Nivel3 ();
+		Application.LoadLevel ("Emociones_Empatia");
 	}
 }

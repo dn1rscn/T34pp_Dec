@@ -99,31 +99,31 @@ public class ControlSlider : MonoBehaviour
 			estrellas[0].GetComponent<Image>().sprite=NOstrella;
 		}
 	}
-	public void progresoEmocionesSNivel1()
+	public void progresoEmociones()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
-		BarraProgreso.value = 4 -(CE.Intentos);
+		BarraProgreso.value = (CE.aciertos);
 
-		if (BarraProgreso.value == 2) //2 intentos
+		if (BarraProgreso.value == 15) //2 intentos
 		{
-			estrellas[3].GetComponent<Image>().sprite=NOstrella;
-			estrellas[4].GetComponent<Image>().sprite=NOstrella;
-			estrellas[5].GetComponent<Image>().sprite=NOstrella;
+			estrellas[3].GetComponent<Image>().sprite=estrellaactiva;
+			estrellas[4].GetComponent<Image>().sprite=estrellaactiva;
+			estrellas[5].GetComponent<Image>().sprite=estrellaactiva;
 		}
 
-		if (BarraProgreso.value == 1) //3 intentos
+		if (BarraProgreso.value == 10) //3 intentos
 		{
-			estrellas[1].GetComponent<Image>().sprite=NOstrella;
-			estrellas[2].GetComponent<Image>().sprite=NOstrella;
+			estrellas[1].GetComponent<Image>().sprite=estrellaactiva;
+			estrellas[2].GetComponent<Image>().sprite=estrellaactiva;
 		}
-		if (BarraProgreso.value == 0) //+ de 3 intentos
+		if (BarraProgreso.value == 5) //+ de 3 intentos
 		{
-			estrellas[0].GetComponent<Image>().sprite=NOstrella;
+			estrellas[0].GetComponent<Image>().sprite=estrellaactiva;
 		}
 	}
 
-	public void progresoEmocionesNivel1()
+	/*public void progresoEmocionesNivel1()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
@@ -197,5 +197,5 @@ public class ControlSlider : MonoBehaviour
 		{
 			estrellas[0].GetComponent<Image>().sprite=NOstrella;
 		}
-	}
+	}*/
 }

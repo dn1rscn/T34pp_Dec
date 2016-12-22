@@ -21,8 +21,19 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		Aleatorio_Emociones ();
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
 
+	}
+
+	public void Aleatorio_Emociones()
+	{
+		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		
 		PreguntaAleat = Random.Range (0, APregunta.Length);
 		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
 		switch (CE.NivelEmociones) 
@@ -118,13 +129,6 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 			break;
 		}
 		print (respuestaAleat);
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
 	}
 	void noRepetir()
 	{

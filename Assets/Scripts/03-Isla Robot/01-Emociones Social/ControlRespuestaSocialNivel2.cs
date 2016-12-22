@@ -11,6 +11,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	ControlNotificaciones1 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	CargarEmpatia Cargar_Em;
+	ControlMisiones CMisiones;
 	
 	public GameObject IfinJuego;
 	
@@ -104,7 +105,8 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 			if(i==Cargar_Em.Ejer_Activos.Length-1&&Cargar_Em.Ejer_Activos[i]==true)
 			{
 				IfinJuego.SetActive(true);
-				
+
+				CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 				ControlMonedas = GameObject.Find ("controlMonedas");
 				cM = ControlMonedas.GetComponent<Control_monedas> ();
 				
@@ -119,25 +121,46 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 				
 				if (CE.Intentos == 1) 
 				{
+					if(DD.AEmpatia[2]==false)
+					{
+						CNotificaciones.Nivel3.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
 					Invoke ("ActivarEstrella1", 1.0f);
 					Invoke ("ActivarEstrella2", 2.0f);
 					Invoke ("ActivarEstrella3", 3.0f);
+
 					DD.AEmpatia[2] = true;
+
+					if(CE.NivelEmpatia == 2 &&CMisiones.ejerM_3estrellas[1]==false)
+					{
+						CMisiones.ejerB_3estrellas[1]=true;
+						CMisiones.Mision_Robot();
+						CNotificaciones.GMision.SetActive(true);
+						CNotificaciones.MisionDino[1].SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
 					
 				} 
 				else 
 				{
 					if (CE.Intentos == 2) 
 					{
+						if(DD.AEmpatia[2]==false)
+						{
+							CNotificaciones.Nivel3.SetActive(true);
+							GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						}
+
 						Invoke ("ActivarEstrella1", 1.0f);
 						Invoke ("ActivarEstrella2", 2.0f);
+
 						DD.AEmpatia[2] = true;
 						
 					} 
 					else if(CE.Intentos == 3)
 					{
 						Invoke ("ActivarEstrella1", 1.0f);
-						DD.AEmpatia[2] = true;
 						
 					}
 				}
@@ -156,7 +179,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 		}
 		if (IfinJuego.activeSelf == false) 
 		{
-			Cargar_Em.Cambio_escena ();
+			Cargar_Em.Actualizar_Escena ();
 		}
 
 		

@@ -12,6 +12,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 	ControlNotificaciones1 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	CargarEmpatia Cargar_Em;
+	ControlMisiones CMisiones;
 
 	public GameObject IfinJuego;
 
@@ -35,9 +36,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 	void Start () 
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		//CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
 		CE.respuesta = false;
+		CNotificaciones.Isla.SetActive (false);
+		CNotificaciones.Nivel2.SetActive(false);
+		CNotificaciones.GMision.SetActive (false);
+		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
+		{
+			CNotificaciones.MisionDino[i].SetActive(false);
+		}
 		//actualizarPuntuacion ();
 		//CSlider.progresoEmocionesSNivel1 ();
 
@@ -99,7 +108,8 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 			if(i==Cargar_Em.Ejer_Activos.Length-1&&Cargar_Em.Ejer_Activos[i]==true)
 			{
 				IfinJuego.SetActive(true);
-				
+
+				CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 				ControlMonedas = GameObject.Find ("controlMonedas");
 				cM = ControlMonedas.GetComponent<Control_monedas> ();
 				
@@ -123,6 +133,11 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					{
 						CE.empatia1_completado=true;
 					}
+					if(DD.AEmpatia[1]==false)
+					{
+						CNotificaciones.Nivel2.SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
 					
 					Invoke ("ActivarEstrella1", 1.0f);
 					Invoke ("ActivarEstrella2", 2.0f);
@@ -134,6 +149,22 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 						CE.ASocialNivel1[CE.EjercicioSocial]=true;
 					}
 					DD.AEmpatia[1] = true;
+					if(CE.NivelEmpatia == 1 &&CMisiones.ejerM_3estrellas[0]==false)
+					{
+						CMisiones.ejerB_3estrellas[0]=true;
+						CMisiones.Mision_Robot();
+						CNotificaciones.GMision.SetActive(true);
+						CNotificaciones.MisionDino[0].SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
+					if(CE.NivelEmpatia==3&&CMisiones.ejerM_3estrellas[2]==false)
+					{
+						CMisiones.ejerB_3estrellas[2]=true;
+						CMisiones.Mision_Robot();
+						CNotificaciones.GMision.SetActive(true);
+						CNotificaciones.MisionDino[2].SetActive(true);
+						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					}
 					
 				} 
 				else 
@@ -150,7 +181,12 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 						{
 							CE.empatia1_completado=true;
 						}
-						
+
+						if(DD.AEmpatia[1]==false)
+						{
+							CNotificaciones.Nivel2.SetActive(true);
+							GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+						}
 						Invoke ("ActivarEstrella1", 1.0f);
 						Invoke ("ActivarEstrella2", 2.0f);
 						
@@ -160,6 +196,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 							CE.ASocialNivel1[CE.EjercicioSocial]=true;
 						}
 						DD.AEmpatia[1] = true;
+
 						
 						
 					} 
@@ -183,7 +220,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 						{
 							CE.ASocialNivel1[CE.EjercicioSocial]=true;
 						}
-						DD.AEmpatia[1] = true;
+
 						
 						
 					}
@@ -203,7 +240,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 		}
 		if (IfinJuego.activeSelf == false) 
 		{
-			Cargar_Em.Cambio_escena ();
+			Cargar_Em.Actualizar_Escena ();
 		}
 
 	}

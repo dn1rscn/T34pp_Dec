@@ -10,6 +10,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	ControlNotificaciones1 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	ControlMisiones CMisiones;
+
+	public GameObject[] Vidas;
 	
 	public GameObject IfinJuego;
 	public GameObject IfinJuego2;
@@ -41,29 +43,22 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 
+		//CEA.Aleatorio_Emociones ();
+
 		Boton_Back.SetActive (true);
 
 		cM.monedasEmociones=0;
-		CE.Intentos=1;
+		CE.aciertos=0;
+		CE.Intentos = 1;
 
-		if (CE.NivelEmociones==1) 
-		{
-			CSlider.progresoEmocionesNivel1();
-		}
-		if (CE.NivelEmociones==2) 
-		{
-			CSlider.progresoEmocionesNivel2();
-		}
-		if (CE.NivelEmociones==3) 
-		{
-			CSlider.progresoEmocionesNivel3();
-		}
 		CE.respuesta = false;
 		actualizarPuntuacion ();
+		CSlider.progresoEmociones();
 
 		CNotificaciones.Nivel2.SetActive(false);
 		CNotificaciones.Nivel3.SetActive(false);
 		CNotificaciones.Isla.SetActive (false);
+		CNotificaciones.GMision.SetActive (false);
 		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
 		{
 			CNotificaciones.MisionDino[i].SetActive(false);
@@ -97,51 +92,30 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		print (CEA.ARespuesta.Length);
 		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
+		CE.aciertos++;
+
+		actualizarPuntuacion ();
+		CSlider.progresoEmociones();
+
 		if (CEA.ARespuesta.Length == 7) 
 		{
 			cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 			CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
-
-			IfinJuego.SetActive(true);
-			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 			
 			ControlMonedas = GameObject.Find ("controlMonedas");
 			cM = ControlMonedas.GetComponent<Control_monedas> ();
+
 			
-			puntuacionfin = GameObject.Find ("puntuacionFin");
-			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
-			
-			monedasEmociones = GameObject.Find ("monedas");
-			TmonedasEmociones = monedasEmociones.GetComponent<Text> ();
-			
-			
-			if (CE.NivelEmociones==1) 
-			{
-				cM.calcular_monedasEmocionesNivel1();
-			}
-			if (CE.NivelEmociones==2) 
-			{
-				cM.calcular_monedasEmocionesNivel2();
-			}
-			if (CE.NivelEmociones==3) 
-			{
-				cM.calcular_monedasEmocionesNivel3();
-			}
-			cM.calcular_monedasGenerales ();
-			
-			if (CE.Intentos==5||CE.Intentos == 6) 
+			if (CE.aciertos==5) 
 			{
 
 
-				Invoke ("ActivarEstrella1", 1.0f);
+				//Invoke ("ActivarEstrella1", 1.0f);
 				if(CE.NivelEmociones<3)
 				{
 					SiguienteSecuencia.SetActive(true);
 				}
-				if(CE.NivelEmociones<CE.AEmociones.Length)
-				{
-					CE.AEmociones[CE.NivelEmociones]=true;
-				}
+
 
 				if(CE.NivelEmociones==1&&CE.empatia1_completado==true)
 				{
@@ -154,7 +128,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 					CE.emociones1_completado=true;
 				}
 			}
-			if (CE.Intentos == 2||CE.Intentos==3 || CE.Intentos==4) 
+			if (CE.aciertos==10) 
 			{
 				switch(CE.NivelEmociones)
 				{
@@ -175,6 +149,10 @@ public class ControlRespuestaEmociones : MonoBehaviour
 						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 						
 					}
+					if(CE.NivelEmociones<CE.AEmociones.Length)
+					{
+						CE.AEmociones[CE.NivelEmociones]=true;
+					}
 					break;
 					
 				case 2:
@@ -187,8 +165,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 					break;
 				}
 
-				Invoke ("ActivarEstrella1", 1.0f);
-				Invoke ("ActivarEstrella2", 2.0f);
+				//Invoke ("ActivarEstrella1", 1.0f);
+				//Invoke ("ActivarEstrella2", 2.0f);
 				if(CE.NivelEmociones<3)
 				{
 					SiguienteSecuencia.SetActive(true);
@@ -201,41 +179,24 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				
 
 			}
-			if (CE.Intentos == 1) 
+			if (CE.aciertos == 15) 
 			{
-				switch(CE.NivelEmociones)
-				{
-				case 1:
-					if(CE.empatia1_completado==true)
-					{
-						cdg_3d.Altar_Desbloqueado=true;
-						CNotificaciones.Isla.SetActive (true);
-						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-					}
-					else if(CE.NivelEmociones==1&&CE.empatia1_completado==false)
-					{
-						CE.emociones1_completado=true;
-					}
-					if(CE.AEmociones[1]==false)
-					{
-						CNotificaciones.Nivel2.SetActive(true);
-						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-						
-					}
-					break;
-					
-				case 2:
-					if(CE.AEmociones[2]==false)
-					{
-						CNotificaciones.Nivel3.SetActive(true);
-						GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-						
-					}
-					break;
-				}
+				IfinJuego.SetActive(true);
+				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
+
+				puntuacionfin = GameObject.Find ("puntuacionFin");
+				TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
+				
+				monedasEmociones = GameObject.Find ("monedas");
+				TmonedasEmociones = monedasEmociones.GetComponent<Text> ();
+
+				cM.calcular_monedasEmociones();
 				
 				if(CMisiones.ejerM_3estrellas[CE.NivelEmociones+2]==false)
 				{
+					CNotificaciones.Nivel2.SetActive(false);
+					CNotificaciones.Nivel3.SetActive(false);
+					CNotificaciones.Isla.SetActive (false);
 					CNotificaciones.GMision.SetActive(true);
 					for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
 					{
@@ -259,17 +220,27 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				CMisiones.ejerB_3estrellas[CE.NivelEmociones+2]=true;
 				CMisiones.Mision_Robot();
 
-
+				
+				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
+				
+				TmonedasEmociones.text = cM.monedasEmociones.ToString();
+				
+				cM.monedasEmociones=0;
+				CE.Intentos=1;
+				CE.aciertos=0;
+				CE.respuesta=true;
 			}
-			
-			
-			TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
-			
-			TmonedasEmociones.text = cM.monedasEmociones.ToString();
-			
-			cM.monedasEmociones=0;
-			CE.Intentos=1;
-			CE.respuesta=true;
+
+		}
+		if (CE.aciertos != 15) 
+		{
+			for(int i = 0; i<CEA.ARespuestasActivas.Length; i++)
+			{
+				CEA.ARespuestasActivas[i]=false;
+			}
+
+			CEA.Aleatorio_Emociones();
+
 		}
 	}
 	void Error()
@@ -278,19 +249,49 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("fallo_robot");
 		print ("fallo");
 		CE.Intentos++;
-		actualizarPuntuacion ();
-		if (CE.NivelEmociones == 1) 
+
+		if (CE.Intentos == 4) 
 		{
-			CSlider.progresoEmocionesNivel1();
-		}
-		if (CE.NivelEmociones == 2) 
+			Vidas[CE.Intentos-2].SetActive(false);
+
+			IfinJuego.SetActive(true);
+			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
+			
+			puntuacionfin = GameObject.Find ("puntuacionFin");
+			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
+			
+			monedasEmociones = GameObject.Find ("monedas");
+			TmonedasEmociones = monedasEmociones.GetComponent<Text> ();
+			
+			cM.calcular_monedasEmociones();
+
+			if(CE.aciertos>=5)
+			{
+				Invoke ("ActivarEstrella1", 1.0f);
+			}
+			if(CE.aciertos>=10)
+			{
+				Invoke ("ActivarEstrella2", 2.0f);
+			}
+			if(CE.aciertos>=15)
+			{
+				Invoke ("ActivarEstrella3", 3.0f);
+			}
+
+			TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
+			
+			TmonedasEmociones.text = cM.monedasEmociones.ToString();
+			
+			cM.monedasEmociones=0;
+			CE.Intentos=1;
+			CE.aciertos=0;
+			CE.respuesta=true;
+		} 
+		else 
 		{
-			CSlider.progresoEmocionesNivel2();
+			Vidas[CE.Intentos-2].SetActive(false);
 		}
-		if (CE.NivelEmociones == 3) 
-		{
-			CSlider.progresoEmocionesNivel3();
-		}
+
 
 	}
 	void ActivarEstrella1()
@@ -314,7 +315,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		puntuacion = GameObject.Find ("puntuacion");
 		Tpuntuacion = puntuacion.GetComponent<Text> ();
 		
-		Tpuntuacion.text = CE.Intentos.ToString();
+		Tpuntuacion.text = CE.aciertos.ToString();
 	}
 
 	public void Salir_Interfaz()

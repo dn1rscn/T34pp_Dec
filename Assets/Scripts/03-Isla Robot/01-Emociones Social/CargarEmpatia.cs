@@ -47,7 +47,7 @@ public class CargarEmpatia : MonoBehaviour
 
 		print ("caMBIO");
 
-		//CE.NivelEmpatia=1;
+		CE.NivelEmpatia++;
 		CE.respuesta=false;
 		Actualizar_Escena();
 		if (CE.NivelEmpatia == 1 || CE.NivelEmpatia == 3) 
@@ -84,42 +84,7 @@ public class CargarEmpatia : MonoBehaviour
 	public void Salir()
 	{
 		reset ();
-		if (CE.NivelEmpatia == 1) //Nivel 1
-		{
-			switch(CE.EjercicioSocial)
-			{
-			case 1:
-				Application.LoadLevel("Empatia_MenusSeleccion");
-				break;
-			case 2:
-				Application.LoadLevel("Empatia_MenusSeleccion");
-				break;
-			case 3:
-				Application.LoadLevel("Isla_Mecanica_v3");
-				break;
-			}
-		}
-		if (CE.NivelEmpatia == 2) 
-		{
-			Application.LoadLevel("Empatia_MenusSeleccion");
-		}
-		if (CE.NivelEmpatia == 3) //Nivel 3
-		{
-			switch(CE.EjercicioSocial)
-			{
-			case 1:
-				Application.LoadLevel("Empatia_MenusSeleccion");
-				break;
-			case 2:
-				Application.LoadLevel("Empatia_MenusSeleccion");
-				break;
-			case 3:
-				//Application.LoadLevel("Empatia_MenusSeleccion");
-				Application.LoadLevel("Isla_Mecanica_v3");
-				break;
-			}
-		}
-
+		Application.LoadLevel("Isla_Mecanica_v3");
 	}
 	public void Actualizar_Escena()
 	{
@@ -172,7 +137,7 @@ public class CargarEmpatia : MonoBehaviour
 	{
 		while (Ejer_Activos[CE.EjercicioSocial]==true) 
 		{
-			PreguntaAleat = Random.Range (1, 4);
+			CE.EjercicioSocial = Random.Range (0,3);
 		}
 
 		if (Ejer_Activos [CE.EjercicioSocial] == false) 
