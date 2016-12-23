@@ -4,6 +4,7 @@ using System.Collections;
 public class controlObjetosMision : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	Control_PuntuacionObjetos CPO;
 
 	public GameObject[] gObjArray_partesGafasFantasma;
 	public GameObject[] gObjArray_bateriasRobot;
@@ -15,6 +16,7 @@ public class controlObjetosMision : MonoBehaviour {
 	
 		//Accedemos al script de datos globales
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		CPO = GameObject.Find ("objetos").GetComponent<Control_PuntuacionObjetos> ();
 	
 		gObjArray_partesGafasFantasma = GameObject.FindGameObjectsWithTag("gafaFantasma");
 		gObjArray_bateriasRobot = GameObject.FindGameObjectsWithTag("bateriaRobot");
@@ -63,6 +65,8 @@ public class controlObjetosMision : MonoBehaviour {
 
 					CDG_Mundo3D.check_partesGafas[cont]= true;
 					recogidos++;
+					CPO.GafasRecogidas++;
+					CPO.actualizar_Objetos();
 
 					if(recogidos == 4){
 						//Activamos la variable de datos globales "tenemosGafasFantasma"
@@ -106,6 +110,8 @@ public class controlObjetosMision : MonoBehaviour {
 
 					CDG_Mundo3D.check_bateriasRobot[cont]= true;
 					recogidos++;
+					CPO.EnergiaRecogida++;
+					CPO.actualizar_Objetos();
 					if(recogidos == 4){
 
 						//Activamos la animacion "TODAS LAS BATERIAS CONSEGUIDAS!!"
