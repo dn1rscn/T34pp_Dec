@@ -54,6 +54,9 @@ public class controlObjetosMision : MonoBehaviour {
 
 			coli.gameObject.SetActive (false);
 
+			CPO.GafasRecogidas++;
+			CPO.actualizar_Objetos();
+
 			int cont=0;
 			int recogidos=0;
 			//Recorremos el array de gameobjects 
@@ -65,8 +68,6 @@ public class controlObjetosMision : MonoBehaviour {
 
 					CDG_Mundo3D.check_partesGafas[cont]= true;
 					recogidos++;
-					CPO.GafasRecogidas++;
-					CPO.actualizar_Objetos();
 
 					if(recogidos == 4){
 						//Activamos la variable de datos globales "tenemosGafasFantasma"
@@ -98,7 +99,10 @@ public class controlObjetosMision : MonoBehaviour {
 			GameObject.Find("audioRecogerBateria").GetComponent<AudioSource>().Play();
 
 			coli.gameObject.SetActive (false);
-			
+
+			CPO.EnergiaRecogida++;
+			CPO.actualizar_Objetos();
+
 			int cont=0;
 			int recogidos=0;
 			//Recorremos el array de gameobjects 
@@ -110,8 +114,7 @@ public class controlObjetosMision : MonoBehaviour {
 
 					CDG_Mundo3D.check_bateriasRobot[cont]= true;
 					recogidos++;
-					CPO.EnergiaRecogida++;
-					CPO.actualizar_Objetos();
+
 					if(recogidos == 4){
 
 						//Activamos la animacion "TODAS LAS BATERIAS CONSEGUIDAS!!"

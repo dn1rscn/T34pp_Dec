@@ -81,7 +81,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			agente.SetDestination(posicionConversarConRobot);
 
 			//Activamos la animacion de zoom de la camara
-				animator_Cam.SetBool("ZoomCam_Robot", true);
+			animator_Cam.SetBool("ZoomCam_Robot", true);
 
 			//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 			spr_bocadilloRobot_01.enabled=true;
@@ -134,7 +134,6 @@ public class controlInteraccionRobot : MonoBehaviour {
 			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
 			{
 				//agente.transform.LookAt(Robot.transform.position);
-
 				if (agente.velocity!=Vector3.zero)		
 				{
 					posicionCorrecta=false;
@@ -146,6 +145,8 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 					//Invoke("DejarDeMirarRobot",2.0f);
 					animator_Prota.SetBool("andar",false);
+					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+
 				}
 			}
 		}
@@ -232,6 +233,9 @@ public class controlInteraccionRobot : MonoBehaviour {
 		animator_Canvas.Play("Canvas_DesaparecerDialogos");
 		
 		posicionCorrecta=true;
+
+		GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+
 
 
 	}
