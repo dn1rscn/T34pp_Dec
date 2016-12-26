@@ -43,7 +43,12 @@ public class controlMascota : MonoBehaviour {
 		if (agente_mascota.remainingDistance>=13) 
 		{
 			agente_mascota.speed = 10f;
-			animator_mascota.SetBool ("correr", true);
+			if(animator_mascota.GetBool("correr")){
+				animator_mascota.SetBool ("correr", true);
+			}
+			else{
+				animator_mascota.SetBool ("andar", true);
+			}			
 		}
 
 		// 2º.- Si la mascota esta a menos de 15 pero a mas de 7 unidades del objetivo, ejecutamos y mantenemos la 

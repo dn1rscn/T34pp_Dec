@@ -41,12 +41,18 @@ public class ControlDatosGlobales_Mundo3D: MonoBehaviour {
 	public bool hemosHabladoConRobot = false;
 
 	public bool tenemosHuevoDino;
+	public bool huevoDinoEntregado;
+
 
 	public bool[] check_partesGafas = new bool[4];
 	public bool tenemosGafasFantasma;
+	public bool gafasFantasmaEntregadas;
+
 
 	public bool[] check_bateriasRobot = new bool[4];
 	public bool tenemosBateriasRobot;
+	public bool robotArreglado;
+
 
 	void Awake ()
 	{

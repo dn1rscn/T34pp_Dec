@@ -9,12 +9,10 @@ public class controlInteraccionRobot : MonoBehaviour {
 	public Sprite[] array_BocadillosConversacion; 
 	public int bocadillosRestantes;
 
-	//SpriteRenderer spr_flechaDestino_Robot;
 	SpriteRenderer spr_bocadilloRobot_01;
 	SpriteRenderer spr_bocadilloRobot_FinMision;
 	
 	Vector3 posicionConversarConRobot;
-	Vector3 posicionConversarConRobot2;
 
 	ControlProtaMouse_2 ctrlProta;
 
@@ -24,8 +22,6 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 	public GameObject gObj_botonPasarBocadillo;
 	public GameObject gObj_botonPasarBocadillo_2;
-
-	//public GameObject huevoNido;
 
 	Animator animator_Robot;
 	Animator animator_Canvas;
@@ -40,18 +36,16 @@ public class controlInteraccionRobot : MonoBehaviour {
 		bocadillosRestantes = array_BocadillosConversacion.Length;
 
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
-		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
 
 		Robot= GameObject.Find("robot_animaciones_bake_v2");
 
-		//spr_flechaDestino_Robot = GameObject.Find("flechaDestino_Robot").GetComponent<SpriteRenderer>();
 		spr_bocadilloRobot_01 = GameObject.Find("bocadillo_Robot").GetComponent<SpriteRenderer>();
 		spr_bocadilloRobot_FinMision = GameObject.Find("bocadillo_Robot_FinMision").GetComponent<SpriteRenderer>();
 
 		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
 		posicionConversarConRobot = GameObject.Find("Posicion_ConversarConRobot").transform.position; 
-		posicionConversarConRobot2 = GameObject.Find("Posicion_ConversarConRobot2").transform.position; 
 
 		animator_Robot = GameObject.Find ("robot_animaciones_bake_v2").GetComponent <Animator> ();
 		animator_Cam = GameObject.Find ("PivoteCamaraPrincipal").GetComponent <Animator> ();
@@ -59,6 +53,19 @@ public class controlInteraccionRobot : MonoBehaviour {
 		animator_Prota = GameObject.Find ("Chico_TEAPlay").GetComponent<Animator>();
 
 		ctrlProta = GameObject.Find ("Chico_TEAPlay").GetComponent<ControlProtaMouse_2>();
+
+		//Si ya le hemos dado las baterias al robot, debe empezar el nivel en pie
+		if(CDG_Mundo3D.robotArreglado){
+			animator_Robot.Play("reposo_robot");
+			CDG_Mundo3D.hemosHabladoConRobot = true;
+			CDG_Mundo3D.tenemosBateriasRobot = true;
+			CDG_Mundo3D.IslaMec_Desbloqueada = true;
+			CDG_Mundo3D.check_bateriasRobot [0] = true;
+			CDG_Mundo3D.check_bateriasRobot [1] = true;
+			CDG_Mundo3D.check_bateriasRobot [2] = true;
+			CDG_Mundo3D.check_bateriasRobot [3] = true;
+
+		}
 	}
 
 	void OnTriggerEnter(Collider coli)
@@ -66,37 +73,30 @@ public class controlInteraccionRobot : MonoBehaviour {
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			//Si NO hemos hablado aun con Robot
-			if (!CDG_Mundo3D.hemosHabladoConRobot)
+			if (!CDG_Mundo3D.hemosHabladoConRobot && !CDG_Mundo3D.tenemosBateriasRobot)
 			{
-			//Desactivamos la flecha de destino sobre el Robot
-			//spr_flechaDestino_Robot.enabled = false;
+				//Activamos el "Modo Dialogo" desde el animator del canvas
+				animator_Canvas.Play("Canvas_AparecerDialogos");
 
-			//Activamos el "Modo Dialogo" desde el animator del canvas
-			animator_Canvas.Play("Canvas_AparecerDialogos");
+				//Desactivamos el control del prota mientras estemos conversando
+				ctrlProta.enabled = false;
 
-			//Desactivamos el control del prota mientras estemos conversando
-			ctrlProta.enabled = false;
+				//Y mandamos su NavMeshAgent a la posicion de conversar con el Robot
+				agente.SetDestination(posicionConversarConRobot);
 
-			//Y mandamos su NavMeshAgent a la posicion de conversar con el Robot
-			agente.SetDestination(posicionConversarConRobot);
+				//Activamos la animacion de zoom de la camara
+				animator_Cam.SetBool("ZoomCam_Robot", true);
 
-			//Activamos la animacion de zoom de la camara
-			animator_Cam.SetBool("ZoomCam_Robot", true);
-
-			//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
-			spr_bocadilloRobot_01.enabled=true;
-			gObj_botonPasarBocadillo.SetActive(true);
-	
+				//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
+				spr_bocadilloRobot_01.enabled=true;
+				gObj_botonPasarBocadillo.SetActive(true);
 			}
 
 			//Si ya hemos hablado con Robot..
 			else 
 			{
 				//Si HEMOS CONSEGUIDO LAS BATERIAS DEL Robot:
-				if(CDG_Mundo3D.tenemosBateriasRobot){
-					animator_Robot.SetBool("acierto_Robot",true);
-					Invoke ("RobotAnimAcierto_desactivar",2.0f);
-
+				if(CDG_Mundo3D.tenemosBateriasRobot && !CDG_Mundo3D.robotArreglado){
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
 
@@ -113,7 +113,9 @@ public class controlInteraccionRobot : MonoBehaviour {
 					spr_bocadilloRobot_FinMision.enabled=true;
 					gObj_botonPasarBocadillo_2.SetActive(true);
 
-					//Hacemos que aparezca el Robot se levante
+					CDG_Mundo3D.robotArreglado=true;
+
+					//Hacemos que el Robot se levante
 					Invoke("activarRobot",2.0f);
 				}
 
@@ -127,7 +129,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 	void OnTriggerStay(Collider coli)
 	{
-		//Si no hemos hablado aun con el Robot o si ya tenemos el Huevo
+		//Si no hemos hablado aun con el Robot o si ya tenemos sus baterias
 		if (!CDG_Mundo3D.hemosHabladoConRobot||CDG_Mundo3D.tenemosBateriasRobot)
 		{
 			//Colocamos al personaje en la posicion correcta.
@@ -146,7 +148,6 @@ public class controlInteraccionRobot : MonoBehaviour {
 					//Invoke("DejarDeMirarRobot",2.0f);
 					animator_Prota.SetBool("andar",false);
 					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
-
 				}
 			}
 		}
@@ -156,15 +157,8 @@ public class controlInteraccionRobot : MonoBehaviour {
 	{
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
-			//	animator_Cam.SetBool("ZoomCam_Robot", false);
-		//	animator_Robot.SetBool ("fallo_Robot", false);
-		//	animator_Canvas.Play("Canvas_DesaparecerDialogos");
-
 			posicionCorrecta=false;
-			animator_Robot.SetBool ("fallo_Robot", false);
-
 		}
-		
 	}
 
 	public void RobotAnimAcierto_desactivar(){
@@ -182,9 +176,8 @@ public class controlInteraccionRobot : MonoBehaviour {
 	}
 
 	public void activarRobot(){
-
 		//	Ejecutamos la animacion de reposo del robot
-
+		animator_Robot.SetBool("acierto_Robot",true);
 	}
 
 	public void pasarBocadillo(){
