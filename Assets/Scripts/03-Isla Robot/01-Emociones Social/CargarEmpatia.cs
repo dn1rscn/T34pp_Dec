@@ -8,6 +8,7 @@ public class CargarEmpatia : MonoBehaviour
 	controlRespAleatoria CRA;
 	ControlAleatorioSocialNivel2 CA2;
 	Control_monedas cM;
+	ControlNotificaciones1 CNotificaciones;
 
 	public GameObject[] GRPS_Canvas;
 	public GameObject[] GRPS;
@@ -44,7 +45,7 @@ public class CargarEmpatia : MonoBehaviour
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
-
+		reset ();
 		print ("caMBIO");
 
 		CE.NivelEmpatia++;
@@ -172,6 +173,7 @@ public class CargarEmpatia : MonoBehaviour
 	{
 		cM = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		//CRA = GameObject.Find ("crtRespuesta").GetComponent<controlRespAleatoria> ();
 		
 		for (int i=0; i<vidas.Length; i++) 

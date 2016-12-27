@@ -34,10 +34,18 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	void Start () 
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		//CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
 		//CSlider.progresoEmocionesSNivel1 ();
 		CE.respuesta = false;
+		CNotificaciones.Isla.SetActive (false);
+		CNotificaciones.Nivel2.SetActive(false);
+		CNotificaciones.GMision.SetActive (false);
+		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
+		{
+			CNotificaciones.MisionDino[i].SetActive(false);
+		}
 		//actualizarPuntuacion ();
 	}
 	
@@ -49,6 +57,15 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
+		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+
+		CNotificaciones.Isla.SetActive (false);
+		CNotificaciones.Nivel2.SetActive(false);
+		CNotificaciones.GMision.SetActive (false);
+		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
+		{
+			CNotificaciones.MisionDino[i].SetActive(false);
+		}
 		if (CE.respuesta == false) 
 		{
 			CAN2 = GameObject.Find ("ctrlAleatorio").GetComponent<ControlAleatorioSocialNivel2> ();
