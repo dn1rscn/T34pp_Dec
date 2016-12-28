@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: 5ba1be853b436d544bb3942c4763515e
+timeCreated: 1482958590
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Isla_Fantasma_Isla_Grande
+    100002: Isla_Fantasma_Isla_Grande_suelo
+    100004: Isla_Fantasma_Isla_Pequena
+    100006: Isla_Fantasma_isla_pequena_suelo
+    100008: //RootNode
+    400000: Isla_Fantasma_Isla_Grande
+    400002: Isla_Fantasma_Isla_Grande_suelo
+    400004: Isla_Fantasma_Isla_Pequena
+    400006: Isla_Fantasma_isla_pequena_suelo
+    400008: //RootNode
+    2300000: Isla_Fantasma_Isla_Grande
+    2300002: Isla_Fantasma_Isla_Grande_suelo
+    2300004: Isla_Fantasma_Isla_Pequena
+    2300006: Isla_Fantasma_isla_pequena_suelo
+    3300000: Isla_Fantasma_Isla_Grande
+    3300002: Isla_Fantasma_Isla_Grande_suelo
+    3300004: Isla_Fantasma_Isla_Pequena
+    3300006: Isla_Fantasma_isla_pequena_suelo
+    4300000: Isla_Fantasma_Isla_Pequena
+    4300002: Isla_Fantasma_Isla_Grande
+    4300004: Isla_Fantasma_Isla_Grande_suelo
+    4300006: Isla_Fantasma_isla_pequena_suelo
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
