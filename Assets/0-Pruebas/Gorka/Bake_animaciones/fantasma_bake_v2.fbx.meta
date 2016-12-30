@@ -308,7 +308,7 @@ ModelImporter:
     - serializedVersion: 16
       name: reposo_fantasma
       takeName: reposo_fantasma
-      firstFrame: 10
+      firstFrame: 15
       lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0

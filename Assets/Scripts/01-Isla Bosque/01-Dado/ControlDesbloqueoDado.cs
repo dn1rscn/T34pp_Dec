@@ -20,19 +20,16 @@ public class ControlDesbloqueoDado : MonoBehaviour
 			if(DD.ADado[i]==true)
 			{
 				Acontrol_Dado[i].GetComponent<Image>().sprite = imagenes_unlocked[i];
-				Acontrol_Dado[i].GetComponent<Button>().enabled=true;
+				Acontrol_Dado[i].transform.GetChild(0).gameObject.SetActive(true);
+				Acontrol_Dado[i].GetComponent<Button>().enabled = true;
 			}
 			else if(DD.ADado[i]==false)
 			{
 				Acontrol_Dado[i].GetComponent<Image>().sprite=imagenes_Locked[i];
-				Acontrol_Dado[i].GetComponent<Button>().enabled=false;
+				Acontrol_Dado[i].transform.GetChild(0).gameObject.SetActive(false);
+				Acontrol_Dado[i].GetComponent<Button>().enabled = false;
 			}
 		}
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
 	
 	}
 }

@@ -23,19 +23,16 @@ public class ControlDesbloqueoSonidos : MonoBehaviour
 			if(DD.ASonidos[i]==true)
 			{
 				Acontrol_Sonidos[i].GetComponent<Image>().sprite = imagenes_unlocked[i];
+				Acontrol_Sonidos[i].transform.GetChild(0).gameObject.SetActive(true);
 				Acontrol_Sonidos[i].GetComponent<Button>().enabled=true;
 			}
 			else if(DD.ASonidos[i]==false)
 			{
 				Acontrol_Sonidos[i].GetComponent<Image>().sprite=imagenes_Locked[i];
+				Acontrol_Sonidos[i].transform.GetChild(0).gameObject.SetActive(false);
 				Acontrol_Sonidos[i].GetComponent<Button>().enabled=false;
 			}
 		}
-		
-	}
-
-	// Update is called once per frame
-	void Update () {
 		
 	}
 }

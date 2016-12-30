@@ -24,11 +24,15 @@ public class controlDesbloqueoSecuencias : MonoBehaviour
 			if(cs.Asecuencias[i]==true)
 			{
 				Acontrol_secuencias[i].GetComponent<Image>().sprite = imagenes_unlocked[i];
+				Acontrol_secuencias[i].transform.GetChild(0).gameObject.SetActive(true);
+				Acontrol_secuencias[i].transform.GetChild(1).gameObject.SetActive(true);
 				Acontrol_secuencias[i].GetComponent<Button>().enabled=true;
 			}
 			else if(cs.Asecuencias[i]==false)
 			{
-				Acontrol_secuencias[i].GetComponent<Image>().sprite=imagenes_Locked[i];
+				Acontrol_secuencias[i].GetComponent<Image>().sprite=imagenes_Locked[i];				
+				Acontrol_secuencias[i].transform.GetChild(0).gameObject.SetActive(false);
+				Acontrol_secuencias[i].transform.GetChild(1).gameObject.SetActive(false);
 				Acontrol_secuencias[i].GetComponent<Button>().enabled=false;
 			}
 		}
