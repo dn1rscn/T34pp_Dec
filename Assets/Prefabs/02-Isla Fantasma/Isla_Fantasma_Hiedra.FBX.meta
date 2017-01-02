@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: b6f50edf06840c04eb44a93f87d6791b
+timeCreated: 1483366499
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Isla_Fantasma_hierdra_01
+    100004: Isla_Fantasma_hierdra_010
+    100006: Isla_Fantasma_hierdra_011
+    100008: Isla_Fantasma_hierdra_012
+    100010: Isla_Fantasma_hierdra_02
+    100012: Isla_Fantasma_hierdra_03
+    100014: Isla_Fantasma_hierdra_04
+    100016: Isla_Fantasma_hierdra_05
+    100018: Isla_Fantasma_hierdra_06
+    100020: Isla_Fantasma_hierdra_07
+    100022: Isla_Fantasma_hierdra_08
+    100024: Isla_Fantasma_hierdra_09
+    400000: //RootNode
+    400002: Isla_Fantasma_hierdra_01
+    400004: Isla_Fantasma_hierdra_010
+    400006: Isla_Fantasma_hierdra_011
+    400008: Isla_Fantasma_hierdra_012
+    400010: Isla_Fantasma_hierdra_02
+    400012: Isla_Fantasma_hierdra_03
+    400014: Isla_Fantasma_hierdra_04
+    400016: Isla_Fantasma_hierdra_05
+    400018: Isla_Fantasma_hierdra_06
+    400020: Isla_Fantasma_hierdra_07
+    400022: Isla_Fantasma_hierdra_08
+    400024: Isla_Fantasma_hierdra_09
+    2300000: Isla_Fantasma_hierdra_01
+    2300002: Isla_Fantasma_hierdra_010
+    2300004: Isla_Fantasma_hierdra_011
+    2300006: Isla_Fantasma_hierdra_012
+    2300008: Isla_Fantasma_hierdra_02
+    2300010: Isla_Fantasma_hierdra_03
+    2300012: Isla_Fantasma_hierdra_04
+    2300014: Isla_Fantasma_hierdra_05
+    2300016: Isla_Fantasma_hierdra_06
+    2300018: Isla_Fantasma_hierdra_07
+    2300020: Isla_Fantasma_hierdra_08
+    2300022: Isla_Fantasma_hierdra_09
+    3300000: Isla_Fantasma_hierdra_01
+    3300002: Isla_Fantasma_hierdra_010
+    3300004: Isla_Fantasma_hierdra_011
+    3300006: Isla_Fantasma_hierdra_012
+    3300008: Isla_Fantasma_hierdra_02
+    3300010: Isla_Fantasma_hierdra_03
+    3300012: Isla_Fantasma_hierdra_04
+    3300014: Isla_Fantasma_hierdra_05
+    3300016: Isla_Fantasma_hierdra_06
+    3300018: Isla_Fantasma_hierdra_07
+    3300020: Isla_Fantasma_hierdra_08
+    3300022: Isla_Fantasma_hierdra_09
+    4300000: Isla_Fantasma_hierdra_09
+    4300002: Isla_Fantasma_hierdra_04
+    4300004: Isla_Fantasma_hierdra_03
+    4300006: Isla_Fantasma_hierdra_01
+    4300008: Isla_Fantasma_hierdra_010
+    4300010: Isla_Fantasma_hierdra_012
+    4300012: Isla_Fantasma_hierdra_011
+    4300014: Isla_Fantasma_hierdra_02
+    4300016: Isla_Fantasma_hierdra_05
+    4300018: Isla_Fantasma_hierdra_08
+    4300020: Isla_Fantasma_hierdra_07
+    4300022: Isla_Fantasma_hierdra_06
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
