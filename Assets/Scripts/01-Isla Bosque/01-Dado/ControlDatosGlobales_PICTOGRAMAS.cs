@@ -25,16 +25,4 @@ public class ControlDatosGlobales_PICTOGRAMAS : MonoBehaviour
 	public GameObject Cartel2;
 	public GameObject Cartel3;
 
-	// Use this for initialization
-	void Start () 
-	{
-
-	}
-
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 }

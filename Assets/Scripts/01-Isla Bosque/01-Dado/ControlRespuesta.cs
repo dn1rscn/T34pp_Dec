@@ -72,11 +72,6 @@ public class ControlRespuesta : MonoBehaviour
 		IfinJuego.SetActive (false);
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public void SeleccionRespuesta ()
 	{
@@ -120,6 +115,8 @@ public class ControlRespuesta : MonoBehaviour
 	void correcto()
 	{
 		animator_Dino.Play("Acierto_01_dino");
+		animator_Dino.Play("Acierto_02_dino");
+
 		animator_panelCanvas.Play("acierto");
 
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
@@ -136,8 +133,6 @@ public class ControlRespuesta : MonoBehaviour
 
 		//ejecutarSonidoAcierto
 		//GameObject.Find("SonidoAcierto").GetComponent<AudioSource>().Play();
-
-
 
 		GameObject.Find ("Dado").GetComponent<Renderer> ().sharedMaterial = Im_Dado;
 		GameObject.Find("Dado").GetComponent<Animator>().Play ("Tirar_dado");
