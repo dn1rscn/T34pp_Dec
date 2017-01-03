@@ -33,10 +33,10 @@ public class Interface_Mundo : MonoBehaviour
 	public void abrir()
 	{
 		GameObject.Find ("Chico_TEAPlay").GetComponent<ControlProtaMouse_2> ().enabled = false;
+		GameObject.Find ("cuadro").GetComponent<Animator> ().Play ("abrir");
 		Bcerrar.SetActive (true);
 		Babrir.SetActive (false);
 		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent> ();
-		GameObject.Find ("cuadro").GetComponent<Animator> ().Play ("abrir");
 		agente.destination = GameObject.Find ("Chico_TEAPlay").transform.position;
 		GameObject.Find ("Chico_TEAPlay").GetComponent<Animator> ().SetBool("andar",false);
 		
