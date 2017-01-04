@@ -154,6 +154,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 			{
 				CNotificaciones.misiones.SetActive(true);
 				CMisiones.ejerF_3estrellas[cs.Secuencia-1]=true;
+				CMisiones.Mision_Fantasma();
 				CNotificaciones.MisionFantasma[cs.Secuencia-1].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 			}

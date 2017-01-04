@@ -18,7 +18,7 @@ public class controlObjetosMision : MonoBehaviour {
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 
 		//Accedemos al script de puntuacion de objetos
-		CPO = GameObject.Find ("objetos").GetComponent<Control_PuntuacionObjetos> ();
+		CPO = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
 	
 		gObjArray_partesGafasFantasma = GameObject.FindGameObjectsWithTag("gafaFantasma");
 		gObjArray_bateriasRobot = GameObject.FindGameObjectsWithTag("bateriaRobot");

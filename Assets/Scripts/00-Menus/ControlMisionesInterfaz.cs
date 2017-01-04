@@ -7,6 +7,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	ControlMisiones CMisiones;
 	Control_monedas cM;
+	Control_PuntuacionObjetos CPO;
 
 	public Sprite[] MisionesOK;
 	public GameObject[] objetivosOK_Dino;
@@ -29,6 +30,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		cM=GameObject.Find("controlMonedas").GetComponent<Control_monedas>();
+		CPO = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
 
 		TMonedas = GameObject.Find ("monedas").GetComponent<Text> ();
 		TMonedas.text = cM.monedas.ToString();
@@ -40,6 +42,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		ActualizarMisionDino ();
 		ActualizarMisionFantasma();
 		ActualizarMisionRobot();
+
+		CPO.actualizar_Objetos ();
 	}
 	public void ActualizarMisionDino()
 	{
@@ -76,6 +80,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionFantasmaCompletada==true&&cdg_3d.hemosHabladoConFantasma==true)
 		{
+			misionDino.GetComponent<Image> ().sprite = MisionesOK [1];
 			//cambiar imagen o remarcar mision
 			//activar interactable
 			//misionFantasma.GetComponent<Button>().enabled=true;

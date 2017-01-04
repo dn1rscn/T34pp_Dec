@@ -12,19 +12,29 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 	public int GafasRecogidas;
 	public int EnergiaRecogida;
 
+	void Update()
+	{
+	}
+
 	void Awake ()
 	{
-		
-		if (cont == null) {
+		actualizar_Objetos ();
+
+		if (cont == null) 
+		{
 			cont = this;
 			DontDestroyOnLoad (gameObject);
-		} else if (cont != this) {
+
+
+		} else if (cont != this) 
+		{
 			Destroy(gameObject);
 		}
+
 	}
 	public void actualizar_Objetos()
 	{
-		Gafas.GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
-		Energia.GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
+		GameObject.Find("NumGafas").GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
+		GameObject.Find("NumEnergia").GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
 	}
 }

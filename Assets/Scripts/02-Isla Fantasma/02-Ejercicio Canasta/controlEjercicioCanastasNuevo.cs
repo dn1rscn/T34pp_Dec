@@ -367,6 +367,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 			if(CMisiones.ejerF_3estrellas[4]==false)
 			{
 				CMisiones.ejerF_3estrellas[4]=true;
+				CMisiones.Mision_Fantasma();
 				CNotificaciones.MisionFantasma[4].SetActive(true);
 				GameObject.Find("Notificaciones2").GetComponent<Animator>().Play("abrirNotificacion");
 			}
