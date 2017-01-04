@@ -42,10 +42,5 @@ public class ControlDesbloqueosIslaBosque : MonoBehaviour
 		}
 		
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+
 }

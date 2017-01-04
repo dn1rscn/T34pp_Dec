@@ -12,9 +12,6 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 	public int GafasRecogidas;
 	public int EnergiaRecogida;
 
-	void Update()
-	{
-	}
 
 	void Awake ()
 	{

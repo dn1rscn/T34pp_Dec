@@ -4,7 +4,8 @@ using System.Collections;
 public class controlHuevoDino : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
-	
+	ControlMisiones CMisiones;
+
 	Animator animatorHuevo;
 	ControlCamara ctlCamara;
 
@@ -17,6 +18,9 @@ public class controlHuevoDino : MonoBehaviour {
 	void Start () {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
+
+		//ACCEDEMOS AL SCRIPT DE SEGUIMIENTO DE LAS MISIONES
+		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 
 		animatorHuevo = gameObject.GetComponent<Animator>();
 		ctlCamara = GameObject.Find("PivoteCamaraPrincipal").GetComponent<ControlCamara>();
@@ -33,8 +37,10 @@ public class controlHuevoDino : MonoBehaviour {
 				destinoHuevo_Sonidos();
 			}
 
-			//else if( NOS HEMOS PASADO CON 3 ESTRELLAS TODOS LOS NIVELES ) { huevoParaCoger.setActive(true); } 			************ PARA TERMINAR **********
-
+			else if( CMisiones.misionDinoCompletada) 
+			{
+				huevoParaCoger.SetActive(true); 
+			} 
 			else {
 				animatorHuevo.Play("huevoInvisible");
 			}

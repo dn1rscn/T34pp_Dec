@@ -32,9 +32,4 @@ public class controlDesbloqueoIslasMapa : MonoBehaviour
 			Islas[1].GetComponent<Image>().sprite = islas_Locked[1];
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

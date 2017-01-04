@@ -36,6 +36,10 @@ public class ControlRespuesta : MonoBehaviour
 	public GameObject estrella3;
 
 	public GameObject boton_back;
+	public GameObject boton_SiguienteNivel;
+	public GameObject boton_VolverAJugar;
+	public GameObject boton_SeguirJugando;
+
 
 	Renderer miRender;
 	
@@ -63,6 +67,20 @@ public class ControlRespuesta : MonoBehaviour
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
+
+		if(boton_SiguienteNivel){
+			if(DD.Nivel2Dado && Application.loadedLevelName!="Nivel2_dado2.0"){
+				boton_SiguienteNivel.SetActive(true);
+			} 
+			else{
+				boton_SiguienteNivel.SetActive(false);
+			}
+		}
+
+		if (boton_VolverAJugar){
+			boton_VolverAJugar.SetActive(false);
+		}
+
 		boton_back.SetActive(true);
 
 		resetearDado ();
@@ -70,6 +88,8 @@ public class ControlRespuesta : MonoBehaviour
 		CSlider.ProgresoDado ();
 
 		IfinJuego.SetActive (false);
+		IfinJuego2.SetActive (false);
+
 
 	}
 
@@ -114,6 +134,12 @@ public class ControlRespuesta : MonoBehaviour
 
 	void correcto()
 	{
+		if(DD.Nivel2Dado && Application.loadedLevelName!="Nivel2_dado2.0"){
+			if (boton_SiguienteNivel){
+				boton_SiguienteNivel.SetActive(true);
+			}
+		}
+
 		animator_Dino.Play("Acierto_01_dino");
 		animator_Dino.Play("Acierto_02_dino");
 
@@ -161,6 +187,8 @@ public class ControlRespuesta : MonoBehaviour
 		}
 		if(cdg.aciertos==15)
 		{
+			boton_SiguienteNivel.SetActive(true);
+
 			if(CMisiones.dado1==true&&CMisiones.ejerB_3estrellas[0]==false)
 			{
 				CMisiones.ejerB_3estrellas[0]=true;
@@ -230,8 +258,9 @@ public class ControlRespuesta : MonoBehaviour
 		if (cdg.fallos == 3) 
 		{
 			vidas [cdg.fallos-1].SetActive (false);
-
 			boton_back.SetActive(false);
+			boton_VolverAJugar.SetActive(true);
+			boton_SeguirJugando.SetActive(false);
 
 			cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 			CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
@@ -323,8 +352,9 @@ public class ControlRespuesta : MonoBehaviour
 	public void SalirDelJuego()
 	{
 		boton_back.SetActive (false);
-		IfinJuego2.SetActive (true);
-		IfinJuego2.GetComponent<Animator>().Play ("AnimFinPartida");
+
+		IfinJuego.SetActive (true);
+		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
 
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		
@@ -350,13 +380,15 @@ public class ControlRespuesta : MonoBehaviour
 		if (cdg.aciertos >= 10) 
 		{
 			Invoke ("ActivarEstrella2", 2.0f);
-			
+			boton_SiguienteNivel.SetActive(true);
+		
 		}
 		if (cdg.aciertos >= 15) 
-		{
+		{			
 			Invoke ("ActivarEstrella3", 3.0f);
+			boton_SiguienteNivel.SetActive(true);
+
 		}
-		
 		
 		TpuntuacionFin.text = "\nACIERTOS: " + cdg.aciertos.ToString () + "\nCOMBOS: " + cdg.combos.ToString ();
 		
@@ -365,6 +397,7 @@ public class ControlRespuesta : MonoBehaviour
 	public void seguirJugando()
 	{
 		boton_back.SetActive (true);
+		IfinJuego.SetActive (false);
 		IfinJuego2.SetActive (false);
 		GameObject.Find ("Dado").GetComponent<ControlDado>().enabled=true;
 		cM.monedas = cM.monedas - cM.monedas_dado;

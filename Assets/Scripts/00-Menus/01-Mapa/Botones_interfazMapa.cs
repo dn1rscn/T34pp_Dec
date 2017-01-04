@@ -63,13 +63,7 @@ public class Botones_interfazMapa : MonoBehaviour
 
 
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-	
+
 	public void Volver_mundo ()
 	{
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
