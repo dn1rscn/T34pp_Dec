@@ -95,6 +95,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
 
@@ -250,6 +251,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 		Cargar_Em = GameObject.Find ("ControlEscenasEmpatia").GetComponent<CargarEmpatia> ();
 		print ("error");
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("fallo_robot");
 		CE.Intentos++;
 		
 		if(CE.Intentos==4)

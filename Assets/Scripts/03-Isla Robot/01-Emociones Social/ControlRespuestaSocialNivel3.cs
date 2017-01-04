@@ -73,6 +73,7 @@ public class ControlRespuestaSocialNivel3 : MonoBehaviour
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 		
 		print ("correcto");
 		IfinJuego.SetActive(true);
@@ -141,6 +142,7 @@ public class ControlRespuestaSocialNivel3 : MonoBehaviour
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		print ("error");
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
+		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("fallo_robot");
 		
 		CE.Intentos++;
 		//actualizarPuntuacion ();
