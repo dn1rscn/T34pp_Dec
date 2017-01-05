@@ -56,13 +56,13 @@ public class controlPortales : MonoBehaviour {
 			if(coli.gameObject.name=="trigger_EjercicioPictogramas")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "ejercicioDado";
+				destinoPortal= "Ejercicio dado";
 				print(destinoPortal);
 			}
 			else if(coli.gameObject.name=="trigger_EjercicioSonidos")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "ejercicioSonidos";
+				destinoPortal= "Ejercicio sonidos";
 				print(destinoPortal);
 
 				//animator_PanelCanvas.Play("pasarABlanco");
@@ -71,7 +71,7 @@ public class controlPortales : MonoBehaviour {
 			else if(coli.gameObject.name=="trigger_IslaFantasma")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "islaFantasma";
+				destinoPortal= "Isla Fantasma";
 				print(destinoPortal);
 				
 				//animator_PanelCanvas.Play("pasarABlanco");
@@ -82,7 +82,7 @@ public class controlPortales : MonoBehaviour {
 			else if(coli.gameObject.name=="trigger_ejercicioSecuencias")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "ejercicioSecuencias";
+				destinoPortal= "Ejercicio secuencias";
 				print(destinoPortal);
 				
 				//animator_PanelCanvas.Play("pasarABlanco");
@@ -91,14 +91,14 @@ public class controlPortales : MonoBehaviour {
 			else if(coli.gameObject.name=="trigger_ejercicioCanasta")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "juegoCanasta";
+				destinoPortal= "Juego canasta";
 				print(destinoPortal);
 				
 			}
 			else if(coli.gameObject.name=="trigger_islaMecanica")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "islaMecanica";
+				destinoPortal= "Isla Mecanica";
 				print(destinoPortal);
 				
 			}
@@ -108,21 +108,21 @@ public class controlPortales : MonoBehaviour {
 			else if(coli.gameObject.name=="trigger_ejercicioEmocionesSocial")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "emocionesSocial";
+				destinoPortal= "Ejercicio empatia";
 				print(destinoPortal);
 				
 			}
 			else if(coli.gameObject.name=="trigger_ejercicioEmociones")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "ejercicioEmociones";
+				destinoPortal= "Ejercicio emociones";
 				print(destinoPortal);
 				
 			}
 			else if(coli.gameObject.name=="trigger_altarFinal")
 			{
 				//CDG_Mundo3D.posicionPersonaje = 2;
-				destinoPortal= "altarFinal";
+				destinoPortal= "Isla Altar";
 				print(destinoPortal);
 				
 			}
@@ -155,14 +155,14 @@ public class controlPortales : MonoBehaviour {
 		{
 		
 		//ISLA BOSQUE
-		case "ejercicioDado":
+		case "Ejercicio dado":
 			Application.LoadLevel("Dado_SeleccionNivel");
 			break;
-		case "ejercicioSonidos":
+		case "Ejercicio sonidos":
 			Application.LoadLevel("Sonidos_menu_Seleccion");
 			print ("Cargando ejercicio sonidos...");
 			break;
-		case "islaFantasma":
+		case "Isla Fantasma":
 
 			//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla, y no en la 6 
 			CDG_Mundo3D.posicionPersonaje = 1;
@@ -175,15 +175,15 @@ public class controlPortales : MonoBehaviour {
 			break;
 
 		//ISLA FANTASMA
-		case "ejercicioSecuencias":
+		case "Ejercicio secuencias":
 			Application.LoadLevel("SECUENCIAS_menu_seleccion");
 			print ("Cargando ejercicio secuencias...");
 			break;
-		case "juegoCanasta":
+		case "Juego canasta":
 			Application.LoadLevel("10_iFantasma_P2_Canasta");
 			print ("Cargando ejercicio canasta...");
 			break;
-		case "islaMecanica":
+		case "Isla Mecanica":
 			//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla, y no en la 6 
 			CDG_Mundo3D.posicionPersonaje = 1;
 
@@ -195,15 +195,15 @@ public class controlPortales : MonoBehaviour {
 			break;
 
 		//ISLA MECANICA
-		case "emocionesSocial":
+		case "Ejercicio empatia":
 			Application.LoadLevel("Empatia_MenusSeleccion");
 			print ("Cargando ejercicio emociones social...");
 			break;
-		case "ejercicioEmociones":
+		case "Ejercicio emociones":
 			Application.LoadLevel("2-Emociones_SelecNivel");
 			print ("Cargando ejercicio emociones...");
 			break;
-		case "altarFinal":
+		case "Isla Altar":
 			Application.LoadLevel("Isla_altar");
 			print ("Cargando altarFINAL...");
 			CDG_Mundo3D.islaBosque = true;

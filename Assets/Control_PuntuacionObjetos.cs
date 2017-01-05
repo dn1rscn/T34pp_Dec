@@ -31,7 +31,11 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 	}
 	public void actualizar_Objetos()
 	{
-		GameObject.Find("NumGafas").GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
+		if(GameObject.Find("NumGafas")){
+			GameObject.Find("NumGafas").GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
+		}
+		if(GameObject.Find("NumEnergia")){
 		GameObject.Find("NumEnergia").GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
+		}
 	}
 }
