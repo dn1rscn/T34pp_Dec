@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class controlHuevoDino : MonoBehaviour {
@@ -25,7 +25,6 @@ public class controlHuevoDino : MonoBehaviour {
 		animatorHuevo = gameObject.GetComponent<Animator>();
 		ctlCamara = GameObject.Find("PivoteCamaraPrincipal").GetComponent<ControlCamara>();
 
-
 		if(!CDG_Mundo3D.huevoInvisible)
 		{
 			animatorHuevo.Play("AnimEgg_00_reposo");
@@ -39,7 +38,8 @@ public class controlHuevoDino : MonoBehaviour {
 
 			else if( CMisiones.misionDinoCompletada) 
 			{
-				huevoParaCoger.SetActive(true); 
+				huevoParaCoger.SetActive(true);
+				animatorHuevo.Play("huevoInvisible");
 			} 
 			else {
 				animatorHuevo.Play("huevoInvisible");
