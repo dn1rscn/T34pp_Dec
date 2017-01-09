@@ -217,7 +217,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				{
 					CE.AEmociones[CE.NivelEmociones]=true;
 				}
-				CMisiones.ejerB_3estrellas[CE.NivelEmociones+2]=true;
+				CMisiones.ejerM_3estrellas[CE.NivelEmociones+2]=true;
 				CMisiones.Mision_Robot();
 
 				

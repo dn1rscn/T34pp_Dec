@@ -132,17 +132,23 @@ public class Botones_interfazMapa : MonoBehaviour
 	{
 		Debug.Log ("A Isla Bosque");
 		CDG_Mundo3D.islaBosque = true;
+		CDG_Mundo3D.islaFant = false;
+		CDG_Mundo3D.islaMec = false;
 		Application.LoadLevel ("Isla_bosque");
 	}
 	void ToFantasma()
 	{
 		Debug.Log ("A Isla Fantasma");
+		CDG_Mundo3D.islaBosque = false;
 		CDG_Mundo3D.islaFant = true;
+		CDG_Mundo3D.islaMec = false;
 		Application.LoadLevel ("Isla_fantasma");
 	}
 	void ToRobot()
 	{
 		Debug.Log ("A Isla Robot");
+		CDG_Mundo3D.islaBosque = false;
+		CDG_Mundo3D.islaFant = false;
 		CDG_Mundo3D.islaMec = true;
 		Application.LoadLevel ("Isla_Mecanica_v3");
 	}

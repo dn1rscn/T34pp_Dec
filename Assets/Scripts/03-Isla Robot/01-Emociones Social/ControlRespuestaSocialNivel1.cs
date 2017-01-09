@@ -152,7 +152,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					DD.AEmpatia[1] = true;
 					if(CE.NivelEmpatia == 1 &&CMisiones.ejerM_3estrellas[0]==false)
 					{
-						CMisiones.ejerB_3estrellas[0]=true;
+						CMisiones.ejerM_3estrellas[0]=true;
 						CMisiones.Mision_Robot();
 						CNotificaciones.GMision.SetActive(true);
 						CNotificaciones.MisionDino[0].SetActive(true);
@@ -160,7 +160,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					}
 					if(CE.NivelEmpatia==3&&CMisiones.ejerM_3estrellas[2]==false)
 					{
-						CMisiones.ejerB_3estrellas[2]=true;
+						CMisiones.ejerM_3estrellas[2]=true;
 						CMisiones.Mision_Robot();
 						CNotificaciones.GMision.SetActive(true);
 						CNotificaciones.MisionDino[2].SetActive(true);

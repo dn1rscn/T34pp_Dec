@@ -152,7 +152,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 
 					if(CE.NivelEmpatia == 2 &&CMisiones.ejerM_3estrellas[1]==false)
 					{
-						CMisiones.ejerB_3estrellas[1]=true;
+						CMisiones.ejerM_3estrellas[1]=true;
 						CMisiones.Mision_Robot();
 						CNotificaciones.GMision.SetActive(true);
 						CNotificaciones.MisionDino[1].SetActive(true);
