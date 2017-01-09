@@ -23,19 +23,16 @@ public class ControlDesbloqueoNivelesEmpatia : MonoBehaviour
 			if(DD.AEmpatia[i]==true)
 			{
 				Niveles[i].GetComponent<Image>().sprite = UnLock[i];
+				Niveles[i].transform.GetChild(0).gameObject.SetActive(true);
 				Niveles[i].GetComponent<Button>().enabled=true;
 			}
 			else if(DD.AEmpatia[i]==false)
 			{
 				Niveles[i].GetComponent<Image>().sprite=Lock[i];
+				Niveles[i].transform.GetChild(0).gameObject.SetActive(false);
 				Niveles[i].GetComponent<Button>().enabled=false;
 			}
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+
 }

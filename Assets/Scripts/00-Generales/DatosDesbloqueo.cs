@@ -30,14 +30,9 @@ public class DatosDesbloqueo : MonoBehaviour
 		AEmpatia [0] = true;
 		DontDestroyOnLoad (this);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 	void Awake ()
 	{
-		
 		if (cont == null) {
 			cont = this;
 			DontDestroyOnLoad (gameObject);
