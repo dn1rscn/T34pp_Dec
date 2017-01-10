@@ -35,6 +35,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		TMonedas = GameObject.Find ("monedas").GetComponent<Text> ();
 		TMonedas.text = cM.monedas.ToString();
 
+		GL.Clear (true, false, Color.black);
+
 		objetivosMisionDino ();
 		obejtivosMisionFantasma ();
 		obejtivosMisionRobot ();
@@ -45,6 +47,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 
 		CPO.actualizar_Objetos ();
 	}
+	
+
 	public void ActualizarMisionDino()
 	{
 		if (CMisiones.misionDinoCompletada==false) 
@@ -80,10 +84,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionFantasmaCompletada==true&&cdg_3d.hemosHabladoConFantasma==true)
 		{
-			misionDino.GetComponent<Image> ().sprite = MisionesOK [1];
-			//cambiar imagen o remarcar mision
-			//activar interactable
-			//misionFantasma.GetComponent<Button>().enabled=true;
+			misionFantasma.GetComponent<Image> ().sprite = MisionesOK [1];
 		}
 	}
 	public void ActualizarMisionRobot()
@@ -102,8 +103,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionRobotCompletada==true&&cdg_3d.hemosHabladoConRobot==true)
 		{
-			//cambiar imagen o remarcar mision
-			//activar interactable
+			misionRobot.GetComponent<Image> ().sprite = MisionesOK [2];
 		}
 	}
 
