@@ -66,6 +66,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionDinoCompletada==true&&cdg_3d.hemosHabladoConDino==true)
 		{
+			misionDino.SetActive (true);
 			misionDino.GetComponent<Image> ().sprite = MisionesOK [0];
 		}
 	}
@@ -84,6 +85,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionFantasmaCompletada==true&&cdg_3d.hemosHabladoConFantasma==true)
 		{
+			misionFantasma.SetActive (true);
+			print("cambiamos imagen");
 			misionFantasma.GetComponent<Image> ().sprite = MisionesOK [1];
 		}
 	}
@@ -103,6 +106,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		} 
 		else if(CMisiones.misionRobotCompletada==true&&cdg_3d.hemosHabladoConRobot==true)
 		{
+			misionRobot.SetActive (true);
 			misionRobot.GetComponent<Image> ().sprite = MisionesOK [2];
 		}
 	}
