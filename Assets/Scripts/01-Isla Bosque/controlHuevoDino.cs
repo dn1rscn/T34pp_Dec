@@ -45,7 +45,6 @@ public class controlHuevoDino : MonoBehaviour {
 				animatorHuevo.Play("huevoInvisible");
 			} 
 			else {
-
 				huevoParaCoger.SetActive(false);
 				animatorHuevo.Play("huevoInvisible");
 			}
