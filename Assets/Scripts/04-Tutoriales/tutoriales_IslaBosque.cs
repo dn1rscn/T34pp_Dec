@@ -15,7 +15,7 @@ public class tutoriales_IslaBosque : MonoBehaviour {
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
 		scriptCtrlProta.enabled = false;
-		print("scriptProta_desactivado");
+		//print("controlProta_desactivado");
 
 
 		//Si es la primera vez que accedemos a la isla:

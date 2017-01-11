@@ -12,17 +12,27 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 	public GameObject botoncreditos;
 	public GameObject creditos;
 
+	public GameObject prota;
+	public GameObject posicionFinal;
+
+	NavMeshAgent agente;
+
 	void Start(){
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
-
+		agente = prota.GetComponent<NavMeshAgent>();
 	}
 
 	void OnTriggerEnter(Collider coli)
 	{
-
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
+			//Desactivamos los controles del prota y lo enviamos a la posicion final
+			prota.GetComponent<CapsuleCollider>().enabled = false;
+			prota.GetComponent<ControlProtaMouse_2>().enabled = false;
+			agente.SetDestination(posicionFinal.transform.position);
+
+
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");
 			Animator dino_animator = dino.GetComponent<Animator> ();
 			dino_animator.SetBool ("bCelebra", true);
@@ -38,9 +48,20 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 
 		Invoke("mostrarInterfazIslaAltar",3.0f);
 	}
+
+	void FixedUpdate(){
+		if (agente.velocity!=Vector3.zero)		
+		{
+			prota.GetComponent<Animator>().SetBool ("andar", true);
+		}
+		else
+		{
+			prota.GetComponent<Animator>().SetBool("andar",false);
+		}
+	}
+
 	void OnTriggerExit(Collider coli)
 	{
-
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			GameObject dino = GameObject.Find ("Dinoi_animaciones_v3");
@@ -59,9 +80,6 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 			Animator fantasma_animator = fantasma.GetComponent<Animator> ();
 			fantasma_animator.SetBool ("bCelebra", false);
 		}
-		
-		
-		
 	}
 
 	public void mostrarInterfazIslaAltar(){

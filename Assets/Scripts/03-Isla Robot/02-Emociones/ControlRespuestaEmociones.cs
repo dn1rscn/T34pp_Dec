@@ -65,12 +65,6 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	public void Respuesta()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
@@ -88,9 +82,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 
 	void Correcto()
 	{
-		print ("correcto");
+		//print ("correcto");
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
-		print (CEA.ARespuesta.Length);
+		//print (CEA.ARespuesta.Length);
 		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 		CE.aciertos++;
 

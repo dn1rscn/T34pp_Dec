@@ -48,8 +48,8 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 			respuestaCorrectaAleat = Random.Range (1, 8);
 			break;
 		}
-		print (respuestaCorrectaAleat);
-		print (PreguntaAleat);
+		//print (respuestaCorrectaAleat);
+		//print (PreguntaAleat);
 		switch (respuestaCorrectaAleat) 
 		{
 		case 1:					//respuesta correcta en cartel1
@@ -128,7 +128,7 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 		default:
 			break;
 		}
-		print (respuestaAleat);
+		//print (respuestaAleat);
 	}
 	void noRepetir()
 	{

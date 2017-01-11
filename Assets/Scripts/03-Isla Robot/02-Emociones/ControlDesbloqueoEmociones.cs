@@ -22,11 +22,13 @@ public class ControlDesbloqueoEmociones : MonoBehaviour
 			if(CE.AEmociones[i]==true)
 			{
 				Acontrol_Emociones[i].GetComponent<Image>().sprite = imagenes_unlocked[i];
+				Acontrol_Emociones[i].transform.GetChild(0).gameObject.SetActive(true);
 				Acontrol_Emociones[i].GetComponent<Button>().enabled=true;
 			}
 			else if(CE.AEmociones[i]==false)
 			{
-				Acontrol_Emociones[i].GetComponent<Image>().sprite=imagenes_Locked[i];
+				Acontrol_Emociones[i].GetComponent<Image>().sprite=imagenes_Locked[i];		
+				Acontrol_Emociones[i].transform.GetChild(0).gameObject.SetActive(false);
 				Acontrol_Emociones[i].GetComponent<Button>().enabled=false;
 			}
 		}

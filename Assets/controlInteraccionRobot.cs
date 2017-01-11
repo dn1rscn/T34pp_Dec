@@ -100,8 +100,10 @@ public class controlInteraccionRobot : MonoBehaviour {
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
 
+
 					//Desactivamos el control del prota mientras estemos conversando
 					ctrlProta.enabled = false;
+					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
 
 					//Y mandamos su NavMeshAgent a la posicion de conversar con el Robot
 					agente.SetDestination(posicionConversarConRobot);

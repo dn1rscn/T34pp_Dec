@@ -71,7 +71,7 @@ public class control_triggersPosicion : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider coli){
-		print (coli.gameObject.name);
+		//print (coli.gameObject.name);
 
 		switch (coli.gameObject.name)
 		{

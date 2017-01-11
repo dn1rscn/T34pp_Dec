@@ -37,9 +37,7 @@ public class controlInteraccionDino : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-
 		bocadillosRestantes = array_BocadillosConversacion.Length;
-
 
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
@@ -61,6 +59,17 @@ public class controlInteraccionDino : MonoBehaviour {
 		animator_Prota = GameObject.Find ("Chico_TEAPlay").GetComponent<Animator>();
 
 		ctrlProta = GameObject.Find ("Chico_TEAPlay").GetComponent<ControlProtaMouse_2>();
+
+		//Si ya le hemos dado el huevo al dino...
+		if(CDG_Mundo3D.huevoDinoEntregado){
+			huevoNido.SetActive (true);
+
+			CDG_Mundo3D.hemosHabladoConDino = true; 
+			CDG_Mundo3D.tenemosHuevoDino = true;
+
+		}
+
+
 	}
 
 	void OnTriggerEnter(Collider coli)

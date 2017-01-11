@@ -65,8 +65,8 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		if(CDG_Mundo3D.gafasFantasmaEntregadas){
 			gafasFantasma.SetActive (true);
 			animator_Fantasma.Play("reposo_fantasma");
-			CDG_Mundo3D.hemosHabladoConRobot = true; 
-			CDG_Mundo3D.tenemosBateriasRobot = true;
+			CDG_Mundo3D.hemosHabladoConFantasma = true; 
+			CDG_Mundo3D.tenemosGafasFantasma = true;
 			CDG_Mundo3D.IslaFantasma_Desbloqueada = true;
 			CDG_Mundo3D.check_partesGafas [0] = true;
 			CDG_Mundo3D.check_partesGafas [1] = true;
@@ -97,6 +97,8 @@ public class controlInteraccionFantasma : MonoBehaviour {
 				//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 				spr_bocadilloFantasma_01.enabled=true;
 				gObj_botonPasarBocadillo.SetActive(true);
+				GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+
 			}
 
 			//Si ya hemos hablado con el Fantasma..
@@ -106,11 +108,12 @@ public class controlInteraccionFantasma : MonoBehaviour {
 				if(CDG_Mundo3D.tenemosGafasFantasma && !CDG_Mundo3D.gafasFantasmaEntregadas){
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
-					
+
 					//Desactivamos el control del prota mientras estemos conversando
 					ctrlProta.enabled = false;
-					
-					//Y mandamos su NavMeshAgent a la posicion de conversar con el Robot
+					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+
+					//Y mandamos su NavMeshAgent a la posicion de conversar con el Fantasma
 					agenteProta.SetDestination(posicionConversarConFantasma);
 					
 					//Activamos la animacion de zoom de la camara
@@ -120,7 +123,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 					spr_bocadilloFantasma_FinMision.enabled=true;
 					gObj_botonPasarBocadillo_2.SetActive(true);
 					
-					CDG_Mundo3D.robotArreglado=true;
+					CDG_Mundo3D.gafasFantasmaEntregadas=true;
 
 					animator_Fantasma.SetBool("acierto_Fantasma",true);
 					//Hacemos que el al fantasma le aparezcan las gafas

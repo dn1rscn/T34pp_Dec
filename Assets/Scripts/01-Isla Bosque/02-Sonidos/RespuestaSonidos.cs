@@ -71,12 +71,6 @@ public class RespuestaSonidos : MonoBehaviour
 			CNotificaciones.MisionDino[i].SetActive(false);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 
 	public void respuesta1()
 	{
@@ -99,8 +93,6 @@ public class RespuestaSonidos : MonoBehaviour
 		{
 			GameObject.Find("Isla_Bosque_Boton_Play").GetComponent<Animator>().Play ("anim_Play");
 		}
-		
-	
 	}
 
 	public void respuesta2()
@@ -179,6 +171,7 @@ public class RespuestaSonidos : MonoBehaviour
 		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 
 		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Acierto_01_dino");
+		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Acierto_02_dino");
 		
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
 
@@ -291,7 +284,9 @@ public class RespuestaSonidos : MonoBehaviour
 	{
 		CS.fallos++;
 
-		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Fallo_01_dino");
+		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Fallo_01_dino");		
+		GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>().Play("Fallo_02_dino");
+
 		GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
 
 		if(CS.fallos==3)

@@ -36,12 +36,17 @@ public class controlHuevoDino : MonoBehaviour {
 				destinoHuevo_Sonidos();
 			}
 
-			else if( CMisiones.misionDinoCompletada) 
+			else if(CMisiones.misionDinoCompletada) 
 			{
 				huevoParaCoger.SetActive(true);
+				if(!CDG_Mundo3D.tenemosHuevoDino){
+					huevoParaCoger.SetActive(false);
+				}
 				animatorHuevo.Play("huevoInvisible");
 			} 
 			else {
+
+				huevoParaCoger.SetActive(false);
 				animatorHuevo.Play("huevoInvisible");
 			}
 		}
@@ -77,6 +82,7 @@ public class controlHuevoDino : MonoBehaviour {
 				break;
 			case 2:
 				ctlCamara.rotarCam_Izq();
+				Invoke("rotarCamSegundaVez",0.1f);
 				animatorHuevo.Play("AnimEgg_02");
 				print ("El huevo avanza hasta el portal de sonidos");
 
@@ -91,5 +97,10 @@ public class controlHuevoDino : MonoBehaviour {
 		else {
 			animatorHuevo.Play("huevoInvisible");
 		}
+	}
+
+	public void rotarCamSegundaVez()
+	{
+		ctlCamara.rotarCam_Izq();
 	}
 }
