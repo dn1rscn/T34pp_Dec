@@ -77,7 +77,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 		
 		if (cs.fallos == 2 ) 
 		{
-			if(cs.Secuencia==1&&DD.Canasta==true)
+			if(cs.Secuencia==1&&DD.Canasta==true&&CDG_Mundo3D.IslaMec_Desbloqueada==false)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
@@ -102,7 +102,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 		}
 		if (cs.fallos == 1) 
 		{
-			if(cs.Secuencia==1&&DD.Canasta==true)
+			if(cs.Secuencia==1&&DD.Canasta==true&&CDG_Mundo3D.IslaMec_Desbloqueada==false)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
@@ -130,7 +130,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 			Invoke ("ActivarEstrella1", 1.0f);
 			Invoke ("ActivarEstrella2", 2.0f);
 			Invoke ("ActivarEstrella3", 3.0f);
-			if(cs.Secuencia==1&&DD.Canasta==true)
+			if(cs.Secuencia==1&&DD.Canasta==true&&CDG_Mundo3D.IslaMec_Desbloqueada==false)
 			{
 				CDG_Mundo3D.IslaMec_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
