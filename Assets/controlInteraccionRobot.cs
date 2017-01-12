@@ -160,6 +160,8 @@ public class controlInteraccionRobot : MonoBehaviour {
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			posicionCorrecta=false;
+			GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+
 		}
 	}
 

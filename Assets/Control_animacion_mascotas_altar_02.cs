@@ -87,8 +87,13 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 	}
 
 	public void cargarMenuInicial(){
-		Application.LoadLevel("personalizacion2.0");
 		CDG_Mundo3D.IKKI = true;
+		CDG_Mundo3D.islaBosque=false;
+		CDG_Mundo3D.islaFant = false;
+		CDG_Mundo3D.islaMec=false;
+
+		Application.LoadLevel("personalizacion2.0");
+
 	}
 
 	public void cargarcreditos () {

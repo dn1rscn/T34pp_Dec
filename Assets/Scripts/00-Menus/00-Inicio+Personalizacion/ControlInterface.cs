@@ -108,12 +108,6 @@ public class ControlInterface : MonoBehaviour
 		}
 	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 	public void Mapa()
 	{
 		Application.LoadLevel ("Mapa");
@@ -137,7 +131,7 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void PersonalizacionInicial()
 	{
-		print ("cam personaje");
+		//print ("cam personaje");
 		if (cdgP.inicio == true) {
 			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
 		} else if (cdgP.inicio == false) 
@@ -147,7 +141,7 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void PersonalizacionJuego()
 	{
-		print ("hola");
+		//print ("hola");
 		cdgP.inicio = false;
 	}
 	public void mascotas()

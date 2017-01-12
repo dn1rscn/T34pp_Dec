@@ -14,6 +14,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 	Vector3 posicionConversarConFantasma;
 	Vector3 posicionReposoFantasma;
+	GameObject posicionReposoFantasma2;
 
 	ControlProtaMouse_2 ctrlProta;
 
@@ -53,6 +54,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 		posicionConversarConFantasma = GameObject.Find("Posicion_ConversarConFantasma").transform.position; 
 		posicionReposoFantasma = GameObject.Find("posicionReposoFantasma_PuertaMansion").transform.position; 
+		posicionReposoFantasma2 = GameObject.Find("posicionReposoFantasma2_PuertaMansion"); 
 
 		animator_Fantasma = Fantasma.GetComponent <Animator> ();
 		animator_Cam = GameObject.Find ("PivoteCamaraPrincipal").GetComponent <Animator> ();
@@ -64,7 +66,13 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		//Si ya le hemos dado las gafas al fantasma, debe empezar el nivel con ellas puestas
 		if(CDG_Mundo3D.gafasFantasmaEntregadas){
 			gafasFantasma.SetActive (true);
+
+
+			Fantasma.transform.parent.gameObject.transform.position=posicionReposoFantasma2.transform.position;
+			//agenteFantasma.enabled=true;
 			animator_Fantasma.Play("reposo_fantasma");
+
+
 			CDG_Mundo3D.hemosHabladoConFantasma = true; 
 			CDG_Mundo3D.tenemosGafasFantasma = true;
 			CDG_Mundo3D.IslaFantasma_Desbloqueada = true;
@@ -96,9 +104,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 				//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 				spr_bocadilloFantasma_01.enabled=true;
-				gObj_botonPasarBocadillo.SetActive(true);
-				GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
-
+				Invoke("botonBocadillo_01",3.0f);
 			}
 
 			//Si ya hemos hablado con el Fantasma..
@@ -111,7 +117,6 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 					//Desactivamos el control del prota mientras estemos conversando
 					ctrlProta.enabled = false;
-					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
 
 					//Y mandamos su NavMeshAgent a la posicion de conversar con el Fantasma
 					agenteProta.SetDestination(posicionConversarConFantasma);
@@ -121,13 +126,16 @@ public class controlInteraccionFantasma : MonoBehaviour {
 					
 					//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
 					spr_bocadilloFantasma_FinMision.enabled=true;
-					gObj_botonPasarBocadillo_2.SetActive(true);
-					
+					Invoke("botonBocadillo_02",4.0f);
+
 					CDG_Mundo3D.gafasFantasmaEntregadas=true;
 
 					animator_Fantasma.SetBool("acierto_Fantasma",true);
 					//Hacemos que el al fantasma le aparezcan las gafas
 					Invoke("activarGafasFantasma",2.0f);
+				}
+				else{
+					Invoke("activarCollider",1.0f);
 				}
 			}
 		
@@ -136,25 +144,27 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 	void OnTriggerStay(Collider coli)
 	{
-		//Si no hemos hablado aun con el Fantasma o si ya tenemos sus gafas
-		if (!CDG_Mundo3D.hemosHabladoConFantasma||CDG_Mundo3D.tenemosGafasFantasma)
+		if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
 		{
+			//Si no hemos hablado aun con el Fantasma o si ya tenemos sus gafas
 			//Colocamos al personaje en la posicion correcta.
-			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
+			if (!CDG_Mundo3D.hemosHabladoConFantasma||(CDG_Mundo3D.tenemosGafasFantasma&&!CDG_Mundo3D.gafasFantasmaEntregadas))
 			{
 				//agente.transform.LookAt(Robot.transform.position);
 				if (agenteProta.velocity!=Vector3.zero)		
 				{
+					print("andando");
 					posicionCorrecta=false;
 					animator_Prota.SetBool ("andar", true);
 				}
 				else
 				{
-					agenteProta.transform.LookAt(Fantasma.transform.position);
-					
-					//Invoke("DejarDeMirarRobot",2.0f);
 					animator_Prota.SetBool("andar",false);
+
+					print("quieto");
+					agenteProta.transform.LookAt(Fantasma.transform.position);
 					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+					//Invoke("DejarDeMirarRobot",2.0f);
 				}
 			}
 		}
@@ -165,6 +175,8 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			posicionCorrecta=false;
+			GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+
 		}
 	}
 	
@@ -196,6 +208,15 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		Invoke("salirDialogo",3.0f);
 	}
 
+	void botonBocadillo_01(){
+		gObj_botonPasarBocadillo.SetActive(true);
+	}
+
+	void botonBocadillo_02(){
+		gObj_botonPasarBocadillo_2.SetActive(true);
+
+	}
+
 	public void terminarMisionFantasma(){
 		//mandamos al fantasma a la posicion de reposo (delante de la mansion)
 		agenteFantasma.enabled= true;
@@ -224,6 +245,10 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		CDG_Mundo3D.hemosHabladoConFantasma = true;
 		CMI.ActualizarMisionFantasma ();
 
+		GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+
+	}
+	void activarCollider(){
 		GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
 
 	}

@@ -28,7 +28,16 @@ public class ControlEscenas : MonoBehaviour {
 		animator_PanelCanvas = GameObject.Find("Panel_Canvas").GetComponent<Animator>();
 		}
 	}
-	
+
+	public void cargarMenuInicial(){
+		CDG_Mundo3D.IKKI = true;
+		CDG_Mundo3D.islaBosque=false;
+		CDG_Mundo3D.islaFant = false;
+		CDG_Mundo3D.islaMec=false;
+		
+		Application.LoadLevel("personalizacion2.0");
+		
+	}
 	public void siguienteEscena() {
 		
 		if (Application.loadedLevelName == "03_Mundo3D" || Application.loadedLevelName == "04_Nivel1-PICTOGRAMAS") {
@@ -334,9 +343,5 @@ public class ControlEscenas : MonoBehaviour {
 
 	//**********************************************************************************
 
-	public void CargarEscenaPERSONALIZAR()
-	{
-		Application.LoadLevel ("personalizacion1");
-	}
 }
 

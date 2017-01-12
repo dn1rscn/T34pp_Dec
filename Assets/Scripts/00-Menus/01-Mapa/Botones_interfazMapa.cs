@@ -11,7 +11,7 @@ public class Botones_interfazMapa : MonoBehaviour
 	public GameObject Fondo_IFantasma;
 	public GameObject Fondo_IRobot;
 
-	public float Tiempo;
+	float Tiempo = 0;
 
 	public bool seleccion;
 
@@ -89,6 +89,7 @@ public class Botones_interfazMapa : MonoBehaviour
 			Fondo_IFantasma.SetActive (false);
 			Fondo_IRobot.SetActive (false);
 
+			CDG_Mundo3D.posicionPersonaje = 1;
 			seleccion=true;
 			Loading.SetActive(true);
 
@@ -103,6 +104,8 @@ public class Botones_interfazMapa : MonoBehaviour
 			Fondo_IBosque.SetActive (false);
 			Fondo_IFantasma.SetActive (true);
 			Fondo_IRobot.SetActive (false);
+
+			CDG_Mundo3D.posicionPersonaje = 1;
 
 			seleccion=true;
 			Loading.SetActive(true);
@@ -119,6 +122,8 @@ public class Botones_interfazMapa : MonoBehaviour
 			Fondo_IBosque.SetActive (false);
 			Fondo_IFantasma.SetActive (false);
 			Fondo_IRobot.SetActive (true);
+
+			CDG_Mundo3D.posicionPersonaje = 1;
 
 			seleccion = true;
 			Loading.SetActive(true);

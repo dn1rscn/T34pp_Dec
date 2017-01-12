@@ -25,10 +25,13 @@ public class controlHuevoDino : MonoBehaviour {
 		animatorHuevo = gameObject.GetComponent<Animator>();
 		ctlCamara = GameObject.Find("PivoteCamaraPrincipal").GetComponent<ControlCamara>();
 
+		//Si el huevo tiene que aparecer
 		if(!CDG_Mundo3D.huevoInvisible)
 		{
 			animatorHuevo.Play("AnimEgg_00_reposo");
-		} else {
+		} 
+
+		else {
 			//Si nos hemos pasado el ejercicio 1 del dado
 			if(CDG_Mundo3D.Ejer_Bosque[0] == true && CDG_Mundo3D.destinoHuevo == 1){
 				//activamos el huevo y la preparamos su segunda animacion
@@ -38,9 +41,10 @@ public class controlHuevoDino : MonoBehaviour {
 
 			else if(CMisiones.misionDinoCompletada) 
 			{
-				huevoParaCoger.SetActive(true);
+				huevoParaCoger.SetActive(false);
 				if(!CDG_Mundo3D.tenemosHuevoDino){
-					huevoParaCoger.SetActive(false);
+					huevoParaCoger.SetActive(true);
+
 				}
 				animatorHuevo.Play("huevoInvisible");
 			} 

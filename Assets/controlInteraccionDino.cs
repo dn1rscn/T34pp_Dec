@@ -103,8 +103,8 @@ public class controlInteraccionDino : MonoBehaviour {
 			//Si ya hemos hablado con dino..
 			else 
 			{
-				//Si HEMOS CONSEGUIDO EL HUEVO DEL DINO:
-				if(CDG_Mundo3D.tenemosHuevoDino){
+				//Si HEMOS CONSEGUIDO EL HUEVO DEL DINO Y AUN NO LO HEMOS ENTREGADO:
+				if(CDG_Mundo3D.tenemosHuevoDino && !CDG_Mundo3D.huevoDinoEntregado){
 					animator_Dino.SetBool("acierto_Dino",true);
 					Invoke ("DinoAnimAcierto_desactivar",2.0f);
 
@@ -126,6 +126,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 					//Hacemos que aparezca el huevo del Dino en el nido
 					Invoke("activarHuevoNido",2.0f);
+					CDG_Mundo3D.huevoDinoEntregado=true;
 				}
 
 				//Si no tenemos el huevo del Dino
@@ -139,11 +140,11 @@ public class controlInteraccionDino : MonoBehaviour {
 
 	void OnTriggerStay(Collider coli)
 	{
-		//Si no hemos hablado aun con el Dino o si ya tenemos el Huevo
-		if (!CDG_Mundo3D.hemosHabladoConDino||CDG_Mundo3D.tenemosHuevoDino)
+		if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
 		{
+			//Si no hemos hablado aun con el Dino o si ya tenemos el Huevo
 			//Colocamos al personaje en la posicion correcta.
-			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
+			if (!CDG_Mundo3D.hemosHabladoConDino||CDG_Mundo3D.tenemosHuevoDino)
 			{
 				//agente.transform.LookAt(Dino.transform.position);
 
@@ -173,6 +174,8 @@ public class controlInteraccionDino : MonoBehaviour {
 
 			posicionCorrecta=false;
 			animator_Dino.SetBool ("fallo_Dino", false);
+			GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+
 
 		}
 		
