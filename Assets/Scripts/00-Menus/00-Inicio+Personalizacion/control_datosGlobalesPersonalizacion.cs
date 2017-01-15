@@ -31,6 +31,7 @@ public class control_datosGlobalesPersonalizacion : MonoBehaviour
 	public bool Vper_activo;
 
 	// Use this for initialization
+
 	void Start () 
 	{
 		DontDestroyOnLoad (this);

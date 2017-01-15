@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class ControlInterface : MonoBehaviour 
 {
 	control_datosGlobalesPersonalizacion cdgP;
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	SaveLoad SL;
+
 
 	public GameObject BotonInicio;
 	public GameObject BotonJuego;
@@ -22,11 +27,17 @@ public class ControlInterface : MonoBehaviour
 	public GameObject FondoFantasma;
 	public GameObject FondoDino;
 
+
 	// Use this for initialization
 	void Start () 
 	{
 		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();;
+
+		//Game.
+		//print ("cargamos partida");
+		SL.Load ();
 
 		if (CDG_Mundo3D.IKKI == true) 
 		{
@@ -108,8 +119,22 @@ public class ControlInterface : MonoBehaviour
 		}
 	
 	}
-	public void Mapa()
+	public void OKpersonalizacion()
 	{
+		print ("guardamos Partida");
+		cdgP.nuevoJuego = false;
+		SL.Save ();
+		Application.LoadLevel ("Mapa");
+	}
+	public void Continuar()
+	{
+		//cdgP.nuevoJuego = false;
+		Application.LoadLevel ("Mapa");
+	}
+
+	public void NuevoJuego()
+	{
+		cdgP.nuevoJuego = false;
 		Application.LoadLevel ("Mapa");
 	}
 	public void Volver_mundo ()
@@ -132,7 +157,8 @@ public class ControlInterface : MonoBehaviour
 	public void PersonalizacionInicial()
 	{
 		//print ("cam personaje");
-		if (cdgP.inicio == true) {
+		if (cdgP.inicio == true) 
+		{
 			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
 		} else if (cdgP.inicio == false) 
 		{
@@ -184,6 +210,16 @@ public class ControlInterface : MonoBehaviour
 	public void twitter ()
 	{
 		Application.OpenURL ("https://twitter.com/Studiosikki");
+	}
+	public void borrar_Partida()
+	{
+		if (File.Exists ("SavedGame.sg")) {
+			print ("existe el archivo");
+			File.Delete ("SavedGame.sg");
+		} else 
+		{
+			print ("no existe el archivo");
+		}
 	}
 
 }
