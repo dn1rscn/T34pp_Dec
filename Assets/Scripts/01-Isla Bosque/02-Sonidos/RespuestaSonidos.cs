@@ -8,6 +8,7 @@ public class RespuestaSonidos : MonoBehaviour
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	ControlMisiones CMisiones;
 	ControlNotificaciones1 CNotificaciones;
+	SaveLoad SL;
 
 	ControlSonidos CS;
 	reproducirSonido RS;
@@ -53,6 +54,8 @@ public class RespuestaSonidos : MonoBehaviour
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 		cM=GameObject.Find("controlMonedas").GetComponent<Control_monedas>();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
+
 
 		BotonBack.SetActive (true);
 
@@ -388,6 +391,7 @@ public class RespuestaSonidos : MonoBehaviour
 		//cdg.aciertosSeguidos = 0;
 		//cdg.combos = 0;
 		cM.MonedasSonidos = 0;
+		SL.Save ();
 	}
 
 	public void Notificacion ()

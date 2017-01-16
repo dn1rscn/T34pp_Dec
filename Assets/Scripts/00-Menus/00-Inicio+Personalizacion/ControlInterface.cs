@@ -33,7 +33,7 @@ public class ControlInterface : MonoBehaviour
 	{
 		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
-		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();;
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		//Game.
 		//print ("cargamos partida");
@@ -43,6 +43,8 @@ public class ControlInterface : MonoBehaviour
 		{
 			if (cdgP.nuevoJuego == true) 
 			{
+				print("nuevo Juego");
+
 				BotonInicio.SetActive (true);
 				PersonajeInicio.SetActive (true);
 				MascotaInicio.SetActive (true);
@@ -213,9 +215,9 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void borrar_Partida()
 	{
-		if (File.Exists ("SavedGame.sg")) {
+		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) {
 			print ("existe el archivo");
-			File.Delete ("SavedGame.sg");
+			File.Delete (Application.persistentDataPath + "SavedGame.sg");
 		} else 
 		{
 			print ("no existe el archivo");

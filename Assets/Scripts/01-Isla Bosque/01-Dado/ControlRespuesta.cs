@@ -7,6 +7,7 @@ public class ControlRespuesta : MonoBehaviour
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	ControlMisiones CMisiones;
 	ControlNotificaciones1 CNotificaciones;
+	SaveLoad SL;
 
 	ControlDatosGlobales_PICTOGRAMAS cdg;
 	GameObject DGlobales;
@@ -66,6 +67,7 @@ public class ControlRespuesta : MonoBehaviour
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
 		CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 
 		if(boton_SiguienteNivel){
@@ -393,6 +395,8 @@ public class ControlRespuesta : MonoBehaviour
 		TpuntuacionFin.text = "\nACIERTOS: " + cdg.aciertos.ToString () + "\nCOMBOS: " + cdg.combos.ToString ();
 		
 		TmonedasDado.text = cM.monedas_dado.ToString();
+
+		SL.Save ();
 	}
 	public void seguirJugando()
 	{
