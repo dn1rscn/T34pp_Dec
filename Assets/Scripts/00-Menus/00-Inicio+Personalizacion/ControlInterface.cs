@@ -37,14 +37,22 @@ public class ControlInterface : MonoBehaviour
 
 		//Game.
 		//print ("cargamos partida");
-		SL.Load ();
+		//SL.Load ();
 
 		if (CDG_Mundo3D.IKKI == true) 
 		{
-			if (cdgP.nuevoJuego == true) 
+			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+			{
+				BotonInicio.SetActive (false);
+				CamInicio.SetActive (true);
+				
+				BotonJuego.SetActive (true);
+				CamJuego.SetActive (false);
+			} 
+			else //if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
 			{
 				print("nuevo Juego");
-
+				
 				BotonInicio.SetActive (true);
 				PersonajeInicio.SetActive (true);
 				MascotaInicio.SetActive (true);
@@ -54,16 +62,8 @@ public class ControlInterface : MonoBehaviour
 				Personajejuego.SetActive (false);
 				Mascotajuego.SetActive (false);
 				CamJuego.SetActive (false);
-
-				cdgP.inicio=true;
-			} 
-			else if (cdgP.nuevoJuego == false) 
-			{
-				BotonInicio.SetActive (false);
-				CamInicio.SetActive (true);
 				
-				BotonJuego.SetActive (true);
-				CamJuego.SetActive (false);
+				cdgP.inicio=true;
 			}
 
 			CDG_Mundo3D.IKKI=false;
@@ -131,6 +131,7 @@ public class ControlInterface : MonoBehaviour
 	public void Continuar()
 	{
 		//cdgP.nuevoJuego = false;
+		SL.Load ();
 		Application.LoadLevel ("Mapa");
 	}
 

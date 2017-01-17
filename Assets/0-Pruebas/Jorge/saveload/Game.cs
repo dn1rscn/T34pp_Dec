@@ -8,7 +8,7 @@ public class Game
 
 	//DATOS PERSONALIZACION
 
-	public bool nuevoJuego;
+	public static bool nuevoJuego;
 
 	public int sexo;
 
@@ -43,5 +43,44 @@ public class Game
 	public bool[] check_bateriasRobot;
 	public bool tenemosBat;
 	public bool robotAreglado;
-	
+
+
+	//DATOS OBJETOS
+	public int GafasRecogidas;
+	public int bateriasRecogidas;
+
+	//MISIONES
+	public bool Dado1_Completado;
+	public bool Sonidos1_Completado;
+
+	public bool[] ejerB_3Estrellas;
+	public bool[] ejerF_3Estrellas;
+	public bool[] ejerM_3Estrellas;
+
+	public bool misionDinoCompletada;
+	public bool misionFantasmaCompletada;
+	public bool misionRobotCompletada;
+
+	//EJERCICIOS desbloqueo
+	public bool Nivel2Dado;
+
+	public bool Nivel2Sonidos;
+	public bool Nivel3Sonidos;
+
+	public bool secuencia1;
+	public bool Canasta;
+
+	public bool[] ADado;
+	public bool[] ASonidos;
+	public bool[] AEmpatia;
+	public bool[] Asecuencias;
+	public bool[] ASocialNivel1;
+	public bool[] ASocialNivel3;
+	public bool[] AEmociones;
+
+	//MONEDAS
+	public int monedas;
+
+	public bool emociones1_Completado;
+	public bool empatia1_Completado;
 }

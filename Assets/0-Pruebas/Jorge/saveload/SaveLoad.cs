@@ -12,6 +12,12 @@ public class SaveLoad : MonoBehaviour
 	control_datosGlobalesPersonalizacion cdgP;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	Game datos;
+	Control_PuntuacionObjetos PObjetos;
+	ControlMisiones Misiones;
+	DatosDesbloqueo DDesbloqueo;
+	Control_monedas Monedas;
+	ControlSecuencias Secuencias;
+	ControlEmociones Emociones;
 
 	void Start () 
 	{
@@ -62,8 +68,14 @@ public class SaveLoad : MonoBehaviour
 	{
 		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
+		Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
+		DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
+		Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
+		Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
+		Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
-		datos.nuevoJuego = cdgP.nuevoJuego;
+		Game.nuevoJuego = cdgP.nuevoJuego;
 		datos.sexo = cdgP.Sexo;
 		datos.pelo = cdgP.posicion_pelo;
 		datos.piel = cdgP.posicion_piel;
@@ -88,14 +100,51 @@ public class SaveLoad : MonoBehaviour
 		datos.check_bateriasRobot = cdg_3d.check_bateriasRobot;
 		datos.tenemosBat = cdg_3d.tenemosBateriasRobot;
 		datos.robotAreglado = cdg_3d.robotArreglado;
+
+		datos.GafasRecogidas = PObjetos.GafasRecogidas;
+		datos.bateriasRecogidas = PObjetos.EnergiaRecogida;
+
+		datos.Dado1_Completado = Misiones.Dado1_Completado;
+		datos.Sonidos1_Completado = Misiones.Sonidos1_Completado;
+		datos.ejerB_3Estrellas = Misiones.ejerB_3estrellas;
+		datos.ejerF_3Estrellas = Misiones.ejerF_3estrellas;
+		datos.ejerM_3Estrellas = Misiones.ejerM_3estrellas;
+		datos.misionDinoCompletada = Misiones.misionDinoCompletada;
+		datos.misionFantasmaCompletada = Misiones.misionFantasmaCompletada;
+		datos.misionRobotCompletada = Misiones.misionRobotCompletada;
+
+		datos.Nivel2Dado = DDesbloqueo.Nivel2Dado;
+		datos.Nivel2Sonidos = DDesbloqueo.Nivel2Sonidos;
+		datos.Nivel3Sonidos = DDesbloqueo.Nivel3Sonidos;
+		datos.secuencia1 = DDesbloqueo.secuencia1;
+		datos.Canasta = DDesbloqueo.Canasta;
+		datos.ADado = DDesbloqueo.ADado;
+		datos.ASonidos = DDesbloqueo.ASonidos;
+		datos.AEmpatia = DDesbloqueo.AEmpatia;
+
+		datos.monedas = Monedas.monedas;
+
+		datos.Asecuencias = Secuencias.Asecuencias;
+
+		datos.ASocialNivel1 = Emociones.ASocialNivel1;
+		datos.ASocialNivel3 = Emociones.ASocialNivel3;
+		datos.AEmociones = Emociones.AEmociones;
+		datos.emociones1_Completado = Emociones.emociones1_completado;
+		datos.empatia1_Completado = Emociones.empatia1_completado;
 	}
 
 	void cargarDatos()
 	{
 		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
+		Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
+		DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
+		Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
+		Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
+		Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		
-		cdgP.nuevoJuego=datos.nuevoJuego;
+		cdgP.nuevoJuego=Game.nuevoJuego;
 		cdgP.Sexo=datos.sexo;
 		cdgP.posicion_pelo=datos.pelo;
 		cdgP.posicion_piel=datos.piel;
@@ -120,5 +169,36 @@ public class SaveLoad : MonoBehaviour
 		cdg_3d.check_bateriasRobot=datos.check_bateriasRobot;
 		cdg_3d.tenemosBateriasRobot=datos.tenemosBat;
 		cdg_3d.robotArreglado=datos.robotAreglado;
+
+		PObjetos.GafasRecogidas = datos.GafasRecogidas;
+		PObjetos.EnergiaRecogida = datos.bateriasRecogidas;
+
+		Misiones.Dado1_Completado = datos.Dado1_Completado;
+		Misiones.Sonidos1_Completado = datos.Sonidos1_Completado;
+		Misiones.ejerB_3estrellas = datos.ejerB_3Estrellas;
+		Misiones.ejerF_3estrellas = datos.ejerF_3Estrellas;
+		Misiones.ejerM_3estrellas = datos.ejerM_3Estrellas;
+		Misiones.misionDinoCompletada = datos.misionDinoCompletada;
+		Misiones.misionFantasmaCompletada = datos.misionFantasmaCompletada;
+		Misiones.misionRobotCompletada = datos.misionRobotCompletada;
+
+		DDesbloqueo.Nivel2Dado = datos.Nivel2Dado;
+		DDesbloqueo.Nivel2Sonidos = datos.Nivel2Sonidos;
+		DDesbloqueo.Nivel3Sonidos = datos.Nivel3Sonidos;
+		DDesbloqueo.secuencia1 = datos.secuencia1;
+		DDesbloqueo.Canasta = datos.Canasta;
+		DDesbloqueo.ADado = datos.ADado;
+		DDesbloqueo.ASonidos = datos.ASonidos;
+		DDesbloqueo.AEmpatia = datos.AEmpatia;
+
+		Monedas.monedas = datos.monedas;
+
+		Secuencias.Asecuencias = datos.Asecuencias;
+
+		Emociones.ASocialNivel1 = datos.ASocialNivel1;
+		Emociones.ASocialNivel3 = datos.ASocialNivel3;
+		Emociones.AEmociones = datos.AEmociones;
+		Emociones.emociones1_completado = datos.emociones1_Completado;
+		Emociones.empatia1_completado = datos.empatia1_Completado;
 	}
 }
