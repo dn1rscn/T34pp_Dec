@@ -151,6 +151,9 @@ public class ControlInterface : MonoBehaviour
 		else if (CDG_Mundo3D.islaFant == true) {
 			Application.LoadLevel ("Isla_fantasma");
 		}
+		else{
+			Application.LoadLevel ("Mapa");
+		}
 	}
 	public void RA_personalizacion()
 	{
