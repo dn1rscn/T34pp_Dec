@@ -13,6 +13,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	CargarEmpatia Cargar_Em;
 	ControlMisiones CMisiones;
+	SaveLoad SL;
 
 	public GameObject IfinJuego;
 
@@ -37,16 +38,11 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 		//CSlider = GameObject.Find ("Progreso").GetComponent<ControlSlider> ();
 
 		CE.respuesta = false;
-		CNotificaciones.Isla.SetActive (false);
-		CNotificaciones.Nivel2.SetActive(false);
-		CNotificaciones.GMision.SetActive (false);
-		for(int i=0;i < CNotificaciones.MisionDino.Length; i++)
-		{
-			CNotificaciones.MisionDino[i].SetActive(false);
-		}
+
 		//actualizarPuntuacion ();
 		//CSlider.progresoEmocionesSNivel1 ();
 
@@ -108,7 +104,19 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 
 			if(i==Cargar_Em.Ejer_Activos.Length-1&&Cargar_Em.Ejer_Activos[i]==true)
 			{
+				CNotificaciones.Isla.SetActive (false);
+				CNotificaciones.Nivel2.SetActive(false);
+				CNotificaciones.Nivel3.SetActive(false);
+				CNotificaciones.GMision.SetActive (false);
+				for(int x=0;x < CNotificaciones.MisionDino.Length; x++)
+				{
+					CNotificaciones.MisionDino[x].SetActive(false);
+				}
+
 				IfinJuego.SetActive(true);
+				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
+
+				SL.Save();
 
 				CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 				ControlMonedas = GameObject.Find ("controlMonedas");
@@ -124,7 +132,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				cM.calcular_monedasGenerales ();
 				if (CE.Intentos == 1) 
 				{
-					if(CE.emociones1_completado==true)
+					if(CE.emociones1_completado==true&&cdg_3d.Altar_Desbloqueado==false)
 					{
 						cdg_3d.Altar_Desbloqueado=true;
 						CNotificaciones.Isla.SetActive (true);

@@ -47,6 +47,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	ControlNotificaciones2 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	DatosDesbloqueo DD;
+	SaveLoad SL;
 
 
 	// Use this for initialization
@@ -63,6 +64,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		CNotificaciones = GameObject.Find ("Notificaciones2").GetComponent<ControlNotificaciones2> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 		IfinJuego.SetActive (false);
 
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
@@ -338,6 +340,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
+
+		SL.Save();
+
 		puntuacionfin = GameObject.Find ("puntuacionFin");
 		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 		monedasCanasta = GameObject.Find ("monedas");
@@ -387,8 +392,8 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 		monedasCanasta = GameObject.Find ("monedas");
 		Tmonedascanasta = monedasCanasta.GetComponent<Text> ();
-		cM.calcular_monedasCanasta ();
-		cM.calcular_monedasGenerales ();
+		//cM.calcular_monedasCanasta ();
+		//cM.calcular_monedasGenerales ();
 		
 		TpuntuacionFin.text ="HAS PERDIDO" + "\nACIERTOS: " + puntuacionJugador.ToString ();
 		

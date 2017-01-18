@@ -17,6 +17,8 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 	public int respuestaAleat;
 	public int PreguntaAleat;
 
+	int AnteriorPregunta;
+
 	int i;
 	// Use this for initialization
 	void Start () 
@@ -139,5 +141,15 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 		}
 		ARespuesta [i].GetComponent<Image> ().sprite = AImRespuesta [respuestaAleat];
 		ARespuestasActivas[respuestaAleat]=true;
+	}
+	void noRepetirRespuesta()
+	{
+		PreguntaAleat = Random.Range (0, APregunta.Length);
+		while (PreguntaAleat==AnteriorPregunta) 
+		{
+			PreguntaAleat = Random.Range (0, APregunta.Length);
+		}
+		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
+		PreguntaAleat = AnteriorPregunta;
 	}
 }

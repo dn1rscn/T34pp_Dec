@@ -10,6 +10,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 	ControlNotificaciones1 CNotificaciones;
 	ControlDatosGlobales_Mundo3D cdg_3d;
 	ControlMisiones CMisiones;
+	SaveLoad SL;
 
 	public GameObject[] Vidas;
 	
@@ -42,6 +43,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones1> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		//CEA.Aleatorio_Emociones ();
 
@@ -178,6 +180,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				IfinJuego.SetActive(true);
 				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 
+				SL.Save();
+
 				puntuacionfin = GameObject.Find ("puntuacionFin");
 				TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 				
@@ -250,6 +254,8 @@ public class ControlRespuestaEmociones : MonoBehaviour
 
 			IfinJuego.SetActive(true);
 			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
+
+			SL.Save();
 			
 			puntuacionfin = GameObject.Find ("puntuacionFin");
 			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();

@@ -47,19 +47,25 @@ public class CargarEmpatia : MonoBehaviour
 
 		reset ();
 		print ("caMBIO");
-
-		CE.NivelEmpatia++;
-		CE.respuesta=false;
-		Actualizar_Escena();
-		if (CE.NivelEmpatia == 1 || CE.NivelEmpatia == 3) 
+		if(CE.NivelEmpatia<3)
 		{
-			CRA = GameObject.Find ("crtRespuesta").GetComponent<controlRespAleatoria> ();
-			CRA.RespuesAleatoria ();
-		} 
-		else if (CE.NivelEmpatia == 2) 
+			CE.NivelEmpatia++;
+			CE.respuesta=false;
+			Actualizar_Escena();
+			if (CE.NivelEmpatia == 1 || CE.NivelEmpatia == 3) 
+			{
+				CRA = GameObject.Find ("crtRespuesta").GetComponent<controlRespAleatoria> ();
+				CRA.RespuesAleatoria ();
+			} 
+			else if (CE.NivelEmpatia == 2) 
+			{
+				CA2 = GameObject.Find ("ctrlAleatorio").GetComponent<ControlAleatorioSocialNivel2> ();
+				CA2.AleatorioResp();
+			}
+		}
+		else if (CE.NivelEmpatia==3)
 		{
-			CA2 = GameObject.Find ("ctrlAleatorio").GetComponent<ControlAleatorioSocialNivel2> ();
-			CA2.AleatorioResp();
+			Application.LoadLevel("Empatia_MenusSeleccion");
 		}
 	}
 	public void Volver_a_jugar()

@@ -26,11 +26,13 @@ public class FinPartida_Secuencias : MonoBehaviour
 	DatosDesbloqueo DD;
 	ControlNotificaciones2 CNotificaciones;
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	SaveLoad SL;
 
 	// Use this for initialization
 	void Start () 
 	{
 		CNotificaciones = GameObject.Find ("Notificaciones").GetComponent<ControlNotificaciones2> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		boton_Back.SetActive (true);
 
@@ -60,9 +62,12 @@ public class FinPartida_Secuencias : MonoBehaviour
 		ctrlsecuencias = GameObject.Find ("DatosGlobalesSecuencias");
 		cs = ctrlsecuencias.GetComponent<ControlSecuencias> ();
 		Debug.Log("finjuego2");
+
 		IfinJuego.SetActive(true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
-		
+
+		SL.Save();
+
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		

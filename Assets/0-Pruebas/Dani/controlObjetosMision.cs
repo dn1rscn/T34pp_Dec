@@ -5,6 +5,7 @@ public class controlObjetosMision : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	Control_PuntuacionObjetos CPO;
+	SaveLoad SL;
 
 	public GameObject[] gObjArray_partesGafasFantasma;
 	public GameObject[] gObjArray_bateriasRobot;
@@ -16,6 +17,7 @@ public class controlObjetosMision : MonoBehaviour {
 	
 		//Accedemos al script de datos globales
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		//Accedemos al script de puntuacion de objetos
 		if(GameObject.Find("PuntuacionObjetos")){
@@ -31,7 +33,8 @@ public class controlObjetosMision : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider coli)
-	{	
+	{
+		SL.Save();
 		//Si colisionamos con el huevo del dino
 		if (coli.gameObject.tag == "huevoDino")
 		{
