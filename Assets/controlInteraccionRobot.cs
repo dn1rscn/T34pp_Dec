@@ -5,6 +5,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	ControlMisionesInterfaz CMI;
+	SaveLoad SL;
 
 	public Sprite[] array_BocadillosConversacion; 
 	public int bocadillosRestantes;
@@ -38,6 +39,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		Robot= GameObject.Find("robot_animaciones_bake_v2");
 
@@ -75,6 +77,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			//Si NO hemos hablado aun con Robot
 			if (!CDG_Mundo3D.hemosHabladoConRobot && !CDG_Mundo3D.tenemosBateriasRobot)
 			{
+				SL.Save();
 				//Activamos el "Modo Dialogo" desde el animator del canvas
 				animator_Canvas.Play("Canvas_AparecerDialogos");
 
@@ -97,6 +100,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			{
 				//Si HEMOS CONSEGUIDO LAS BATERIAS DEL Robot:
 				if(CDG_Mundo3D.tenemosBateriasRobot && !CDG_Mundo3D.robotArreglado){
+					SL.Save();
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
 

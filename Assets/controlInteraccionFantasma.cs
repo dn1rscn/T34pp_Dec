@@ -5,6 +5,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	ControlMisionesInterfaz CMI;
+	SaveLoad SL;
 
 	public Sprite[] array_BocadillosConversacion; 
 	public int bocadillosRestantes;
@@ -43,6 +44,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		Fantasma = GameObject.Find("fantasma_bake_v2");
 
@@ -90,6 +92,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			//Si NO hemos hablado aun con el fantasma
 			if (!CDG_Mundo3D.hemosHabladoConFantasma && !CDG_Mundo3D.tenemosGafasFantasma)
 			{
+				SL.Save();
 				//Activamos el "Modo Dialogo" desde el animator del canvas
 				animator_Canvas.Play("Canvas_AparecerDialogos");
 
@@ -112,6 +115,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			{
 				//Si HEMOS CONSEGUIDO LAS GAFAS DEL FANTASMA:
 				if(CDG_Mundo3D.tenemosGafasFantasma && !CDG_Mundo3D.gafasFantasmaEntregadas){
+					SL.Save();
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
 

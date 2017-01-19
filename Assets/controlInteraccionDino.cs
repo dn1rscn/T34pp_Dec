@@ -5,6 +5,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	ControlMisionesInterfaz CMI;
+	SaveLoad SL;
 
 	public Sprite[] array_BocadillosConversacion; 
 	public int bocadillosRestantes;
@@ -42,6 +43,7 @@ public class controlInteraccionDino : MonoBehaviour {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 		CMI = GameObject.Find ("interfaz").GetComponent<ControlMisionesInterfaz> ();
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
 		Dino= GameObject.Find("Dinoi_animaciones_v3");
 
@@ -79,6 +81,7 @@ public class controlInteraccionDino : MonoBehaviour {
 			//Si NO hemos hablado aun con Dino
 			if (!CDG_Mundo3D.hemosHabladoConDino)
 			{
+				SL.Save();
 			//Desactivamos la flecha de destino sobre el dino
 			spr_flechaDestino_Dino.enabled = false;
 
@@ -105,6 +108,7 @@ public class controlInteraccionDino : MonoBehaviour {
 			{
 				//Si HEMOS CONSEGUIDO EL HUEVO DEL DINO Y AUN NO LO HEMOS ENTREGADO:
 				if(CDG_Mundo3D.tenemosHuevoDino && !CDG_Mundo3D.huevoDinoEntregado){
+					SL.Save();
 					animator_Dino.SetBool("acierto_Dino",true);
 					Invoke ("DinoAnimAcierto_desactivar",2.0f);
 
