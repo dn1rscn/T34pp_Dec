@@ -66,8 +66,6 @@ public class FinPartida_Secuencias : MonoBehaviour
 		IfinJuego.SetActive(true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
 
-		SL.Save();
-
 		ControlMonedas = GameObject.Find ("controlMonedas");
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		
@@ -169,6 +167,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 		TpuntuacionFin.text = "\nFALLOS: " + cs.fallos.ToString ();
 		
 		TmonedasSecuencia.text = cM.monedas_secuencia.ToString();
+
+		SL.Save();
 		
 		resetar_secuencias ();
 		

@@ -385,13 +385,15 @@ public class RespuestaSonidos : MonoBehaviour
 		TpuntuacionFin.text = "\nACIERTOS: " + CS.aciertos.ToString ();
 		
 		TmonedasSonidos.text = cM.MonedasSonidos.ToString();
-		
+
+		SL.Save ();
+
 		CS.aciertos = 0;
 		CS.fallos = 0;
 		//cdg.aciertosSeguidos = 0;
 		//cdg.combos = 0;
 		cM.MonedasSonidos = 0;
-		SL.Save ();
+
 	}
 
 	public void Notificacion ()

@@ -180,8 +180,6 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				IfinJuego.SetActive(true);
 				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 
-				SL.Save();
-
 				puntuacionfin = GameObject.Find ("puntuacionFin");
 				TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 				
@@ -222,7 +220,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
 				
 				TmonedasEmociones.text = cM.monedasEmociones.ToString();
-				
+
+				SL.Save();
+
 				cM.monedasEmociones=0;
 				CE.Intentos=1;
 				CE.aciertos=0;
@@ -254,8 +254,6 @@ public class ControlRespuestaEmociones : MonoBehaviour
 
 			IfinJuego.SetActive(true);
 			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
-
-			SL.Save();
 			
 			puntuacionfin = GameObject.Find ("puntuacionFin");
 			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
@@ -281,7 +279,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
 			
 			TmonedasEmociones.text = cM.monedasEmociones.ToString();
-			
+
+			SL.Save();
+
 			cM.monedasEmociones=0;
 			CE.Intentos=1;
 			CE.aciertos=0;

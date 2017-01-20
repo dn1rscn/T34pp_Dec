@@ -341,8 +341,6 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
 
-		SL.Save();
-
 		puntuacionfin = GameObject.Find ("puntuacionFin");
 		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 		monedasCanasta = GameObject.Find ("monedas");
@@ -380,7 +378,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		TpuntuacionFin.text ="HAS GANADO" + "\nACIERTOS: " + puntuacionJugador.ToString ();
 		
 		Tmonedascanasta.text = cM.MonedasGenerales_canasta.ToString();
-		
+
+		SL.Save();
+
 		puntuacionJugador = 0;
 		cM.MonedasGenerales_canasta = 0;
 	}

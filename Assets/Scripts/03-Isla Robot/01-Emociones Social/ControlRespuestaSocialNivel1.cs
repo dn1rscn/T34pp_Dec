@@ -116,8 +116,6 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				IfinJuego.SetActive(true);
 				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 
-				SL.Save();
-
 				CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 				ControlMonedas = GameObject.Find ("controlMonedas");
 				cM = ControlMonedas.GetComponent<Control_monedas> ();
@@ -240,7 +238,8 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				
 				TmonedasSocialNivel1.text = cM.monedasSocialNivel1.ToString();
 				
-				
+				SL.Save();
+
 				CE.Intentos = 1;
 				cM.monedasSocialNivel1 = 0;
 				CE.respuesta = true;
