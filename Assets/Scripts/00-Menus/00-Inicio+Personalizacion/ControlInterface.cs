@@ -27,6 +27,8 @@ public class ControlInterface : MonoBehaviour
 	public GameObject FondoFantasma;
 	public GameObject FondoDino;
 
+	public GameObject mensaje;
+
 
 	// Use this for initialization
 	void Start () 
@@ -135,11 +137,11 @@ public class ControlInterface : MonoBehaviour
 		Application.LoadLevel ("Mapa");
 	}
 
-	public void NuevoJuego()
+	/*public void NuevoJuego()
 	{
 		cdgP.nuevoJuego = false;
 		Application.LoadLevel ("Mapa");
-	}
+	}*/
 	public void Volver_mundo ()
 	{
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
@@ -156,9 +158,9 @@ public class ControlInterface : MonoBehaviour
 			Application.LoadLevel ("Mapa");
 		}
 	}
-	public void RA_personalizacion()
+	public void No_borrar()
 	{
-		Application.LoadLevel("personalizar_RA");
+		mensaje.SetActive(false);
 	}
 	public void PersonalizacionInicial()
 	{
@@ -166,15 +168,16 @@ public class ControlInterface : MonoBehaviour
 		if (cdgP.inicio == true) 
 		{
 			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
+
 		} else if (cdgP.inicio == false) 
 		{
 			GameObject.Find ("camara_Juego").GetComponent<Animator> ().Play ("ACamMascPersonaje");
 		}
 	}
-	public void PersonalizacionJuego()
+	public void NuevaPartida()
 	{
 		//print ("hola");
-		cdgP.inicio = false;
+		mensaje.SetActive(true);
 	}
 	public void mascotas()
 	{
@@ -222,6 +225,7 @@ public class ControlInterface : MonoBehaviour
 		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) {
 			print ("existe el archivo");
 			File.Delete (Application.persistentDataPath + "SavedGame.sg");
+			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
 		} else 
 		{
 			print ("no existe el archivo");
