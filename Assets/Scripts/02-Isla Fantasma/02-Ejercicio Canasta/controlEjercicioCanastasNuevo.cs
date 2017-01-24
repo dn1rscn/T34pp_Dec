@@ -39,6 +39,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	Text Tmonedascanasta;
 	
 	public GameObject IfinJuego;
+	GameObject botonBack;
 	
 	GameObject puntuacionfin;
 	Text TpuntuacionFin;
@@ -65,7 +66,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		cM = ControlMonedas.GetComponent<Control_monedas> ();
 		CNotificaciones = GameObject.Find ("Notificaciones2").GetComponent<ControlNotificaciones2> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
+
 		IfinJuego.SetActive (false);
+		botonBack = GameObject.Find("Back");
 
 		CNotificaciones.Siguiente_Secuencia.SetActive(false);
 		//CNotificaciones.Portal.SetActive(false);
@@ -334,6 +337,8 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	}
 	void activar_FinJuego_win()
 	{
+		botonBack.SetActive (false);
+
 		CMisiones=GameObject.Find ("Misiones").GetComponent<ControlMisiones>();
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
@@ -386,6 +391,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	}
 	public void activar_FinJuego_lose()
 	{
+		botonBack.SetActive (false);
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
 		puntuacionfin = GameObject.Find ("puntuacionFin");
@@ -402,5 +408,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		puntuacionJugador = 0;
 		cM.MonedasGenerales_canasta = 0;
 	}
-
+	public void SeguirJugando()
+	{
+		IfinJuego.SetActive (false);
+		botonBack.SetActive (true);
+	}
 }

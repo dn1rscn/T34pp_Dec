@@ -46,10 +46,6 @@ public class FinPartida_Secuencias : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	public void finjuego()
 	{
 		boton_Back.SetActive (false);

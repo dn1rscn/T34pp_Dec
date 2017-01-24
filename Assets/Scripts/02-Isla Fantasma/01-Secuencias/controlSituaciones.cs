@@ -21,12 +21,7 @@ public class controlSituaciones : MonoBehaviour
 		print (Sit1.GetComponent<Image>().sprite);
 	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+
 	void situacion1()
 	{
 		situa1 = Random.Range (0, 3);

@@ -34,13 +34,6 @@ public class ControlRespuestaSec : MonoBehaviour
 		//CSlider.progresoSecuencias ();
 
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-	
 
 	public void click()
 	{
@@ -71,6 +64,9 @@ public class ControlRespuestaSec : MonoBehaviour
 
 			//HAS ACERTADO
 			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("acierto_fantasma");
+
+			GameObject.Find("fantasma_bake_v2").GetComponent<Animator>().Play("acierto_fantasma_2");
+
 			
 			//ejecutar animacionAcierto
 			GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");

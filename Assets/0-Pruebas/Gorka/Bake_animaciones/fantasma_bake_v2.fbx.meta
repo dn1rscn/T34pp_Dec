@@ -1015,7 +1015,7 @@ ModelImporter:
     - serializedVersion: 16
       name: acierto_fantasma
       takeName: acierto_fantasma
-      firstFrame: 207
+      firstFrame: 220
       lastFrame: 285
       wrapMode: 0
       orientationOffsetY: 0
