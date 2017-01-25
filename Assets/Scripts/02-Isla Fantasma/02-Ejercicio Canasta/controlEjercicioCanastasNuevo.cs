@@ -9,6 +9,8 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	public GameObject botonTurnoMascota;
 	public GameObject botonTurnoJugador;
 
+	public GameObject panelEsperaTuTurno;
+
 	public GameObject barraPotencia;
 
 	public float lanzamientoMascota;
@@ -53,6 +55,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		panelEsperaTuTurno.SetActive(false);
 
 		Confeti = GameObject.Find("confeti");
 		Confeti.SetActive(false);
@@ -85,6 +88,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 
 		botonStart.SetActive(false);
 		botonTurnoJugador.SetActive(false);
+		panelEsperaTuTurno.SetActive(true);
 
 		if (num_turnoMascota < 6) {
 			//numero random, acierto o fallo de la mascota
@@ -251,6 +255,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		//mostramos los botones de juego para el jugador
 		botonTurnoMascota.SetActive(false);
 		botonTurnoJugador.SetActive(true);
+
+		panelEsperaTuTurno.SetActive(false);
+
 		botonTurnoJugador.GetComponent<Button>().interactable = true;
 	}
 
@@ -273,7 +280,10 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 	{
 		
 	print ("FIN DEL JUEGO!!");
-	
+	//borramos el panel indicador de turno
+		Destroy(panelEsperaTuTurno);
+
+
 	//escondemos los botones de juego
 	botonTurnoMascota.SetActive(false);
 	botonTurnoJugador.SetActive(false);
