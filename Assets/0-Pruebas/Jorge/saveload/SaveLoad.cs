@@ -22,7 +22,21 @@ public class SaveLoad : MonoBehaviour
 	void Start () 
 	{
 		DontDestroyOnLoad (this);
-		//guardamosDatos ();
+
+		//CREAMOS ARCHIVO VARIABLES DEFAULT
+		if(File.Exists (Application.persistentDataPath + "Default.sg"))
+		{
+		}
+		else
+		{
+			print ("guardamos Default");
+			datos = new Game ();
+			guardamosDatos ();
+			FileStream file2 = File.Create (Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+			BinaryFormatter bformatter = new BinaryFormatter ();
+			bformatter.Serialize (file2, datos);//guardamos las variables
+			file2.Close ();
+		}
 	}
 	void Awake ()
 	{
@@ -61,6 +75,22 @@ public class SaveLoad : MonoBehaviour
 			datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
 			cargarDatos();
 			file.Close ();
+		}
+	}
+
+	public void LoadDefault()
+	{
+		if (File.Exists (Application.persistentDataPath + "Default.sg")) 
+		{
+			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+			
+			print("cargamos Default");
+			datos= new Game ();
+			FileStream file2 = File.Open (Application.persistentDataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
+			BinaryFormatter bformatter = new BinaryFormatter ();
+			datos = (Game)bformatter.Deserialize(file2); //decodificamos/cargamos el archivo
+			cargarDatos();
+			file2.Close ();
 		}
 	}
 

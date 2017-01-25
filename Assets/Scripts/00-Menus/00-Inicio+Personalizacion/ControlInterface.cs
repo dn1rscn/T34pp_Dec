@@ -9,6 +9,7 @@ public class ControlInterface : MonoBehaviour
 	control_datosGlobalesPersonalizacion cdgP;
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	SaveLoad SL;
+	Actualizar_ninos AN;
 
 
 	public GameObject BotonInicio;
@@ -36,6 +37,7 @@ public class ControlInterface : MonoBehaviour
 		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
+		AN=GameObject.Find("AvataresParaMenu").GetComponent<Actualizar_ninos>();
 
 		//Game.
 		//print ("cargamos partida");
@@ -145,7 +147,8 @@ public class ControlInterface : MonoBehaviour
 	public void Volver_mundo ()
 	{
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
-		if (CDG_Mundo3D.islaBosque == true) {
+		if (CDG_Mundo3D.islaBosque == true) 
+		{
 			Application.LoadLevel ("Isla_bosque");
 		}
 		else if (CDG_Mundo3D.islaMec == true) {
@@ -157,6 +160,8 @@ public class ControlInterface : MonoBehaviour
 		else{
 			Application.LoadLevel ("Mapa");
 		}
+
+		SL.Save();
 	}
 	public void No_borrar()
 	{
@@ -222,9 +227,24 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void borrar_Partida()
 	{
-		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) {
+		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+		{
 			print ("existe el archivo");
 			File.Delete (Application.persistentDataPath + "SavedGame.sg");
+			SL.LoadDefault();
+			AN.Start();
+			print("nuevo Juego");
+			
+			BotonInicio.SetActive (true);
+			PersonajeInicio.SetActive (true);
+			MascotaInicio.SetActive (true);
+			CamInicio.SetActive (true);
+			
+			BotonJuego.SetActive (false);
+			Personajejuego.SetActive (false);
+			Mascotajuego.SetActive (false);
+			CamJuego.SetActive (false);
+
 			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
 		} else 
 		{

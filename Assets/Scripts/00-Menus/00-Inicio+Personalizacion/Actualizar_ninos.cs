@@ -24,7 +24,7 @@ public class Actualizar_ninos : MonoBehaviour
 	control_datosGlobalesPersonalizacion cdgp;
 
 	// Use this for initialization
-	void Start () 
+	public void Start () 
 	{
 		if(GameObject.Find ("datosGlobalesPersonalizacion")){
 			cdgp = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
@@ -80,8 +80,6 @@ public class Actualizar_ninos : MonoBehaviour
 				}
 			}
 		}
-
-
-
 	}
+	
 }

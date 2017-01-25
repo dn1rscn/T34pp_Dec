@@ -77,7 +77,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			//Si NO hemos hablado aun con Robot
 			if (!CDG_Mundo3D.hemosHabladoConRobot && !CDG_Mundo3D.tenemosBateriasRobot)
 			{
-				SL.Save();
+
 				//Activamos el "Modo Dialogo" desde el animator del canvas
 				animator_Canvas.Play("Canvas_AparecerDialogos");
 
@@ -130,6 +130,8 @@ public class controlInteraccionRobot : MonoBehaviour {
 					Invoke ("RobotAnimFallo_desactivar",2.0f);
 				}
 			}
+
+			SL.Save();
 		}
 	}
 

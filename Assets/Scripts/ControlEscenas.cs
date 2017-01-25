@@ -6,6 +6,7 @@ public class ControlEscenas : MonoBehaviour {
 
 	Animator animator_PanelCanvas;
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	SaveLoad SL;
 
 	ControlMisiones CMisiones;
 
@@ -17,7 +18,7 @@ public class ControlEscenas : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		SL=GameObject.Find("saveload").GetComponent<SaveLoad>();
 		//SI EXISTE, ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		if(GameObject.Find("ControlDatosGlobales")){
 			CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
@@ -29,14 +30,16 @@ public class ControlEscenas : MonoBehaviour {
 		}
 	}
 
-	public void cargarMenuInicial(){
+	public void cargarMenuInicial()
+	{
+
 		CDG_Mundo3D.IKKI = true;
 		CDG_Mundo3D.islaBosque=false;
 		CDG_Mundo3D.islaFant = false;
 		CDG_Mundo3D.islaMec=false;
 		
 		Application.LoadLevel("personalizacion2.0");
-		
+		SL.Save();
 	}
 	public void siguienteEscena() {
 		

@@ -81,7 +81,7 @@ public class controlInteraccionDino : MonoBehaviour {
 			//Si NO hemos hablado aun con Dino
 			if (!CDG_Mundo3D.hemosHabladoConDino)
 			{
-				SL.Save();
+
 			//Desactivamos la flecha de destino sobre el dino
 			spr_flechaDestino_Dino.enabled = false;
 
@@ -139,6 +139,8 @@ public class controlInteraccionDino : MonoBehaviour {
 					Invoke ("DinoAnimFallo_desactivar",2.0f);
 				}
 			}
+
+			SL.Save();
 		}
 	}
 

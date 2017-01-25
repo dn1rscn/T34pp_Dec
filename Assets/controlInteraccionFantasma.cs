@@ -92,7 +92,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			//Si NO hemos hablado aun con el fantasma
 			if (!CDG_Mundo3D.hemosHabladoConFantasma && !CDG_Mundo3D.tenemosGafasFantasma)
 			{
-				SL.Save();
+
 				//Activamos el "Modo Dialogo" desde el animator del canvas
 				animator_Canvas.Play("Canvas_AparecerDialogos");
 
@@ -142,6 +142,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 					Invoke("activarCollider",1.0f);
 				}
 			}
+			SL.Save();
 		
 		}
 	}
