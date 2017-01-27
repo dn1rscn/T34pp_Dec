@@ -143,8 +143,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 			//Colocamos al personaje en la posicion correcta.
 			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
 			{
-				//agente.transform.LookAt(Robot.transform.position);
-				if (agente.velocity!=Vector3.zero)		
+				if(agente.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
 				{
 					posicionCorrecta=false;
 					animator_Prota.SetBool ("andar", true);
@@ -154,8 +153,9 @@ public class controlInteraccionRobot : MonoBehaviour {
 					agente.transform.LookAt(Robot.transform.position);
 
 					//Invoke("DejarDeMirarRobot",2.0f);
-					animator_Prota.SetBool("andar",false);
 					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+					animator_Prota.SetBool("andar",false);
+
 				}
 			}
 		}

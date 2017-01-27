@@ -156,20 +156,20 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			if (!CDG_Mundo3D.hemosHabladoConFantasma||(CDG_Mundo3D.tenemosGafasFantasma&&!CDG_Mundo3D.gafasFantasmaEntregadas))
 			{
 				//agente.transform.LookAt(Robot.transform.position);
-				if (agenteProta.velocity!=Vector3.zero)		
+				if(agenteProta.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
 				{
-					print("andando");
 					posicionCorrecta=false;
 					animator_Prota.SetBool ("andar", true);
 				}
 				else
 				{
-					animator_Prota.SetBool("andar",false);
 
 					print("quieto");
 					agenteProta.transform.LookAt(Fantasma.transform.position);
 					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
 					//Invoke("DejarDeMirarRobot",2.0f);
+					animator_Prota.SetBool("andar",false);
+
 				}
 			}
 		}
