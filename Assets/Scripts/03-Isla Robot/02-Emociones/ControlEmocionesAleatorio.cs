@@ -36,8 +36,7 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 		
-		PreguntaAleat = Random.Range (0, APregunta.Length);
-		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
+		noRepetirRespuesta();
 		switch (CE.NivelEmociones) 
 		{
 		case 1:

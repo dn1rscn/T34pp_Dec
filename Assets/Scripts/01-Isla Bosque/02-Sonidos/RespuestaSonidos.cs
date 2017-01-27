@@ -218,7 +218,7 @@ public class RespuestaSonidos : MonoBehaviour
 		}
 		if (CS.aciertos == 3) 
 		{
-			if(CS.nivel==1&&CMisiones.Dado1_Completado==true)
+			if(CS.nivel==1&&CMisiones.Dado1_Completado==true&&cdg_3d.IslaFantasma_Desbloqueada==false)
 			{
 				cdg_3d.IslaFantasma_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
