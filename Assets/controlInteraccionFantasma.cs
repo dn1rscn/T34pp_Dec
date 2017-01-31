@@ -115,6 +115,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			{
 				//Si HEMOS CONSEGUIDO LAS GAFAS DEL FANTASMA:
 				if(CDG_Mundo3D.tenemosGafasFantasma && !CDG_Mundo3D.gafasFantasmaEntregadas){
+	
 					SL.Save();
 					//Activamos el "Modo Dialogo" desde el animator del canvas
 					animator_Canvas.Play("Canvas_AparecerDialogos");
@@ -142,6 +143,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 					Invoke("activarCollider",1.0f);
 				}
 			}
+	
 			SL.Save();
 		
 		}
@@ -156,19 +158,22 @@ public class controlInteraccionFantasma : MonoBehaviour {
 			if (!CDG_Mundo3D.hemosHabladoConFantasma||(CDG_Mundo3D.tenemosGafasFantasma&&!CDG_Mundo3D.gafasFantasmaEntregadas))
 			{
 				//agente.transform.LookAt(Robot.transform.position);
-				if(agenteProta.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
+				if(agenteProta.velocity !=Vector3.zero) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
 				{
 					posicionCorrecta=false;
-					animator_Prota.SetBool ("andar", true);
+					animator_Prota.SetBool("andar",true);
 				}
 				else
 				{
-
 					print("quieto");
-					agenteProta.transform.LookAt(Fantasma.transform.position);
-					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
-					//Invoke("DejarDeMirarRobot",2.0f);
 					animator_Prota.SetBool("andar",false);
+					agenteProta.transform.LookAt(Fantasma.transform.position);
+					posicionCorrecta=true;
+
+					//Invoke("DejarDeMirarRobot",2.0f);
+
+					//GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
+
 
 				}
 			}
@@ -180,7 +185,7 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			posicionCorrecta=false;
-			GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+			//GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
 
 		}
 	}

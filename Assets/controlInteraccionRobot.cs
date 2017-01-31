@@ -143,18 +143,19 @@ public class controlInteraccionRobot : MonoBehaviour {
 			//Colocamos al personaje en la posicion correcta.
 			if (coli.gameObject.name == "Chico_TEAPlay" && !posicionCorrecta) 
 			{
-				if(agente.remainingDistance >= 0.1) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
+				if(agente.velocity !=Vector3.zero) //&& (impacto.point-agente.transform.position).magnitude>= distanciaMinima)
 				{
 					posicionCorrecta=false;
 					animator_Prota.SetBool ("andar", true);
 				}
 				else
 				{
+					animator_Prota.SetBool("andar",false);
 					agente.transform.LookAt(Robot.transform.position);
+					posicionCorrecta=true;
 
 					//Invoke("DejarDeMirarRobot",2.0f);
-					GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
-					animator_Prota.SetBool("andar",false);
+					//GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = false;
 
 				}
 			}
@@ -166,7 +167,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 		if (coli.gameObject.name == "Chico_TEAPlay") 
 		{
 			posicionCorrecta=false;
-			GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
+			//GameObject.Find ("Chico_TEAPlay").GetComponent<CapsuleCollider>().enabled = true;
 
 		}
 	}
