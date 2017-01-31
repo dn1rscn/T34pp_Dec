@@ -149,6 +149,6 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 			PreguntaAleat = Random.Range (0, APregunta.Length);
 		}
 		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
-		PreguntaAleat = AnteriorPregunta;
+		AnteriorPregunta=PreguntaAleat;
 	}
 }
