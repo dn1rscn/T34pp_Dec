@@ -99,7 +99,7 @@ public class Control_monedas : MonoBehaviour
 	{
 		cec = GameObject.Find ("Prefab_animEscena").GetComponent<controlEjercicioCanastasNuevo> ();
 
-		monedas_canastas = cec.puntuacionJugador * 10;
+		monedas_canastas = cec.puntuacionJugador * 20;
 		MonedasGenerales_canasta = monedas_canastas;
 
 	}
@@ -120,10 +120,10 @@ public class Control_monedas : MonoBehaviour
 			monedasSocialNivel1 = 100;
 			break;
 		case 2:
-			monedasSocialNivel1 = 60;
+			monedasSocialNivel1 = 50;
 			break;
 		case 3:
-			monedasSocialNivel1 = 30;
+			monedasSocialNivel1 = 10;
 			break;
 		case 4:
 			monedasSocialNivel1 = 0;

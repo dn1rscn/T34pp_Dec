@@ -105,19 +105,19 @@ public class ControlSlider : MonoBehaviour
 
 		BarraProgreso.value = (CE.aciertos);
 
-		if (BarraProgreso.value == 15) //2 intentos
+		if (BarraProgreso.value == 10) //2 intentos
 		{
 			estrellas[3].GetComponent<Image>().sprite=estrellaactiva;
 			estrellas[4].GetComponent<Image>().sprite=estrellaactiva;
 			estrellas[5].GetComponent<Image>().sprite=estrellaactiva;
 		}
 
-		if (BarraProgreso.value == 10) //3 intentos
+		if (BarraProgreso.value == 7) //3 intentos
 		{
 			estrellas[1].GetComponent<Image>().sprite=estrellaactiva;
 			estrellas[2].GetComponent<Image>().sprite=estrellaactiva;
 		}
-		if (BarraProgreso.value == 5) //+ de 3 intentos
+		if (BarraProgreso.value == 3) //+ de 3 intentos
 		{
 			estrellas[0].GetComponent<Image>().sprite=estrellaactiva;
 		}

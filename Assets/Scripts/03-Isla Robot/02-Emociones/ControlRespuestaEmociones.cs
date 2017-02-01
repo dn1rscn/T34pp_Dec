@@ -102,7 +102,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			cM = ControlMonedas.GetComponent<Control_monedas> ();
 
 			
-			if (CE.aciertos==5) 
+			if (CE.aciertos==3) 
 			{
 
 
@@ -124,7 +124,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 					CE.emociones1_completado=true;
 				}
 			}
-			if (CE.aciertos==10) 
+			if (CE.aciertos==7) 
 			{
 				switch(CE.NivelEmociones)
 				{
@@ -175,7 +175,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				
 
 			}
-			if (CE.aciertos == 15) 
+			if (CE.aciertos == 10) 
 			{
 				IfinJuego.SetActive(true);
 				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
