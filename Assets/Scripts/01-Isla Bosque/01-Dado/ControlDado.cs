@@ -21,6 +21,7 @@ public class ControlDado : MonoBehaviour
 	GameObject DGlobales;
 
 	ControlCartel CC;
+	ControlCartelNivel2 CC2;
 	GameObject cartel;
 
 	bool lanzar = true;
@@ -32,7 +33,14 @@ public class ControlDado : MonoBehaviour
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 		
 		cartel = GameObject.Find ("carteles");
-		CC = cartel.GetComponent<ControlCartel> ();
+		if(cartel.GetComponent<ControlCartel> ())
+		{
+			CC = cartel.GetComponent<ControlCartel> ();
+		}
+		else
+		{
+			CC2 = cartel.GetComponent<ControlCartelNivel2>();
+		}
 
 		rbd = GetComponent<Rigidbody> ();
 
@@ -64,7 +72,15 @@ public class ControlDado : MonoBehaviour
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 
 		cartel = GameObject.Find ("carteles");
-		CC = cartel.GetComponent<ControlCartel> ();
+		if(cartel.GetComponent<ControlCartel> ())
+		{
+			CC = cartel.GetComponent<ControlCartel> ();
+		}
+		else
+		{
+			CC2 = cartel.GetComponent<ControlCartelNivel2>();
+		}
+
 
 		//LANZAMIENTO
 		if (lanzar == true && cdg.resp==true) 				//si no hay respuesta y el dado no esta en el suelo no se puede lanzar			
@@ -83,7 +99,16 @@ public class ControlDado : MonoBehaviour
 
 			salto ();
 
-			CC.carteles ();
+			if(cartel.GetComponent<ControlCartel> ())
+			{
+				CC.carteles ();
+			}
+			else
+			{
+				CC2.carteles ();
+			}
+
+
 			lanzar = false;			//dado no esta en suelo
 			cdg.resp = false;		//no hay respuesta
 		}

@@ -19,6 +19,7 @@ public class ControlDatosGlobales_PICTOGRAMAS : MonoBehaviour
 
 	//public Material [] palabras;
 	public Sprite [] pictogramas;
+	public string [] Palabras;
 	public Material[] ImDado;
 
 	public GameObject Cartel1;

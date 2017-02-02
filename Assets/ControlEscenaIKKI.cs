@@ -13,6 +13,7 @@ public class ControlEscenaIKKI : MonoBehaviour
 
 
 		CDG_Mundo3D.IKKI = true;
+		languageDictionary.Lenguaje();
 		//SL.Load ();
 	}
 	

@@ -26,6 +26,7 @@ public class SaveLoad : MonoBehaviour
 		//CREAMOS ARCHIVO VARIABLES DEFAULT
 		if(File.Exists (Application.persistentDataPath + "Default.sg"))
 		{
+			print("existe archivo default");
 		}
 		else
 		{
