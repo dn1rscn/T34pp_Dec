@@ -13,9 +13,11 @@ public static class languageDictionary//: MonoBehaviour
 	public static void Lenguaje ()
 	{
 		//stringList = new Dictionary<string, string>();
+		//stringList.Clear();
 
 		if(lang=="Spanish"||lang==null)
 		{
+
 			stringList.Add ("Cargando...", "Cargando...");
 			
 			//intro

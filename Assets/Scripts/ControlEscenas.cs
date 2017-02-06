@@ -342,6 +342,10 @@ public class ControlEscenas : MonoBehaviour {
 		CE.NivelEmociones = 3;
 		Application.LoadLevel ("Emociones");
 	}
+	public void idioma()
+	{
+		Application.LoadLevel("seleccion_Idioma");
+	}
 
 
 	//**********************************************************************************

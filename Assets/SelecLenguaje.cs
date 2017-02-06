@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class SelecLenguaje : MonoBehaviour 
 {
+	ControlEscenas CE;
+
 	public Sprite Check;
 	public Sprite NoCheck;
 	public GameObject BEspañol;
@@ -13,7 +15,23 @@ public class SelecLenguaje : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		Español();
+		CE=GameObject.Find("control escenas").GetComponent<ControlEscenas>();
+		switch(languageDictionary.lang)
+		{
+		case null:
+			Español();
+			break;
+		case "Spanish":
+			Español();
+			break;
+		case "English":
+			Ingles();
+			break;
+		case "Euskara":
+			Euskera();
+				break;
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -28,7 +46,7 @@ public class SelecLenguaje : MonoBehaviour
 		BEuskera.GetComponent<Image>().sprite = NoCheck;
 
 		languageDictionary.lang = "Spanish";
-		languageDictionary.Lenguaje();
+		//languageDictionary.Lenguaje();
 		print(languageDictionary.lang);
 	}
 	public void Ingles()
@@ -38,7 +56,7 @@ public class SelecLenguaje : MonoBehaviour
 		BEuskera.GetComponent<Image>().sprite = NoCheck;
 		
 		languageDictionary.lang = "English";
-		languageDictionary.Lenguaje();
+		//languageDictionary.Lenguaje();
 		print(languageDictionary.lang);
 	}
 	public void Euskera()
@@ -48,7 +66,15 @@ public class SelecLenguaje : MonoBehaviour
 		BEuskera.GetComponent<Image>().sprite = Check;
 		
 		languageDictionary.lang = "Euskara";
-		languageDictionary.Lenguaje();
+		//languageDictionary.Lenguaje();
 		print(languageDictionary.lang);
 	}
+
+	public void confirmar_idioma()
+	{
+		languageDictionary.stringList.Clear();
+		languageDictionary.Lenguaje();
+		CE.CargarPICTOGRAMAS_Nivel2();
+	}
+
 }
