@@ -80,7 +80,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Bombilla", "bombilla");
 			stringList.Add ("LLave", "Llave");
 			stringList.Add ("Percha", "Percha");
-			stringList.Add ("Taza", "Copa");
+			stringList.Add ("Taza", "Taza");
 			stringList.Add ("Vaso", "Vaso");
 			stringList.Add ("Sol", "Sol");
 			stringList.Add ("Luna", "Luna");
@@ -364,9 +364,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Monedas:", "Txanponak: ");
 			stringList.Add ("Nivel 2 completado", "2 Maila osatuta");
 			
-			stringList.Add ("TIRA", "Dado");
-			stringList.Add ("EL", "a");
-			stringList.Add ("DADO", "bota");
+			stringList.Add ("TIRA", "Dadoa");
+			stringList.Add ("EL", "bota");
+			stringList.Add ("DADO", "ezazu");
 			
 			stringList.Add ("Fresa", "Marrubia");
 			stringList.Add ("Pera", "Udarea");
