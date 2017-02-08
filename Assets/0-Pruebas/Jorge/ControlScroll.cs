@@ -32,14 +32,15 @@ public class ControlScroll : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	/*void Update () 
 	{
-		/*if (Input.GetMouseButtonUp (0)&&gameObject.name=="Panel") 
+		if (Input.GetMouseButtonUp (0)&&gameObject.name=="Panel") 
 		{
 			print("suelto barra");
-		}*/
+		}
 
 	}
+	*/
 
 	void OnMouseDown()
 	{
@@ -169,19 +170,19 @@ public class ControlScroll : MonoBehaviour
 	void Control_Nivel1()
 	{
 		if (Barra_Scroll.value < 0.25f) { //boton
-			Barra_Scroll.value = 0;
+			//Barra_Scroll.value = 0;
 			B = 0;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.25f && Barra_Scroll.value < 0.75f) { //boton 1
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
 			B = 1;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.75) { //boton 2
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
 			B = 2;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
@@ -190,31 +191,31 @@ public class ControlScroll : MonoBehaviour
 	void Control_Nivel2()
 	{
 		if (Barra_Scroll.value < 0.1f) { //boton
-			Barra_Scroll.value = 0;
+			//Barra_Scroll.value = 0;
 			B = 0;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.1f && Barra_Scroll.value < 0.35f) { //boton 1
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.25f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.25f;
 			B = 1;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.35f && Barra_Scroll.value < 0.65f) { //boton 2
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
 			B = 2;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.65f && Barra_Scroll.value < 0.85f) { //boton 3
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.75f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.75f;
 			B = 3;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.85) { //boton 4
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
 			B = 4;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
@@ -223,43 +224,43 @@ public class ControlScroll : MonoBehaviour
 	void Control_Nivel3()
 	{
 		if (Barra_Scroll.value < 0.1f) { //boton
-			Barra_Scroll.value = 0;
+			//Barra_Scroll.value = 0;
 			B = 0;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.1f && Barra_Scroll.value < 0.26f) { //boton 1
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.17f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.17f;
 			B = 1;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.26f && Barra_Scroll.value < 0.43f) { //boton 2
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.34f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.34f;
 			B = 2;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.43f && Barra_Scroll.value < 0.59f) { //boton 3
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.5f;
 			B = 3;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.59 && Barra_Scroll.value < 0.76) { //boton 4
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.67f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.67f;
 			B = 4;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.76 && Barra_Scroll.value < 0.93) { //boton 5
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 0.84f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 0.84f;
 			B = 5;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
 		}
 		if (Barra_Scroll.value >= 0.93) { //boton 5
-			Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
+			//Barra_Scroll.GetComponent<Scrollbar> ().value = 1f;
 			B = 6;
 			Reducir_tamaño ();
 			Ampliar_tamaño ();
