@@ -84,7 +84,7 @@ public class Botones_interfazMapa : MonoBehaviour
 	{
 		if (seleccion == false&&CDG_Mundo3D.islaBosque==false ) 
 		{
-			//print (Tiempo);
+			print (Tiempo);
 			Fondo_IBosque.SetActive (true);
 			Fondo_IFantasma.SetActive (false);
 			Fondo_IRobot.SetActive (false);
