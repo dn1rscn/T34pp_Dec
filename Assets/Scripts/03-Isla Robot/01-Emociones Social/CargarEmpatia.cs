@@ -93,6 +93,11 @@ public class CargarEmpatia : MonoBehaviour
 		reset ();
 		Application.LoadLevel("Isla_Mecanica_v3");
 	}
+	public void volverAlMenuSeleccion()
+	{
+		reset ();
+		Application.LoadLevel("Empatia_MenusSeleccion");
+	}
 	public void Actualizar_Escena()
 	{
 		CE = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
