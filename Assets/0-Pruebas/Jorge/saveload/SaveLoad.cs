@@ -24,20 +24,7 @@ public class SaveLoad : MonoBehaviour
 		DontDestroyOnLoad (this);
 
 		//CREAMOS ARCHIVO VARIABLES DEFAULT
-		if(File.Exists (Application.persistentDataPath + "Default.sg"))
-		{
-			print("existe archivo default");
-		}
-		else
-		{
-			print ("guardamos Default");
-			datos = new Game ();
-			guardamosDatos ();
-			FileStream file2 = File.Create (Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
-			BinaryFormatter bformatter = new BinaryFormatter ();
-			bformatter.Serialize (file2, datos);//guardamos las variables
-			file2.Close ();
-		}
+		Default();
 	}
 	void Awake ()
 	{
@@ -63,11 +50,22 @@ public class SaveLoad : MonoBehaviour
 		file.Close ();
 	}
 
+	public void Default()
+	{
+		print ("guardamos Default");
+		datos = new Game ();
+		guardamosDatos ();
+		FileStream file = File.Create (Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+		BinaryFormatter bformatter = new BinaryFormatter ();
+		bformatter.Serialize (file, datos);//guardamos las variables
+		file.Close ();
+	}
+
 	public void Load()
 	{
 		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
 		{
-			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+			//cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 
 			print("cargamos");
 			datos= new Game ();
@@ -83,15 +81,15 @@ public class SaveLoad : MonoBehaviour
 	{
 		if (File.Exists (Application.persistentDataPath + "Default.sg")) 
 		{
-			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+			//cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 			
 			print("cargamos Default");
 			datos= new Game ();
-			FileStream file2 = File.Open (Application.persistentDataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
+			FileStream file = File.Open (Application.persistentDataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
 			BinaryFormatter bformatter = new BinaryFormatter ();
-			datos = (Game)bformatter.Deserialize(file2); //decodificamos/cargamos el archivo
+			datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
 			cargarDatos();
-			file2.Close ();
+			file.Close ();
 		}
 	}
 

@@ -18,294 +18,293 @@ public static class languageDictionary//: MonoBehaviour
 		if(lang=="Spanish"||lang==null)
 		{
 
-			stringList.Add ("Cargando...", "Cargando...");
+			stringList.Add ("Cargando...", "CARGANDO...");
 			
 			//intro
-			stringList.Add ("Empezar", "Empezar");
-			stringList.Add ("Continuar", "Continuar");
-			stringList.Add ("Nuevo", "Nuevo");
+			stringList.Add ("Empezar", "EMPEZAR");
+			stringList.Add ("Continuar", "CONTINUAR");
+			stringList.Add ("Nuevo", "NUEVO");
 			
 			//personalizacion
-			stringList.Add ("Crea tu avatar", "Crea tu avatar");
+			stringList.Add ("Crea tu avatar", "CREA TU AVATAR");
 			
 			//selec isla
-			stringList.Add ("Selección de isla", "Selección de isla");
+			stringList.Add ("Selección de isla", "SELECCIÓN DE ISLA");
 			
 			//Tutorial
-			stringList.Add ("Tutorial", "Tutorial");
-			stringList.Add ("Haz click en el suelo para moverte", "Haz click en el suelo para moverte");
-			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "Interactua con las mascotas haciendo click en ellas");
-			stringList.Add ("¡Hola!", "¡Hola!");
-			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "Pausa la partida para acceder a mapa y personalización");
-			stringList.Add ("Accede a los portales para completar los ejercicios", "Accede a los portales para completar los ejercicios");
-			
+			stringList.Add ("Tutorial", "TUTORIAL");
+			stringList.Add ("Haz click en el suelo para moverte", "HAZ CLICK EN EL SUELO PARA MOVERTE");
+			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "INTERACTUA CON LAS MASCOTAS HACIENDO CLOCK EN ELLAS");
+			stringList.Add ("¡Hola!", "¡HOLA!");
+			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PAUSA LA PARTIDA PARA ACCEDER A MAPA Y PERSONALIZACIÓN");
+			stringList.Add ("Accede a los portales para completar los ejercicios", "ACCEDE A LOS PORTALES PARA COMPLETAR LOS EJERCICIOS");
 			//DIno
-			stringList.Add ("¡Bienvenido a la isla bosque!", "¡Bienvenido a la isla bosque!");
-			stringList.Add ("He perdido uno de mis:", "He perdido uno de mis:");
-			stringList.Add ("Ayúdame a encontrarlo", "Ayúdame a encontrarlo");
-			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "¡Gracias por ayudarme a recuperarlo!");
+			stringList.Add ("¡Bienvenido a la isla bosque!", "¡BIENVENIDO A LA ISLA BOSQUE!");
+			stringList.Add ("He perdido uno de mis:", "HE PERDIDO UNO DE MIS:");
+			stringList.Add ("Ayúdame a encontrarlo", "AYÚDAME A ENCONTRARLO");
+			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "¡GRACIAS POR AYUDARME A RECUPERARLO!");
 			
 			//Menu
-			stringList.Add ("Objetivos", "Objetivos");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "Consigue 3 estrellas en todos los ejercicios de la isla bosque");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "Consigue 3 estrellas en todos los ejercicios de la isla Fantasma");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "Consigue 3 estrellas en todos los ejercicios de la isla Mecanica");
-			stringList.Add ("Dado nivel 1", "Dado nivel 1");
-			stringList.Add ("Dado nivel 2", "Dado nivel 2");
-			stringList.Add ("Sonidos nivel 1", "Sonidos nivel 1");
-			stringList.Add ("Sonidos nivel 2", "Sonidos nivel 2");
-			stringList.Add ("Sonidos nivel 3", "Sonidos nivel 3");
+			stringList.Add ("Objetivos", "OBJETIVOS");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA BOSQUE");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA FANTASMA");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA MECANICA");
+			stringList.Add ("Dado nivel 1", "DADO NIVEL 1");
+			stringList.Add ("Dado nivel 2", "DADO NIVEL 2");
+			stringList.Add ("Sonidos nivel 1", "SONIDOS NIVEL 1");
+			stringList.Add ("Sonidos nivel 2", "SONIDOS NIVEL 2");
+			stringList.Add ("Sonidos nivel 3", "SONIDOS NIVEL 3");
 			
 			//DAdo
-			stringList.Add ("Ejercicio dado", "Ejercicio dado");
-			stringList.Add ("Entrar", "Entrar");
-			stringList.Add ("Selección de nivel", "Selección de nivel");
-			stringList.Add ("Haz click en el dado para lanzarlo", "Haz click en el dado para lanzarlo");
-			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "¡Empareja la imagen con el dado para ganar puntos!");
-			stringList.Add ("Nivel 2 desbloqueado", "Nivel 2 desbloqueado");
-			stringList.Add ("Nivel 1 Completado", "Nivel 1 Completado");
-			stringList.Add ("Aciertos: ", "Aciertos: ");
-			stringList.Add ("Combos: ", "Combos: ");
-			stringList.Add ("Monedas: ", "Monedas: ");
-			stringList.Add ("Nivel 2 completado", "Nivel 2 completado");
+			stringList.Add ("Ejercicio dado", "EJERCICIO DADO");
+			stringList.Add ("Entrar", "ENTRAR");
+			stringList.Add ("Selección de nivel", "SELECCIÓN DE NIVEL");
+			stringList.Add ("Haz click en el dado para lanzarlo", "HAZ CLICK EN EL DADO PARA LANZARLO");
+			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "¡EMPAREJA LA IMAGEN CON EL DADO PARA GANAR PUNTOS!");
+			stringList.Add ("Nivel 2 desbloqueado", "NIVEL 2 DESBLOQUEADO");
+			stringList.Add ("Nivel 1 Completado", "NIVEL 1 COMPLETADO");
+			stringList.Add ("Aciertos: ", "ACIERTOS: ");
+			stringList.Add ("Combos: ", "COMBOS: ");
+			stringList.Add ("Monedas: ", "MONEDAS: ");
+			stringList.Add ("Nivel 2 completado", "NIVEL 2 COMPLETADO");
 			
 			stringList.Add ("TIRA", "TIRA");
 			stringList.Add ("EL", "EL");
 			stringList.Add ("DADO", "DADO");
 			
-			stringList.Add ("Fresa", "Fresa");
-			stringList.Add ("Pera", "Pera");
-			stringList.Add ("Platano", "Platano");
-			stringList.Add ("Copa", "Copa");
-			stringList.Add ("Bombilla", "bombilla");
-			stringList.Add ("LLave", "Llave");
-			stringList.Add ("Percha", "Percha");
-			stringList.Add ("Taza", "Taza");
-			stringList.Add ("Vaso", "Vaso");
-			stringList.Add ("Sol", "Sol");
-			stringList.Add ("Luna", "Luna");
-			stringList.Add ("Estrella", "Estrella");
+			stringList.Add ("Fresa", "FRESA");
+			stringList.Add ("Pera", "PERA");
+			stringList.Add ("Platano", "PLATANO");
+			stringList.Add ("Copa", "COPA");
+			stringList.Add ("Bombilla", "BOMBILLA");
+			stringList.Add ("LLave", "LLAVE");
+			stringList.Add ("Percha", "PERCHA");
+			stringList.Add ("Taza", "TAZA");
+			stringList.Add ("Vaso", "VASO");
+			stringList.Add ("Sol", "SOL");
+			stringList.Add ("Luna", "LUNA");
+			stringList.Add ("Estrella", "ESTRELLA");
 			
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","Ejercicios sonidos");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "Pulsa Play para escuchar en sonido");
-			stringList.Add ("y REPLAY para repetirlo", "y REPLAY para repetirlo");
-			stringList.Add ("Haz click en la imagen que corresponda al sonido", "Haz click en la imagen que corresponda al sonido");
-			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "Pulsa PLAY de nuevo para seguir jugando");
-			stringList.Add ("Isla Fantasma desbloqueada", "Isla Fantasma desbloqueada");
+			stringList.Add ("Ejercicios sonidos","EJERCICIOS SONIDOS");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PULSA PLAY PARA ESCUCHAR UN SONIDO");
+			stringList.Add ("y REPLAY para repetirlo", "Y REPLAY PARA REPETIRLO");
+			stringList.Add ("Haz click en la imagen que corresponda al sonido", "HAZ CLICK EN LA IMAGEN QUE CORRESPONDA AL SONIDO");
+			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PULSA PLAY DE NUEVO PARA SEGUIR JUGANDO");
+			stringList.Add ("Isla Fantasma desbloqueada", "ISLA FANTASMA DESBLOQUEADA");
 			
-			stringList.Add ("Isla Fantasma", "Isla Fantasma");
+			stringList.Add ("Isla Fantasma", "ISLA FANTASMA");
 			
 			//Fantasma
-			stringList.Add ("¡Bienvenido a la isla fantasma!", "¡Bienvenido a la isla fantasma!");
-			stringList.Add ("Mis:", "Mis:");
-			stringList.Add ("se han ro...ro..roto...", "se han ro...ro..roto...");
-			stringList.Add ("Ayúdame a encontrar las piezas", "Ayúdame a encontrar las piezas");
+			stringList.Add ("¡Bienvenido a la isla fantasma!", "¡BIENVENIDO A LA ISLA FANTASMA!");
+			stringList.Add ("Mis:", "MIS:");
+			stringList.Add ("se han ro...ro..roto...", "SE HAN RO...RO..ROTO...");
+			stringList.Add ("Ayúdame a encontrar las piezas", "AYÚDAME A ENCONTRAR LAS PIEZAS");
 			
 			//Ejercicio secuencias
-			stringList.Add ("Ejercicio secuencias", "Ejercicio secuencias");
-			stringList.Add ("Lavarse los dientes", "Lavarse los dientes");
-			stringList.Add ("Llamar por teléfono", "Llamar por teléfono");
-			stringList.Add ("Comprar pan", "Comprar pan");
-			stringList.Add ("Cruzar la calle", "Cruzar la calle");
-			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "Coloca las imagenes en el marco en el orden correcto");
-			stringList.Add ("¡Haz click en ellas para colocarlas!", "¡Haz click en ellas para colocarlas!");
-			stringList.Add ("¿Quieres salir?", "¿Quieres salir?");
-			stringList.Add ("Secuencia desbloqueada", "Secuencia desbloqueada");
-			stringList.Add ("Isla Mecanica Desbloqueada", "Isla Mecanica Desbloqueada");
+			stringList.Add ("Ejercicio secuencias", "EJERCICIO SECUENCIAS");
+			stringList.Add ("Lavarse los dientes", "LAVARSE LOS DIENTES");
+			stringList.Add ("Llamar por teléfono", "LLAMAR POR TELÉFONO");
+			stringList.Add ("Comprar pan", "COMPRAR PAN");
+			stringList.Add ("Cruzar la calle", "CRUZAR LA CALLE");
+			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "COLOCA LAS IMAGENES EN EL MARCO EN EL ORDEN CORRECTO");
+			stringList.Add ("¡Haz click en ellas para colocarlas!", "¡HAZ CLICK EN ELLAS PARA COLOCARLAS!");
+			stringList.Add ("¿Quieres salir?", "¿QUIERES SALIR?");
+			stringList.Add ("Secuencia desbloqueada", "SECUENCIA DESBLOQUEADA");
+			stringList.Add ("Isla Mecanica Desbloqueada", "ISLA MECANICA DESBLOQUEADA");
 			
 			//CANASTA
-			stringList.Add ("Juego canasta", "Juego canasta");
-			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "¡Consigue más puntos que el fantasma encestando!");
-			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "Haz click en la barra cuando pase la barra amarilla");
-			stringList.Add ("¡Hazlo tres veces para encestar!", "¡Hazlo tres veces para encestar!");
-			stringList.Add ("Has perdido", "Has perdido");
-			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "¡GRACIAS! ¡Has logrado encontrar mis gafas!");
+			stringList.Add ("Juego canasta", "JUEGO CANASTA");
+			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "¡CONSIGUE MÁS PUNTOS QUE EL FANTASMA ENCESTANDO!");
+			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "HAZ CLICK EN LA BARRA CUANDO PASE LA BARRA AMARILLA");
+			stringList.Add ("¡Hazlo tres veces para encestar!", "¡HAZLO TRES VECES PARA ENCESTAR!");
+			stringList.Add ("Has perdido", "HAS PERDIDO");
+			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "¡GRACIAS! ¡HAS LOGRADO ENCONTRAR MIS GAFAS!");
 			
 			//Entrar isla mecanica
-			stringList.Add ("Isla Mecanica", "Isla Mecanica");
+			stringList.Add ("Isla Mecanica", "ISLA MECANICA");
 			
 			//Robot
-			stringList.Add ("¡Bienvenido a isla Mecanica!", "¡Bienvenido a isla Mecanica!");
-			stringList.Add ("Me he quedado sin bateria...", "Me he quedado sin bateria...");
-			stringList.Add ("Ayúdame a encontrar: ", "Ayúdame a encontrar: ");
-			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias!", "¡Genial! ¡Gracias por encontrar mis baterias!");
+			stringList.Add ("¡Bienvenido a isla Mecanica!", "¡BIENVENIDO A ISLA MECANICA!");
+			stringList.Add ("Me he quedado sin bateria...", "ME HE QUEDADO SIN BATERIA...");
+			stringList.Add ("Ayúdame a encontrar: ", "AYÚDAME A ENCONTRAR: ");
+			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias!", "¡GENIAL! ¡GRACIAS POR ENCONTRAR MIS BATERIAS!");
 			
 			//emociones
-			stringList.Add ("Ejercicio emociones", "Ejercicio emociones");
-			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "Selecciona la emoción por la que te pregunta el robot");
-			stringList.Add ("Arrastra la imagen para verlas", "Arrastra la imagen para verlas");
-			stringList.Add ("Pulsa la imagen que elijas", "Pulsa la imagen que elijas");
-			stringList.Add ("Alegria", "Alegria");
-			stringList.Add ("Asco", "Asco");
-			stringList.Add ("Enfado", "Enfado");
-			stringList.Add ("Miedo", "Miedo");
-			stringList.Add ("Sorpresa", "Sorpresa");
-			stringList.Add ("Tristeza", "Tristeza");
-			stringList.Add ("Vergüenza", "Vergüenza");
-			stringList.Add ("Curiosidad", "Curiosidad");
-			stringList.Add ("Nerviosismo", "Nerviosismo");
-			stringList.Add ("Tranquilidad", "Tranquilidad");
+			stringList.Add ("Ejercicio emociones", "EJERCICIO EMOCIONES");
+			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "SELECCIONA LA EMOCIÓN POR LA QUE TE PREGUNTA EL ROBOT");
+			stringList.Add ("Arrastra la imagen para verlas", "ARRASTRA LA IMAGEN PARA VERLAS");
+			stringList.Add ("Pulsa la imagen que elijas", "PULSA LA IMAGEN QUE ELIJAS");
+			stringList.Add ("Alegria", "ALEGRIA");
+			stringList.Add ("Asco", "ASCO");
+			stringList.Add ("Enfado", "ENFADO");
+			stringList.Add ("Miedo", "MIEDO");
+			stringList.Add ("Sorpresa", "SORPRESA");
+			stringList.Add ("Tristeza", "TRISTEZA");
+			stringList.Add ("Vergüenza", "VEGÜENZA");
+			stringList.Add ("Curiosidad", "CURIOSIDAD");
+			stringList.Add ("Nerviosismo", "NERVIOSISMO");
+			stringList.Add ("Tranquilidad", "TRANQUILIDAD");
 			
 			//Empatia
-			stringList.Add ("Ejercicio empatia", "Ejercicio empatia");
-			stringList.Add ("Observa la situación que se plantea en la tele grande", "Observa la situación que se plantea en la tele grande");
-			stringList.Add ("Selecciona como crees que se sentiría esa persona", "Selecciona como crees que se sentiría esa persona");
-			stringList.Add ("Pulsa la imagen para seleccionarla", "Pulsa la imagen para seleccionarla");
+			stringList.Add ("Ejercicio empatia", "EJERCICIO EMPATIA");
+			stringList.Add ("Observa la situación que se plantea en la tele grande", "OBSERVA LA SITUACIÓN QUE SE PLANTEA EN LA TELE GRANDE");
+			stringList.Add ("Selecciona como crees que se sentiría esa persona", "SELECCIONA COMO CREES QUE SE SENTIRÍA ESA PERSONA");
+			stringList.Add ("Pulsa la imagen para seleccionarla", "PULSA LA IMAGEN PARA SELECCIONARLA");
 			
 			//Isla ALtar
-			stringList.Add ("Isla Altar", "Isla Altar");
-			stringList.Add ("¡Felicidades!", "¡Felicidades!");
-			stringList.Add ("¡Felicidades! Has completado el juego", "¡Felicidades! Has completado el juego");
-			stringList.Add ("Menú inicial", "Menú inicial");
-			stringList.Add ("Créditos", "Créditos");
+			stringList.Add ("Isla Altar", "ISLA ALTAR");
+			stringList.Add ("¡Felicidades!", "¡FELICIDADES!");
+			stringList.Add ("¡Felicidades! Has completado el juego", "¡FELICIDADES! HAS COMPLETADO EL JUEGO");
+			stringList.Add ("Menú inicial", "MENÚ INICIAL");
+			stringList.Add ("Créditos", "CRÉDITOS");
 		}
 
 		if(lang=="English")
 		{
 			//print(lang);
 			//PANTALLA CARGA
-			stringList.Add ("Cargando...", "Loading...");
+			stringList.Add ("Cargando...", "LOADING...");
 
 			//intro
-			stringList.Add ("Empezar", "Start");
-			stringList.Add ("Continuar", "Continue");
-			stringList.Add ("Nuevo", "New");
+			stringList.Add ("Empezar", "START");
+			stringList.Add ("Continuar", "CONTINUE");
+			stringList.Add ("Nuevo", "NEW");
 
 			//personalizacion
-			stringList.Add ("Crea tu avatar", "Create your avatar");
+			stringList.Add ("Crea tu avatar", "CREATE YOUR AVATAR");
 
 			//selec isla
-			stringList.Add ("Selección de isla", "Island selection");
+			stringList.Add ("Selección de isla", "ISLAND SELECTION");
 
 			//Tutorial
-			stringList.Add ("Tutorial", "Tutorial");
-			stringList.Add ("Haz click en el suelo para moverte", "Click on the floor to move");
-			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "Click on the pets to talk to them");
-			stringList.Add ("¡Hola!", "Hello!");
-			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "Pause the game to access map and personalization");
-			stringList.Add ("Accede a los portales para completar los ejercicios", "Access the portals to complete the exercises");
+			stringList.Add ("Tutorial", "TUTORIAL");
+			stringList.Add ("Haz click en el suelo para moverte", "CLICK ON THE FLOOR TO MOVE");
+			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "CLICK ON THE PETS TO TALK TO THEM");
+			stringList.Add ("¡Hola!", "HELLO!");
+			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PAUSE THE GAME TO ACCESS MAP AND PERSONALIZATION");
+			stringList.Add ("Accede a los portales para completar los ejercicios", "ACCESS THE PORTALS TO COMPLETE THE EXERCISES");
 
 			//DIno
-			stringList.Add ("¡Bienvenido a la isla bosque!", "Welcome to the forest island");
-			stringList.Add ("He perdido uno de mis:", "I lost one of my:");
-			stringList.Add ("Ayúdame a encontrarlo", "Help me finding it please");
-			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "Thanks for helping me getting it back!");
+			stringList.Add ("¡Bienvenido a la isla bosque!", "WELCOME TO THE FOREST ISLAND");
+			stringList.Add ("He perdido uno de mis:", "I LOST ONE OF MY:");
+			stringList.Add ("Ayúdame a encontrarlo", "HELP ME FINDING IT PLEASE");
+			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "THANKS FOR HELPING ME GETTING IT BACK!");
 
 			//Menu
-			stringList.Add ("Objetivos", "Aims");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "Get 3 stars on all of the forest island exercises");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "Get 3 stars on all Phantom island exercises");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "Get 3 stars on all Mechanical island exercises");
-			stringList.Add ("Dado nivel 1", "Dice level 1");
-			stringList.Add ("Dado nivel 2", "Dice level 2");
-			stringList.Add ("Sonidos nivel 1", "Sounds level 1");
-			stringList.Add ("Sonidos nivel 2", "Sounds level 2");
-			stringList.Add ("Sonidos nivel 3", "Sounds level 3");
+			stringList.Add ("Objetivos", "AIMS");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "GET 3 STARS ON ALL OF THE FOREST ISLAND EXERCISES");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "GET 3 STARS ON ALL PHANTOM ISLAND EXERCISES");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "GET 3 STARS ON ALL MECHANICAL ISLAND EXERCISES");
+			stringList.Add ("Dado nivel 1", "DICE LEVEL 1");
+			stringList.Add ("Dado nivel 2", "DICE LEVEL 2");
+			stringList.Add ("Sonidos nivel 1", "SOUNDS LEVEL 1");
+			stringList.Add ("Sonidos nivel 2", "SOUNDS LEVEL 2");
+			stringList.Add ("Sonidos nivel 3", "SOUNDS LEVEL 3");
 
 			//DAdo
-			stringList.Add ("Ejercicio dado", "Dice exercise");
-			stringList.Add ("Entrar", "Go in");
-			stringList.Add ("Selección de nivel", "Level selection");
-			stringList.Add ("Haz click en el dado para lanzarlo", "Click on the dice to throw it");
-			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "Match the image with the dice to earn points!");
-			stringList.Add ("Nivel 2 desbloqueado", "Level 2 unlocked");
-			stringList.Add ("Nivel 1 Completado", "Level 1 Completed");
-			stringList.Add ("Aciertos:", "Hits: ");
-			stringList.Add ("Combos:", "Combo:");
-			stringList.Add ("Monedas:", "Coins:");
-			stringList.Add ("Nivel 2 completado", "Level 2 completed");
+			stringList.Add ("Ejercicio dado", "DICE EXERCISE");
+			stringList.Add ("Entrar", "GO IN");
+			stringList.Add ("Selección de nivel", "LEVEL SELECTION");
+			stringList.Add ("Haz click en el dado para lanzarlo", "CLICK ON THE DICE TO THROW IT");
+			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "MATCH THE IMAGE WITH THE DICE TO EARN POINTS!");
+			stringList.Add ("Nivel 2 desbloqueado", "LEVEL 2 UNLOCKED");
+			stringList.Add ("Nivel 1 Completado", "LEVEL 1 COMPLETED");
+			stringList.Add ("Aciertos:", "HITS: ");
+			stringList.Add ("Combos:", "COMBO:");
+			stringList.Add ("Monedas:", "COINS:");
+			stringList.Add ("Nivel 2 completado", "LEVEL 2 COMPLETED");
 
 			stringList.Add ("TIRA", "THROW");
 			stringList.Add ("EL", "THE");
 			stringList.Add ("DADO", "DICE");
 
-			stringList.Add ("Fresa", "Strawberry");
-			stringList.Add ("Pera", "Pear");
-			stringList.Add ("Platano", "Banana");
-			stringList.Add ("Copa", "Drinking glass");
-			stringList.Add ("Bombilla", "Light bulb");
-			stringList.Add ("LLave", "Key");
-			stringList.Add ("Percha", "Hanger");
-			stringList.Add ("Taza", "Cup");
-			stringList.Add ("Vaso", "Glass");
-			stringList.Add ("Sol", "Sun");
-			stringList.Add ("Luna", "Moon");
-			stringList.Add ("Estrella", "Star");
+			stringList.Add ("Fresa", "STRAWBERRY");
+			stringList.Add ("Pera", "PEAR");
+			stringList.Add ("Platano", "BANANA");
+			stringList.Add ("Copa", "DRINKING GLASS");
+			stringList.Add ("Bombilla", "LIGHT BULB");
+			stringList.Add ("LLave", "KEY");
+			stringList.Add ("Percha", "HANGER");
+			stringList.Add ("Taza", "CUP");
+			stringList.Add ("Vaso", "GLASS");
+			stringList.Add ("Sol", "SUN");
+			stringList.Add ("Luna", "MOON");
+			stringList.Add ("Estrella", "STAR");
 
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","Sounds exercise");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "Press PLAY to hear a sound");
-			stringList.Add ("y REPAY para repetirlo", "and REPLAY to hear it again");
-			stringList.Add ("Haz click en la imagen que corresponda al sonido", "Click on the image that corresponds to the sound");
-			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "Press PLAY again to continue playing");
-			stringList.Add ("Isla Fantasma desbloqueada", "Ghost island unlocked");
+			stringList.Add ("Ejercicios sonidos","SOUNDS EXERCISE");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PRESS PLAY TO HEAR A SOUND");
+			stringList.Add ("y REPAY para repetirlo", "AND REPLAY TO HEAR IT AGAIN");
+			stringList.Add ("Haz click en la imagen que corresponda al sonido", "CLICK ON THE IMAGE THAT CORRESPONDS TO THE SOUND");
+			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PRESS PLAY AGAIN TO CONTINUE PLAYING");
+			stringList.Add ("Isla Fantasma desbloqueada", "GHOST ISLAND UNLOCKED");
 
-			stringList.Add ("Isla Fantasma", "Ghost island");
+			stringList.Add ("Isla Fantasma", "GHOST ISLAND");
 
 			//Fantasma
-			stringList.Add ("¡Bienvenido a la isla fantasma!", "Welcome to the ghost island!");
-			stringList.Add ("Mis:", "My:");
-			stringList.Add ("se han ro...ro..roto...", "are bro...o...o..oken");
-			stringList.Add ("Ayúdame a encontrar las piezas ", "Help me finding the pieces");
+			stringList.Add ("¡Bienvenido a la isla fantasma!", "WELCOME TO THE GHOST ISLAND!");
+			stringList.Add ("Mis:", "MY:");
+			stringList.Add ("se han ro...ro..roto...", "ARE BRO...O..O..OKEN");
+			stringList.Add ("Ayúdame a encontrar las piezas ", "HELP ME FINDING THE PIECES");
 
 			//Ejercicio secuencias
-			stringList.Add ("Ejercicio secuencias", "Sequences exercise");
-			stringList.Add ("Lavarse los dientes", "Brush your teeth");
-			stringList.Add ("Llamar por teléfono", "Phone call");
-			stringList.Add ("Comprar pan", "Buy");
-			stringList.Add ("Cruzar la calle", "Cross the road");
-			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "Place the images in the frame in the correct order");
-			stringList.Add ("¡Haz click en ellas para colocarlas!", "Press the images to place them!");
-			stringList.Add ("¿Quieres salir?", "Do you wanna to quit?");
-			stringList.Add ("Secuencia desbloqueada", "Sequence unlocked");
-			stringList.Add ("Isla Mecanica Desbloqueada", "Mechanical island Unlocked");
+			stringList.Add ("Ejercicio secuencias", "SECUENCES EXERCISE");
+			stringList.Add ("Lavarse los dientes", "BRUSH YOUR TEETH");
+			stringList.Add ("Llamar por teléfono", "PHONE CALL");
+			stringList.Add ("Comprar pan", "BUY");
+			stringList.Add ("Cruzar la calle", "CROSS THE ROAD");
+			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "PLACE THE IMAGES IN THE FRAME IN THE CORRECT ORDER");
+			stringList.Add ("¡Haz click en ellas para colocarlas!", "PRESS THE IMAGES TO PLACE THEM!");
+			stringList.Add ("¿Quieres salir?", "DO YOU WANNA TO QUIT?");
+			stringList.Add ("Secuencia desbloqueada", "SEQUENCE UNLOCKED");
+			stringList.Add ("Isla Mecanica Desbloqueada", "MECHANICAL ISLAND UNLOCKED");
 
 			//CANASTA
-			stringList.Add ("Juego canasta", "Basketball game");
-			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "Get  more points than the ghost by scoring the basket");
-			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "Click on the bar below when it passes the yellow marker");
-			stringList.Add ("¡Hazlo tres veces para encestar!", "Do it three times to score!");
-			stringList.Add ("Has perdido", "You lose");
-			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "Thank you! you've found my glasses!");
+			stringList.Add ("Juego canasta", "BASKETBALL GAME");
+			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "GET MORE POINTS THAN THE GHOST BY SCORING THE BASKET");
+			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "CLICK ON THE BAR BELOW WHEN IT PASSES THE YELLOW MARKER");
+			stringList.Add ("¡Hazlo tres veces para encestar!", "DO IT THREE TIMES TO SCORE!");
+			stringList.Add ("Has perdido", "YOU LOSE");
+			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "THANK YOU! YOU'VE FOUND MY GLASSES!");
 
 			//Entrar isla mecanica
-			stringList.Add ("Isla Mecanica", "Mechanical islad");
+			stringList.Add ("Isla Mecanica", "MECHANICAL ISLAND");
 
 			//Robot
-			stringList.Add ("¡Bienvenido a isla Mecanica!", "Welcome to Mechanical Island!");
-			stringList.Add ("Me he quedado sin bateria...", "I ran out of battery");
-			stringList.Add ("Ayúdame a encontrar: ", "Help me find:");
-			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias|", "Great! Thank you for finding my batteries!");
+			stringList.Add ("¡Bienvenido a isla Mecanica!", "WELCOME TO MECHANICAL ISALAND!");
+			stringList.Add ("Me he quedado sin bateria...", "I RAN OUT OF BATTERY");
+			stringList.Add ("Ayúdame a encontrar: ", "HELP ME FIND:");
+			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias|", "GREAT! THANK YOU FOR FINDING MY BATTERIES!");
 
 			//emociones
-			stringList.Add ("Ejercicio emociones", "Emotions exercise");
-			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "Select the emotion the robot asks for");
-			stringList.Add ("Arrastra la imagen para verlas", "Drag the images to see them");
-			stringList.Add ("Pulsa la imagen que elijas", "Click on the image you chose");
-			stringList.Add ("Alegria", "Joy");
-			stringList.Add ("Asco", "Disgust");
-			stringList.Add ("Enfado", "Anger");
-			stringList.Add ("Miedo", "Fear");
-			stringList.Add ("Sorpresa", "Surprise");
-			stringList.Add ("Tristeza", "SAdness");
-			stringList.Add ("Vergüenza", "Shame");
-			stringList.Add ("Curiosidad", "Curiosity");
-			stringList.Add ("Nerviosismo", "Nervousness");
-			stringList.Add ("Tranquilidad", "Clam");
+			stringList.Add ("Ejercicio emociones", "EMOTIONS EXERCISE");
+			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "SELECT THE EMOTION THE ROBOT ASKS FOR");
+			stringList.Add ("Arrastra la imagen para verlas", "DRAG THE IMAGES TO SEE THEM");
+			stringList.Add ("Pulsa la imagen que elijas", "CLICK ON THE IMAGE YOU CHOSE");
+			stringList.Add ("Alegria", "JOY");
+			stringList.Add ("Asco", "DISGUST");
+			stringList.Add ("Enfado", "ANGER");
+			stringList.Add ("Miedo", "FEAR");
+			stringList.Add ("Sorpresa", "SURPRISE");
+			stringList.Add ("Tristeza", "SADNESS");
+			stringList.Add ("Vergüenza", "SHAME");
+			stringList.Add ("Curiosidad", "CURIOSITY");
+			stringList.Add ("Nerviosismo", "NERVOUSNESS");
+			stringList.Add ("Tranquilidad", "CALM");
 
 			//Empatia
-			stringList.Add ("Ejercicio empatia", "Empathy exercise");
-			stringList.Add ("Observa la situación que se plantea en la tele grande", "Look at the situation on the big TV");
-			stringList.Add ("Selecciona como crees que se sentiría esa persona", "Select how you think that person would feel");
-			stringList.Add ("Pulsa la imagen para seleccionarla", "Click on image to select it");
+			stringList.Add ("Ejercicio empatia", "EMPATHY EXERCISE");
+			stringList.Add ("Observa la situación que se plantea en la tele grande", "LOOK AT THE SITUATION ON THE BIG TV");
+			stringList.Add ("Selecciona como crees que se sentiría esa persona", "SELECT HOW YOU THINK THAT PERSON WOULD FEEL");
+			stringList.Add ("Pulsa la imagen para seleccionarla", "CLICK ON IMAGE TO SELECT IT");
 
 			//Isla ALtar
-			stringList.Add ("Isla Altar", "Altar islad");
-			stringList.Add ("¡Felicidades!", "Congratulations!");
-			stringList.Add ("¡Felicidades! Has completado el juego", "Congratulations! you have completed the game");
-			stringList.Add ("Menú inicial", "Start menu");
-			stringList.Add ("Créditos", "Credits");
+			stringList.Add ("Isla Altar", "ALTAR ISLAND");
+			stringList.Add ("¡Felicidades!", "CONGRATULATIONS!");
+			stringList.Add ("¡Felicidades! Has completado el juego", "CONGRATULATIONS! YOU HAVE COMPLETED THE GAME");
+			stringList.Add ("Menú inicial", "START MENU");
+			stringList.Add ("Créditos", "CREDITS");
 		}
 
 		
@@ -313,147 +312,147 @@ public static class languageDictionary//: MonoBehaviour
 		{
 			//print(lang);
 			//PANTALLA CARGA
-			stringList.Add ("Cargando...", "Kargatzen...");
+			stringList.Add ("Cargando...", "KARGATZEN...");
 			
 			//intro
-			stringList.Add ("Empezar", "Hasi");
-			stringList.Add ("Continuar", "Jarraitu");
-			stringList.Add ("Nuevo", "Berria");
+			stringList.Add ("Empezar", "HASI");
+			stringList.Add ("Continuar", "JARRAITU");
+			stringList.Add ("Nuevo", "BERRIA");
 			
 			//personalizacion
-			stringList.Add ("Crea tu avatar", "Zure pertsonaia sortu");
+			stringList.Add ("Crea tu avatar", "ZURE PERTSONAIA SORTU");
 			
 			//selec isla
-			stringList.Add ("Selección de isla", "Uharte aukeraketa");
+			stringList.Add ("Selección de isla", "UHARTE AUKERAKETA");
 			
 			//Tutorial
-			stringList.Add ("Tutorial", "Tutoriala");
-			stringList.Add ("Haz click en el suelo para moverte", "Lurrean CLICK egin pertsonaia mugi dezan");
-			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "Maskotetan CLICK egin beraiekin hitz egiteko");
+			stringList.Add ("Tutorial", "TUTORIALA");
+			stringList.Add ("Haz click en el suelo para moverte", "LURREAN CLICK EGIN PERTSONAIA MUGI DEZAN");
+			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "MASKOTETAN CLICK EGIN BERAIEKIN HITZ EGITEKO");
 			stringList.Add ("¡Hola!", "Kaixo!");
-			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "Partida geldiarazi mapa eta pertsonai sorkuntzara sartu ahal izateko");
-			stringList.Add ("Accede a los portales para completar los ejercicios", "Portaletan sartu ariketak osatu ditzazun");
+			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PARTIDA GELDIARAZI MAPA ETA PERTSONAI SORKUNTZARA SARTU AHAL IZATEKO");
+			stringList.Add ("Accede a los portales para completar los ejercicios", "PORTALETAN SARTU ARIKETAK OSATU DITZAZUN");
 			
 			//DIno
-			stringList.Add ("¡Bienvenido a la isla bosque!", "Ongi etorri baso uhartera!");
-			stringList.Add ("He perdido uno de mis:", "Nire Galdu egin dut");
-			stringList.Add ("Ayúdame a encontrarlo", "Aurkitu ezazu mesedez");
-			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "Eskerrik asko aurkitu izanagatik");
+			stringList.Add ("¡Bienvenido a la isla bosque!", "ONGI ETORRI BASO UHARTERA!");
+			stringList.Add ("He perdido uno de mis:", "NIRE GALDU EGIN DUT");
+			stringList.Add ("Ayúdame a encontrarlo", "AURKITU EZAZU MESEDEZ");
+			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "ESKERRIK ASKO AURKITU IZANAGATIK");
 			
 			//Menu
-			stringList.Add ("Objetivos", "Helburuak");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "Baso uharteko ariketa guztietan hiru izar lor itzazu");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "Mamu uharteko ariketa guztietan hiru izar lor itzazu");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "Mekanikoa uharteko ariketa guztietan hiru izar lor itzazu");
-			stringList.Add ("Dado nivel 1", "Dado 1 malla");
-			stringList.Add ("Dado nivel 2", "Dado 2 malla");
-			stringList.Add ("Sonidos nivel 1", "Soinuak 1 malla");
-			stringList.Add ("Sonidos nivel 2", "Soinuak 2 malla");
-			stringList.Add ("Sonidos nivel 3", "Soinuak 3 malla");
+			stringList.Add ("Objetivos", "HELBURUAK");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "BASO UHARTEKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "MANU UHARTRKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "MEKANIKOA UHARTEKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
+			stringList.Add ("Dado nivel 1", "DADO 1 MALLA");
+			stringList.Add ("Dado nivel 2", "DADO 2 MALLA");
+			stringList.Add ("Sonidos nivel 1", "SOINUAK 1 MALLA");
+			stringList.Add ("Sonidos nivel 2", "SOINUAK 2 MALLA");
+			stringList.Add ("Sonidos nivel 3", "SOINUAK 3 MALLA");
 			
 			//DAdo
-			stringList.Add ("Ejercicio dado", "Dado ariketa");
-			stringList.Add ("Entrar", "Sartu");
-			stringList.Add ("Selección de nivel", "Maila aukeraketa");
-			stringList.Add ("Haz click en el dado para lanzarlo", "Dadoan CLICK egin jaurti dezazun");
-			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "Irudia dadoarekin batu puntuak irabazi ditzazun!");
-			stringList.Add ("Nivel 2 desbloqueado", "2 Maila prest");
-			stringList.Add ("Nivel 1 Completado", "1 Maila osatuta");
-			stringList.Add ("Aciertos:", "Asmatutakoak: ");
-			stringList.Add ("Combos:", "Kateak: ");
-			stringList.Add ("Monedas:", "Txanponak: ");
-			stringList.Add ("Nivel 2 completado", "2 Maila osatuta");
+			stringList.Add ("Ejercicio dado", "DADO ARIKETA");
+			stringList.Add ("Entrar", "SARTU");
+			stringList.Add ("Selección de nivel", "MAILA AUKERAKETA");
+			stringList.Add ("Haz click en el dado para lanzarlo", "DADOAN CLICK EGIN JAURTI DEZAZUN");
+			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "IRUDIA DADOAREKIN BATU PUNTUAK IRABAZI DITZAZUN!");
+			stringList.Add ("Nivel 2 desbloqueado", "2 MAILA PREST");
+			stringList.Add ("Nivel 1 Completado", "1 MAILA OSATUTA");
+			stringList.Add ("Aciertos:", "ASMATUTAKOAK: ");
+			stringList.Add ("Combos:", "KATEAK: ");
+			stringList.Add ("Monedas:", "TXANPONAK: ");
+			stringList.Add ("Nivel 2 completado", "2 MAILA OSATUTA");
 			
-			stringList.Add ("TIRA", "Dadoa");
-			stringList.Add ("EL", "bota");
-			stringList.Add ("DADO", "ezazu");
+			stringList.Add ("TIRA", "DADOA");
+			stringList.Add ("EL", "BOTA");
+			stringList.Add ("DADO", "EZAZU");
 			
-			stringList.Add ("Fresa", "Marrubia");
-			stringList.Add ("Pera", "Udarea");
-			stringList.Add ("Platano", "Banana");
-			stringList.Add ("Copa", "Kopa");
-			stringList.Add ("Bombilla", "Bonbilla");
-			stringList.Add ("LLave", "Giltza");
-			stringList.Add ("Percha", "Esekigailua");
-			stringList.Add ("Taza", "Katilua");
-			stringList.Add ("Vaso", "Edalontzia");
-			stringList.Add ("Sol", "Eguzkia");
-			stringList.Add ("Luna", "Ilargia");
-			stringList.Add ("Estrella", "Izarra");
+			stringList.Add ("Fresa", "MARRUBIA");
+			stringList.Add ("Pera", "UDAREA");
+			stringList.Add ("Platano", "BANANA");
+			stringList.Add ("Copa", "KOPA");
+			stringList.Add ("Bombilla", "BONBILLA");
+			stringList.Add ("LLave", "GILTZA");
+			stringList.Add ("Percha", "ESEKIGAILUA");
+			stringList.Add ("Taza", "KATILUA");
+			stringList.Add ("Vaso", "EDALONTZIA");
+			stringList.Add ("Sol", "EGUZKIA");
+			stringList.Add ("Luna", "ILARGIA");
+			stringList.Add ("Estrella", "IZARRA");
 			
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","Soinu ariketa");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PLAY botoia sakatu soinu bat etzuteko");
-			stringList.Add ("y REPAY para repetirlo", "REPLAY botoia sakatu soinu bera entzuteko");
-			stringList.Add ("Haz click en la imagen que corresponda al sonido", "Entzutako soinuari dagokion iruda sakatu");
-			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PLAY botoia berriro sakatu jolasten jaraitzeko");
-			stringList.Add ("Isla Fantasma desbloqueada", "Mamu uhartea desblokeatua");
+			stringList.Add ("Ejercicios sonidos","SOINU ARIKETA");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PLAY BOTOIA SAKATU SOINU BAT ETZUTEKO");
+			stringList.Add ("y REPAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
+			stringList.Add ("Haz click en la imagen que corresponda al sonido", "ENTZUTAKO SOINUARI DAGOKION IRUDA SAKATU");
+			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PLAY BOTOIA BERRIRO SAKATU JOLASTEN JARAITZEKO");
+			stringList.Add ("Isla Fantasma desbloqueada", "MAMU UHARTEA DESBLOKEATUA");
 			
-			stringList.Add ("Isla Fantasma", "Mamu uhartea");
+			stringList.Add ("Isla Fantasma", "MAMU UHARTEA");
 			
 			//Fantasma
-			stringList.Add ("¡Bienvenido a la isla fantasma!", "Ongi etorri mami uhartera!");
-			stringList.Add ("Mis:", "Nire:");
-			stringList.Add ("se han ro...ro..roto...", "beta..a..a..aurrekoak hautsi dira");
-			stringList.Add ("Ayúdame a encontrar las piezas ", "Zati guztiak aurkitzen lagundu nazazu mesedez");
+			stringList.Add ("¡Bienvenido a la isla fantasma!", "ONGI ETORRI MAMI UHARTERA!");
+			stringList.Add ("Mis:", "NIRE:");
+			stringList.Add ("se han ro...ro..roto...", "BETA..A..A..AURREKOAK HAUTSI DIRA");
+			stringList.Add ("Ayúdame a encontrar las piezas ", "ZATI GUZTIAK AURKITZEN LAGUNDU NAZAZU MESEDEZ");
 			
 			//Ejercicio secuencias
-			stringList.Add ("Ejercicio secuencias", "Ekintza-saila ariketa");
-			stringList.Add ("Lavarse los dientes", "Hortzak garbitu");
-			stringList.Add ("Llamar por teléfono", "Telefonoz deitu");
-			stringList.Add ("Comprar pan", "Ogia erosi");
-			stringList.Add ("Cruzar la calle", "Errepidea gurutzatu");
-			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "Irudiak markoan kiri zuzenean jarri");
-			stringList.Add ("¡Haz click en ellas para colocarlas!", "Irudiak sakatuz koka itzazu!");
-			stringList.Add ("¿Quieres salir?", "Irten nahi duzu?");
-			stringList.Add ("Secuencia desbloqueada", "Ekintza prest");
-			stringList.Add ("Isla Mecanica Desbloqueada", "Uharte mekanikoa desblokeatua");
+			stringList.Add ("Ejercicio secuencias", "EKINTZA-SAILA ARIKETA");
+			stringList.Add ("Lavarse los dientes", "HORTZAK GARBITU");
+			stringList.Add ("Llamar por teléfono", "TELEFONOZ DEITU");
+			stringList.Add ("Comprar pan", "OGIA EROSI");
+			stringList.Add ("Cruzar la calle", "ERREPIDEA GURURZATU");
+			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "IRUDIAK MARKOAN KIRI ZUZENEAN JARRI");
+			stringList.Add ("¡Haz click en ellas para colocarlas!", "IRUDIAK SAKATUZ KOKA ITZAZU!");
+			stringList.Add ("¿Quieres salir?", "IRTEN NAHI DUZU?");
+			stringList.Add ("Secuencia desbloqueada", "EKINTZA PREST");
+			stringList.Add ("Isla Mecanica Desbloqueada", "UHARTE MEKANIKOA DESBLOKEATUA");
 			
 			//CANASTA
-			stringList.Add ("Juego canasta", "Saskibaloi jokoa");
-			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "Baloia saskiratu mamua baino puntu gehio lortzeko");
-			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "Beheko barra sakatu hutsune horia gainditzen duenean");
-			stringList.Add ("¡Hazlo tres veces para encestar!", "Hiru aldiz sakatu ezazu saskiratzeko!");
-			stringList.Add ("Has perdido", "Huts egin duzu");
-			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "Eskerrik asko! Nire betaurrekoak aurkitu dituzu!");
+			stringList.Add ("Juego canasta", "SASKIBALOI JOKOA");
+			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "BALOIA SASKIRATU MAMUA BAINO PUNTU GEHIO LORTZEKO");
+			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "BEHEKO BARRA SAKATU HUTSUNE HORIA GAINDITZEN DUENEAN");
+			stringList.Add ("¡Hazlo tres veces para encestar!", "HIRU ALDIZ SAKATU EZAZU SASKIRATZEKO!");
+			stringList.Add ("Has perdido", "HUTS EGIN DUZU");
+			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "ESKERRIK ASKO! NIRE BETAURREKOAK AURKITU DITUZU!");
 			
 			//Entrar isla mecanica
-			stringList.Add ("Isla Mecanica", "Uharte mekanikoa");
+			stringList.Add ("Isla Mecanica", "UHARTE MEKANIKOA");
 			
 			//Robot
-			stringList.Add ("¡Bienvenido a isla Mecanica!", "Ongi etorri Uhaste Mekanikora!");
-			stringList.Add ("Me he quedado sin bateria...", "Bateria agortu zait...");
-			stringList.Add ("Ayúdame a encontrar: ", "aurkitzen lagundu nazazu");
-			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias|", "Bikain! Eskerrik asko lagundu izanagatik!");
+			stringList.Add ("¡Bienvenido a isla Mecanica!", "ONGI ETORRI UHASTE MEKANIKORA!");
+			stringList.Add ("Me he quedado sin bateria...", "BATERIA AGORTU ZAIT...");
+			stringList.Add ("Ayúdame a encontrar: ", "AURKITZEN LAGUNDU NAZAZU");
+			stringList.Add ("¡Genial! ¡Gracias por encontrar mis baterias|", "BIKAIN! ESKERRIK ASKO LAGUNDU IZANAGATIK!");
 			
 			//emociones
-			stringList.Add ("Ejercicio emociones", "Emozioen ariketa");
-			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "Robotak galdetutako emozioa aukeratu");
-			stringList.Add ("Arrastra la imagen para verlas", "Irudiak mugitu guztiak ikusi ahal izateko");
-			stringList.Add ("Pulsa la imagen que elijas", "Aukeratutako irudia sakatu");
-			stringList.Add ("Alegria", "Poza");
-			stringList.Add ("Asco", "Nazka");
-			stringList.Add ("Enfado", "Haserraldi");
-			stringList.Add ("Miedo", "Beldurra");
-			stringList.Add ("Sorpresa", "Harridura");
-			stringList.Add ("TRisteza", "Goibeltasuna");
-			stringList.Add ("Vergüenza", "Lotsa");
-			stringList.Add ("Curiosidad", "Jakingura");
-			stringList.Add ("Nerviosismo", "Urduritasun");
-			stringList.Add ("Tranquilidad", "Lasaitasuna");
+			stringList.Add ("Ejercicio emociones", "EMOZIOEN ARIKETA");
+			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "ROBOTAK GALDETUTAKO EMOZIOA AUKERATU");
+			stringList.Add ("Arrastra la imagen para verlas", "IRUDIAK MUGITU GUZTIAK IKUSI AHAL IZATEKO");
+			stringList.Add ("Pulsa la imagen que elijas", "AUKERATUTAKO IRUDIA SAKATU");
+			stringList.Add ("Alegria", "POZA");
+			stringList.Add ("Asco", "NAZKA");
+			stringList.Add ("Enfado", "HASERRALDI");
+			stringList.Add ("Miedo", "BELDURRA");
+			stringList.Add ("Sorpresa", "HARRIDURA");
+			stringList.Add ("TRisteza", "GOIBELTASUNA");
+			stringList.Add ("Vergüenza", "LOTSA");
+			stringList.Add ("Curiosidad", "JAKINGURA");
+			stringList.Add ("Nerviosismo", "URDURITASUN");
+			stringList.Add ("Tranquilidad", "LASAITASUNA");
 			
 			//Empatia
-			stringList.Add ("Ejercicio empatia", "Enpatia ariketa");
-			stringList.Add ("Observa la situación que se plantea en la tele grande", "Telebistan agertzen diren irudiak ikusi");
-			stringList.Add ("Selecciona como crees que se sentiría esa persona", "Irudietan agertzen den pertsona nola sentitzen den aukeratu");
-			stringList.Add ("Pulsa la imagen para seleccionarla", "Irudia sakatu aukeratu ahal izateko");
+			stringList.Add ("Ejercicio empatia", "ENPATIA ARIKETA");
+			stringList.Add ("Observa la situación que se plantea en la tele grande", "TELEBISTAN AGARTZEN DIREN IRUDIAK IKUSI");
+			stringList.Add ("Selecciona como crees que se sentiría esa persona", "IRUSIETAN AGERTZEN DEN PERTSONA NOLA SENTITZEN DEN AUKERATU");
+			stringList.Add ("Pulsa la imagen para seleccionarla", "IRUSIA SAKATU AUKERATU AHAL IZATEKO");
 			
 			//Isla ALtar
-			stringList.Add ("Isla Altar", "Aldare uhartea");
-			stringList.Add ("¡Felicidades!", "Zorionak!");
-			stringList.Add ("¡Felicidades! Has completado el juego", "Zorionak! Jokoa osatu duzu");
-			stringList.Add ("Menú inicial", "Hasierako menua");
-			stringList.Add ("Créditos", "Kredituak");
+			stringList.Add ("Isla Altar", "ALDERE UHARTEA");
+			stringList.Add ("¡Felicidades!", "ZORIONAK!");
+			stringList.Add ("¡Felicidades! Has completado el juego", "ZORIONAK! JOKOA OSATU DUZU");
+			stringList.Add ("Menú inicial", "HASIERAKO MENUA");
+			stringList.Add ("Créditos", "KREDITUAK");
 		}
 	}
 }

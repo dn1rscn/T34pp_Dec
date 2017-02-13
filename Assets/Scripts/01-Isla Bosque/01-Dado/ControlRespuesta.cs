@@ -190,6 +190,7 @@ public class ControlRespuesta : MonoBehaviour
 		if(cdg.aciertos==15)
 		{
 			boton_SiguienteNivel.SetActive(true);
+			SalirDelJuego();
 
 			if(CMisiones.dado1==true&&CMisiones.ejerB_3estrellas[0]==false)
 			{
@@ -204,7 +205,7 @@ public class ControlRespuesta : MonoBehaviour
 				}
 				CNotificaciones.MisionDino[0].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-				SalirDelJuego();
+				//SalirDelJuego();
 			}
 			if(CMisiones.dado2==true&&CMisiones.ejerB_3estrellas[1]==false)
 			{
@@ -219,7 +220,7 @@ public class ControlRespuesta : MonoBehaviour
 				}
 				CNotificaciones.MisionDino[1].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
-				SalirDelJuego();
+				//SalirDelJuego();
 			}
 		}
 		if (cdg.aciertos == 10 && DD.Nivel2Dado == false) 
