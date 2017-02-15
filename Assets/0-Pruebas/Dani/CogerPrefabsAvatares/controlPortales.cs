@@ -129,7 +129,8 @@ public class controlPortales : MonoBehaviour {
 
 			//Actualizamos el texto contiene el gameObject "nombrePortal"
 			textoNombrePortal.text = destinoPortal;
-
+			
+			textoNombrePortal.text=languageDictionary.stringList [destinoPortal];
 
 		}
 	}

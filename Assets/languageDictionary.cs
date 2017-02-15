@@ -17,6 +17,11 @@ public static class languageDictionary//: MonoBehaviour
 
 		if(lang=="Spanish"||lang==null)
 		{
+			stringList.Add("Seleccion de Idioma", "SELECCIÓN DE IDIOMA");
+
+			stringList.Add ("Español", "ESPAÑOL");
+			stringList.Add ("Ingles", "INGLES");
+			stringList.Add ("Euskera", "EUSKERA");
 
 			stringList.Add ("Cargando...", "CARGANDO...");
 			
@@ -54,6 +59,12 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Sonidos nivel 1", "SONIDOS NIVEL 1");
 			stringList.Add ("Sonidos nivel 2", "SONIDOS NIVEL 2");
 			stringList.Add ("Sonidos nivel 3", "SONIDOS NIVEL 3");
+			stringList.Add ("Empatia nivel 1", "EMPATIA NIVEL 1");
+			stringList.Add ("Empatia nivel 2", "EMPATIA NIVEL 2");
+			stringList.Add ("Empatia nivel 3", "EMPATIA NIVEL 3");
+			stringList.Add ("Emociones nivel 1", "EMOCIONES NIVEL 1");
+			stringList.Add ("Emociones nivel 2", "EMOCIONES NIVEL 2");
+			stringList.Add ("Emociones nivel 3", "EMOCIONES NIVEL 3");
 			
 			//DAdo
 			stringList.Add ("Ejercicio dado", "EJERCICIO DADO");
@@ -201,6 +212,12 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Sonidos nivel 1", "SOUNDS LEVEL 1");
 			stringList.Add ("Sonidos nivel 2", "SOUNDS LEVEL 2");
 			stringList.Add ("Sonidos nivel 3", "SOUNDS LEVEL 3");
+			stringList.Add ("Empatia nivel 1", "EMPATHY LEVEL 1");
+			stringList.Add ("Empatia nivel 2", "EMPATHY LEVEL 2");
+			stringList.Add ("Empatia nivel 3", "EMPATHY LEVEL 3");
+			stringList.Add ("Emociones nivel 1", "EMOTIONS LEVEL 1");
+			stringList.Add ("Emociones nivel 2", "EMOTIONS LEVEL 2");
+			stringList.Add ("Emociones nivel 3", "EMOTIONS LEVEL 3");
 
 			//DAdo
 			stringList.Add ("Ejercicio dado", "DICE EXERCISE");
@@ -349,6 +366,12 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Sonidos nivel 1", "SOINUAK 1 MALLA");
 			stringList.Add ("Sonidos nivel 2", "SOINUAK 2 MALLA");
 			stringList.Add ("Sonidos nivel 3", "SOINUAK 3 MALLA");
+			stringList.Add ("Empatia nivel 1", "ENPATIA 1 MALLA");
+			stringList.Add ("Empatia nivel 2", "ENPATIA 2 MALLA");
+			stringList.Add ("Empatia nivel 3", "ENPATIA 3 MALLA");
+			stringList.Add ("Emociones nivel 1", "EMOZIOEN 1 MALLA");
+			stringList.Add ("Emociones nivel 2", "EMOZIOEN 2 MALLA");
+			stringList.Add ("Emociones nivel 3", "EMOZIOEN 3 MALLA");
 			
 			//DAdo
 			stringList.Add ("Ejercicio dado", "DADO ARIKETA");

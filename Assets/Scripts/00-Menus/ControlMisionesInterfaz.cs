@@ -137,6 +137,17 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		ObjetivosRobot.SetActive (true);
 		GameObject.Find ("GrupoMisiones").GetComponent<Animator> ().Play ("abrirObjetivos");
 	}
+	public void Idiomas()
+	{
+		Application.LoadLevel("seleccion_Idioma");
+	}
+	public void cerrarIdiomas()
+	{
+		languageDictionary.stringList.Clear();
+		languageDictionary.Lenguaje();
+		//Traduccion();
+		GameObject.Find("GrupoMisiones").GetComponent<Animator> ().Play ("cerrarIdiomas");
+	}
 
 	public void cerrarObjetivos()
 	{

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class SelecLenguaje : MonoBehaviour 
 {
 	ControlEscenas CE;
+	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
+	SaveLoad SL;
 
 	public Sprite Check;
 	public Sprite NoCheck;
@@ -74,7 +76,27 @@ public class SelecLenguaje : MonoBehaviour
 	{
 		languageDictionary.stringList.Clear();
 		languageDictionary.Lenguaje();
-		CE.CargarPICTOGRAMAS_Nivel2();
+
+		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
+
+		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
+		if (CDG_Mundo3D.islaBosque == true) 
+		{
+			Application.LoadLevel ("Isla_bosque");
+		}
+		else if (CDG_Mundo3D.islaMec == true) {
+			Application.LoadLevel ("Isla_Mecanica_v3");
+		}
+		else if (CDG_Mundo3D.islaFant == true) {
+			Application.LoadLevel ("Isla_fantasma");
+		}
+		else
+		{
+			Application.LoadLevel("personalizacion2.0");
+		}
+		
+		SL.Save();
+
 	}
 
 }

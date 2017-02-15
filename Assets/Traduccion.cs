@@ -26,11 +26,9 @@ public class Traduccion : MonoBehaviour
 		print(text);
 			
 		textComponent.text=languageDictionary.stringList [text];
-
-
-
 	}
-	
+
+
 	// Update is called once per frame
 	/*void Awake ()
 	{

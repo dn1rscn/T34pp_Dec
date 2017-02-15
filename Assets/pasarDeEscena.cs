@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class pasarDeEscena : MonoBehaviour {
 
@@ -16,9 +19,16 @@ public class pasarDeEscena : MonoBehaviour {
 			print ("Debes especificar el nombre de la escena siguiente en el Inspector");
 		} 
 
-		else {
-
-			Application.LoadLevel(escenaSiguiente);
+		else 
+		{
+			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+			{
+				Application.LoadLevel("personalizacion2.0");
+			}
+			else
+			{
+				Application.LoadLevel(escenaSiguiente);
+			}
 
 		}
 	}
