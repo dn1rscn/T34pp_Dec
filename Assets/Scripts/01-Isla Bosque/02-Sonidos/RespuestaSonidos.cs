@@ -382,7 +382,7 @@ public class RespuestaSonidos : MonoBehaviour
 		}
 		
 		
-		TpuntuacionFin.text = "\nACIERTOS: " + CS.aciertos.ToString ();
+		TpuntuacionFin.text = CS.aciertos.ToString ();
 		
 		TmonedasSonidos.text = cM.MonedasSonidos.ToString();
 

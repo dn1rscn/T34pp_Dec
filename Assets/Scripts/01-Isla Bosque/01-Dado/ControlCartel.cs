@@ -34,6 +34,10 @@ public class ControlCartel : MonoBehaviour
 		DGlobales = GameObject.Find ("DatosGlobales");
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 
+		GameObject.Find("Text1").SetActive(false);
+		GameObject.Find("Text2").SetActive(false);
+		GameObject.Find("Text3").SetActive(false);
+
 		cdg.correcto = Random.Range (1,4);
 		print ("cartel correcto "+cdg.correcto);
 		switch (cdg.correcto) 

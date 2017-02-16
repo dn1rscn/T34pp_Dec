@@ -17,7 +17,9 @@ public class SelecLenguaje : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+
 		CE=GameObject.Find("control escenas").GetComponent<ControlEscenas>();
+
 		switch(languageDictionary.lang)
 		{
 		case null:
@@ -33,6 +35,7 @@ public class SelecLenguaje : MonoBehaviour
 			Euskera();
 				break;
 		}
+
 
 	}
 	
@@ -78,7 +81,7 @@ public class SelecLenguaje : MonoBehaviour
 		languageDictionary.Lenguaje();
 
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
-
+		Application.LoadLevel("Nivel1_dado2.0");
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		if (CDG_Mundo3D.islaBosque == true) 
 		{

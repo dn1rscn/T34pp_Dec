@@ -58,6 +58,7 @@ public class ControlRespuesta : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+
 		animator_Dino = GameObject.Find("Dinoi_animaciones_v3").GetComponent<Animator>();
 		animator_panelCanvas = GameObject.Find("Panel_Canvas").GetComponent<Animator>();
 
@@ -305,6 +306,12 @@ public class ControlRespuesta : MonoBehaviour
 
 			TmonedasDado.text = cM.monedas_dado.ToString();
 
+
+			//TmonedasDado.text=languageDictionary.stringList [TmonedasDado];
+			languageDictionary.lang = "Spanish";
+
+			TpuntuacionFin.text=languageDictionary.stringList [TpuntuacionFin.text];
+
 			resetearDado();
 
 		} 
@@ -393,7 +400,7 @@ public class ControlRespuesta : MonoBehaviour
 
 		}
 		
-		TpuntuacionFin.text = "\nACIERTOS: " + cdg.aciertos.ToString () + "\nCOMBOS: " + cdg.combos.ToString ();
+		TpuntuacionFin.text =cdg.aciertos.ToString ()+ "\n" + cdg.combos.ToString ();
 		
 		TmonedasDado.text = cM.monedas_dado.ToString();
 

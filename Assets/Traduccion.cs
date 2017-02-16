@@ -16,6 +16,8 @@ public class Traduccion : MonoBehaviour
 		//languageDictionary.lang = "English";
 		//print(languageDictionary.lang);
 		//languageDictionary.Lenguaje();
+		languageDictionary.stringList.Clear();
+		languageDictionary.Lenguaje();
 	
 		print(languageDictionary.lang);
 		//languageDictionary.Lenguaje();

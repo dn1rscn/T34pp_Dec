@@ -390,7 +390,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 				GameObject.Find("Notificaciones2").GetComponent<Animator>().Play("abrirNotificacion");
 			}
 		}
-		TpuntuacionFin.text ="HAS GANADO" + "\nACIERTOS: " + puntuacionJugador.ToString ();
+		TpuntuacionFin.text =puntuacionJugador.ToString ();
+
+		GameObject.Find("resultado").GetComponent<Text>().text=languageDictionary.stringList ["Has pganado"];
 		
 		Tmonedascanasta.text = cM.MonedasGenerales_canasta.ToString();
 
@@ -411,7 +413,8 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		//cM.calcular_monedasCanasta ();
 		//cM.calcular_monedasGenerales ();
 		
-		TpuntuacionFin.text ="HAS PERDIDO" + "\nACIERTOS: " + puntuacionJugador.ToString ();
+		TpuntuacionFin.text = puntuacionJugador.ToString ();
+		GameObject.Find("resultado").GetComponent<Text>().text=languageDictionary.stringList ["Has perdido"];
 		
 		Tmonedascanasta.text = cM.MonedasGenerales_canasta.ToString();
 		

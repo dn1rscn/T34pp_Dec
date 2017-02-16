@@ -23,6 +23,8 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ingles", "INGLES");
 			stringList.Add ("Euskera", "EUSKERA");
 
+			stringList.Add ("Fallos", "FALLOS");
+
 			stringList.Add ("Cargando...", "CARGANDO...");
 			
 			//intro
@@ -74,9 +76,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "¡EMPAREJA LA IMAGEN CON EL DADO PARA GANAR PUNTOS!");
 			stringList.Add ("Nivel 2 desbloqueado", "NIVEL 2 DESBLOQUEADO");
 			stringList.Add ("Nivel 1 Completado", "NIVEL 1 COMPLETADO");
-			stringList.Add ("Aciertos: ", "ACIERTOS: ");
-			stringList.Add ("Combos: ", "COMBOS: ");
-			stringList.Add ("Monedas: ", "MONEDAS: ");
+			stringList.Add ("Aciertos:", "ACIERTOS: ");
+			stringList.Add ("Combos:", "COMBOS: ");
+			stringList.Add ("Monedas:", "MONEDAS: ");
 			stringList.Add ("Nivel 2 completado", "NIVEL 2 COMPLETADO");
 			
 			stringList.Add ("TIRA", "TIRA");
@@ -130,6 +132,8 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "HAZ CLICK EN LA BARRA CUANDO PASE LA BARRA AMARILLA");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "¡HAZLO TRES VECES PARA ENCESTAR!");
 			stringList.Add ("Has perdido", "HAS PERDIDO");
+			stringList.Add ("Has ganado", "HAS GANADO");
+			stringList.Add ("Espera tu turno...", "ESPERA TU TURNO...");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "¡GRACIAS! ¡HAS LOGRADO ENCONTRAR MIS GAFAS!");
 			
 			//Entrar isla mecanica
@@ -175,6 +179,10 @@ public static class languageDictionary//: MonoBehaviour
 		{
 			//print(lang);
 			//PANTALLA CARGA
+			stringList.Add ("Español", "SPANISH");
+			stringList.Add ("Ingles", "ENGLISH");
+			stringList.Add ("Euskera", "EUSKERA");
+
 			stringList.Add ("Cargando...", "LOADING...");
 
 			//intro
@@ -283,6 +291,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "CLICK ON THE BAR BELOW WHEN IT PASSES THE YELLOW MARKER");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "DO IT THREE TIMES TO SCORE!");
 			stringList.Add ("Has perdido", "YOU LOSE");
+			stringList.Add ("Has ganado", "YOU WIN");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "THANK YOU! YOU'VE FOUND MY GLASSES!");
 
 			//Entrar isla mecanica
@@ -328,7 +337,12 @@ public static class languageDictionary//: MonoBehaviour
 		if(lang=="Euskara")
 		{
 			//print(lang);
+			stringList.Add ("Español", "ESPAÑOL");
+			stringList.Add ("Ingles", "INGLES");
+			stringList.Add ("Euskera", "EUSKERA");
+
 			//PANTALLA CARGA
+
 			stringList.Add ("Cargando...", "KARGATZEN...");
 			
 			//intro
@@ -437,6 +451,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "BEHEKO BARRA SAKATU HUTSUNE HORIA GAINDITZEN DUENEAN");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "HIRU ALDIZ SAKATU EZAZU SASKIRATZEKO!");
 			stringList.Add ("Has perdido", "HUTS EGIN DUZU");
+			stringList.Add ("Has ganado", "");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "ESKERRIK ASKO! NIRE BETAURREKOAK AURKITU DITUZU!");
 			
 			//Entrar isla mecanica
