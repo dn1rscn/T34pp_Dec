@@ -6,12 +6,14 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 {
 	ControlEmociones CE;
 
+	public string[] AEmociones;
 	public Sprite[] APregunta;
 	public Sprite[] AImRespuesta;
 	public GameObject[] ARespuesta;
 	public bool[] ARespuestasActivas;
 
 	public Image Pregunta;
+	public Text TPregunta;
 
 	public int respuestaCorrectaAleat;
 	public int respuestaAleat;
@@ -149,6 +151,8 @@ public class ControlEmocionesAleatorio : MonoBehaviour
 			PreguntaAleat = Random.Range (0, APregunta.Length);
 		}
 		Pregunta.GetComponent<Image> ().sprite = APregunta [PreguntaAleat];
+		TPregunta.GetComponent<Text> ().text=languageDictionary.stringList [AEmociones[PreguntaAleat]];
+
 		AnteriorPregunta=PreguntaAleat;
 	}
 }

@@ -22,6 +22,10 @@ public class ControlMisionesInterfaz : MonoBehaviour
 	public GameObject ObjetivosFantasma;
 	public GameObject ObjetivosRobot;
 
+	public Sprite Bandera_Español;
+	public Sprite Bandera_Ingles;
+	public Sprite Bandera_Euskera;
+
 	Text TMonedas;
 
 	// Use this for initialization
@@ -46,6 +50,22 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		ActualizarMisionRobot();
 
 		CPO.actualizar_Objetos ();
+
+		switch(languageDictionary.lang)
+		{
+		case null:
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Español;
+			break;
+		case "Spanish":
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Español;
+			break;
+		case "English":
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Ingles;
+			break;
+		case "Euskara":
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Euskera;
+			break;
+		}
 	}
 	
 

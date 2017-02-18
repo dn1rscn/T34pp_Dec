@@ -217,7 +217,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				CMisiones.Mision_Robot();
 
 				
-				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
+				TpuntuacionFin.text = CE.aciertos.ToString ();
 				
 				TmonedasEmociones.text = cM.monedasEmociones.ToString();
 
@@ -230,7 +230,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			}
 
 		}
-		if (CE.aciertos != 15) 
+		if (CE.aciertos != 10) 
 		{
 			for(int i = 0; i<CEA.ARespuestasActivas.Length; i++)
 			{
@@ -263,20 +263,20 @@ public class ControlRespuestaEmociones : MonoBehaviour
 			
 			cM.calcular_monedasEmociones();
 
-			if(CE.aciertos>=5)
+			if(CE.aciertos>=3)
 			{
 				Invoke ("ActivarEstrella1", 1.0f);
 			}
-			if(CE.aciertos>=10)
+			if(CE.aciertos>=7)
 			{
 				Invoke ("ActivarEstrella2", 2.0f);
 			}
-			if(CE.aciertos>=15)
+			if(CE.aciertos>=10)
 			{
 				Invoke ("ActivarEstrella3", 3.0f);
 			}
 
-			TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString ();
+			TpuntuacionFin.text = CE.aciertos.ToString ();
 			
 			TmonedasEmociones.text = cM.monedasEmociones.ToString();
 

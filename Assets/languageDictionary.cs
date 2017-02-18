@@ -26,6 +26,10 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Fallos", "FALLOS");
 
 			stringList.Add ("Cargando...", "CARGANDO...");
+
+			stringList.Add ("¿SEGURO QUE QUIERES BORRAR LA PARTIDA?", "¿SEGURO QUE QUIERES BORRAR LA PARTIDA?");
+			stringList.Add ("SI", "SI");
+			stringList.Add ("NO", "NO");
 			
 			//intro
 			stringList.Add ("Empezar", "EMPEZAR");
@@ -125,6 +129,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¿Quieres salir?", "¿QUIERES SALIR?");
 			stringList.Add ("Secuencia desbloqueada", "SECUENCIA DESBLOQUEADA");
 			stringList.Add ("Isla Mecanica Desbloqueada", "ISLA MECANICA DESBLOQUEADA");
+			stringList.Add ("Secuencia completada", "SECUENCIA COMPLETADA");
 			
 			//CANASTA
 			stringList.Add ("Juego canasta", "JUEGO CANASTA");
@@ -184,6 +189,8 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Euskera", "EUSKERA");
 
 			stringList.Add ("Cargando...", "LOADING...");
+
+			stringList.Add ("Fallos", "MISTAKES");
 
 			//intro
 			stringList.Add ("Empezar", "START");
@@ -284,6 +291,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¿Quieres salir?", "DO YOU WANNA TO QUIT?");
 			stringList.Add ("Secuencia desbloqueada", "SEQUENCE UNLOCKED");
 			stringList.Add ("Isla Mecanica Desbloqueada", "MECHANICAL ISLAND UNLOCKED");
+			stringList.Add ("Secuencia completada", "SEQUENCE COMPLETED");
 
 			//CANASTA
 			stringList.Add ("Juego canasta", "BASKETBALL GAME");
@@ -292,6 +300,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Hazlo tres veces para encestar!", "DO IT THREE TIMES TO SCORE!");
 			stringList.Add ("Has perdido", "YOU LOSE");
 			stringList.Add ("Has ganado", "YOU WIN");
+			stringList.Add ("Espera tu turno...", "WAIT FOR YOUR TURN...");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "THANK YOU! YOU'VE FOUND MY GLASSES!");
 
 			//Entrar isla mecanica
@@ -341,6 +350,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ingles", "INGLES");
 			stringList.Add ("Euskera", "EUSKERA");
 
+			stringList.Add ("Fallos", "AKATSAK");
 			//PANTALLA CARGA
 
 			stringList.Add ("Cargando...", "KARGATZEN...");
@@ -444,6 +454,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¿Quieres salir?", "IRTEN NAHI DUZU?");
 			stringList.Add ("Secuencia desbloqueada", "EKINTZA PREST");
 			stringList.Add ("Isla Mecanica Desbloqueada", "UHARTE MEKANIKOA DESBLOKEATUA");
+			stringList.Add ("Secuencia completada", "EKINTZA-SAILA OSATUTA");
 			
 			//CANASTA
 			stringList.Add ("Juego canasta", "SASKIBALOI JOKOA");
@@ -451,7 +462,8 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "BEHEKO BARRA SAKATU HUTSUNE HORIA GAINDITZEN DUENEAN");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "HIRU ALDIZ SAKATU EZAZU SASKIRATZEKO!");
 			stringList.Add ("Has perdido", "HUTS EGIN DUZU");
-			stringList.Add ("Has ganado", "");
+			stringList.Add ("Has ganado", "IRABAZI DUZU");
+			stringList.Add ("Espera tu turno...", "ITXARIN ZURE TXANDA...");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "ESKERRIK ASKO! NIRE BETAURREKOAK AURKITU DITUZU!");
 			
 			//Entrar isla mecanica
