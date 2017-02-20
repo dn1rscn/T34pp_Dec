@@ -21,12 +21,6 @@ public class ControlCartel : MonoBehaviour
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 
 	//RESPUESTA CORRECTA EN CARTEL
 	public void carteles()
@@ -34,9 +28,15 @@ public class ControlCartel : MonoBehaviour
 		DGlobales = GameObject.Find ("DatosGlobales");
 		cdg = DGlobales.GetComponent<ControlDatosGlobales_PICTOGRAMAS> ();
 
-		GameObject.Find("Text1").SetActive(false);
-		GameObject.Find("Text2").SetActive(false);
-		GameObject.Find("Text3").SetActive(false);
+		if(GameObject.Find("Text1")){
+			GameObject.Find("Text1").SetActive(false);
+		}
+		if(GameObject.Find("Text2")){
+			GameObject.Find("Text2").SetActive(false);
+		}
+		if(GameObject.Find("Text3")){
+			GameObject.Find("Text3").SetActive(false);
+		}
 
 		cdg.correcto = Random.Range (1,4);
 		print ("cartel correcto "+cdg.correcto);

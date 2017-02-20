@@ -11,14 +11,8 @@ public class ControlEscenaIKKI : MonoBehaviour
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
-
 		CDG_Mundo3D.IKKI = true;
 		languageDictionary.Lenguaje();
 		//SL.Load ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

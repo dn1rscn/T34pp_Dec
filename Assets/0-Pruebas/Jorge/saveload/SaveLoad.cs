@@ -40,7 +40,10 @@ public class SaveLoad : MonoBehaviour
 	public void Save()
 	{
 		//savedGames.Add(Game.current);
-		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+		if(GameObject.Find ("datosGlobalesPersonalizacion")){
+			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+		}
+
 		print ("guardamos");
 		datos = new Game ();
 		guardamosDatos ();
@@ -95,139 +98,171 @@ public class SaveLoad : MonoBehaviour
 
 	void guardamosDatos()
 	{
-		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
-		PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
-		Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
-		DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
-		Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
-		Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
-		Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+		if(GameObject.Find ("datosGlobalesPersonalizacion")){
+			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 
-		Game.nuevoJuego = cdgP.nuevoJuego;
-		datos.sexo = cdgP.Sexo;
-		datos.pelo = cdgP.posicion_pelo;
-		datos.piel = cdgP.posicion_piel;
-		datos.piernas = cdgP.posicion_piernas;
-		datos.camiseta = cdgP.posicion_camiseta;
+			Game.nuevoJuego = cdgP.nuevoJuego;
+			datos.sexo = cdgP.Sexo;
+			datos.pelo = cdgP.posicion_pelo;
+			datos.piel = cdgP.posicion_piel;
+			datos.piernas = cdgP.posicion_piernas;
+			datos.camiseta = cdgP.posicion_camiseta;
+		}
+		if(GameObject.Find ("ControlDatosGlobales")){
+			cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 
-		datos.IslaMec = cdg_3d.IslaMec_Desbloqueada;
-		datos.IslaFantas = cdg_3d.IslaFantasma_Desbloqueada;
-		datos.Altar = cdg_3d.Altar_Desbloqueado;
-		//datos.IKKI = cdg_3d.IKKI;
-		datos.destinoHuevo = cdg_3d.destinoHuevo;
-		datos.huevoInvisible = cdg_3d.huevoInvisible;
-		datos.TutoBosque_Visto = cdg_3d.hemosVisto_TutorialIslaBosque;
-		datos.HabladoDino = cdg_3d.hemosHabladoConDino;
-		datos.HabladoFant = cdg_3d.hemosHabladoConFantasma;
-		datos.HabladoRobot = cdg_3d.hemosHabladoConRobot;
-		datos.tenemosHuevo = cdg_3d.tenemosHuevoDino;
-		datos.huevoDinoEntregado = cdg_3d.huevoDinoEntregado;
-		datos.check_partesGafas = cdg_3d.check_partesGafas;
-		datos.tenemosGafas = cdg_3d.tenemosGafasFantasma;
-		datos.gafasEntregadas = cdg_3d.gafasFantasmaEntregadas;
-		datos.check_bateriasRobot = cdg_3d.check_bateriasRobot;
-		datos.tenemosBat = cdg_3d.tenemosBateriasRobot;
-		datos.robotAreglado = cdg_3d.robotArreglado;
+			datos.IslaMec = cdg_3d.IslaMec_Desbloqueada;
+			datos.IslaFantas = cdg_3d.IslaFantasma_Desbloqueada;
+			datos.Altar = cdg_3d.Altar_Desbloqueado;
+			//datos.IKKI = cdg_3d.IKKI;
+			datos.destinoHuevo = cdg_3d.destinoHuevo;
+			datos.huevoInvisible = cdg_3d.huevoInvisible;
+			datos.TutoBosque_Visto = cdg_3d.hemosVisto_TutorialIslaBosque;
+			datos.HabladoDino = cdg_3d.hemosHabladoConDino;
+			datos.HabladoFant = cdg_3d.hemosHabladoConFantasma;
+			datos.HabladoRobot = cdg_3d.hemosHabladoConRobot;
+			datos.tenemosHuevo = cdg_3d.tenemosHuevoDino;
+			datos.huevoDinoEntregado = cdg_3d.huevoDinoEntregado;
+			datos.check_partesGafas = cdg_3d.check_partesGafas;
+			datos.tenemosGafas = cdg_3d.tenemosGafasFantasma;
+			datos.gafasEntregadas = cdg_3d.gafasFantasmaEntregadas;
+			datos.check_bateriasRobot = cdg_3d.check_bateriasRobot;
+			datos.tenemosBat = cdg_3d.tenemosBateriasRobot;
+			datos.robotAreglado = cdg_3d.robotArreglado;
+		}
+		if(GameObject.Find ("PuntuacionObjetos")){
+			PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
 
-		datos.GafasRecogidas = PObjetos.GafasRecogidas;
-		datos.bateriasRecogidas = PObjetos.EnergiaRecogida;
+			datos.GafasRecogidas = PObjetos.GafasRecogidas;
+			datos.bateriasRecogidas = PObjetos.EnergiaRecogida;
+		}
+		if(GameObject.Find ("Misiones")){
+			Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
 
-		datos.Dado1_Completado = Misiones.Dado1_Completado;
-		datos.Sonidos1_Completado = Misiones.Sonidos1_Completado;
-		datos.ejerB_3Estrellas = Misiones.ejerB_3estrellas;
-		datos.ejerF_3Estrellas = Misiones.ejerF_3estrellas;
-		datos.ejerM_3Estrellas = Misiones.ejerM_3estrellas;
-		datos.misionDinoCompletada = Misiones.misionDinoCompletada;
-		datos.misionFantasmaCompletada = Misiones.misionFantasmaCompletada;
-		datos.misionRobotCompletada = Misiones.misionRobotCompletada;
+			datos.Dado1_Completado = Misiones.Dado1_Completado;
+			datos.Sonidos1_Completado = Misiones.Sonidos1_Completado;
+			datos.ejerB_3Estrellas = Misiones.ejerB_3estrellas;
+			datos.ejerF_3Estrellas = Misiones.ejerF_3estrellas;
+			datos.ejerM_3Estrellas = Misiones.ejerM_3estrellas;
+			datos.misionDinoCompletada = Misiones.misionDinoCompletada;
+			datos.misionFantasmaCompletada = Misiones.misionFantasmaCompletada;
+			datos.misionRobotCompletada = Misiones.misionRobotCompletada;
+		}
+		if(GameObject.Find ("ctrDesbloqueo")){
+			DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 
-		datos.Nivel2Dado = DDesbloqueo.Nivel2Dado;
-		datos.Nivel2Sonidos = DDesbloqueo.Nivel2Sonidos;
-		datos.Nivel3Sonidos = DDesbloqueo.Nivel3Sonidos;
-		datos.secuencia1 = DDesbloqueo.secuencia1;
-		datos.Canasta = DDesbloqueo.Canasta;
-		datos.ADado = DDesbloqueo.ADado;
-		datos.ASonidos = DDesbloqueo.ASonidos;
-		datos.AEmpatia = DDesbloqueo.AEmpatia;
+			datos.Nivel2Dado = DDesbloqueo.Nivel2Dado;
+			datos.Nivel2Sonidos = DDesbloqueo.Nivel2Sonidos;
+			datos.Nivel3Sonidos = DDesbloqueo.Nivel3Sonidos;
+			datos.secuencia1 = DDesbloqueo.secuencia1;
+			datos.Canasta = DDesbloqueo.Canasta;
+			datos.ADado = DDesbloqueo.ADado;
+			datos.ASonidos = DDesbloqueo.ASonidos;
+			datos.AEmpatia = DDesbloqueo.AEmpatia;
+		}
+		if(GameObject.Find ("controlMonedas")){
+			Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
 
-		datos.monedas = Monedas.monedas;
+			datos.monedas = Monedas.monedas;
+		}
+		if(GameObject.Find ("DatosGlobalesSecuencias")){
+			Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
 
-		datos.Asecuencias = Secuencias.Asecuencias;
+			datos.Asecuencias = Secuencias.Asecuencias;
+		}
+		if(GameObject.Find ("ctrEmociones")){
+			Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
 
-		datos.ASocialNivel1 = Emociones.ASocialNivel1;
-		datos.ASocialNivel3 = Emociones.ASocialNivel3;
-		datos.AEmociones = Emociones.AEmociones;
-		datos.emociones1_Completado = Emociones.emociones1_completado;
-		datos.empatia1_Completado = Emociones.empatia1_completado;
+			datos.ASocialNivel1 = Emociones.ASocialNivel1;
+			datos.ASocialNivel3 = Emociones.ASocialNivel3;
+			datos.AEmociones = Emociones.AEmociones;
+			datos.emociones1_Completado = Emociones.emociones1_completado;
+			datos.empatia1_Completado = Emociones.empatia1_completado;
+		}
 	}
 
 	void cargarDatos()
 	{
-		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-		cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
-		PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
-		Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
-		DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
-		Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
-		Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
-		Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
-		
-		cdgP.nuevoJuego=Game.nuevoJuego;
-		cdgP.Sexo=datos.sexo;
-		cdgP.posicion_pelo=datos.pelo;
-		cdgP.posicion_piel=datos.piel;
-		cdgP.posicion_piernas=datos.piernas;
-		cdgP.posicion_camiseta=datos.camiseta;
+		if(GameObject.Find ("datosGlobalesPersonalizacion")){
+			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 
-		cdg_3d.IslaMec_Desbloqueada=datos.IslaMec;
-		cdg_3d.IslaFantasma_Desbloqueada=datos.IslaFantas;
-		cdg_3d.Altar_Desbloqueado=datos.Altar;
-		//cdg_3d.IKKI=datos.IKKI;
-		cdg_3d.destinoHuevo=datos.destinoHuevo;
-		cdg_3d.huevoInvisible=datos.huevoInvisible;
-		cdg_3d.hemosVisto_TutorialIslaBosque=datos.TutoBosque_Visto;
-		cdg_3d.hemosHabladoConDino=datos.HabladoDino;
-		cdg_3d.hemosHabladoConFantasma=datos.HabladoFant;
-		cdg_3d.hemosHabladoConRobot=datos.HabladoRobot;
-		cdg_3d.tenemosHuevoDino=datos.tenemosHuevo;
-		cdg_3d.huevoDinoEntregado=datos.huevoDinoEntregado;
-		cdg_3d.check_partesGafas=datos.check_partesGafas;
-		cdg_3d.tenemosGafasFantasma=datos.tenemosGafas;
-		cdg_3d.gafasFantasmaEntregadas=datos.gafasEntregadas;
-		cdg_3d.check_bateriasRobot=datos.check_bateriasRobot;
-		cdg_3d.tenemosBateriasRobot=datos.tenemosBat;
-		cdg_3d.robotArreglado=datos.robotAreglado;
+			cdgP.nuevoJuego=Game.nuevoJuego;
+			cdgP.Sexo=datos.sexo;
+			cdgP.posicion_pelo=datos.pelo;
+			cdgP.posicion_piel=datos.piel;
+			cdgP.posicion_piernas=datos.piernas;
+			cdgP.posicion_camiseta=datos.camiseta;
+		}
+		if(GameObject.Find ("ControlDatosGlobales")){
+			cdg_3d = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 
-		PObjetos.GafasRecogidas = datos.GafasRecogidas;
-		PObjetos.EnergiaRecogida = datos.bateriasRecogidas;
+			cdg_3d.IslaMec_Desbloqueada=datos.IslaMec;
+			cdg_3d.IslaFantasma_Desbloqueada=datos.IslaFantas;
+			cdg_3d.Altar_Desbloqueado=datos.Altar;
+			//cdg_3d.IKKI=datos.IKKI;
+			cdg_3d.destinoHuevo=datos.destinoHuevo;
+			cdg_3d.huevoInvisible=datos.huevoInvisible;
+			cdg_3d.hemosVisto_TutorialIslaBosque=datos.TutoBosque_Visto;
+			cdg_3d.hemosHabladoConDino=datos.HabladoDino;
+			cdg_3d.hemosHabladoConFantasma=datos.HabladoFant;
+			cdg_3d.hemosHabladoConRobot=datos.HabladoRobot;
+			cdg_3d.tenemosHuevoDino=datos.tenemosHuevo;
+			cdg_3d.huevoDinoEntregado=datos.huevoDinoEntregado;
+			cdg_3d.check_partesGafas=datos.check_partesGafas;
+			cdg_3d.tenemosGafasFantasma=datos.tenemosGafas;
+			cdg_3d.gafasFantasmaEntregadas=datos.gafasEntregadas;
+			cdg_3d.check_bateriasRobot=datos.check_bateriasRobot;
+			cdg_3d.tenemosBateriasRobot=datos.tenemosBat;
+			cdg_3d.robotArreglado=datos.robotAreglado;
+		}
+		if(GameObject.Find ("PuntuacionObjetos")){
+			PObjetos = GameObject.Find ("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos> ();
 
-		Misiones.Dado1_Completado = datos.Dado1_Completado;
-		Misiones.Sonidos1_Completado = datos.Sonidos1_Completado;
-		Misiones.ejerB_3estrellas = datos.ejerB_3Estrellas;
-		Misiones.ejerF_3estrellas = datos.ejerF_3Estrellas;
-		Misiones.ejerM_3estrellas = datos.ejerM_3Estrellas;
-		Misiones.misionDinoCompletada = datos.misionDinoCompletada;
-		Misiones.misionFantasmaCompletada = datos.misionFantasmaCompletada;
-		Misiones.misionRobotCompletada = datos.misionRobotCompletada;
+			PObjetos.GafasRecogidas = datos.GafasRecogidas;
+			PObjetos.EnergiaRecogida = datos.bateriasRecogidas;
+		}
+		if(GameObject.Find ("Misiones")){
+			Misiones = GameObject.Find ("Misiones").GetComponent<ControlMisiones> ();
 
-		DDesbloqueo.Nivel2Dado = datos.Nivel2Dado;
-		DDesbloqueo.Nivel2Sonidos = datos.Nivel2Sonidos;
-		DDesbloqueo.Nivel3Sonidos = datos.Nivel3Sonidos;
-		DDesbloqueo.secuencia1 = datos.secuencia1;
-		DDesbloqueo.Canasta = datos.Canasta;
-		DDesbloqueo.ADado = datos.ADado;
-		DDesbloqueo.ASonidos = datos.ASonidos;
-		DDesbloqueo.AEmpatia = datos.AEmpatia;
+			Misiones.Dado1_Completado = datos.Dado1_Completado;
+			Misiones.Sonidos1_Completado = datos.Sonidos1_Completado;
+			Misiones.ejerB_3estrellas = datos.ejerB_3Estrellas;
+			Misiones.ejerF_3estrellas = datos.ejerF_3Estrellas;
+			Misiones.ejerM_3estrellas = datos.ejerM_3Estrellas;
+			Misiones.misionDinoCompletada = datos.misionDinoCompletada;
+			Misiones.misionFantasmaCompletada = datos.misionFantasmaCompletada;
+			Misiones.misionRobotCompletada = datos.misionRobotCompletada;
+		}
+		if(GameObject.Find ("ctrDesbloqueo")){
+			DDesbloqueo = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 
-		Monedas.monedas = datos.monedas;
+			DDesbloqueo.Nivel2Dado = datos.Nivel2Dado;
+			DDesbloqueo.Nivel2Sonidos = datos.Nivel2Sonidos;
+			DDesbloqueo.Nivel3Sonidos = datos.Nivel3Sonidos;
+			DDesbloqueo.secuencia1 = datos.secuencia1;
+			DDesbloqueo.Canasta = datos.Canasta;
+			DDesbloqueo.ADado = datos.ADado;
+			DDesbloqueo.ASonidos = datos.ASonidos;
+			DDesbloqueo.AEmpatia = datos.AEmpatia;
+		}
+		if(GameObject.Find ("controlMonedas")){
+			Monedas = GameObject.Find ("controlMonedas").GetComponent<Control_monedas> ();
 
-		Secuencias.Asecuencias = datos.Asecuencias;
+			Monedas.monedas = datos.monedas;
+		}
+		if(GameObject.Find ("DatosGlobalesSecuencias")){
+			Secuencias = GameObject.Find ("DatosGlobalesSecuencias").GetComponent<ControlSecuencias> ();
 
-		Emociones.ASocialNivel1 = datos.ASocialNivel1;
-		Emociones.ASocialNivel3 = datos.ASocialNivel3;
-		Emociones.AEmociones = datos.AEmociones;
-		Emociones.emociones1_completado = datos.emociones1_Completado;
-		Emociones.empatia1_completado = datos.empatia1_Completado;
+			Secuencias.Asecuencias = datos.Asecuencias;
+		}
+		if(GameObject.Find ("ctrEmociones")){
+			Emociones = GameObject.Find ("ctrEmociones").GetComponent<ControlEmociones> ();
+
+			Emociones.ASocialNivel1 = datos.ASocialNivel1;
+			Emociones.ASocialNivel3 = datos.ASocialNivel3;
+			Emociones.AEmociones = datos.AEmociones;
+			Emociones.emociones1_completado = datos.emociones1_Completado;
+			Emociones.empatia1_completado = datos.empatia1_Completado;
+		}
 	}
 }
