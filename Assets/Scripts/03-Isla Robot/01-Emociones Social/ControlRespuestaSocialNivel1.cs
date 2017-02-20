@@ -234,7 +234,7 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				}
 				
 				
-				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
+				//TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
 				
 				TmonedasSocialNivel1.text = cM.monedasSocialNivel1.ToString();
 				

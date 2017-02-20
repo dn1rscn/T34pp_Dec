@@ -79,7 +79,10 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en el dado para lanzarlo", "HAZ CLICK EN EL DADO PARA LANZARLO");
 			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "¡EMPAREJA LA IMAGEN CON EL DADO PARA GANAR PUNTOS!");
 			stringList.Add ("Nivel 2 desbloqueado", "NIVEL 2 DESBLOQUEADO");
+			stringList.Add ("Nivel 3 desbloqueado", "NIVEL 3 DESBLOQUEADO");
 			stringList.Add ("Nivel 1 Completado", "NIVEL 1 COMPLETADO");
+			stringList.Add ("Nivel 2 Completado", "NIVEL 2 COMPLETADO");
+			stringList.Add ("Nivel 3 Completado", "NIVEL 3 COMPLETADO");
 			stringList.Add ("Aciertos:", "ACIERTOS: ");
 			stringList.Add ("Combos:", "COMBOS: ");
 			stringList.Add ("Monedas:", "MONEDAS: ");
@@ -241,7 +244,10 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en el dado para lanzarlo", "CLICK ON THE DICE TO THROW IT");
 			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "MATCH THE IMAGE WITH THE DICE TO EARN POINTS!");
 			stringList.Add ("Nivel 2 desbloqueado", "LEVEL 2 UNLOCKED");
+			stringList.Add ("Nivel 3 desbloqueado", "LEVEL 3 UNLOCKED");
 			stringList.Add ("Nivel 1 Completado", "LEVEL 1 COMPLETED");
+			stringList.Add ("Nivel 2 Completado", "LEVEL 3 COMPLETED");
+			stringList.Add ("Nivel 3 Completado", "LEVEL 4 COMPLETED");
 			stringList.Add ("Aciertos:", "HITS: ");
 			stringList.Add ("Combos:", "COMBO:");
 			stringList.Add ("Monedas:", "COINS:");
@@ -404,7 +410,10 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Haz click en el dado para lanzarlo", "DADOAN CLICK EGIN JAURTI DEZAZUN");
 			stringList.Add ("¡Empareja la imagen con el dado para ganar puntos!", "IRUDIA DADOAREKIN BATU PUNTUAK IRABAZI DITZAZUN!");
 			stringList.Add ("Nivel 2 desbloqueado", "2 MAILA PREST");
+			stringList.Add ("Nivel 3 desbloqueado", "3 MAILA PREST");
 			stringList.Add ("Nivel 1 Completado", "1 MAILA OSATUTA");
+			stringList.Add ("Nivel 2 Completado", "2 MAILA OSATUTA");
+			stringList.Add ("Nivel 3 Completado", "3 MAILA OSATUTA");
 			stringList.Add ("Aciertos:", "ASMATUTAKOAK: ");
 			stringList.Add ("Combos:", "KATEAK: ");
 			stringList.Add ("Monedas:", "TXANPONAK: ");
