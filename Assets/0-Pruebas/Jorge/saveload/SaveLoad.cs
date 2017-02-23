@@ -24,7 +24,7 @@ public class SaveLoad : MonoBehaviour
 		DontDestroyOnLoad (this);
 
 		//CREAMOS ARCHIVO VARIABLES DEFAULT
-		Default();
+		//Default();
 	}
 	void Awake ()
 	{
@@ -51,6 +51,7 @@ public class SaveLoad : MonoBehaviour
 		BinaryFormatter bformatter = new BinaryFormatter ();
 		bformatter.Serialize (file, datos);//guardamos las variables
 		file.Close ();
+
 	}
 
 	public void Default()
@@ -69,7 +70,6 @@ public class SaveLoad : MonoBehaviour
 		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
 		{
 			//cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-
 			print("cargamos");
 			datos= new Game ();
 			FileStream file = File.Open (Application.persistentDataPath + "SavedGame.sg", FileMode.Open); //leemos el archivo de guardado
@@ -98,6 +98,8 @@ public class SaveLoad : MonoBehaviour
 
 	void guardamosDatos()
 	{
+		datos.Idioma=languageDictionary.lang;
+
 		if(GameObject.Find ("datosGlobalesPersonalizacion")){
 			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 
@@ -183,6 +185,14 @@ public class SaveLoad : MonoBehaviour
 
 	void cargarDatos()
 	{
+		languageDictionary.stringList.Clear();
+
+		languageDictionary.lang=datos.Idioma;
+		languageDictionary.Lenguaje();
+
+		print("idioma guardado "+datos.Idioma);
+		print("idioma cargado "+languageDictionary.lang);
+
 		if(GameObject.Find ("datosGlobalesPersonalizacion")){
 			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 

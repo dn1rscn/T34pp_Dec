@@ -392,7 +392,7 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		}
 		TpuntuacionFin.text =puntuacionJugador.ToString ();
 
-		GameObject.Find("resultado").GetComponent<Text>().text=languageDictionary.stringList ["Has pganado"];
+		GameObject.Find("resultado").GetComponent<Text>().text=languageDictionary.stringList ["Has ganado"];
 		
 		Tmonedascanasta.text = cM.MonedasGenerales_canasta.ToString();
 

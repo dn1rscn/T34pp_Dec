@@ -140,7 +140,7 @@ public class controlInteraccionDino : MonoBehaviour {
 				}
 			}
 
-			SL.Save();
+
 		}
 	}
 
@@ -260,6 +260,8 @@ public class controlInteraccionDino : MonoBehaviour {
 		animator_Canvas.Play("Canvas_DesaparecerDialogos");
 		
 		posicionCorrecta=true;
+
+		SL.Save();
 
 
 	}

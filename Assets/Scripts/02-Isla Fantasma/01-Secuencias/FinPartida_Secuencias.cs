@@ -160,7 +160,7 @@ public class FinPartida_Secuencias : MonoBehaviour
 		}
 		
 		
-		TpuntuacionFin.text = "\nFALLOS: " + cs.fallos.ToString ();
+		TpuntuacionFin.text = cs.fallos.ToString ();
 		
 		TmonedasSecuencia.text = cM.monedas_secuencia.ToString();
 

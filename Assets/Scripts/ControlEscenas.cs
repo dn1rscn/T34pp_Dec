@@ -122,6 +122,7 @@ public class ControlEscenas : MonoBehaviour {
 		CDG_Mundo3D.islaBosque = true;
 		CDG_Mundo3D.islaMec = false;
 		CDG_Mundo3D.islaFant = false;
+		SL.Save();
 	}
 	/*
 	public void CargarIslaDino(){
@@ -143,12 +144,14 @@ public class ControlEscenas : MonoBehaviour {
 		CDG_Mundo3D.islaBosque = false;
 		CDG_Mundo3D.islaMec = true;
 		CDG_Mundo3D.islaFant = false;
+		SL.Save();
 	}
 	public void CargarIslaFantasma(){
 		Application.LoadLevel ("Isla_fantasma");
 		CDG_Mundo3D.islaBosque = false;
 		CDG_Mundo3D.islaMec = false;
 		CDG_Mundo3D.islaFant = true;
+		SL.Save();
 	}
 
 	public void AjustarPosicionPersonaje()

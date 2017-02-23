@@ -81,24 +81,28 @@ public class SelecLenguaje : MonoBehaviour
 		languageDictionary.Lenguaje();
 
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
-		Application.LoadLevel("Nivel1_dado2.0");
+		//Application.LoadLevel("Nivel1_dado2.0");
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		if (CDG_Mundo3D.islaBosque == true) 
 		{
 			Application.LoadLevel ("Isla_bosque");
+			SL.Save();
 		}
-		else if (CDG_Mundo3D.islaMec == true) {
+		else if (CDG_Mundo3D.islaMec == true) 
+		{
 			Application.LoadLevel ("Isla_Mecanica_v3");
+			SL.Save();
 		}
 		else if (CDG_Mundo3D.islaFant == true) {
 			Application.LoadLevel ("Isla_fantasma");
+			SL.Save();
 		}
 		else
 		{
 			Application.LoadLevel("personalizacion2.0");
 		}
 		
-		SL.Save();
+
 
 	}
 

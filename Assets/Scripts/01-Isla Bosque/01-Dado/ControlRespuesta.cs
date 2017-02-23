@@ -302,13 +302,13 @@ public class ControlRespuesta : MonoBehaviour
 			}
 
 			
-			TpuntuacionFin.text = "\nACIERTOS: " + cdg.aciertos.ToString () + "\nCOMBOS: " + cdg.combos.ToString ();
+			TpuntuacionFin.text = "\n" + cdg.aciertos.ToString () + "\n" + cdg.combos.ToString ();
 
 			TmonedasDado.text = cM.monedas_dado.ToString();
 
 
 			//TmonedasDado.text=languageDictionary.stringList [TmonedasDado];
-			languageDictionary.lang = "Spanish";
+			//languageDictionary.lang = "Spanish";
 
 			TpuntuacionFin.text=languageDictionary.stringList [TpuntuacionFin.text];
 

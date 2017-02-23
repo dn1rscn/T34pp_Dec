@@ -47,6 +47,7 @@ public class ControlInterface : MonoBehaviour
 		{
 			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
 			{
+
 				BotonInicio.SetActive (false);
 				CamInicio.SetActive (true);
 				
@@ -234,8 +235,9 @@ public class ControlInterface : MonoBehaviour
 			SL.LoadDefault();
 			AN.Start();
 			print("nuevo Juego");
-			
-			BotonInicio.SetActive (true);
+
+			Application.LoadLevel("seleccion_Idioma");
+			/*BotonInicio.SetActive (true);
 			PersonajeInicio.SetActive (true);
 			MascotaInicio.SetActive (true);
 			CamInicio.SetActive (true);
@@ -245,7 +247,7 @@ public class ControlInterface : MonoBehaviour
 			Mascotajuego.SetActive (false);
 			CamJuego.SetActive (false);
 
-			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");
+			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");*/
 		} else 
 		{
 			print ("no existe el archivo");

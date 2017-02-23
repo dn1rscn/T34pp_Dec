@@ -23,7 +23,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ingles", "INGLES");
 			stringList.Add ("Euskera", "EUSKERA");
 
-			stringList.Add ("Fallos", "FALLOS");
+			stringList.Add ("Fallos:", "FALLOS:");
 
 			stringList.Add ("Cargando...", "CARGANDO...");
 
@@ -57,9 +57,9 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//Menu
 			stringList.Add ("Objetivos", "OBJETIVOS");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA BOSQUE");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA FANTASMA");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE LA ISLA MECANICA");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE ISLA BOSQUE");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE ISLA FANTASMA");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "CONSIGUE 3 ESTRELLAS EN TODOS LOS EJERCICIOS DE ISLA MECANICA");
 			stringList.Add ("Dado nivel 1", "DADO NIVEL 1");
 			stringList.Add ("Dado nivel 2", "DADO NIVEL 2");
 			stringList.Add ("Sonidos nivel 1", "SONIDOS NIVEL 1");
@@ -106,7 +106,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Estrella", "ESTRELLA");
 			
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","EJERCICIOS SONIDOS");
+			stringList.Add ("Ejercicio sonidos","EJERCICIO SONIDOS");
 			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PULSA PLAY PARA ESCUCHAR UN SONIDO");
 			stringList.Add ("y REPLAY para repetirlo", "Y REPLAY PARA REPETIRLO");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "HAZ CLICK EN LA IMAGEN QUE CORRESPONDA AL SONIDO");
@@ -125,7 +125,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ejercicio secuencias", "EJERCICIO SECUENCIAS");
 			stringList.Add ("Lavarse los dientes", "LAVARSE LOS DIENTES");
 			stringList.Add ("Llamar por teléfono", "LLAMAR POR TELÉFONO");
-			stringList.Add ("Comprar pan", "COMPRAR PAN");
+			stringList.Add ("Comprar el pan", "COMPRAR EL PAN");
 			stringList.Add ("Cruzar la calle", "CRUZAR LA CALLE");
 			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "COLOCA LAS IMAGENES EN EL MARCO EN EL ORDEN CORRECTO");
 			stringList.Add ("¡Haz click en ellas para colocarlas!", "¡HAZ CLICK EN ELLAS PARA COLOCARLAS!");
@@ -156,7 +156,7 @@ public static class languageDictionary//: MonoBehaviour
 			//emociones
 			stringList.Add ("Ejercicio emociones", "EJERCICIO EMOCIONES");
 			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "SELECCIONA LA EMOCIÓN POR LA QUE TE PREGUNTA EL ROBOT");
-			stringList.Add ("Arrastra la imagen para verlas", "ARRASTRA LA IMAGEN PARA VERLAS");
+			stringList.Add ("Arrastra la imagen para verlas", "ARRASTRA LAS IMAGENES PARA VERLAS");
 			stringList.Add ("Pulsa la imagen que elijas", "PULSA LA IMAGEN QUE ELIJAS");
 			stringList.Add ("Alegria", "ALEGRIA");
 			stringList.Add ("Asco", "ASCO");
@@ -193,7 +193,11 @@ public static class languageDictionary//: MonoBehaviour
 
 			stringList.Add ("Cargando...", "LOADING...");
 
-			stringList.Add ("Fallos", "MISTAKES");
+			stringList.Add ("Fallos:", "MISTAKES:");
+
+			stringList.Add ("¿SEGURO QUE QUIERES BORRAR LA PARTIDA?", "¿ARE YOU SURE YOU WANT TO LEAVE THE GAME?");
+			stringList.Add ("SI", "YES");
+			stringList.Add ("NO", "NO");
 
 			//intro
 			stringList.Add ("Empezar", "START");
@@ -208,17 +212,17 @@ public static class languageDictionary//: MonoBehaviour
 
 			//Tutorial
 			stringList.Add ("Tutorial", "TUTORIAL");
-			stringList.Add ("Haz click en el suelo para moverte", "CLICK ON THE FLOOR TO MOVE");
+			stringList.Add ("Haz click en el suelo para moverte", "CLICK ON THE GROUND TO MOVE");
 			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "CLICK ON THE PETS TO TALK TO THEM");
 			stringList.Add ("¡Hola!", "HELLO!");
-			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PAUSE THE GAME TO ACCESS MAP AND PERSONALIZATION");
+			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PAUSE THE GAME TO ACCESS MAP AND CUSTOMIZATION");
 			stringList.Add ("Accede a los portales para completar los ejercicios", "ACCESS THE PORTALS TO COMPLETE THE EXERCISES");
 
 			//DIno
 			stringList.Add ("¡Bienvenido a la isla bosque!", "WELCOME TO THE FOREST ISLAND");
 			stringList.Add ("He perdido uno de mis:", "I LOST ONE OF MY:");
 			stringList.Add ("Ayúdame a encontrarlo", "HELP ME FINDING IT PLEASE");
-			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "THANKS FOR HELPING ME GETTING IT BACK!");
+			stringList.Add ("¡Gracias por ayudarme a recuperarlo!", "THANKS FOR HELPING ME GET IT BACK!");
 
 			//Menu
 			stringList.Add ("Objetivos", "AIMS");
@@ -247,7 +251,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Nivel 3 desbloqueado", "LEVEL 3 UNLOCKED");
 			stringList.Add ("Nivel 1 Completado", "LEVEL 1 COMPLETED");
 			stringList.Add ("Nivel 2 Completado", "LEVEL 3 COMPLETED");
-			stringList.Add ("Nivel 3 Completado", "LEVEL 4 COMPLETED");
+			stringList.Add ("Nivel 3 Completado", "LEVEL 3 COMPLETED");
 			stringList.Add ("Aciertos:", "HITS: ");
 			stringList.Add ("Combos:", "COMBO:");
 			stringList.Add ("Monedas:", "COINS:");
@@ -271,7 +275,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Estrella", "STAR");
 
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","SOUNDS EXERCISE");
+			stringList.Add ("Ejercicio sonidos","SOUNDS EXERCISE");
 			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PRESS PLAY TO HEAR A SOUND");
 			stringList.Add ("y REPAY para repetirlo", "AND REPLAY TO HEAR IT AGAIN");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "CLICK ON THE IMAGE THAT CORRESPONDS TO THE SOUND");
@@ -290,10 +294,10 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ejercicio secuencias", "SECUENCES EXERCISE");
 			stringList.Add ("Lavarse los dientes", "BRUSH YOUR TEETH");
 			stringList.Add ("Llamar por teléfono", "PHONE CALL");
-			stringList.Add ("Comprar pan", "BUY");
+			stringList.Add ("Comprar el pan", "BUY BREAD");
 			stringList.Add ("Cruzar la calle", "CROSS THE ROAD");
 			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "PLACE THE IMAGES IN THE FRAME IN THE CORRECT ORDER");
-			stringList.Add ("¡Haz click en ellas para colocarlas!", "PRESS THE IMAGES TO PLACE THEM!");
+			stringList.Add ("¡Haz click en ellas para colocarlas!", "PRESS ON THE IMAGES TO PLACE THEM!");
 			stringList.Add ("¿Quieres salir?", "DO YOU WANNA TO QUIT?");
 			stringList.Add ("Secuencia desbloqueada", "SEQUENCE UNLOCKED");
 			stringList.Add ("Isla Mecanica Desbloqueada", "MECHANICAL ISLAND UNLOCKED");
@@ -356,7 +360,11 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ingles", "INGLES");
 			stringList.Add ("Euskera", "EUSKERA");
 
-			stringList.Add ("Fallos", "AKATSAK");
+			stringList.Add ("Fallos:", "AKATSAK:");
+
+			stringList.Add ("¿SEGURO QUE QUIERES BORRAR LA PARTIDA?", "ZIRU PARTIDA EZABATU NAHI DUZULA?");
+			stringList.Add ("SI", "BAI");
+			stringList.Add ("NO", "EZ");
 			//PANTALLA CARGA
 
 			stringList.Add ("Cargando...", "KARGATZEN...");
@@ -437,7 +445,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Estrella", "IZARRA");
 			
 			//SOnidos
-			stringList.Add ("Ejercicios sonidos","SOINU ARIKETA");
+			stringList.Add ("Ejercicio sonidos","SOINU ARIKETA");
 			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PLAY BOTOIA SAKATU SOINU BAT ETZUTEKO");
 			stringList.Add ("y REPAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "ENTZUTAKO SOINUARI DAGOKION IRUDA SAKATU");
@@ -456,7 +464,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Ejercicio secuencias", "EKINTZA-SAILA ARIKETA");
 			stringList.Add ("Lavarse los dientes", "HORTZAK GARBITU");
 			stringList.Add ("Llamar por teléfono", "TELEFONOZ DEITU");
-			stringList.Add ("Comprar pan", "OGIA EROSI");
+			stringList.Add ("Comprar el pan", "OGIA EROSI");
 			stringList.Add ("Cruzar la calle", "ERREPIDEA GURURZATU");
 			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "IRUDIAK MARKOAN KIRI ZUZENEAN JARRI");
 			stringList.Add ("¡Haz click en ellas para colocarlas!", "IRUDIAK SAKATUZ KOKA ITZAZU!");

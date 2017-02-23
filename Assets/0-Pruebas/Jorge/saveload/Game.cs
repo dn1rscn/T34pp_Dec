@@ -6,6 +6,8 @@ public class Game
 {
 	//control_datosGlobalesPersonalizacion cdgp;
 
+	public string Idioma;
+
 	//DATOS PERSONALIZACION
 
 	public static bool nuevoJuego;
