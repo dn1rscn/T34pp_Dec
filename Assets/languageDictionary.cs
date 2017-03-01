@@ -177,6 +177,7 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//Isla ALtar
 			stringList.Add ("Isla Altar", "ISLA ALTAR");
+			stringList.Add ("Isla Altar Desbloqueada", "ISLA ALTAR DESBLOQUEADA");
 			stringList.Add ("¡Felicidades!", "¡FELICIDADES!");
 			stringList.Add ("¡Felicidades! Has completado el juego", "¡FELICIDADES! HAS COMPLETADO EL JUEGO");
 			stringList.Add ("Menú inicial", "MENÚ INICIAL");
@@ -346,6 +347,7 @@ public static class languageDictionary//: MonoBehaviour
 
 			//Isla ALtar
 			stringList.Add ("Isla Altar", "ALTAR ISLAND");
+			stringList.Add ("Isla Altar Desbloqueada", "ALTAR ISLAND UNLOCKED");
 			stringList.Add ("¡Felicidades!", "CONGRATULATIONS!");
 			stringList.Add ("¡Felicidades! Has completado el juego", "CONGRATULATIONS! YOU HAVE COMPLETED THE GAME");
 			stringList.Add ("Menú inicial", "START MENU");
@@ -516,6 +518,7 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//Isla ALtar
 			stringList.Add ("Isla Altar", "ALDERE UHARTEA");
+			stringList.Add ("Isla Altar Desbloqueada", "UHARTE ALDERE DESBLOKEATUA");
 			stringList.Add ("¡Felicidades!", "ZORIONAK!");
 			stringList.Add ("¡Felicidades! Has completado el juego", "ZORIONAK! JOKOA OSATU DUZU");
 			stringList.Add ("Menú inicial", "HASIERAKO MENUA");

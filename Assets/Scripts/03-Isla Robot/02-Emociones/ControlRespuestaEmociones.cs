@@ -113,7 +113,7 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				}
 
 
-				if(CE.NivelEmociones==1&&CE.empatia1_completado==true)
+				if(CE.NivelEmociones==1&&CE.empatia1_completado==true&&cdg_3d.Altar_Desbloqueado==false)
 				{
 					cdg_3d.Altar_Desbloqueado=true;
 					CNotificaciones.Isla.SetActive (true);

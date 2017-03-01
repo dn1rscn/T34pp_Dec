@@ -31,11 +31,15 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 	}
 	public void actualizar_Objetos()
 	{
-		if(GameObject.Find("NumGafas")){
+		print("actualizar puntuacion");
+		if(GameObject.Find("NumGafas"))
+		{
 			GameObject.Find("NumGafas").GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
 		}
-		if(GameObject.Find("NumEnergia")){
-		GameObject.Find("NumEnergia").GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
+		if(GameObject.Find("NumEnergia"))
+		{
+			print("energia");
+			GameObject.Find("NumEnergia").GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
 		}
 	}
 }

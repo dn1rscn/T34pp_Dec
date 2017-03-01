@@ -49,8 +49,6 @@ public class ControlMisionesInterfaz : MonoBehaviour
 		ActualizarMisionFantasma();
 		ActualizarMisionRobot();
 
-		CPO.actualizar_Objetos ();
-
 		switch(languageDictionary.lang)
 		{
 		case null:
@@ -66,6 +64,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Euskera;
 			break;
 		}
+
+		CPO.actualizar_Objetos();
 	}
 	
 
@@ -214,6 +214,18 @@ public class ControlMisionesInterfaz : MonoBehaviour
 			{
 				objetivosOK_Robot[i].SetActive(false);
 			}
+		}
+	}
+	void actualizaobjetos()
+	{
+		if(GameObject.Find("NumGafas"))
+		{
+			GameObject.Find("NumGafas").GetComponent<Text> ().text = CPO.GafasRecogidas.ToString()+("/4");
+		}
+		if(GameObject.Find("NumEnergia"))
+		{
+			print("energia");
+			GameObject.Find("NumEnergia").GetComponent<Text> ().text = CPO.EnergiaRecogida.ToString()+("/4");
 		}
 	}
 }

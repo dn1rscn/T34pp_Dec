@@ -192,7 +192,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 				
 				//SiguienteSituacion.SetActive (true);
 				
-				TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
+				//TpuntuacionFin.text = "\nIntentos: " + CE.Intentos.ToString();
 				
 				TmonedasSocialNivel2.text = cM.monedasSocialNivel1.ToString();
 
