@@ -107,7 +107,7 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//SOnidos
 			stringList.Add ("Ejercicio sonidos","EJERCICIO SONIDOS");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PULSA PLAY PARA ESCUCHAR UN SONIDO");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido", "PULSA PLAY PARA ESCUCHAR UN SONIDO");
 			stringList.Add ("y REPLAY para repetirlo", "Y REPLAY PARA REPETIRLO");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "HAZ CLICK EN LA IMAGEN QUE CORRESPONDA AL SONIDO");
 			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PULSA PLAY DE NUEVO PARA SEGUIR JUGANDO");
@@ -136,6 +136,7 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//CANASTA
 			stringList.Add ("Juego canasta", "JUEGO CANASTA");
+			stringList.Add ("Canasta Completada", "CANASTA COMPLETADA");
 			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "¡CONSIGUE MÁS PUNTOS QUE EL FANTASMA ENCESTANDO!");
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "HAZ CLICK EN LA BARRA CUANDO PASE LA BARRA AMARILLA");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "¡HAZLO TRES VECES PARA ENCESTAR!");
@@ -156,7 +157,7 @@ public static class languageDictionary//: MonoBehaviour
 			//emociones
 			stringList.Add ("Ejercicio emociones", "EJERCICIO EMOCIONES");
 			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "SELECCIONA LA EMOCIÓN POR LA QUE TE PREGUNTA EL ROBOT");
-			stringList.Add ("Arrastra la imagen para verlas", "ARRASTRA LAS IMAGENES PARA VERLAS");
+			stringList.Add ("Arrastra las imagenes para verlas", "ARRASTRA LAS IMAGENES PARA VERLAS");
 			stringList.Add ("Pulsa la imagen que elijas", "PULSA LA IMAGEN QUE ELIJAS");
 			stringList.Add ("Alegria", "ALEGRIA");
 			stringList.Add ("Asco", "ASCO");
@@ -277,8 +278,8 @@ public static class languageDictionary//: MonoBehaviour
 
 			//SOnidos
 			stringList.Add ("Ejercicio sonidos","SOUNDS EXERCISE");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PRESS PLAY TO HEAR A SOUND");
-			stringList.Add ("y REPAY para repetirlo", "AND REPLAY TO HEAR IT AGAIN");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido", "PRESS PLAY TO HEAR A SOUND");
+			stringList.Add ("y REPLAY para repetirlo", "AND REPLAY TO HEAR IT AGAIN");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "CLICK ON THE IMAGE THAT CORRESPONDS TO THE SOUND");
 			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PRESS PLAY AGAIN TO CONTINUE PLAYING");
 			stringList.Add ("Isla Fantasma desbloqueada", "GHOST ISLAND UNLOCKED");
@@ -306,6 +307,7 @@ public static class languageDictionary//: MonoBehaviour
 
 			//CANASTA
 			stringList.Add ("Juego canasta", "BASKETBALL GAME");
+			stringList.Add ("Canasta Completada", "BASKETBALL GAME COMPLETED");
 			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "GET MORE POINTS THAN THE GHOST BY SCORING THE BASKET");
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "CLICK ON THE BAR BELOW WHEN IT PASSES THE YELLOW MARKER");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "DO IT THREE TIMES TO SCORE!");
@@ -326,7 +328,7 @@ public static class languageDictionary//: MonoBehaviour
 			//emociones
 			stringList.Add ("Ejercicio emociones", "EMOTIONS EXERCISE");
 			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "SELECT THE EMOTION THE ROBOT ASKS FOR");
-			stringList.Add ("Arrastra la imagen para verlas", "DRAG THE IMAGES TO SEE THEM");
+			stringList.Add ("Arrastra las imagenes para verlas", "DRAG THE IMAGES TO SEE THEM");
 			stringList.Add ("Pulsa la imagen que elijas", "CLICK ON THE IMAGE YOU CHOSE");
 			stringList.Add ("Alegria", "JOY");
 			stringList.Add ("Asco", "DISGUST");
@@ -399,7 +401,7 @@ public static class languageDictionary//: MonoBehaviour
 			//Menu
 			stringList.Add ("Objetivos", "HELBURUAK");
 			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla bosque", "BASO UHARTEKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
-			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "MANU UHARTRKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
+			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Fantasma", "MAMU UHARTEKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
 			stringList.Add ("Consigue 3 estrellas en todos los ejercicios de la isla Mecanica", "MEKANIKOA UHARTEKO ARIKETA GUZTIETAN HIRU IZAR LOR ITZAZU");
 			stringList.Add ("Dado nivel 1", "DADO 1 MALLA");
 			stringList.Add ("Dado nivel 2", "DADO 2 MALLA");
@@ -448,8 +450,8 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//SOnidos
 			stringList.Add ("Ejercicio sonidos","SOINU ARIKETA");
-			stringList.Add ("Pulsa PLAY para escuchar un sonido ", "PLAY BOTOIA SAKATU SOINU BAT ETZUTEKO");
-			stringList.Add ("y REPAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
+			stringList.Add ("Pulsa PLAY para escuchar un sonido", "PLAY BOTOIA SAKATU SOINU BAT ETZUTEKO");
+			stringList.Add ("y RELPAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "ENTZUTAKO SOINUARI DAGOKION IRUDA SAKATU");
 			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PLAY BOTOIA BERRIRO SAKATU JOLASTEN JARAITZEKO");
 			stringList.Add ("Isla Fantasma desbloqueada", "MAMU UHARTEA DESBLOKEATUA");
@@ -468,7 +470,7 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("Llamar por teléfono", "TELEFONOZ DEITU");
 			stringList.Add ("Comprar el pan", "OGIA EROSI");
 			stringList.Add ("Cruzar la calle", "ERREPIDEA GURURZATU");
-			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "IRUDIAK MARKOAN KIRI ZUZENEAN JARRI");
+			stringList.Add ("Coloca las imagenes en el marco en el orden correcto", "IRUDIAK MARKOAN ORDEN ZUZENEAN JARRI");
 			stringList.Add ("¡Haz click en ellas para colocarlas!", "IRUDIAK SAKATUZ KOKA ITZAZU!");
 			stringList.Add ("¿Quieres salir?", "IRTEN NAHI DUZU?");
 			stringList.Add ("Secuencia desbloqueada", "EKINTZA PREST");
@@ -477,12 +479,13 @@ public static class languageDictionary//: MonoBehaviour
 			
 			//CANASTA
 			stringList.Add ("Juego canasta", "SASKIBALOI JOKOA");
+			stringList.Add ("Canasta Completada", "SASKIBALOI JOKOA OSATUTA");
 			stringList.Add ("¡Consigue más puntos que el fantasma encestando!", "BALOIA SASKIRATU MAMUA BAINO PUNTU GEHIO LORTZEKO");
 			stringList.Add ("Haz click en la barra cuando pase la barra amarilla", "BEHEKO BARRA SAKATU HUTSUNE HORIA GAINDITZEN DUENEAN");
 			stringList.Add ("¡Hazlo tres veces para encestar!", "HIRU ALDIZ SAKATU EZAZU SASKIRATZEKO!");
 			stringList.Add ("Has perdido", "HUTS EGIN DUZU");
 			stringList.Add ("Has ganado", "IRABAZI DUZU");
-			stringList.Add ("Espera tu turno...", "ITXARIN ZURE TXANDA...");
+			stringList.Add ("Espera tu turno...", "ITXARON ZURE TXANDA...");
 			stringList.Add ("¡GRACIAS! ¡Has logrado encontrar mis gafas!", "ESKERRIK ASKO! NIRE BETAURREKOAK AURKITU DITUZU!");
 			
 			//Entrar isla mecanica
@@ -497,14 +500,14 @@ public static class languageDictionary//: MonoBehaviour
 			//emociones
 			stringList.Add ("Ejercicio emociones", "EMOZIOEN ARIKETA");
 			stringList.Add ("Selecciona la emoción por la que te pregunta el robot", "ROBOTAK GALDETUTAKO EMOZIOA AUKERATU");
-			stringList.Add ("Arrastra la imagen para verlas", "IRUDIAK MUGITU GUZTIAK IKUSI AHAL IZATEKO");
+			stringList.Add ("Arrastra las imagenes para verlas", "IRUDIAK MUGITU GUZTIAK IKUSI AHAL IZATEKO");
 			stringList.Add ("Pulsa la imagen que elijas", "AUKERATUTAKO IRUDIA SAKATU");
 			stringList.Add ("Alegria", "POZA");
 			stringList.Add ("Asco", "NAZKA");
 			stringList.Add ("Enfado", "HASERRALDI");
 			stringList.Add ("Miedo", "BELDURRA");
 			stringList.Add ("Sorpresa", "HARRIDURA");
-			stringList.Add ("TRisteza", "GOIBELTASUNA");
+			stringList.Add ("Tristeza", "GOIBELTASUNA");
 			stringList.Add ("Vergüenza", "LOTSA");
 			stringList.Add ("Curiosidad", "JAKINGURA");
 			stringList.Add ("Nerviosismo", "URDURITASUN");
