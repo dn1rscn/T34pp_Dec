@@ -13,6 +13,7 @@ public class SelecLenguaje : MonoBehaviour
 	public GameObject BEspañol;
 	public GameObject BIngles;
 	public GameObject BEuskera;
+	public GameObject BFrances;
 
 	// Use this for initialization
 	void Start () 
@@ -33,7 +34,10 @@ public class SelecLenguaje : MonoBehaviour
 			break;
 		case "Euskara":
 			Euskera();
-				break;
+			break;
+		case "Frances":
+			Frances();
+			break;
 		}
 
 
@@ -49,6 +53,7 @@ public class SelecLenguaje : MonoBehaviour
 		BEspañol.GetComponent<Image>().sprite = Check;
 		BIngles.GetComponent<Image>().sprite = NoCheck;
 		BEuskera.GetComponent<Image>().sprite = NoCheck;
+		BFrances.GetComponent<Image>().sprite = NoCheck;
 
 		languageDictionary.lang = "Spanish";
 		//languageDictionary.Lenguaje();
@@ -59,6 +64,7 @@ public class SelecLenguaje : MonoBehaviour
 		BEspañol.GetComponent<Image>().sprite = NoCheck;
 		BIngles.GetComponent<Image>().sprite = Check;
 		BEuskera.GetComponent<Image>().sprite = NoCheck;
+		BFrances.GetComponent<Image>().sprite = NoCheck;
 		
 		languageDictionary.lang = "English";
 		//languageDictionary.Lenguaje();
@@ -69,8 +75,20 @@ public class SelecLenguaje : MonoBehaviour
 		BEspañol.GetComponent<Image>().sprite = NoCheck;
 		BIngles.GetComponent<Image>().sprite = NoCheck;
 		BEuskera.GetComponent<Image>().sprite = Check;
+		BFrances.GetComponent<Image>().sprite = NoCheck;
 		
 		languageDictionary.lang = "Euskara";
+		//languageDictionary.Lenguaje();
+		print(languageDictionary.lang);
+	}
+	public void Frances()
+	{
+		BEspañol.GetComponent<Image>().sprite = NoCheck;
+		BIngles.GetComponent<Image>().sprite = NoCheck;
+		BEuskera.GetComponent<Image>().sprite = NoCheck;
+		BFrances.GetComponent<Image>().sprite = Check;
+		
+		languageDictionary.lang = "Frances";
 		//languageDictionary.Lenguaje();
 		print(languageDictionary.lang);
 	}
