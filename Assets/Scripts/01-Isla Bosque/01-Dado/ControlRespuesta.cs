@@ -178,6 +178,9 @@ public class ControlRespuesta : MonoBehaviour
 			if(CMisiones.dado1==true&&CMisiones.Dado1_Completado==false)
 			{
 				CMisiones.Dado1_Completado=true;
+				/*GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("Notificaciones")
+					.SetEventAction("Nivel 1 dado Completado"));*/
 			}
 			if(CMisiones.dado1==true&&CMisiones.Sonidos1_Completado==true&&cdg_3d.IslaFantasma_Desbloqueada==false)
 			{
@@ -186,6 +189,9 @@ public class ControlRespuesta : MonoBehaviour
 				CNotificaciones.GMision.SetActive(false);
 				CNotificaciones.Nivel2.SetActive(false);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("Notificaciones")
+					.SetEventAction("Isla Fantasma Desbloqueada"));
 			}
 		}
 		if(cdg.aciertos==15)
@@ -207,6 +213,9 @@ public class ControlRespuesta : MonoBehaviour
 				CNotificaciones.MisionDino[0].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				//SalirDelJuego();
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("Notificaciones")
+					.SetEventAction("Nivel 1 dado 3 estrellas"));
 			}
 			if(CMisiones.dado2==true&&CMisiones.ejerB_3estrellas[1]==false)
 			{
@@ -222,6 +231,9 @@ public class ControlRespuesta : MonoBehaviour
 				CNotificaciones.MisionDino[1].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				//SalirDelJuego();
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("Notificaciones")
+					.SetEventAction("Nivel 2 dado Completado3 estrellas"));
 			}
 		}
 		if (cdg.aciertos == 10 && DD.Nivel2Dado == false) 
@@ -239,6 +251,9 @@ public class ControlRespuesta : MonoBehaviour
 			}
 
 			DD.Nivel2Dado=true;
+			GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("Notificaciones")
+					.SetEventAction("Nivel 2 dado Desbloqueado"));
 		}
 	}
 	void error()
@@ -311,6 +326,12 @@ public class ControlRespuesta : MonoBehaviour
 			//languageDictionary.lang = "Spanish";
 
 			TpuntuacionFin.text=languageDictionary.stringList [TpuntuacionFin.text];
+
+			GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("puntuacion")
+					.SetEventAction(Application.loadedLevelName)
+					.SetEventLabel("aciertos")
+					.SetEventValue(cdg.aciertos));
 
 			resetearDado();
 
@@ -405,6 +426,13 @@ public class ControlRespuesta : MonoBehaviour
 		TmonedasDado.text = cM.monedas_dado.ToString();
 
 		SL.Save ();
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("puntuacion")
+					.SetEventAction(Application.loadedLevelName)
+					.SetEventLabel("aciertos")
+					.SetEventValue(cdg.aciertos));
+
 	}
 	public void seguirJugando()
 	{

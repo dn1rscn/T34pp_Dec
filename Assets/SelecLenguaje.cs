@@ -8,6 +8,8 @@ public class SelecLenguaje : MonoBehaviour
 	ControlDatosGlobales_Mundo3D CDG_Mundo3D;
 	SaveLoad SL;
 
+	//GoogleAnalyticsV4 GoogleAnalytics;
+
 	public Sprite Check;
 	public Sprite NoCheck;
 	public GameObject BEspañol;
@@ -20,7 +22,11 @@ public class SelecLenguaje : MonoBehaviour
 	{
 
 		CE=GameObject.Find("control escenas").GetComponent<ControlEscenas>();
+		//GoogleAnalytics = GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>();
 
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+			.SetScreenName("Idiomas"));
+			
 		switch(languageDictionary.lang)
 		{
 		case null:
@@ -99,6 +105,11 @@ public class SelecLenguaje : MonoBehaviour
 		languageDictionary.Lenguaje();
 
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+			.SetEventCategory("Idiomas")
+			.SetEventAction(languageDictionary.lang));
+
 		//Application.LoadLevel("Nivel1_dado2.0");
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		if (CDG_Mundo3D.islaBosque == true) 

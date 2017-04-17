@@ -18,6 +18,9 @@ public class ControlDesbloqueoSonidos : MonoBehaviour
 	{
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
 		
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel Sonidos"));
+
 		for (i=0; i<DD.ASonidos.Length; i++) 
 		{
 			if(DD.ASonidos[i]==true)

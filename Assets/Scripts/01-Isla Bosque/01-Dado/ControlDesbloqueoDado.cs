@@ -14,6 +14,9 @@ public class ControlDesbloqueoDado : MonoBehaviour
 	void Start () 
 	{
 		DD = GameObject.Find ("ctrDesbloqueo").GetComponent<DatosDesbloqueo> ();
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel Dado"));
 		
 		for (int i=0; i<DD.ADado.Length; i++) 
 		{

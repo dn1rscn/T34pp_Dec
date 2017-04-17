@@ -45,6 +45,9 @@ public class ControlInterface : MonoBehaviour
 
 		if (CDG_Mundo3D.IKKI == true) 
 		{
+			GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Inicio"));
+
 			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
 			{
 
@@ -91,6 +94,9 @@ public class ControlInterface : MonoBehaviour
 			} 
 			else if (cdgP.inicio == false) 
 			{
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Personalizacion"));
+
 				BotonInicio.SetActive (false);
 				PersonajeInicio.SetActive (false);
 				MascotaInicio.SetActive (false);
@@ -138,6 +144,10 @@ public class ControlInterface : MonoBehaviour
 		//cdgP.nuevoJuego = false;
 		SL.Load ();
 		Application.LoadLevel ("Mapa");
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+				.SetEventCategory("Botones Inicio")
+				.SetEventAction("Continuar"));
 	}
 
 	/*public void NuevoJuego()

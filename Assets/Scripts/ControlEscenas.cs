@@ -175,6 +175,8 @@ public class ControlEscenas : MonoBehaviour {
 		CMisiones.dado1 = true;
 		CMisiones.dado2 = false;
 		Application.LoadLevel ("Nivel1_dado2.0");
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel 1 Dado"));
 	}
 	public void CargarPICTOGRAMAS_Nivel2()
 	{
@@ -182,6 +184,8 @@ public class ControlEscenas : MonoBehaviour {
 		CMisiones.dado1 = false;
 		CMisiones.dado2 = true;
 		Application.LoadLevel ("Nivel2_dado2.0");
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel 2 Dado"));
 	}
 
 
@@ -244,6 +248,9 @@ public class ControlEscenas : MonoBehaviour {
 		CS = GameObject.Find ("ctrSonidos").GetComponent<ControlSonidos> ();
 		CS.nivel = 1;
 		Application.LoadLevel ("SonidosNivel1");
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel 1 Sonidos"));
 	}
 	public void CargarSonidosNivel2()
 	{
@@ -251,12 +258,17 @@ public class ControlEscenas : MonoBehaviour {
 		CS.nivel = 2;
 
 		Application.LoadLevel ("SonidosNivel2");
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel 2 Sonidos"));
 	}
 	public void CargarSonidosNivel3()
 	{
 		CS = GameObject.Find ("ctrSonidos").GetComponent<ControlSonidos> ();
 		CS.nivel = 3;
 		Application.LoadLevel ("SonidosNivel3");
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Nivel 3 Sonidos"));
 	}
 	public void CargarSocial()
 	{

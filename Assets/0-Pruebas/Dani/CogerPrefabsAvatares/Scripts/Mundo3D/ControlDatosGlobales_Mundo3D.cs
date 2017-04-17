@@ -7,6 +7,8 @@ public class ControlDatosGlobales_Mundo3D: MonoBehaviour {
 		
 	public static ControlDatosGlobales_Mundo3D cont;
 
+	public bool Demo = true;
+
 	public bool[] Ejer_Bosque;
 	public bool[] Ejer_Fantasma;
 

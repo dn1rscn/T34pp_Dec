@@ -73,6 +73,10 @@ public class Interface_Mundo : MonoBehaviour
 		//activamos la animacion "AnimMenuIslasCamara_01" de la camara del prota
 		animatorCamaraProta.SetBool("SelecIsla",true);
 
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+			.SetEventCategory("Interfaz")
+			.SetEventAction("Mapa"));
+
 	}
 	public void cerrarMenuSeleccionIslas(){
 		

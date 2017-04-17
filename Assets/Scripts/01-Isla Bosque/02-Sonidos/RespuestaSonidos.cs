@@ -203,6 +203,10 @@ public class RespuestaSonidos : MonoBehaviour
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				DD.Nivel2Sonidos=true;
 
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Nivel 2 Sonidos Desbloqueado"));
+
 			}
 			if(CS.nivel==2&&DD.Nivel3Sonidos==false)
 			{
@@ -214,6 +218,10 @@ public class RespuestaSonidos : MonoBehaviour
 				CNotificaciones.GMision.SetActive(false);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
 				DD.Nivel3Sonidos=true;
+
+					GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Nivel 3 Sonidos Desbloqueado"));
 			}
 		}
 		if (CS.aciertos == 3) 
@@ -223,6 +231,10 @@ public class RespuestaSonidos : MonoBehaviour
 				cdg_3d.IslaFantasma_Desbloqueada=true;
 				CNotificaciones.Isla.SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+
+					GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Isla Fantasma Desbloqueada"));
 			}
 			else if(CS.nivel==1&&CMisiones.Dado1_Completado==false)
 			{
@@ -246,6 +258,10 @@ public class RespuestaSonidos : MonoBehaviour
 				}
 				CNotificaciones.MisionDino[2].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Nivel 1 Sonidos 3 Estrellas"));
 			}
 			if(CS.nivel==2&&CMisiones.ejerB_3estrellas[3]==false)
 			{
@@ -261,6 +277,10 @@ public class RespuestaSonidos : MonoBehaviour
 				}
 				CNotificaciones.MisionDino[3].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+					
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Nivel 2 Sonidos 3 Estrellas"));
 			}
 			if(CS.nivel==3&&CMisiones.ejerB_3estrellas[4]==false)
 			{
@@ -276,6 +296,10 @@ public class RespuestaSonidos : MonoBehaviour
 				}
 				CNotificaciones.MisionDino[4].SetActive(true);
 				GameObject.Find("Notificaciones").GetComponent<Animator>().Play("abrirNotificacion");
+
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("notificaciones")
+					.SetEventAction("Nivel 3 Sonidos 3 Estrellas"));
 			}
 
 			FinPartida();
@@ -387,6 +411,12 @@ public class RespuestaSonidos : MonoBehaviour
 		TmonedasSonidos.text = cM.MonedasSonidos.ToString();
 
 		SL.Save ();
+
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+					.SetEventCategory("puntuacion")
+					.SetEventAction(Application.loadedLevelName)
+					.SetEventLabel("aciertos")
+					.SetEventValue(CS.aciertos));
 
 		CS.aciertos = 0;
 		CS.fallos = 0;

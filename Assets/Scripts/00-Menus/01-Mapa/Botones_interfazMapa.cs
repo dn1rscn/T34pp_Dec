@@ -34,18 +34,27 @@ public class Botones_interfazMapa : MonoBehaviour
 
 			if (CDG_Mundo3D.islaBosque == true) 
 			{
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Isla Bosque"));
+
 				Fondo_IBosque.SetActive (true);
 				Fondo_IFantasma.SetActive (false);
 				Fondo_IRobot.SetActive (false);
 			}
 			if (CDG_Mundo3D.islaMec == true) 
 			{
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Isla Mecanica"));
+
 				Fondo_IBosque.SetActive (false);
 				Fondo_IFantasma.SetActive (false);
 				Fondo_IRobot.SetActive (true);
 			}
 			if (CDG_Mundo3D.islaFant == true) 
 			{
+				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+				.SetScreenName("Isla Fantasma"));
+
 				Fondo_IBosque.SetActive (false);
 				Fondo_IFantasma.SetActive (true);
 				Fondo_IRobot.SetActive (false);
@@ -98,21 +107,27 @@ public class Botones_interfazMapa : MonoBehaviour
 	}
 	public void Isla_FAntasma()
 	{
-		if (seleccion == false && CDG_Mundo3D.IslaFantasma_Desbloqueada==true&&CDG_Mundo3D.islaFant==false) 
+		if (CDG_Mundo3D.Demo==true)
 		{
-			print (Tiempo);
-			Fondo_IBosque.SetActive (false);
-			Fondo_IFantasma.SetActive (true);
-			Fondo_IRobot.SetActive (false);
-
-			CDG_Mundo3D.posicionPersonaje = 1;
-
-			seleccion=true;
-			Loading.SetActive(true);
-
-			Invoke ("ToFantasma", Tiempo);
+			Application.LoadLevel("Isla_altar");
 		}
+		else if (CDG_Mundo3D.Demo==false)
+		{
+			if (seleccion == false && CDG_Mundo3D.IslaFantasma_Desbloqueada==true&&CDG_Mundo3D.islaFant==false) 
+			{
+				print (Tiempo);
+				Fondo_IBosque.SetActive (false);
+				Fondo_IFantasma.SetActive (true);
+				Fondo_IRobot.SetActive (false);
 
+				CDG_Mundo3D.posicionPersonaje = 1;
+
+				seleccion=true;
+				Loading.SetActive(true);
+
+				Invoke ("ToFantasma", Tiempo);
+			}
+		}
 	}
 	public void Isla_Robot()
 	{
