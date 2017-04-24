@@ -7,7 +7,13 @@ public class controlInteraccionDino : MonoBehaviour {
 	ControlMisionesInterfaz CMI;
 	SaveLoad SL;
 
-	public Sprite[] array_BocadillosConversacion; 
+	public Sprite[] array_BocadillosConversacion;
+
+	public Sprite[] array_BocadillosConversacion_castellano;
+	public Sprite[] array_BocadillosConversacion_euskera;
+	public Sprite[] array_BocadillosConversacion_ingles;
+	public Sprite[] array_BocadillosConversacion_frances; 
+
 	public int bocadillosRestantes;
 
 	SpriteRenderer spr_flechaDestino_Dino;
@@ -47,6 +53,43 @@ public class controlInteraccionDino : MonoBehaviour {
 
 		Dino= GameObject.Find("Dinoi_animaciones_v3");
 
+		//Segun el idioma seleccionado ajustamos los bocadillos
+		switch (languageDictionary.lang) 
+		{
+		case "Spanish":	
+			print ("traduciendoBocadillos_Castellano");
+			GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_castellano[0];
+			array_BocadillosConversacion[0]=array_BocadillosConversacion_castellano[2];
+			array_BocadillosConversacion[1]=array_BocadillosConversacion_castellano[1];
+			GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_castellano[3];
+
+			break;
+		case "English":
+			print ("traduciendoBocadillos_Ingles");
+			GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_ingles[0];
+			array_BocadillosConversacion[0]=array_BocadillosConversacion_ingles[2];
+			array_BocadillosConversacion[1]=array_BocadillosConversacion_ingles[1];
+			GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_ingles[3];
+
+			break;
+		case "Euskara":
+			print ("traduciendoBocadillos_Euskara");
+			GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_euskera[0];
+			array_BocadillosConversacion[0]=array_BocadillosConversacion_euskera[2];
+			array_BocadillosConversacion[1]=array_BocadillosConversacion_euskera[1];
+			GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_euskera[3];
+
+			break;
+		case "Frances":
+			print ("traduciendoBocadillos_Frances");
+			GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_frances[0];
+			array_BocadillosConversacion[0]=array_BocadillosConversacion_frances[2];
+			array_BocadillosConversacion[1]=array_BocadillosConversacion_frances[1];
+			GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>().sprite=array_BocadillosConversacion_frances[3];
+
+			break;
+		}
+		
 		spr_flechaDestino_Dino = GameObject.Find("flechaDestino_Dino").GetComponent<SpriteRenderer>();
 		spr_bocadilloDino_01 = GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>();
 		spr_bocadilloDino_FinMision = GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>();
@@ -81,25 +124,25 @@ public class controlInteraccionDino : MonoBehaviour {
 			//Si NO hemos hablado aun con Dino
 			if (!CDG_Mundo3D.hemosHabladoConDino)
 			{
+				//Desactivamos la flecha de destino sobre el dino
+				spr_flechaDestino_Dino.enabled = false;
 
-			//Desactivamos la flecha de destino sobre el dino
-			spr_flechaDestino_Dino.enabled = false;
+				//Activamos el "Modo Dialogo" desde el animator del canvas
+				animator_Canvas.Play("Canvas_AparecerDialogos");
 
-			//Activamos el "Modo Dialogo" desde el animator del canvas
-			animator_Canvas.Play("Canvas_AparecerDialogos");
+				//Desactivamos el control del prota mientras estemos conversando
+				ctrlProta.enabled = false;
 
-			//Desactivamos el control del prota mientras estemos conversando
-			ctrlProta.enabled = false;
+				//Y mandamos su NavMeshAgent a la posicion de conversar con el Dino
+				agente.SetDestination(posicionConversarConDino);
 
-			//Y mandamos su NavMeshAgent a la posicion de conversar con el Dino
-			agente.SetDestination(posicionConversarConDino);
+				//Activamos la animacion de zoom de la camara
+				animator_Cam.SetBool("ZoomCam", true);
 
-			//Activamos la animacion de zoom de la camara
-			animator_Cam.SetBool("ZoomCam", true);
-
-			//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
-			spr_bocadilloDino_01.enabled=true;
-			gObj_botonPasarBocadillo.SetActive(true);
+				
+				//Activamos el primer bocadillo de conversacion y el boton para pasar de bocadillos en el canvas
+				spr_bocadilloDino_01.enabled=true;
+				gObj_botonPasarBocadillo.SetActive(true);
 	
 			}
 
@@ -139,7 +182,6 @@ public class controlInteraccionDino : MonoBehaviour {
 					Invoke ("DinoAnimFallo_desactivar",2.0f);
 				}
 			}
-
 
 		}
 	}

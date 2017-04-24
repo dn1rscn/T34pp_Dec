@@ -167,12 +167,17 @@ public class controlPortales : MonoBehaviour {
 
 			//Ajustamos la posicion de aparicion para que aparezca en la posicion 1 de la siguiente isla, y no en la 6 
 			CDG_Mundo3D.posicionPersonaje = 1;
-
-			Application.LoadLevel("Isla_fantasma");
-			print ("Cargando islaFantasma...");
-			CDG_Mundo3D.islaBosque = false;
-			CDG_Mundo3D.islaMec = false;
-			CDG_Mundo3D.islaFant = true;
+			if (CDG_Mundo3D.Demo)
+			{
+				Application.LoadLevel("Demo_escenaFinal");
+			}
+			else{
+				Application.LoadLevel("Isla_fantasma");
+				print ("Cargando islaFantasma...");
+				CDG_Mundo3D.islaBosque = false;
+				CDG_Mundo3D.islaMec = false;
+				CDG_Mundo3D.islaFant = true;
+			}
 			break;
 
 		//ISLA FANTASMA

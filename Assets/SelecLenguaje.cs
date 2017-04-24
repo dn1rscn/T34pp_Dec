@@ -21,7 +21,7 @@ public class SelecLenguaje : MonoBehaviour
 	void Start () 
 	{
 
-		CE=GameObject.Find("control escenas").GetComponent<ControlEscenas>();
+		CE = GameObject.Find("control escenas").GetComponent<ControlEscenas>();
 		//GoogleAnalytics = GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>();
 
 		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
@@ -49,11 +49,6 @@ public class SelecLenguaje : MonoBehaviour
 
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void Español()
 	{
 		BEspañol.GetComponent<Image>().sprite = Check;

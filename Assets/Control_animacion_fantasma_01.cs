@@ -12,11 +12,6 @@ public class Control_animacion_fantasma_01 : MonoBehaviour
 		
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 	void OnTriggerEnter(Collider coli)
 	{
 		
@@ -28,7 +23,6 @@ public class Control_animacion_fantasma_01 : MonoBehaviour
 			fantasma_animator.SetBool ("bSaludar", true);
 		}
 
-		
 		
 		
 	}

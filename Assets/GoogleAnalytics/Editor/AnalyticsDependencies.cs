@@ -45,7 +45,9 @@ public class AnalyticsDependencies : AssetPostprocessor
                 {"packageIds", new string[] {
                         "extra-google-m2repository",
                         "extra-android-m2repository"} }
-            });
+            
+		}
+		);
 #endif
     }
 
