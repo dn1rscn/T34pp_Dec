@@ -236,6 +236,10 @@ public class ControlInterface : MonoBehaviour
 	{
 		Application.OpenURL ("https://twitter.com/Studiosikki");
 	}
+	public void webIkki ()
+	{
+		Application.OpenURL ("www.studiosikki.com");
+	}
 	public void borrar_Partida()
 	{
 		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
