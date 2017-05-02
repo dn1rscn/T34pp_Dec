@@ -25,6 +25,8 @@ public class ControlMisionesInterfaz : MonoBehaviour
 	public Sprite Bandera_Español;
 	public Sprite Bandera_Ingles;
 	public Sprite Bandera_Euskera;
+	public Sprite Bandera_Frances;
+
 
 	Text TMonedas;
 
@@ -62,6 +64,9 @@ public class ControlMisionesInterfaz : MonoBehaviour
 			break;
 		case "Euskara":
 			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Euskera;
+			break;
+		case "Frances":
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Frances;
 			break;
 		}
 

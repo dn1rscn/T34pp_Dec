@@ -184,10 +184,18 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Felicidades! Has completado el juego", "¡FELICIDADES! HAS COMPLETADO EL JUEGO");
 			stringList.Add ("Menú inicial", "MENÚ INICIAL");
 			stringList.Add ("Créditos", "CRÉDITOS");
+
+			//Menu Final Demo
+			stringList.Add ("¿Podras ganar al fantasma a baloncesto?", "¿PODRÁS GANAR AL FANTASMA A BALONCESTO?");
+			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "¡EXPLORA LA ISLA MECÁNICA Y COMPLETA NUEVOS JUEGOS!");
+			stringList.Add ("¿Seras capaz de llegar hasta el final?", "¿SERAS CAPAZ DE LLEGAR HASTA EL FINAL?");
+			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "¿TE ATREVES A ADENTRARTE EN LA ISLA FANTASMA?");
 		}
 
 		if(lang=="English")
 		{
+			stringList.Add("Seleccion de Idioma", "CHOOSE LANGUAGE");
+
 			//print(lang);
 			//PANTALLA CARGA
 			stringList.Add ("Español", "SPANISH");
@@ -356,11 +364,20 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Felicidades! Has completado el juego", "CONGRATULATIONS! YOU HAVE COMPLETED THE GAME");
 			stringList.Add ("Menú inicial", "START MENU");
 			stringList.Add ("Créditos", "CREDITS");
+
+			//Menu Final Demo
+			stringList.Add ("¿Podras ganar al fantasma a baloncesto?", "COULD YOU WIN THE GHOST IN A BASKETBALL MATCH?");
+			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "EXPLORE MECHANICAL ISLAND AND COMPLETE MORE GAMES!");
+			stringList.Add ("¿Seras capaz de llegar hasta el final?", "WILL YOU BE ABLE TO GET TO THE END?");
+			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "WILL YOU DARE TO VENTURE INTO PHANTOM ISLAND?");
 		}
 
 		
 		if(lang=="Euskara")
 		{
+
+			stringList.Add("Seleccion de Idioma", "HIZKUNTZA AUKERATU");
+
 			//print(lang);
 			stringList.Add ("Español", "ESPAÑOL");
 			stringList.Add ("Ingles", "INGLÉS");
@@ -529,11 +546,17 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Felicidades! Has completado el juego", "ZORIONAK! JOKOA OSATU DUZU");
 			stringList.Add ("Menú inicial", "HASIERAKO MENUA");
 			stringList.Add ("Créditos", "KREDITUAK");
+
+			//Menu Final Demo
+			stringList.Add ("¿Podras ganar al fantasma a baloncesto?", "MAMUA SASKIBALOIRA IRABAZIKO ZENUKE?");
+			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "UHARTE MEKANIKOA AZTERTU ETA JOKO GEHIAGO OSATU!");
+			stringList.Add ("¿Seras capaz de llegar hasta el final?", "BUKAERA ARTE IRISTEKO GAI IZANGO ZARA?");
+			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "MAMU UHARTEAN BARNERATZEN AUSARTZEN ZARA?");
 		}
 
 		if(lang=="Frances")
 		{
-			stringList.Add("Seleccion de Idioma", "SELECCIÓN DE IDIOMA");
+			stringList.Add("Seleccion de Idioma", "CHOISIR LA LANGUE");
 			
 			stringList.Add ("Español", "ESPAGNOL");
 			stringList.Add ("Ingles", "ANGLAIS");
@@ -700,6 +723,12 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Felicidades! Has completado el juego", "FÉLICITATIONS! VOUS AVEZ COMPLÉTÉ LE JEU");
 			stringList.Add ("Menú inicial", "MENU INITIAL");
 			stringList.Add ("Créditos", "CRÉDITS");
+
+			//Menu Final Demo
+			stringList.Add ("¿Podras ganar al fantasma a baloncesto?", "COULD YOU WIN THE GHOST IN A BASKETBALL MATCH?");
+			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "EXPLORE MECHANICAL ISLAND AND COMPLETE MORE GAMES!");
+			stringList.Add ("¿Seras capaz de llegar hasta el final?", "WILL YOU BE ABLE TO GET TO THE END?");
+			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "WILL YOU DARE TO VENTURE INTO PHANTOM ISLAND?");
 		}
 	}
 }

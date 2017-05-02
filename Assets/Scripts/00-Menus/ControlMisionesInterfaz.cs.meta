@@ -1,10 +1,21 @@
 fileFormatVersion: 2
 guid: a2143dc0aa831bc46bec59bb8f030ec4
-timeCreated: 1476973642
+timeCreated: 1493221942
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - misionDino: {instanceID: 0}
+  - misionFantasma: {instanceID: 0}
+  - misionRobot: {instanceID: 0}
+  - ObjetivosDino: {instanceID: 0}
+  - ObjetivosFantasma: {instanceID: 0}
+  - ObjetivosRobot: {instanceID: 0}
+  - "Bandera_Espa\xF1ol": {fileID: 21300000, guid: a3580ff2887ae614890676d907026f02,
+      type: 3}
+  - Bandera_Ingles: {fileID: 21300000, guid: 000745b8e8e03e2428403851056c5408, type: 3}
+  - Bandera_Euskera: {fileID: 21300000, guid: 40da89ed52a42164f9a48e8304345fdb, type: 3}
+  - Bandera_Frances: {fileID: 21300000, guid: dbdf22c24dd70e145ac03946766ee5b2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

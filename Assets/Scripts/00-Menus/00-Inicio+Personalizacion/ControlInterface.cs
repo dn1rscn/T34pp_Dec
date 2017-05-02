@@ -139,6 +139,49 @@ public class ControlInterface : MonoBehaviour
 		SL.Save ();
 		Application.LoadLevel ("Mapa");
 	}
+	public void irAPlayStore()
+	{
+		print ("Vamos a PlayStore");
+		SL.Save ();
+
+		//Redireccionar a la Playstore
+
+		//Analytics
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		                                                                   .SetEventCategory("valoracion")
+		                                                                   .SetEventAction("like_DEMO"));
+	
+	}
+
+	public void dislikeYVolverAlMenu()
+	{
+	//Analytics
+	GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		                                                                   .SetEventCategory("valoracion")
+		                                                                   .SetEventAction("dislike_DEMO"));
+	}
+	public void redireccionarAWebIkki()
+	{
+		//Analytics
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		                                                                   .SetEventCategory("valoracion")
+		                                                                   .SetEventAction("redireccionBotonWeb_DEMO"));
+	}
+	public void redireccionarTwitterIkki()
+	{
+		//Analytics
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		                                                                   .SetEventCategory("valoracion")
+		                                                                   .SetEventAction("redireccionTwitter_DEMO"));
+	}
+	public void redireccionarFacebookIkki()
+	{
+		//Analytics
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		                                                                   .SetEventCategory("valoracion")
+		                                                                   .SetEventAction("redireccionFacebook_DEMO"));
+	}
+
 	public void Continuar()
 	{
 		//cdgP.nuevoJuego = false;
@@ -238,7 +281,7 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void webIkki ()
 	{
-		Application.OpenURL ("www.studiosikki.com");
+		Application.OpenURL ("http://www.studiosikki.com");
 	}
 	public void borrar_Partida()
 	{

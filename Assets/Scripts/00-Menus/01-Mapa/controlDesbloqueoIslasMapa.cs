@@ -15,7 +15,7 @@ public class controlDesbloqueoIslasMapa : MonoBehaviour
 	{
 		cdg_3d=GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 
-		if (cdg_3d.IslaFantasma_Desbloqueada == true) 
+		if (cdg_3d.IslaFantasma_Desbloqueada == true && cdg_3d.Demo==false) 
 		{
 			Islas[0].GetComponent<Image>().sprite = islas_unlocked[0];
 		} 
