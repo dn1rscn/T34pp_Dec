@@ -46,7 +46,7 @@ public static class languageDictionary//: MonoBehaviour
 			//Tutorial
 			stringList.Add ("Tutorial", "TUTORIAL");
 			stringList.Add ("Haz click en el suelo para moverte", "HAZ CLICK EN EL SUELO PARA MOVERTE");
-			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "INTERACTUA CON LAS MASCOTAS HACIENDO CLOCK EN ELLAS");
+			stringList.Add ("Interactua con las mascotas haciendo click en ellas", "INTERACTUA CON LAS MASCOTAS HACIENDO CLICK EN ELLAS");
 			stringList.Add ("¡Hola!", "¡HOLA!");
 			stringList.Add ("Pausa la partida para acceder a mapa y personalización", "PAUSA LA PARTIDA PARA ACCEDER A MAPA Y PERSONALIZACIÓN");
 			stringList.Add ("Accede a los portales para completar los ejercicios", "ACCEDE A LOS PORTALES PARA COMPLETAR LOS EJERCICIOS");
@@ -95,7 +95,7 @@ public static class languageDictionary//: MonoBehaviour
 			
 			stringList.Add ("Fresa", "FRESA");
 			stringList.Add ("Pera", "PERA");
-			stringList.Add ("Platano", "PLATANO");
+			stringList.Add ("Platano", "PLÁTANO");
 			stringList.Add ("Copa", "COPA");
 			stringList.Add ("Bombilla", "BOMBILLA");
 			stringList.Add ("LLave", "LLAVE");
@@ -190,6 +190,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "¡EXPLORA LA ISLA MECÁNICA Y COMPLETA NUEVOS JUEGOS!");
 			stringList.Add ("¿Seras capaz de llegar hasta el final?", "¿SERAS CAPAZ DE LLEGAR HASTA EL FINAL?");
 			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "¿TE ATREVES A ADENTRARTE EN LA ISLA FANTASMA?");
+
+			stringList.Add ("VALÓRANOS", "VALÓRANOS");
+			stringList.Add ("¡GRACIAS POR JUGAR!", "¡GRACIAS POR JUGAR!");
 		}
 
 		if(lang=="English")
@@ -370,6 +373,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "EXPLORE MECHANICAL ISLAND AND COMPLETE MORE GAMES!");
 			stringList.Add ("¿Seras capaz de llegar hasta el final?", "WILL YOU BE ABLE TO GET TO THE END?");
 			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "WILL YOU DARE TO VENTURE INTO PHANTOM ISLAND?");
+
+			stringList.Add ("VALÓRANOS", "RATE US");
+			stringList.Add ("¡GRACIAS POR JUGAR!", "¡THANKS FOR PLAYING!");
 		}
 
 		
@@ -471,7 +477,7 @@ public static class languageDictionary//: MonoBehaviour
 			//SOnidos
 			stringList.Add ("Ejercicio sonidos","SOINU ARIKETA");
 			stringList.Add ("Pulsa PLAY para escuchar un sonido", "PLAY BOTOIA SAKATU SOINU BAT ETZUTEKO");
-			stringList.Add ("y RELPAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
+			stringList.Add ("y REPLAY para repetirlo", "REPLAY BOTOIA SAKATU SOINU BERA ENTZUTAKO");
 			stringList.Add ("Haz click en la imagen que corresponda al sonido", "ENTZUTAKO SOINUARI DAGOKION IRUDA SAKATU");
 			stringList.Add ("Pulsa PLAY de nuevo para seguir jugando", "PLAY BOTOIA BERRIRO SAKATU JOLASTEN JARAITZEKO");
 			stringList.Add ("Isla Fantasma desbloqueada", "MAMU UHARTEA DESBLOKEATUA");
@@ -552,6 +558,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "UHARTE MEKANIKOA AZTERTU ETA JOKO GEHIAGO OSATU!");
 			stringList.Add ("¿Seras capaz de llegar hasta el final?", "BUKAERA ARTE IRISTEKO GAI IZANGO ZARA?");
 			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "MAMU UHARTEAN BARNERATZEN AUSARTZEN ZARA?");
+
+			stringList.Add ("VALÓRANOS", "PUNTUATU GAITZAZU");
+			stringList.Add ("¡GRACIAS POR JUGAR!", "¡ESKERRIK ASKO JOKATZEAGATIK!");
 		}
 
 		if(lang=="Frances")
@@ -729,6 +738,9 @@ public static class languageDictionary//: MonoBehaviour
 			stringList.Add ("¡Explora la isla mecanica y completa nuevos juegos!", "EXPLORE MECHANICAL ISLAND AND COMPLETE MORE GAMES!");
 			stringList.Add ("¿Seras capaz de llegar hasta el final?", "WILL YOU BE ABLE TO GET TO THE END?");
 			stringList.Add ("¿Te atreves a adentrarte en la isla Fantasma?", "WILL YOU DARE TO VENTURE INTO PHANTOM ISLAND?");
+
+			stringList.Add ("VALÓRANOS", "ÉVALUEZ-NOUS");
+			stringList.Add ("¡GRACIAS POR JUGAR!", "MERCI DE JOUER!");
 		}
 	}
 }

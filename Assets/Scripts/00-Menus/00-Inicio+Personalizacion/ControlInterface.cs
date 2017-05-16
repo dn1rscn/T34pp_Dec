@@ -34,101 +34,106 @@ public class ControlInterface : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
-		AN=GameObject.Find("AvataresParaMenu").GetComponent<Actualizar_ninos>();
 
-		//Game.
-		//print ("cargamos partida");
-		//SL.Load ();
-
-		if (CDG_Mundo3D.IKKI == true) 
+		if(Application.loadedLevelName=="personalizacion2.0")
 		{
-			GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
-				.SetScreenName("Inicio"));
+			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+			AN=GameObject.Find("AvataresParaMenu").GetComponent<Actualizar_ninos>();
+			
 
-			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
-			{
+			//Game.
+			//print ("cargamos partida");
+			//SL.Load ();
 
-				BotonInicio.SetActive (false);
-				CamInicio.SetActive (true);
-				
-				BotonJuego.SetActive (true);
-				CamJuego.SetActive (false);
-			} 
-			else //if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
-			{
-				print("nuevo Juego");
-				
-				BotonInicio.SetActive (true);
-				PersonajeInicio.SetActive (true);
-				MascotaInicio.SetActive (true);
-				CamInicio.SetActive (true);
-				
-				BotonJuego.SetActive (false);
-				Personajejuego.SetActive (false);
-				Mascotajuego.SetActive (false);
-				CamJuego.SetActive (false);
-				
-				cdgP.inicio=true;
-			}
-
-			CDG_Mundo3D.IKKI=false;
-		} 
-		else if (CDG_Mundo3D.IKKI == false) 
-		{
-
-			if (cdgP.inicio == true)
-			{
-				BotonInicio.SetActive (true);
-				PersonajeInicio.SetActive (true);
-				MascotaInicio.SetActive (true);
-				CamInicio.SetActive (true);
-
-				BotonJuego.SetActive (false);
-				Personajejuego.SetActive (false);
-				Mascotajuego.SetActive (false);
-				CamJuego.SetActive (false);
-
-			} 
-			else if (cdgP.inicio == false) 
+			if (CDG_Mundo3D.IKKI == true) 
 			{
 				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
-				.SetScreenName("Personalizacion"));
+					.SetScreenName("Inicio"));
 
-				BotonInicio.SetActive (false);
-				PersonajeInicio.SetActive (false);
-				MascotaInicio.SetActive (false);
-				CamInicio.SetActive (false);
+				if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+				{
 
-				BotonJuego.SetActive (true);
-				Personajejuego.SetActive (true);
-				Mascotajuego.SetActive (true);
-				CamJuego.SetActive (true);
+					BotonInicio.SetActive (false);
+					CamInicio.SetActive (true);
+					
+					BotonJuego.SetActive (true);
+					CamJuego.SetActive (false);
+				} 
+				else //if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+				{
+					print("nuevo Juego");
+					
+					BotonInicio.SetActive (true);
+					PersonajeInicio.SetActive (true);
+					MascotaInicio.SetActive (true);
+					CamInicio.SetActive (true);
+					
+					BotonJuego.SetActive (false);
+					Personajejuego.SetActive (false);
+					Mascotajuego.SetActive (false);
+					CamJuego.SetActive (false);
+					
+					cdgP.inicio=true;
+				}
+
+				CDG_Mundo3D.IKKI=false;
+			} 
+			else if (CDG_Mundo3D.IKKI == false) 
+			{
+
+				if (cdgP.inicio == true)
+				{
+					BotonInicio.SetActive (true);
+					PersonajeInicio.SetActive (true);
+					MascotaInicio.SetActive (true);
+					CamInicio.SetActive (true);
+
+					BotonJuego.SetActive (false);
+					Personajejuego.SetActive (false);
+					Mascotajuego.SetActive (false);
+					CamJuego.SetActive (false);
+
+				} 
+				else if (cdgP.inicio == false) 
+				{
+					GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
+					.SetScreenName("Personalizacion"));
+
+					BotonInicio.SetActive (false);
+					PersonajeInicio.SetActive (false);
+					MascotaInicio.SetActive (false);
+					CamInicio.SetActive (false);
+
+					BotonJuego.SetActive (true);
+					Personajejuego.SetActive (true);
+					Mascotajuego.SetActive (true);
+					CamJuego.SetActive (true);
+				}
 			}
-		}
 
 
-		switch (cdgP.mascota)
-		{
-		case 0:
-			FondoRobot.SetActive (true);
-			FondoFantasma.SetActive (false);
-			FondoDino.SetActive (false);
-			break;
+			switch (cdgP.mascota)
+			{
+			case 0:
+				FondoRobot.SetActive (true);
+				FondoFantasma.SetActive (false);
+				FondoDino.SetActive (false);
+				break;
 
-		case 1:
-			FondoRobot.SetActive (false);
-			FondoFantasma.SetActive (true);
-			FondoDino.SetActive (false);
-			break;
+			case 1:
+				FondoRobot.SetActive (false);
+				FondoFantasma.SetActive (true);
+				FondoDino.SetActive (false);
+				break;
 
-		case 2:
-			FondoRobot.SetActive (false);
-			FondoFantasma.SetActive (false);
-			FondoDino.SetActive (true);
-			break;
+			case 2:
+				FondoRobot.SetActive (false);
+				FondoFantasma.SetActive (false);
+				FondoDino.SetActive (true);
+				break;
+			}
 		}
 	
 	}
@@ -142,9 +147,17 @@ public class ControlInterface : MonoBehaviour
 	public void irAPlayStore()
 	{
 		print ("Vamos a PlayStore");
-		SL.Save ();
+		//SL.Save ();
 
 		//Redireccionar a la Playstore
+		if(Application.platform==RuntimePlatform.Android)
+		{
+			Application.OpenURL("market://details?id=com.IKKI.TEApp_");
+		}
+		else
+		{
+			Application.OpenURL("https://play.google.com/store/apps/details?id=com.IKKI.TEApp_");
+		}
 
 		//Analytics
 		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
@@ -156,7 +169,7 @@ public class ControlInterface : MonoBehaviour
 	public void dislikeYVolverAlMenu()
 	{
 	//Analytics
-	GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
+		GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogEvent(new EventHitBuilder()
 		                                                                   .SetEventCategory("valoracion")
 		                                                                   .SetEventAction("dislike_DEMO"));
 	}
