@@ -17,7 +17,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 
 	ControlProtaMouse_2 ctrlProta;
 
-	NavMeshAgent agente;
+	UnityEngine.AI.NavMeshAgent agente;
 
 	GameObject Robot;
 
@@ -46,7 +46,7 @@ public class controlInteraccionRobot : MonoBehaviour {
 		spr_bocadilloRobot_01 = GameObject.Find("bocadillo_Robot").GetComponent<SpriteRenderer>();
 		spr_bocadilloRobot_FinMision = GameObject.Find("bocadillo_Robot_FinMision").GetComponent<SpriteRenderer>();
 
-		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
+		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent>();
 		posicionConversarConRobot = GameObject.Find("Posicion_ConversarConRobot").transform.position; 
 
 		animator_Robot = GameObject.Find ("robot_animaciones_bake_v2").GetComponent <Animator> ();

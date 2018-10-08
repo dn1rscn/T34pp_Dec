@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ControlProtaMouse_2 : MonoBehaviour {
 	
-	NavMeshAgent agente;
+	UnityEngine.AI.NavMeshAgent agente;
 	Animator animatorProta;
 
 	Ray rayoPantalla;
@@ -28,7 +28,7 @@ public class ControlProtaMouse_2 : MonoBehaviour {
 
 		animatorProta =GetComponent<Animator>();
 
-		agente = gameObject.GetComponent<NavMeshAgent> ();
+		agente = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent> ();
 	}
 	
 	// Update is called once per frame

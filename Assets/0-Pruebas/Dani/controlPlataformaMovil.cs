@@ -10,14 +10,14 @@ public class controlPlataformaMovil : MonoBehaviour {
 	Animator animator_Plataforma;
 	Animator animator_Avatar;
 
-	NavMeshAgent agente_Prota;
+	UnityEngine.AI.NavMeshAgent agente_Prota;
 
 	bool comprobarEstadoPlataforma = false;
 	bool triggerActivo=true;
 
 	void Start(){
 		animator_Plataforma = GameObject.Find ("Isla_Bosque_V02Puente_Activado").GetComponent<Animator>();
-		agente_Prota = Prota.GetComponent<NavMeshAgent>();
+		agente_Prota = Prota.GetComponent<UnityEngine.AI.NavMeshAgent>();
 		animator_Avatar =Prota.GetComponent<Animator>();
 
 	}
@@ -54,7 +54,7 @@ public class controlPlataformaMovil : MonoBehaviour {
 
 		//ACTIVAR EL NAVMESHAGENT Y EL RIGIDBODY
 		GameObject.Find("Prota_TEAPlay").GetComponent<Rigidbody>().isKinematic=false;
-		GameObject.Find("Prota_TEAPlay").GetComponent<NavMeshAgent>().enabled=true;
+		GameObject.Find("Prota_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
 
 		//MANDAR AL PROTA A LA POSICION 3 DE LA PLATAFORMA (en la isla de arriba)
 		//agente_Prota.SetDestination(GameObject.Find("point_up_salir").transform.position);

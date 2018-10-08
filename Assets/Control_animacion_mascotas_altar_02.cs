@@ -15,12 +15,12 @@ public class Control_animacion_mascotas_altar_02 : MonoBehaviour
 	public GameObject prota;
 	public GameObject posicionFinal;
 
-	NavMeshAgent agente;
+	UnityEngine.AI.NavMeshAgent agente;
 
 	void Start(){
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
-		agente = prota.GetComponent<NavMeshAgent>();
+		agente = prota.GetComponent<UnityEngine.AI.NavMeshAgent>();
 	}
 
 	void OnTriggerEnter(Collider coli)

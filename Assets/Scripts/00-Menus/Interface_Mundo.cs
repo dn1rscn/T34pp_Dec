@@ -5,7 +5,7 @@ public class Interface_Mundo : MonoBehaviour
 {
 	control_datosGlobalesPersonalizacion cdgP;
 
-	NavMeshAgent agente;
+	UnityEngine.AI.NavMeshAgent agente;
 
 	Animator animatorCanvas;
 	Animator animatorCamaraProta;
@@ -36,7 +36,7 @@ public class Interface_Mundo : MonoBehaviour
 		GameObject.Find ("cuadro").GetComponent<Animator> ().Play ("abrir");
 		Bcerrar.SetActive (true);
 		Babrir.SetActive (false);
-		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent> ();
+		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		agente.destination = GameObject.Find ("Chico_TEAPlay").transform.position;
 		GameObject.Find ("Chico_TEAPlay").GetComponent<Animator> ().SetBool("andar",false);
 		

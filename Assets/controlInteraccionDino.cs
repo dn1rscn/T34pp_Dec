@@ -25,7 +25,7 @@ public class controlInteraccionDino : MonoBehaviour {
 
 	ControlProtaMouse_2 ctrlProta;
 
-	NavMeshAgent agente;
+	UnityEngine.AI.NavMeshAgent agente;
 
 	GameObject Dino;
 
@@ -94,7 +94,7 @@ public class controlInteraccionDino : MonoBehaviour {
 		spr_bocadilloDino_01 = GameObject.Find("bocadillo_Dino").GetComponent<SpriteRenderer>();
 		spr_bocadilloDino_FinMision = GameObject.Find("bocadillo_Dino_FinMision").GetComponent<SpriteRenderer>();
 
-		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
+		agente = GameObject.Find ("Chico_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent>();
 		posicionConversarConDino = GameObject.Find("Posicion_ConversarConDino").transform.position; 
 		posicionConversarConDino2 = GameObject.Find("Posicion_ConversarConDino2").transform.position; 
 

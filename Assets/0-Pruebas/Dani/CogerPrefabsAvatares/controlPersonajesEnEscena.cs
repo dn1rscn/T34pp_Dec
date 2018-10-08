@@ -23,10 +23,10 @@ public class controlPersonajesEnEscena : MonoBehaviour {
 			GameObject Prota = GameObject.Find("Prota_TEAPlay");
 			GameObject personajes = GameObject.Find ("Personajes");
 
-			Prota.GetComponent<NavMeshAgent>().enabled=false;
-			MASCOTAS_Dino.GetComponent<NavMeshAgent>().enabled = false;
-			MASCOTAS_Fantasma.GetComponent<NavMeshAgent>().enabled = false;
-			MASCOTAS_Robot.GetComponent<NavMeshAgent>().enabled = false;
+			Prota.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
+			MASCOTAS_Dino.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+			MASCOTAS_Fantasma.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+			MASCOTAS_Robot.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
 
 			switch (CDG_Mundo3D.posicionPersonaje) {
@@ -59,10 +59,10 @@ public class controlPersonajesEnEscena : MonoBehaviour {
 			actualizarPersonajesEnEscena ();
 
 			
-			Prota.GetComponent<NavMeshAgent>().enabled=true;
-			MASCOTAS_Dino.GetComponent<NavMeshAgent>().enabled = true;
-			MASCOTAS_Fantasma.GetComponent<NavMeshAgent>().enabled = true;
-			MASCOTAS_Robot.GetComponent<NavMeshAgent>().enabled = true;
+			Prota.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
+			MASCOTAS_Dino.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+			MASCOTAS_Fantasma.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+			MASCOTAS_Robot.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 
 
 			if (Application.loadedLevelName == "03_1-Mundo3D_IslaDino") {

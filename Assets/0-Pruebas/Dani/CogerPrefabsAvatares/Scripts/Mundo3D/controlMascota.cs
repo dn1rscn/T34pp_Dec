@@ -22,7 +22,7 @@ public class controlMascota : MonoBehaviour {
 	public Transform gObj_Prota; //Prota que debemos definir en el editor
 	public float distanciaProta; //Distancia entre la mascota y el Prota
 
-	NavMeshAgent agente_mascota;
+	UnityEngine.AI.NavMeshAgent agente_mascota;
 	Animator animator_mascota;
 
 	bool seguir; //Booleana que debe estar activa siempre que queramos que la mascota avance hacia el objetivo
@@ -30,7 +30,7 @@ public class controlMascota : MonoBehaviour {
 	void Start () 
 	{
 	//Obtenemos el navMeshAgent y el Animator de la mascota
-		agente_mascota = gameObject.GetComponent<NavMeshAgent>();
+		agente_mascota = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
 		animator_mascota =GetComponent<Animator>();
 	}
 

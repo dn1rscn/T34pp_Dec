@@ -19,9 +19,9 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 	ControlProtaMouse_2 ctrlProta;
 
-	NavMeshAgent agenteProta;
+	UnityEngine.AI.NavMeshAgent agenteProta;
 
-	NavMeshAgent agenteFantasma;
+	UnityEngine.AI.NavMeshAgent agenteFantasma;
 
 	GameObject Fantasma;
 	public GameObject gafasFantasma;
@@ -51,8 +51,8 @@ public class controlInteraccionFantasma : MonoBehaviour {
 		spr_bocadilloFantasma_01 = GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>();
 		spr_bocadilloFantasma_FinMision = GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>();
 
-		agenteProta = GameObject.Find ("Chico_TEAPlay").GetComponent<NavMeshAgent>();
-		agenteFantasma = GameObject.Find ("fantasma_bake_v2").GetComponent<NavMeshAgent>();
+		agenteProta = GameObject.Find ("Chico_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent>();
+		agenteFantasma = GameObject.Find ("fantasma_bake_v2").GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 		posicionConversarConFantasma = GameObject.Find("Posicion_ConversarConFantasma").transform.position; 
 		posicionReposoFantasma = GameObject.Find("posicionReposoFantasma_PuertaMansion").transform.position; 

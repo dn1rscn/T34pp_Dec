@@ -96,7 +96,7 @@ public class controlEjercicioCanastas : MonoBehaviour {
 		//print (num_turnoJugador);
 
 		//paramos la animacion de la barra movil
-		GameObject.Find("barra_PunteroMóvil").GetComponent<Animator>().Stop();
+		GameObject.Find("barra_PunteroMóvil").GetComponent<Animator>().enabled = false;
 
 		//Las 4 primeras veces que tiramos la pelota:
 		if (num_turnoJugador <= 4) {

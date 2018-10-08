@@ -11,7 +11,7 @@ public class control_triggersPosicion : MonoBehaviour {
 		//ACCEDEMOS AL SCRIPT DE DATOS GLOBALES
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
-		gameObject.GetComponent<NavMeshAgent>().enabled=false;
+		gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
 		GameObject grupoSuperiorProta = transform.parent.gameObject;
 
 		switch (CDG_Mundo3D.posicionPersonaje) {
@@ -65,7 +65,7 @@ public class control_triggersPosicion : MonoBehaviour {
 		}
 
 
-		gameObject.GetComponent<NavMeshAgent>().enabled=true;
+		gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
 
 
 	}
