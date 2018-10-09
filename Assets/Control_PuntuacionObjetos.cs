@@ -15,7 +15,7 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 
 	void Awake ()
 	{
-		actualizar_Objetos ();
+		
 
 		if (cont == null) 
 		{
@@ -27,14 +27,15 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-
-	}
+        //actualizar_Objetos();
+    }
 	public void actualizar_Objetos()
 	{
 		print("actualizar puntuacion");
 		if(GameObject.Find("NumGafas"))
 		{
 			GameObject.Find("NumGafas").GetComponent<Text> ().text = GafasRecogidas.ToString()+("/4");
+            print("ACTUALIZAMOS GAFAS" + GafasRecogidas);
 		}
 		if(GameObject.Find("NumEnergia"))
 		{
