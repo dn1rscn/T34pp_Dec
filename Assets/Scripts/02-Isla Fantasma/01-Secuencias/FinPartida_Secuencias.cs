@@ -219,8 +219,8 @@ public class FinPartida_Secuencias : MonoBehaviour
 		
 		monedasSecuencia = GameObject.Find ("monedas");
 		TmonedasSecuencia = monedasSecuencia.GetComponent<Text> ();
-
-		TpuntuacionFin.text = "\nQUIERES SALIR? ";
+    
+		TpuntuacionFin.text = "¿Quieres salir?";
 		
 		TmonedasSecuencia.text = cM.monedas_secuencia.ToString();
 	}

@@ -7842,7 +7842,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 379310264}
         m_MethodName: activarTutorialInicial
         m_Mode: 1
         m_Arguments:
@@ -7864,7 +7864,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 379310264}
         m_MethodName: pausarTiempo
         m_Mode: 1
         m_Arguments:
@@ -15455,7 +15455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 379310264}
         m_MethodName: pasarTutorial_01
         m_Mode: 1
         m_Arguments:
@@ -27152,7 +27152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 379310264}
         m_MethodName: pasarTutorial_02
         m_Mode: 1
         m_Arguments:

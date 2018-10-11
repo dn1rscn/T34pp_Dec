@@ -13,6 +13,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 
 	public GameObject barraPotencia;
 
+    public GameObject boton_seguirJugando;
+    public GameObject boton_volverJugar;
+
 	public float lanzamientoMascota;
 	public int num_turnoMascota=1;
 	public int num_turnoJugador=0;
@@ -356,6 +359,9 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
 
+        boton_volverJugar.SetActive(true);
+        boton_seguirJugando.SetActive(false);
+
 		puntuacionfin = GameObject.Find ("puntuacionFin");
 		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 		monedasCanasta = GameObject.Find ("monedas");
@@ -406,7 +412,11 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		botonBack.SetActive (false);
 		IfinJuego.SetActive (true);
 		IfinJuego.GetComponent<Animator>().Play ("AnimFinPartida");
-		puntuacionfin = GameObject.Find ("puntuacionFin");
+
+        boton_volverJugar.SetActive(true);
+        boton_seguirJugando.SetActive(false);
+
+        puntuacionfin = GameObject.Find ("puntuacionFin");
 		TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 		monedasCanasta = GameObject.Find ("monedas");
 		Tmonedascanasta = monedasCanasta.GetComponent<Text> ();
@@ -421,9 +431,42 @@ public class controlEjercicioCanastasNuevo : MonoBehaviour {
 		puntuacionJugador = 0;
 		cM.MonedasGenerales_canasta = 0;
 	}
-	public void SeguirJugando()
+
+    public void activar_FinJuego_Salir()
+    {
+        languageDictionary.stringList.Clear();
+        languageDictionary.Lenguaje();
+
+        botonBack.SetActive(false);
+        IfinJuego.SetActive(true);
+        IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
+
+        boton_volverJugar.SetActive(false);
+        boton_seguirJugando.SetActive(true);
+
+        puntuacionfin = GameObject.Find("puntuacionFin");
+        TpuntuacionFin = puntuacionfin.GetComponent<Text>();
+        monedasCanasta = GameObject.Find("monedas");
+        Tmonedascanasta = monedasCanasta.GetComponent<Text>();
+        //cM.calcular_monedasCanasta ();
+        //cM.calcular_monedasGenerales ();
+
+        TpuntuacionFin.text = puntuacionJugador.ToString();
+        GameObject.Find("resultado").GetComponent<Text>().text = languageDictionary.stringList["¿Quieres salir?"];
+
+        Tmonedascanasta.text = cM.MonedasGenerales_canasta.ToString();
+
+        //puntuacionJugador = 0;
+        //cM.MonedasGenerales_canasta = 0;
+    }
+    public void SeguirJugando()
 	{
 		IfinJuego.SetActive (false);
 		botonBack.SetActive (true);
 	}
+    public void salir()
+    {
+        puntuacionJugador = 0;
+        cM.MonedasGenerales_canasta = 0;
+    }
 }
