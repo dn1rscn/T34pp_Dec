@@ -13221,7 +13221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bce970a93e7dc84e98a84ce71dab77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Demo: 1
+  Demo: 0
   Ejer_Bosque: 0000
   Ejer_Fantasma: 0000
   IslaMec_Desbloqueada: 0
