@@ -10,7 +10,12 @@ public class controlInteraccionFantasma : MonoBehaviour {
 	public Sprite[] array_BocadillosConversacion; 
 	public int bocadillosRestantes;
 
-	SpriteRenderer spr_bocadilloFantasma_01;
+    public Sprite[] array_BocadillosConversacion_castellano;
+    public Sprite[] array_BocadillosConversacion_euskera;
+    public Sprite[] array_BocadillosConversacion_ingles;
+    public Sprite[] array_BocadillosConversacion_frances;
+
+    SpriteRenderer spr_bocadilloFantasma_01;
 	SpriteRenderer spr_bocadilloFantasma_FinMision;
 
 	Vector3 posicionConversarConFantasma;
@@ -48,7 +53,45 @@ public class controlInteraccionFantasma : MonoBehaviour {
 
 		Fantasma = GameObject.Find("fantasma_bake_v2");
 
-		spr_bocadilloFantasma_01 = GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>();
+        //Segun el idioma seleccionado ajustamos los bocadillos
+        switch (languageDictionary.lang)
+        {
+            case "Spanish":
+                print("traduciendoBocadillos_Castellano");
+                GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_castellano[0];
+                array_BocadillosConversacion[0] = array_BocadillosConversacion_castellano[2];
+                array_BocadillosConversacion[1] = array_BocadillosConversacion_castellano[1];
+                GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_castellano[3];
+
+                break;
+            case "English":
+                print("traduciendoBocadillos_Ingles");
+                GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_ingles[0];
+                array_BocadillosConversacion[0] = array_BocadillosConversacion_ingles[2];
+                array_BocadillosConversacion[1] = array_BocadillosConversacion_ingles[1];
+                GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_ingles[3];
+
+                break;
+            case "Euskara":
+                print("traduciendoBocadillos_Euskara");
+                GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_euskera[0];
+                array_BocadillosConversacion[0] = array_BocadillosConversacion_euskera[2];
+                array_BocadillosConversacion[1] = array_BocadillosConversacion_euskera[1];
+                GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_euskera[3];
+
+                break;
+            case "Frances":
+                print("traduciendoBocadillos_Frances");
+                GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_frances[0];
+                array_BocadillosConversacion[0] = array_BocadillosConversacion_frances[2];
+                array_BocadillosConversacion[1] = array_BocadillosConversacion_frances[1];
+                GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>().sprite = array_BocadillosConversacion_frances[3];
+
+                break;
+        }
+
+
+        spr_bocadilloFantasma_01 = GameObject.Find("bocadillo_Fantasma").GetComponent<SpriteRenderer>();
 		spr_bocadilloFantasma_FinMision = GameObject.Find("bocadillo_Fantasma_FinMision").GetComponent<SpriteRenderer>();
 
 		agenteProta = GameObject.Find ("Chico_TEAPlay").GetComponent<UnityEngine.AI.NavMeshAgent>();

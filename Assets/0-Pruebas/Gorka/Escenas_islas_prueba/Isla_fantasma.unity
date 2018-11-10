@@ -3732,14 +3732,14 @@ RectTransform:
   m_GameObject: {fileID: 244967442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.958435, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 789964645}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: -360}
+  m_AnchoredPosition: {x: 0.000030517578, y: -359.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244967444
@@ -23132,6 +23132,26 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b21997a3d313aaa45b2f810c07bc8244, type: 3}
   - {fileID: 21300000, guid: 3fd5b8aeda291ea4e9610a3185b5afdc, type: 3}
   bocadillosRestantes: 0
+  array_BocadillosConversacion_castellano:
+  - {fileID: 21300000, guid: 78342e8b824a2654c9432ba4d3c24181, type: 3}
+  - {fileID: 21300000, guid: 9efe9328cfd8878409d668fefbbf9f1b, type: 3}
+  - {fileID: 21300000, guid: b7332ed6b8c424d43be3193a106221f3, type: 3}
+  - {fileID: 21300000, guid: b1de0ee5ac4132f449fa641722fca7be, type: 3}
+  array_BocadillosConversacion_euskera:
+  - {fileID: 21300000, guid: 92fdb569d49cd5b4ea562185c3bd0b34, type: 3}
+  - {fileID: 21300000, guid: 8d3574662ebf52c49ac1daacd3b37097, type: 3}
+  - {fileID: 21300000, guid: 44810e4a887c13f43bda92d8d94146ba, type: 3}
+  - {fileID: 21300000, guid: 725bf7ff42a174a4688f07a00f415588, type: 3}
+  array_BocadillosConversacion_ingles:
+  - {fileID: 21300000, guid: 1cea14aa1112d18409a2163b197e824b, type: 3}
+  - {fileID: 21300000, guid: f9215d1ce9d20f0418be0e719828cd2f, type: 3}
+  - {fileID: 21300000, guid: 121671d9bd576a74dbe12356b2faf7f0, type: 3}
+  - {fileID: 21300000, guid: b6e532255825960409a51d2d6ef4330c, type: 3}
+  array_BocadillosConversacion_frances:
+  - {fileID: 21300000, guid: 13cff83e641565d489f136847250002e, type: 3}
+  - {fileID: 21300000, guid: 930e76ff8b918ff4191be8766b40cf54, type: 3}
+  - {fileID: 21300000, guid: f7b21e57b250b1d4f9b60bee0e5b285d, type: 3}
+  - {fileID: 21300000, guid: 2f7864a47384219458d4f3731ba70c42, type: 3}
   gafasFantasma: {fileID: 2100507427}
   gObj_botonPasarBocadillo: {fileID: 537490634}
   gObj_botonPasarBocadillo_2: {fileID: 964223340}
@@ -29036,7 +29056,7 @@ RectTransform:
   m_GameObject: {fileID: 2091760089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.958435, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 789964645}
   m_RootOrder: 0

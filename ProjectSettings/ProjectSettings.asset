@@ -159,7 +159,7 @@ PlayerSettings:
     tvOS: com.IKKI.TEApp_
   buildNumber:
     iOS: 0
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -245,10 +245,10 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: L:/GitHub/T34pp_Dec/TEApp_KeyStore.keystore
+  AndroidKeystoreName: E:/IKKI STUDIOS/Proyectos/05- TEApp/T34pp_Dec/TEApp_KeyStore.keystore
   AndroidKeyaliasName: teapp free
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
