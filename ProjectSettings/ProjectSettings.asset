@@ -152,7 +152,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.IKKI.TEApp_
+    Android: com.IKKI.TEApp
     Standalone: unity.Studios IKKI.TEApp Lite
     Tizen: com.IKKI.TEApp_
     iOS: com.IKKI.TEApp_
@@ -248,8 +248,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: E:/IKKI STUDIOS/Proyectos/05- TEApp/T34pp_Dec/TEApp_KeyStore.keystore
-  AndroidKeyaliasName: teapp free
+  AndroidKeystoreName: L:/GitHub/T34pp_Dec/Assets/TEApp_key.keystore
+  AndroidKeyaliasName: teapp_ads
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
