@@ -41,6 +41,7 @@ public class Control_PuntuacionObjetos : MonoBehaviour
 		{
 			print("energia");
 			GameObject.Find("NumEnergia").GetComponent<Text> ().text = EnergiaRecogida.ToString()+("/4");
+            print("actualizamos Energia " + EnergiaRecogida);
 		}
 	}
 }

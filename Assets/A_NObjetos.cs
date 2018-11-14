@@ -14,8 +14,15 @@ public class A_NObjetos : MonoBehaviour
         if (GameObject.Find("PuntuacionObjetos"))
         {
             CPO = GameObject.Find("PuntuacionObjetos").GetComponent<Control_PuntuacionObjetos>();
-            print("num gafas = "+CPO.GafasRecogidas);
-            texto_Actualizar.text = CPO.GafasRecogidas.ToString() + ("/4");
+            if (texto_Actualizar.name == "NumGafas")
+            {
+                print("num gafas = " + CPO.GafasRecogidas);
+                texto_Actualizar.text = CPO.GafasRecogidas.ToString() + ("/4");
+            }
+            else if(texto_Actualizar.name== "NumEnergia")
+            {
+                texto_Actualizar.text = CPO.EnergiaRecogida.ToString() + ("/4");
+            }
         }
 
     }
