@@ -90,7 +90,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		GameObject.Find ("robot_animaciones_bake_v2").GetComponent<Animator> ().Play("acierto_robot");
 		CE.aciertos++;
 
-		actualizarPuntuacion ();
+        GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("acierto");
+
+        actualizarPuntuacion ();
 		CSlider.progresoEmociones();
 
 		if (CEA.ARespuesta.Length == 7) 
@@ -180,7 +182,9 @@ public class ControlRespuestaEmociones : MonoBehaviour
 				IfinJuego.SetActive(true);
 				IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
 
-				puntuacionfin = GameObject.Find ("puntuacionFin");
+                Boton_Back.SetActive(false);
+
+                puntuacionfin = GameObject.Find ("puntuacionFin");
 				TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 				
 				monedasEmociones = GameObject.Find ("monedas");
@@ -248,14 +252,18 @@ public class ControlRespuestaEmociones : MonoBehaviour
 		print ("fallo");
 		CE.Intentos++;
 
-		if (CE.Intentos == 4) 
+        GameObject.Find("Panel_Canvas").GetComponent<Animator>().Play("Fallo");
+
+        if (CE.Intentos == 4) 
 		{
 			Vidas[CE.Intentos-2].SetActive(false);
 
 			IfinJuego.SetActive(true);
 			IfinJuego.GetComponent<Animator>().Play("AnimFinPartida");
-			
-			puntuacionfin = GameObject.Find ("puntuacionFin");
+
+            Boton_Back.SetActive(false);
+
+            puntuacionfin = GameObject.Find ("puntuacionFin");
 			TpuntuacionFin = puntuacionfin.GetComponent<Text> ();
 			
 			monedasEmociones = GameObject.Find ("monedas");

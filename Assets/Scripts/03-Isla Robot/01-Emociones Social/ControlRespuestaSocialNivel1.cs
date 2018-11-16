@@ -149,9 +149,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					Invoke ("ActivarEstrella1", 1.0f);
 					Invoke ("ActivarEstrella2", 2.0f);
 					Invoke ("ActivarEstrella3", 3.0f);
-					
-					SiguienteSituacion.SetActive (true);
-					if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                    if (CE.NivelEmpatia == 1)
+                    {
+                        SiguienteSituacion.SetActive(true);
+                    }
+                    else if (CE.NivelEmpatia == 3)
+                    {
+                        SiguienteSituacion.SetActive(false);
+                    }
+
+                    if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 					{
 						CE.ASocialNivel1[CE.EjercicioSocial]=true;
 					}
@@ -196,9 +204,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 						}
 						Invoke ("ActivarEstrella1", 1.0f);
 						Invoke ("ActivarEstrella2", 2.0f);
-						
-						SiguienteSituacion.SetActive (true);
-						if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                        if (CE.NivelEmpatia == 1)
+                        {
+                            SiguienteSituacion.SetActive(true);
+                        }
+                        else if (CE.NivelEmpatia == 3)
+                        {
+                            SiguienteSituacion.SetActive(false);
+                        }
+
+                        if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 						{
 							CE.ASocialNivel1[CE.EjercicioSocial]=true;
 						}
@@ -221,9 +237,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 						}
 						
 						Invoke ("ActivarEstrella1", 1.0f);
-						
-						SiguienteSituacion.SetActive (true);
-						if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                        if (CE.NivelEmpatia == 1)
+                        {
+                            SiguienteSituacion.SetActive(true);
+                        }
+                        else if (CE.NivelEmpatia == 3)
+                        {
+                            SiguienteSituacion.SetActive(false);
+                        }
+
+                        if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 						{
 							CE.ASocialNivel1[CE.EjercicioSocial]=true;
 						}
@@ -293,9 +317,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 				Invoke ("ActivarEstrella3", 3.0f);
-				
-				SiguienteSituacion.SetActive (true);
-				if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                if (CE.NivelEmpatia == 1)
+                {
+                    SiguienteSituacion.SetActive(true);
+                }
+                else if (CE.NivelEmpatia == 3)
+                {
+                    SiguienteSituacion.SetActive(false);
+                }
+
+                if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 				{
 					CE.ASocialNivel1[CE.EjercicioSocial]=true;
 				}
@@ -319,9 +351,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					
 					Invoke ("ActivarEstrella1", 1.0f);
 					Invoke ("ActivarEstrella2", 2.0f);
-					
-					SiguienteSituacion.SetActive (true);
-					if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                    if (CE.NivelEmpatia == 1)
+                    {
+                        SiguienteSituacion.SetActive(true);
+                    }
+                    else if (CE.NivelEmpatia == 3)
+                    {
+                        SiguienteSituacion.SetActive(false);
+                    }
+
+                    if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 					{
 						CE.ASocialNivel1[CE.EjercicioSocial]=true;
 					}
@@ -343,9 +383,17 @@ public class ControlRespuestaSocialNivel1 : MonoBehaviour
 					}
 					
 					Invoke ("ActivarEstrella1", 1.0f);
-					
-					SiguienteSituacion.SetActive (true);
-					if(CE.EjercicioSocial<CE.ASocialNivel1.Length)
+
+                    if (CE.NivelEmpatia == 1)
+                    {
+                        SiguienteSituacion.SetActive(true);
+                    }
+                    else if (CE.NivelEmpatia == 3)
+                    {
+                        SiguienteSituacion.SetActive(false);
+                    }
+
+                    if (CE.EjercicioSocial<CE.ASocialNivel1.Length)
 					{
 						CE.ASocialNivel1[CE.EjercicioSocial]=true;
 					}

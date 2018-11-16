@@ -18,7 +18,7 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 	
 	//public GameObject BotonVolverGrande;
 	
-	//public GameObject SiguienteSituacion;
+	public GameObject SiguienteSituacion;
 	
 	Control_monedas cM;
 	GameObject ControlMonedas;
@@ -155,7 +155,9 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 					Invoke ("ActivarEstrella2", 2.0f);
 					Invoke ("ActivarEstrella3", 3.0f);
 
-					DD.AEmpatia[2] = true;
+                    SiguienteSituacion.SetActive(true);
+
+                    DD.AEmpatia[2] = true;
 
 					if(CE.NivelEmpatia == 2 &&CMisiones.ejerM_3estrellas[1]==false)
 					{
@@ -180,14 +182,16 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 						Invoke ("ActivarEstrella1", 1.0f);
 						Invoke ("ActivarEstrella2", 2.0f);
 
-						DD.AEmpatia[2] = true;
+                        SiguienteSituacion.SetActive(true);
+                        DD.AEmpatia[2] = true;
 						
 					} 
 					else if(CE.Intentos == 3)
 					{
 						Invoke ("ActivarEstrella1", 1.0f);
-						
-					}
+                        SiguienteSituacion.SetActive(true);
+
+                    }
 				}
 				
 				//SiguienteSituacion.SetActive (true);
@@ -243,7 +247,8 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 				Invoke ("ActivarEstrella1", 1.0f);
 				Invoke ("ActivarEstrella2", 2.0f);
 				Invoke ("ActivarEstrella3", 3.0f);
-				DD.AEmpatia[2] = true;
+                SiguienteSituacion.SetActive(true);
+                DD.AEmpatia[2] = true;
 				
 			} 
 			else 
@@ -252,13 +257,15 @@ public class ControlRespuestaSocialNivel2 : MonoBehaviour
 				{
 					Invoke ("ActivarEstrella1", 1.0f);
 					Invoke ("ActivarEstrella2", 2.0f);
-					DD.AEmpatia[2] = true;
+                    SiguienteSituacion.SetActive(true);
+                    DD.AEmpatia[2] = true;
 					
 				} 
 				else if(CE.Intentos == 3)
 				{
 					Invoke ("ActivarEstrella1", 1.0f);
-					DD.AEmpatia[2] = true;
+                    SiguienteSituacion.SetActive(true);
+                    DD.AEmpatia[2] = true;
 					
 				}
 			}

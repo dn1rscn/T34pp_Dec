@@ -21,6 +21,8 @@ public class CargarEmpatia : MonoBehaviour
 
 	public GameObject Ifindeljuego2;
 	public GameObject Boton_Back;
+    public GameObject B_Salir;
+    public Image isla;
 
 	public GameObject[] vidas;
 

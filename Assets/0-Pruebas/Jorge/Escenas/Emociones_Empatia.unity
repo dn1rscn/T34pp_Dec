@@ -4627,6 +4627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IfinJuego: {fileID: 1795275033}
+  SiguienteSituacion: {fileID: 0}
 --- !u!114 &907670625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10775,6 +10776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IfinJuego: {fileID: 1795275033}
+  SiguienteSituacion: {fileID: 0}
 --- !u!114 &1151824762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12837,7 +12839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22493098, guid: 72cdbe275a9b1fd4bb6c734a62bcbac9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.10110474
+      value: -0.10107422
       objectReference: {fileID: 0}
     - target: {fileID: 22493098, guid: 72cdbe275a9b1fd4bb6c734a62bcbac9, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -14968,7 +14970,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 127186, guid: 75f780448ed24ea4895d44a4cd1d4b27, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22465278, guid: 75f780448ed24ea4895d44a4cd1d4b27, type: 2}
       propertyPath: m_LocalScale.x
@@ -16643,6 +16645,8 @@ MonoBehaviour:
   estrella3: {fileID: 1873127253}
   Ifindeljuego2: {fileID: 11270718}
   Boton_Back: {fileID: 75156678}
+  B_Salir: {fileID: 957474160}
+  isla: {fileID: 0}
   vidas:
   - {fileID: 1894971202}
   - {fileID: 896227606}
