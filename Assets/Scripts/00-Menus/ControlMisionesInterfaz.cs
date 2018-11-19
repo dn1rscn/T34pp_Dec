@@ -66,7 +66,7 @@ public class ControlMisionesInterfaz : MonoBehaviour
 			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Euskera;
 			break;
 		case "Frances":
-			GameObject.Find("Bidiomas").GetComponent<Image>().sprite=Bandera_Frances;
+			GameObject.Find("Bidiomas").GetComponent<Image>().sprite= Bandera_Frances;
 			break;
 		}
 

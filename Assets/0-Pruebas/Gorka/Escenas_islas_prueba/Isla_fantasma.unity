@@ -14995,7 +14995,7 @@ MonoBehaviour:
     type: 3}
   Bandera_Ingles: {fileID: 21300000, guid: 000745b8e8e03e2428403851056c5408, type: 3}
   Bandera_Euskera: {fileID: 21300000, guid: 40da89ed52a42164f9a48e8304345fdb, type: 3}
-  Bandera_Frances: {fileID: 0}
+  Bandera_Frances: {fileID: 21300000, guid: dbdf22c24dd70e145ac03946766ee5b2, type: 3}
 --- !u!1 &1060230586
 GameObject:
   m_ObjectHideFlags: 0
@@ -25532,14 +25532,14 @@ RectTransform:
   m_GameObject: {fileID: 1786154125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.147163, y: 11.147166, z: 11.147166}
+  m_LocalScale: {x: 17.22896, y: 17.228964, z: 17.228964}
   m_Children: []
   m_Father: {fileID: 1926240288}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11}
+  m_AnchoredPosition: {x: 0, y: -11.000038}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786154127
