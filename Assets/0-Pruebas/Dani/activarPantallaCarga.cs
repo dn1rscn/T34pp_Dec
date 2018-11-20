@@ -8,8 +8,10 @@ public class activarPantallaCarga : MonoBehaviour {
 
 	void Start(){
 		loadingScreen = GameObject.Find("loadingScreen").GetComponent<Image>();
-	}
-	public void activarLoadingScreen(){
+        loadingScreen.enabled = false;
+
+    }
+    public void activarLoadingScreen(){
 		loadingScreen.enabled = true;
 	}
 }
