@@ -1714,7 +1714,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 129270, guid: 357f3013ac32c9c46b07dcb8ab631cea, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431854, guid: 357f3013ac32c9c46b07dcb8ab631cea, type: 2}
       propertyPath: m_LocalScale.x
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 63498711}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.26972803
+  m_Size: 0.26972806
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

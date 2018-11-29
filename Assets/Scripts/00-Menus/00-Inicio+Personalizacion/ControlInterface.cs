@@ -195,7 +195,7 @@ public class ControlInterface : MonoBehaviour
 		                                                                   .SetEventAction("redireccionFacebook_DEMO"));
 	}
 
-	public void Continuar()
+    public void Continuar()
 	{
 		//cdgP.nuevoJuego = false;
 		SL.Load ();
@@ -284,7 +284,11 @@ public class ControlInterface : MonoBehaviour
 
 		cdgP.mascota = 2;
 	}
-	public void Facebook ()
+    public void Instagram()
+    {
+        Application.OpenURL("https://www.instagram.com/studios_ikki/");
+    }
+    public void Facebook ()
 	{
 		Application.OpenURL ("https://www.facebook.com/Ikki-Studios-1854126904821934");
 	}

@@ -4627,7 +4627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IfinJuego: {fileID: 1795275033}
-  SiguienteSituacion: {fileID: 0}
+  SiguienteSituacion: {fileID: 957474160}
 --- !u!114 &907670625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10824,7 +10824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IfinJuego: {fileID: 1795275033}
-  SiguienteSituacion: {fileID: 0}
+  SiguienteSituacion: {fileID: 957474160}
 --- !u!114 &1151824762
 MonoBehaviour:
   m_ObjectHideFlags: 0
