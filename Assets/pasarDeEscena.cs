@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.iOS;
 
 public class pasarDeEscena : MonoBehaviour {
 
@@ -21,9 +22,16 @@ public class pasarDeEscena : MonoBehaviour {
 
 		else 
 		{
-			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")||File.Exists(Application.dataPath + "SaveGame,sg")) 
 			{
-				Application.LoadLevel("personalizacion2.0");
+                if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+                {
+                    Application.LoadLevel("personalizacion2_ipad");
+                }
+                else
+                {
+                    Application.LoadLevel("personalizacion2.0");
+                }
 			}
 			else
 			{

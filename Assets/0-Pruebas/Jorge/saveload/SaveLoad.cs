@@ -46,8 +46,17 @@ public class SaveLoad : MonoBehaviour
 
 		print ("guardamos");
 		datos = new Game ();
-		guardamosDatos ();
-		FileStream file = File.Create (Application.persistentDataPath + "SavedGame.sg"); //creamos archivo de guardado
+        FileStream file = null;
+        guardamosDatos ();
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
+        {
+            file = File.Create(Application.persistentDataPath + "SavedGame.sg"); //creamos archivo de guardado
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            file = File.Create(Application.dataPath + "SavedGame.sg");
+        }
+        
 		BinaryFormatter bformatter = new BinaryFormatter ();
 		bformatter.Serialize (file, datos);//guardamos las variables
 		file.Close ();
@@ -59,7 +68,15 @@ public class SaveLoad : MonoBehaviour
 		print ("guardamos Default");
 		datos = new Game ();
 		guardamosDatos ();
-		FileStream file = File.Create (Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+        FileStream file = null;
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
+        {
+            file = File.Create(Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            file = File.Create(Application.dataPath + "Default.sg");
+        }
 		BinaryFormatter bformatter = new BinaryFormatter ();
 		bformatter.Serialize (file, datos);//guardamos las variables
 		file.Close ();
@@ -67,33 +84,70 @@ public class SaveLoad : MonoBehaviour
 
 	public void Load()
 	{
-		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
-		{
-			//cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-			print("cargamos");
-			datos= new Game ();
-			FileStream file = File.Open (Application.persistentDataPath + "SavedGame.sg", FileMode.Open); //leemos el archivo de guardado
-			BinaryFormatter bformatter = new BinaryFormatter ();
-			datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
-			cargarDatos();
-			file.Close ();
-		}
+        //FileStream file = null;
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
+        {
+            if (File.Exists(Application.persistentDataPath + "SavedGame.sg"))
+            {
+                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+                print("cargamos");
+                datos = new Game();
+                FileStream file = File.Open(Application.persistentDataPath + "SavedGame.sg", FileMode.Open); //leemos el archivo de guardado
+                BinaryFormatter bformatter = new BinaryFormatter();
+                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
+                cargarDatos();
+                file.Close();
+            }
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            if (File.Exists(Application.dataPath + "SavedGame.sg"))
+            {
+                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+                print("cargamos");
+                datos = new Game();
+                FileStream file = File.Open(Application.dataPath + "SavedGame.sg", FileMode.Open); //leemos el archivo de guardado
+                BinaryFormatter bformatter = new BinaryFormatter();
+                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
+                cargarDatos();
+                file.Close();
+            }
+        }
+        
 	}
 
 	public void LoadDefault()
 	{
-		if (File.Exists (Application.persistentDataPath + "Default.sg")) 
-		{
-			//cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-			
-			print("cargamos Default");
-			datos= new Game ();
-			FileStream file = File.Open (Application.persistentDataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
-			BinaryFormatter bformatter = new BinaryFormatter ();
-			datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
-			cargarDatos();
-			file.Close ();
-		}
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
+        {
+            if (File.Exists(Application.persistentDataPath + "Default.sg"))
+            {
+                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+
+                print("cargamos Default");
+                datos = new Game();
+                FileStream file = File.Open(Application.persistentDataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
+                BinaryFormatter bformatter = new BinaryFormatter();
+                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
+                cargarDatos();
+                file.Close();
+            }
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            if (File.Exists(Application.dataPath + "Default.sg"))
+            {
+                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+                print("cargamos Default");
+                datos = new Game();
+                FileStream file = File.Open(Application.dataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
+                BinaryFormatter bformatter = new BinaryFormatter();
+                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
+                cargarDatos();
+                file.Close();
+            }
+        }
+       
 	}
 
 	void guardamosDatos()

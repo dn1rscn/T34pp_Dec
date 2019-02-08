@@ -37,7 +37,7 @@ public class ControlInterface : MonoBehaviour
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
-		if(Application.loadedLevelName=="personalizacion2.0")
+		if(Application.loadedLevelName=="personalizacion2.0"||Application.loadedLevelName=="personalizacion2_ipad")
 		{
 			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 			AN=GameObject.Find("AvataresParaMenu").GetComponent<Actualizar_ninos>();
@@ -52,7 +52,7 @@ public class ControlInterface : MonoBehaviour
 				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
 					.SetScreenName("Inicio"));
 
-				if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
+				if (File.Exists (Application.persistentDataPath + "SavedGame.sg")||File.Exists(Application.dataPath + "SavedGame.sg")) 
 				{
 
 					BotonInicio.SetActive (false);
@@ -152,11 +152,11 @@ public class ControlInterface : MonoBehaviour
 		//Redireccionar a la Playstore
 		if(Application.platform==RuntimePlatform.Android)
 		{
-			Application.OpenURL("market://details?id=com.IKKI.TEApp_");
+			Application.OpenURL("market://details?id=com.IKKI.TEApp");
 		}
 		else
 		{
-			Application.OpenURL("https://play.google.com/store/apps/details?id=com.IKKI.TEApp_");
+			Application.OpenURL("https://play.google.com/store/apps/details?id=com.IKKI.TEApp");
 		}
 
 		//Analytics
@@ -302,30 +302,52 @@ public class ControlInterface : MonoBehaviour
 	}
 	public void borrar_Partida()
 	{
-		if (File.Exists (Application.persistentDataPath + "SavedGame.sg")) 
-		{
-			print ("existe el archivo");
-			File.Delete (Application.persistentDataPath + "SavedGame.sg");
-			SL.LoadDefault();
-			AN.Start();
-			print("nuevo Juego");
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
+        {
+            if (File.Exists(Application.persistentDataPath + "SavedGame.sg"))
+            {
+                print("existe el archivo");
+                File.Delete(Application.persistentDataPath + "SavedGame.sg");
+                SL.LoadDefault();
+                AN.Start();
+                print("nuevo Juego");
 
-			Application.LoadLevel("seleccion_Idioma");
-			/*BotonInicio.SetActive (true);
-			PersonajeInicio.SetActive (true);
-			MascotaInicio.SetActive (true);
-			CamInicio.SetActive (true);
-			
-			BotonJuego.SetActive (false);
-			Personajejuego.SetActive (false);
-			Mascotajuego.SetActive (false);
-			CamJuego.SetActive (false);
+                Application.LoadLevel("seleccion_Idioma");
+                /*BotonInicio.SetActive (true);
+                PersonajeInicio.SetActive (true);
+                MascotaInicio.SetActive (true);
+                CamInicio.SetActive (true);
 
-			GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");*/
-		} else 
-		{
-			print ("no existe el archivo");
-		}
+                BotonJuego.SetActive (false);
+                Personajejuego.SetActive (false);
+                Mascotajuego.SetActive (false);
+                CamJuego.SetActive (false);
+
+                GameObject.Find ("camara_Inicio").GetComponent<Animator> ().Play ("CamPersonaje");*/
+            }
+            else
+            {
+                print("no existe el archivo");
+            }
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            if (File.Exists(Application.dataPath + "SavedGame.sg"))
+            {
+                print("existe el archivo");
+                File.Delete(Application.dataPath + "SavedGame.sg");
+                SL.LoadDefault();
+                AN.Start();
+                print("nuevo Juego");
+
+                Application.LoadLevel("seleccion_Idioma");
+            }
+            else
+            {
+                print("no existe el archivo");
+            }
+        }
+        
 	}
 
 }

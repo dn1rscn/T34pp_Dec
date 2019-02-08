@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.iOS;
 
 public class tutoriales_IslaBosque : MonoBehaviour {
 
@@ -10,16 +11,22 @@ public class tutoriales_IslaBosque : MonoBehaviour {
 
 	public void Start(){
 		scriptCtrlProta = GameObject.Find ("Chico_TEAPlay").GetComponent<ControlProtaMouse_2>();
-		animator_grpTutoriales = GetComponent<Animator>();
+        if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+        {
+            animator_grpTutoriales = GameObject.Find("grp_control_Tutoriales_ipad").GetComponent<Animator>();
+        }
+        else
+        {
+            animator_grpTutoriales = GameObject.Find("grp_control_Tutoriales").GetComponent<Animator>();
+        }
 
 		CDG_Mundo3D = GameObject.Find("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D>();
 
 		scriptCtrlProta.enabled = false;
-		//print("controlProta_desactivado");
+        //print("controlProta_desactivado");
 
-
-		//Si es la primera vez que accedemos a la isla:
-		if(!CDG_Mundo3D.hemosVisto_TutorialIslaBosque){
+        //Si es la primera vez que accedemos a la isla:
+        if (!CDG_Mundo3D.hemosVisto_TutorialIslaBosque){
 			print ("ACTIVAR TUTORIAL");
 			animator_grpTutoriales.Play("Tutoriales_IslaBosque_00");
 			activarTutorialInicial();

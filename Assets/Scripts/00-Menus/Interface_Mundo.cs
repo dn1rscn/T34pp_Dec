@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.iOS;
 
 public class Interface_Mundo : MonoBehaviour 
 {
@@ -58,7 +59,14 @@ public class Interface_Mundo : MonoBehaviour
 		Time.timeScale = 1;
 		//print ("hola");
 		cdgP.inicio = false;
-		Application.LoadLevel ("personalizacion2.0");
+        if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+        {
+            Application.LoadLevel("personalizacion2_ipad");
+        }
+        else
+        {
+            Application.LoadLevel("personalizacion2.0");
+        }
 	}
 	public void pause()
 	{
