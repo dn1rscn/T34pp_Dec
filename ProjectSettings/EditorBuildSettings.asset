@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/00-Menus/00-MenuInicial+Personalizacion/personalizacion2.0.unity
     guid: 896fab5b4ea26674ebd520d636bceeba
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/00-Menus/00-MenuInicial+Personalizacion/personalizacion2_ipad.unity
     guid: ff220be809dec8144ad443cc5b0fe9b4
   - enabled: 1
