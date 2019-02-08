@@ -53,7 +53,7 @@ public class SaveLoad : MonoBehaviour
             file = File.Open(Application.persistentDataPath + "SavedGame.sg",FileMode.Create); //creamos archivo de guardado
         }
 #if UNITY_IOS
-            file = File.Open(Application.persistentDataPath + "SavedGame.sg",FileMode.Create);
+            file = File.Open(Application.persistentDataPath +"/"+ "SavedGame.sg",FileMode.Create);
 #endif
 
 

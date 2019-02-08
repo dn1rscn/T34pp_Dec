@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.iOS;
 
 public class SelecLenguaje : MonoBehaviour 
 {
@@ -123,8 +124,17 @@ public class SelecLenguaje : MonoBehaviour
 		}
 		else
 		{
-			Application.LoadLevel("personalizacion2.0");
-		}
+            if ((Device.generation.ToString()).Contains("iPad"))
+            {
+                print("Es un ipad: " + Device.generation);
+                Application.LoadLevel("personalizacion2_ipad");
+            }
+            else
+            {
+                print("No es un ipad: " + Device.generation);
+                Application.LoadLevel("personalizacion2.0");
+            }
+        }
 		
 
 
