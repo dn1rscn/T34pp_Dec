@@ -22,14 +22,16 @@ public class pasarDeEscena : MonoBehaviour {
 
 		else 
 		{
-			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")||File.Exists(Application.dataPath + "SaveGame,sg")) 
+			if (File.Exists (Application.persistentDataPath + "SavedGame.sg"))
 			{
                 if ((Device.generation.ToString()).Contains("iPad"))
                 {
+                    print("Es un ipad: " + Device.generation);
                     Application.LoadLevel("personalizacion2_ipad");
                 }
                 else
                 {
+                    print("No es un ipad: " + Device.generation);
                     Application.LoadLevel("personalizacion2.0");
                 }
 			}

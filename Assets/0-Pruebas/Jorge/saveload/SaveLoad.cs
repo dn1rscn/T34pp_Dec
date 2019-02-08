@@ -50,14 +50,14 @@ public class SaveLoad : MonoBehaviour
         guardamosDatos ();
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
         {
-            file = File.Create(Application.persistentDataPath + "SavedGame.sg"); //creamos archivo de guardado
+            file = File.Open(Application.persistentDataPath + "SavedGame.sg",FileMode.Create); //creamos archivo de guardado
         }
-        #if UNITY_IOS
-            file = File.Create(Application.dataPath + "SavedGame.sg");
-        #endif
-        
-        
-		BinaryFormatter bformatter = new BinaryFormatter ();
+#if UNITY_IOS
+            file = File.Open(Application.persistentDataPath + "SavedGame.sg",FileMode.Create);
+#endif
+
+
+        BinaryFormatter bformatter = new BinaryFormatter ();
 		bformatter.Serialize (file, datos);//guardamos las variables
 		file.Close ();
 
