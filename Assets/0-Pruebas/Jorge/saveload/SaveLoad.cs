@@ -52,10 +52,10 @@ public class SaveLoad : MonoBehaviour
         {
             file = File.Create(Application.persistentDataPath + "SavedGame.sg"); //creamos archivo de guardado
         }
-        else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
+        #if UNITY_IOS
             file = File.Create(Application.dataPath + "SavedGame.sg");
-        }
+        #endif
+        
         
 		BinaryFormatter bformatter = new BinaryFormatter ();
 		bformatter.Serialize (file, datos);//guardamos las variables

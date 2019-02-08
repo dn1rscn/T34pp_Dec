@@ -11,7 +11,7 @@ public class tutoriales_IslaBosque : MonoBehaviour {
 
 	public void Start(){
 		scriptCtrlProta = GameObject.Find ("Chico_TEAPlay").GetComponent<ControlProtaMouse_2>();
-        if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+        if ((Device.generation.ToString()).Contains("iPad"))
         {
             animator_grpTutoriales = GameObject.Find("grp_control_Tutoriales_ipad").GetComponent<Animator>();
         }

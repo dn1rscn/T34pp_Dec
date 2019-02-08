@@ -24,7 +24,7 @@ public class pasarDeEscena : MonoBehaviour {
 		{
 			if (File.Exists (Application.persistentDataPath + "SavedGame.sg")||File.Exists(Application.dataPath + "SaveGame,sg")) 
 			{
-                if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+                if ((Device.generation.ToString()).Contains("iPad"))
                 {
                     Application.LoadLevel("personalizacion2_ipad");
                 }

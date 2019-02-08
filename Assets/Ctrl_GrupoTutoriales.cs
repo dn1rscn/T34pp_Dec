@@ -11,7 +11,7 @@ public class Ctrl_GrupoTutoriales : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+        if ((Device.generation.ToString()).Contains("iPad"))
         {
             Tutoriales_ipad.SetActive(true);
             Tutoriales_Movil.SetActive(false);

@@ -59,7 +59,7 @@ public class Interface_Mundo : MonoBehaviour
 		Time.timeScale = 1;
 		//print ("hola");
 		cdgP.inicio = false;
-        if ((Device.generation.ToString()).IndexOf("iPad") > -1)
+        if ((Device.generation.ToString()).Contains("iPad"))
         {
             Application.LoadLevel("personalizacion2_ipad");
         }
