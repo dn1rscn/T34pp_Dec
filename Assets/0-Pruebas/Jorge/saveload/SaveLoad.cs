@@ -72,21 +72,23 @@ public class SaveLoad : MonoBehaviour
 		print ("guardamos Default");
 		datos = new Game ();
 		guardamosDatos ();
-        FileStream file = null;
+      
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
         {
-            file = File.Create(Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+            FileStream file = File.Create(Application.persistentDataPath + "Default.sg"); //creamos archivo de guardado
+            BinaryFormatter bformatter = new BinaryFormatter();
+            bformatter.Serialize(file, datos);//guardamos las variables
+            file.Close();
         }
-        else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            file = File.Create(Application.dataPath + "Default.sg");
-        }
-		BinaryFormatter bformatter = new BinaryFormatter ();
-		bformatter.Serialize (file, datos);//guardamos las variables
-		file.Close ();
-	}
+#if UNITY_IOS
+        string filepath = Path.Combine(Application.persistentDataPath, "Default.json");
 
-	public void Load()
+        string json = JsonUtility.ToJson(datos);
+        File.WriteAllText(filepath, json);
+#endif
+    }
+
+    public void Load()
 	{
         //FileStream file = null;
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
@@ -103,24 +105,24 @@ public class SaveLoad : MonoBehaviour
                 file.Close();
             }
         }
-        else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            if (File.Exists(Application.dataPath + "SavedGame.sg"))
-            {
-                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-                print("cargamos");
-                datos = new Game();
-                FileStream file = File.Open(Application.dataPath + "SavedGame.sg", FileMode.Open); //leemos el archivo de guardado
-                BinaryFormatter bformatter = new BinaryFormatter();
-                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
-                cargarDatos();
-                file.Close();
-            }
-        }
-        
-	}
 
-	public void LoadDefault()
+#if UNITY_IOS
+            
+        string filepath = Path.Combine(Application.persistentDataPath, "progress.json");
+
+        if (File.Exists(filepath))
+        {
+            //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+            print("cargamos");
+            string allText = File.ReadAllText(filepath);
+
+            datos = JsonUtility.FromJson<Game>(allText);
+         }
+#endif
+
+    }
+
+    public void LoadDefault()
 	{
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
         {
@@ -137,24 +139,22 @@ public class SaveLoad : MonoBehaviour
                 file.Close();
             }
         }
-        else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            if (File.Exists(Application.dataPath + "Default.sg"))
-            {
-                //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
-                print("cargamos Default");
-                datos = new Game();
-                FileStream file = File.Open(Application.dataPath + "Default.sg", FileMode.Open); //leemos el archivo de guardado
-                BinaryFormatter bformatter = new BinaryFormatter();
-                datos = (Game)bformatter.Deserialize(file); //decodificamos/cargamos el archivo
-                cargarDatos();
-                file.Close();
-            }
-        }
-       
-	}
+#if UNITY_IOS
+            
+        string filepath = Path.Combine(Application.persistentDataPath, "Default.json");
 
-	void guardamosDatos()
+        if (File.Exists(filepath))
+        {
+            //cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
+            print("cargamos");
+            string allText = File.ReadAllText(filepath);
+
+            datos = JsonUtility.FromJson<Game>(allText);
+         }
+#endif
+    }
+
+    void guardamosDatos()
 	{
 		datos.Idioma=languageDictionary.lang;
 
