@@ -63,6 +63,7 @@ public class SaveLoad : MonoBehaviour
 
         string json = JsonUtility.ToJson(datos);
         File.WriteAllText(filepath, json);
+        print("FILEPATH: " + filepath);
 #endif
 
 	}
@@ -117,7 +118,12 @@ public class SaveLoad : MonoBehaviour
             string allText = File.ReadAllText(filepath);
 
             datos = JsonUtility.FromJson<Game>(allText);
+            cargarDatos();
          }
+        else
+        {
+            print("no existe el archivo: " + filepath);
+        }
 #endif
 
     }
@@ -150,6 +156,7 @@ public class SaveLoad : MonoBehaviour
             string allText = File.ReadAllText(filepath);
 
             datos = JsonUtility.FromJson<Game>(allText);
+            cargarDatos();
          }
 #endif
     }
