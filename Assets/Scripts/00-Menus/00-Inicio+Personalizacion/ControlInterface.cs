@@ -141,8 +141,11 @@ public class ControlInterface : MonoBehaviour
 	{
 		print ("guardamos Partida");
 		cdgP.nuevoJuego = false;
-		Application.LoadLevel ("Mapa");
+
         SL.Save();
+
+        Application.LoadLevel ("Mapa");
+        
     }
 	public void irAPlayStore()
 	{

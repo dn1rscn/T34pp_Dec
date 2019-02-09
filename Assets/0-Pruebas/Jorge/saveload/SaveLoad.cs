@@ -44,22 +44,26 @@ public class SaveLoad : MonoBehaviour
 			cdgP = GameObject.Find ("datosGlobalesPersonalizacion").GetComponent<control_datosGlobalesPersonalizacion> ();
 		}
 
-		print ("guardamos");
-		datos = new Game ();
-        FileStream file = null;
-        guardamosDatos ();
+        datos = new Game();
+        guardamosDatos();
+
+        print ("guardamos");
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android)
         {
+            
+            FileStream file = null;
+            
             file = File.Open(Application.persistentDataPath + "SavedGame.sg",FileMode.Create); //creamos archivo de guardado
+            BinaryFormatter bformatter = new BinaryFormatter();
+            bformatter.Serialize(file, datos);//guardamos las variables
+            file.Close();
         }
 #if UNITY_IOS
-            file = File.Open(Application.persistentDataPath +"/"+ "SavedGame.sg",FileMode.Create);
+        string filepath = Path.Combine(Application.persistentDataPath, "progress.json");
+
+        string json = JsonUtility.ToJson(datos);
+        File.WriteAllText(filepath, json);
 #endif
-
-
-        BinaryFormatter bformatter = new BinaryFormatter ();
-		bformatter.Serialize (file, datos);//guardamos las variables
-		file.Close ();
 
 	}
 
