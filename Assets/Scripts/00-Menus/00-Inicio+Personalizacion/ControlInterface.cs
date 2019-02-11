@@ -52,7 +52,9 @@ public class ControlInterface : MonoBehaviour
 				GameObject.Find("GAv4").GetComponent<GoogleAnalyticsV4>().LogScreen(new AppViewHitBuilder()
 					.SetScreenName("Inicio"));
 
-				if (File.Exists (Application.persistentDataPath + "SavedGame.sg")||File.Exists(Application.dataPath + "SavedGame.sg")) 
+                string filepath = Path.Combine(Application.persistentDataPath, "progress.json");
+
+                if (File.Exists (Application.persistentDataPath + "SavedGame.sg")|| File.Exists(filepath)) 
 				{
 
 					BotonInicio.SetActive (false);
@@ -335,10 +337,11 @@ public class ControlInterface : MonoBehaviour
         }
         else if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            if (File.Exists(Application.dataPath + "SavedGame.sg"))
+            string filepath = Path.Combine(Application.persistentDataPath, "progress.json");
+            if (File.Exists(filepath))
             {
                 print("existe el archivo");
-                File.Delete(Application.dataPath + "SavedGame.sg");
+                File.Delete(filepath);
                 SL.LoadDefault();
                 AN.Start();
                 print("nuevo Juego");

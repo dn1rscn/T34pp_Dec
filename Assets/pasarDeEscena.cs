@@ -22,7 +22,9 @@ public class pasarDeEscena : MonoBehaviour {
 
 		else 
 		{
-			if (File.Exists (Application.persistentDataPath + "SavedGame.sg"))
+            string filepath = Path.Combine(Application.persistentDataPath, "progress.json");
+
+            if (File.Exists (Application.persistentDataPath + "SavedGame.sg")|| File.Exists(filepath))
 			{
                 if ((Device.generation.ToString()).Contains("iPad"))
                 {
