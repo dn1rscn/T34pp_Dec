@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.iOS;
 
 public class ControlEscenas : MonoBehaviour {
 
@@ -37,9 +38,18 @@ public class ControlEscenas : MonoBehaviour {
 		CDG_Mundo3D.islaBosque=false;
 		CDG_Mundo3D.islaFant = false;
 		CDG_Mundo3D.islaMec=false;
-		
-		Application.LoadLevel("personalizacion2.0");
-		SL.Save();
+
+        if ((Device.generation.ToString()).Contains("iPad"))
+        {
+            print("Es un ipad: " + Device.generation);
+            Application.LoadLevel("personalizacion2_ipad");
+        }
+        else
+        {
+            print("No es un ipad: " + Device.generation);
+            Application.LoadLevel("personalizacion2.0");
+        }
+        SL.Save();
 	}
 	public void siguienteEscena() {
 		
