@@ -30,10 +30,13 @@ public class ControlInterface : MonoBehaviour
 
 	public GameObject mensaje;
 
+    Control_parental C_Parental;
+
 
 	// Use this for initialization
 	void Start () 
 	{
+        
 		CDG_Mundo3D = GameObject.Find ("ControlDatosGlobales").GetComponent<ControlDatosGlobales_Mundo3D> ();
 		SL = GameObject.Find ("saveload").GetComponent<SaveLoad> ();
 
@@ -152,14 +155,14 @@ public class ControlInterface : MonoBehaviour
 	public void irAPlayStore()
 	{
 		print ("Vamos a PlayStore");
-		//SL.Save ();
+        //SL.Save ();
 
-		//Redireccionar a la Playstore
-		if(Application.platform==RuntimePlatform.Android)
-		{
-			Application.OpenURL("market://details?id=com.IKKI.TEApp");
-		}
-		else
+        //Redireccionar a la Playstore
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Application.OpenURL("market://details?id=com.IKKI.TEApp");
+        }
+        else if (Application.platform == RuntimePlatform.WindowsPlayer)
 		{
 			Application.OpenURL("https://play.google.com/store/apps/details?id=com.IKKI.TEApp");
 		}
@@ -291,19 +294,27 @@ public class ControlInterface : MonoBehaviour
 	}
     public void Instagram()
     {
-        Application.OpenURL("https://www.instagram.com/studios_ikki/");
+        C_Parental = GameObject.Find("Play").GetComponent<Control_parental>();
+
+        C_Parental.Activar("https://www.instagram.com/studios_ikki/");
     }
     public void Facebook ()
 	{
-		Application.OpenURL ("https://www.facebook.com/Ikki-Studios-1854126904821934");
+        C_Parental = GameObject.Find("Play").GetComponent<Control_parental>();
+
+        C_Parental.Activar("https://www.facebook.com/Ikki-Studios-1854126904821934");
 	}
 	public void twitter ()
 	{
-		Application.OpenURL ("https://twitter.com/Studiosikki");
+        C_Parental = GameObject.Find("Play").GetComponent<Control_parental>();
+
+        C_Parental.Activar("https://twitter.com/Studiosikki");
 	}
 	public void webIkki ()
 	{
-		Application.OpenURL ("http://www.studiosikki.com");
+        C_Parental = GameObject.Find("Play").GetComponent<Control_parental>();
+
+        C_Parental.Activar("http://www.studiosikki.com");
 	}
 	public void borrar_Partida()
 	{

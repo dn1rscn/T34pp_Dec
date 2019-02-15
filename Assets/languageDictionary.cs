@@ -193,6 +193,12 @@ public static class languageDictionary//: MonoBehaviour
 
 			stringList.Add ("VALÓRANOS", "VALÓRANOS");
 			stringList.Add ("¡GRACIAS POR JUGAR!", "¡GRACIAS POR JUGAR!");
+
+            //Control Parental
+            stringList.Add("Pregunta a tus padres:", "PREGUNTA A TUS PADRES:");
+            stringList.Add("¿Eres mayor de edad?", "¿ERES MAYOR DE EDAD?");
+            stringList.Add("Inserta tu año de nacimiento", "INSERTA TU AÑO DE NACIMIENTO");
+            stringList.Add("Debes tener más de 18 años para seguir", "DEBES TENER MAS DE 18 AÑOS PARA SEGUIR");
 		}
 
 		if(lang=="English")
@@ -376,7 +382,13 @@ public static class languageDictionary//: MonoBehaviour
 
 			stringList.Add ("VALÓRANOS", "RATE US");
 			stringList.Add ("¡GRACIAS POR JUGAR!", "¡THANKS FOR PLAYING!");
-		}
+
+            //Control Parental
+            stringList.Add("Pregunta a tus padres:", "ASK YOUR PARENTS:");
+            stringList.Add("¿Eres mayor de edad?", "ARE YOU A GROWN-UP?");
+            stringList.Add("Inserta tu año de nacimiento", "INSERT YOUR OWN BIRTH YEAR");
+            stringList.Add("Debes tener más de 18 años para seguir", "YOU MUST BE OLDER THAN 18 YEARS OLD TO CONTINUE");
+        }
 
 		
 		if(lang=="Euskara")
@@ -561,7 +573,13 @@ public static class languageDictionary//: MonoBehaviour
 
 			stringList.Add ("VALÓRANOS", "PUNTUATU GAITZAZU");
 			stringList.Add ("¡GRACIAS POR JUGAR!", "¡ESKERRIK ASKO JOKATZEAGATIK!");
-		}
+
+            //Control Parental
+            stringList.Add("Pregunta a tus padres:", "ZURE GURASOEI GALDETU:");
+            stringList.Add("¿Eres mayor de edad?", "18 URTE EDO GEHIO DITUZU?");
+            stringList.Add("Inserta tu año de nacimiento", "ZURE JAIOTZE URTEA SARTU");
+            stringList.Add("Debes tener más de 18 años para seguir", "18 URTE BAINO GEHIO IZAN BEHAR DITUZU JARRAITZEKO");
+        }
 
 		if(lang=="Frances")
 		{
@@ -741,7 +759,13 @@ public static class languageDictionary//: MonoBehaviour
 
 			stringList.Add ("VALÓRANOS", "ÉVALUEZ-NOUS");
 			stringList.Add ("¡GRACIAS POR JUGAR!", "MERCI DE JOUER!");
-		}
+
+            //Control Parental
+            stringList.Add("Pregunta a tus padres:", "DEMANDE À TES PARENTS");
+            stringList.Add("¿Eres mayor de edad?", "ÊTES-VOUS UN ADULTE?");
+            stringList.Add("Inserta tu año de nacimiento", "INSÉREZ VOTRE ANNÉE DE NAISSANCE");
+            stringList.Add("Debes tener más de 18 años para seguir", "VOUS DEVEZ AVOIR PLUS DE 18 ANS POUR SUIVRE");
+        }
 	}
 }
 
