@@ -39,12 +39,15 @@ public class Control_parental : MonoBehaviour
             else if (DateTime.Now.Year - Convert.ToInt32(año.text) < 18)
             {
                 warning.SetActive(true);
+                warning.GetComponent<Text>().text = languageDictionary.stringList["Debes tener más de 18 años para seguir"];
                 año.text = null;
             }
         }
         else
         {
             print("año no valido");
+            warning.SetActive(true);
+            warning.GetComponent<Text>().text = languageDictionary.stringList["El año introducido no es valido. introduce un año de 4 digitos"];
         }
     }
 

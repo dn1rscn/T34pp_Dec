@@ -199,6 +199,7 @@ public static class languageDictionary//: MonoBehaviour
             stringList.Add("¿Eres mayor de edad?", "¿ERES MAYOR DE EDAD?");
             stringList.Add("Inserta tu año de nacimiento", "INSERTA TU AÑO DE NACIMIENTO");
             stringList.Add("Debes tener más de 18 años para seguir", "DEBES TENER MAS DE 18 AÑOS PARA SEGUIR");
+            stringList.Add("El año introducido no es valido. introduce un año de 4 digitos", "EL AÑO INTRODUCIDO NO ES VALIDO, INTRODUCE TU AÑO DE NACIMIENTO");
 		}
 
 		if(lang=="English")
@@ -388,6 +389,7 @@ public static class languageDictionary//: MonoBehaviour
             stringList.Add("¿Eres mayor de edad?", "ARE YOU A GROWN-UP?");
             stringList.Add("Inserta tu año de nacimiento", "INSERT YOUR OWN BIRTH YEAR");
             stringList.Add("Debes tener más de 18 años para seguir", "YOU MUST BE OLDER THAN 18 YEARS OLD TO CONTINUE");
+            stringList.Add("El año introducido no es valido. introduce un año de 4 digitos", "THE YEAR INTRODUCED IS NOT VALID, INSERT YOUR YEAR OF BIRTH");
         }
 
 		
@@ -579,6 +581,7 @@ public static class languageDictionary//: MonoBehaviour
             stringList.Add("¿Eres mayor de edad?", "18 URTE EDO GEHIO DITUZU?");
             stringList.Add("Inserta tu año de nacimiento", "ZURE JAIOTZE URTEA SARTU");
             stringList.Add("Debes tener más de 18 años para seguir", "18 URTE BAINO GEHIO IZAN BEHAR DITUZU JARRAITZEKO");
+            stringList.Add("El año introducido no es valido. introduce un año de 4 digitos", "SARTUTAKO URTEA EZ DA ZUZENA, JAIO ZINEN URTEA SARTU EZAZU");
         }
 
 		if(lang=="Frances")
@@ -765,6 +768,7 @@ public static class languageDictionary//: MonoBehaviour
             stringList.Add("¿Eres mayor de edad?", "ÊTES-VOUS UN ADULTE?");
             stringList.Add("Inserta tu año de nacimiento", "INSÉREZ VOTRE ANNÉE DE NAISSANCE");
             stringList.Add("Debes tener más de 18 años para seguir", "VOUS DEVEZ AVOIR PLUS DE 18 ANS POUR SUIVRE");
+            stringList.Add("El año introducido no es valido. introduce un año de 4 digitos", "L'ANNÉE PRÉSENTÉE N'EST PAS VALIDE, INTRODUISEZ VOTRE ANNÉE DE NAISSANCE");
         }
 	}
 }
